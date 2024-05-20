@@ -18,11 +18,20 @@
       padding: 20px;
       background-color: white;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .left-column, .right-column {
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     header {
       text-align: center;
       margin-bottom: 20px;
+      width: 100%;
     }
 
     header h1 {
@@ -51,7 +60,7 @@
       font-size: 1.5em;
     }
 
-    .experience, .education, .certification, .achievements, .skills, .core-competencies {
+    .experience, .education, .certification, .achievements, .skills, .core-competencies, .projects {
       padding: 0 20px;
     }
 
@@ -101,124 +110,128 @@
       </div>
     </header>
 
-    <section>
-      <h2>EXPERIENCE (6 Years)</h2>
-      <div class="experience">
-        <p><strong>IBM (Data Scientist)</strong><span class="date">Mar 2024 – Ongoing</span></p>
-        <p><strong>Accenture (Data Scientist)</strong><span class="date">Apr 2021 – Feb 2024</span></p>
-        <p><strong>Capgemini (Process Lead)</strong><span class="date">Feb 2021 – Mar 2021</span></p>
-        <p><strong>Clean Harbors (Data Scientist)</strong><span class="date">Jun 2018 – Jan 2021</span></p>
-      </div>
-    </section>
+    <div class="left-column">
+      <section>
+        <h2>EXPERIENCE (6 Years)</h2>
+        <div class="experience">
+          <p><strong>IBM (Data Scientist)</strong><span class="date">Mar 2024 – Ongoing</span></p>
+          <p><strong>Accenture (Data Scientist)</strong><span class="date">Apr 2021 – Feb 2024</span></p>
+          <p><strong>Capgemini (Process Lead)</strong><span class="date">Feb 2021 – Mar 2021</span></p>
+          <p><strong>Clean Harbors (Data Scientist)</strong><span class="date">Jun 2018 – Jan 2021</span></p>
+        </div>
+      </section>
 
-    <section>
-      <h2>PROFESSIONAL SUMMARY</h2>
-      <p>IIT Dhanbad graduate with 6 years of expertise in Data Science, Generative AI, MLOps, responsible AI, and AI Governance. Skilled in Azure, AWS, GCP, Python, SQL, Power BI, Data Analytics and various data science tools. Led projects, seeking a leadership role for impactful data science and ML projects.</p>
-    </section>
+      <section>
+        <h2>PROJECTS</h2>
+        <div class="projects">
+          <h3>AI Governance, IBM</h3>
+          <ul>
+            <li>Led the design and development of a comprehensive AI governance solution using IBM's Watsonx.Governance platform.</li>
+            <li>Ensured ethical and responsible development, deployment, and management of Generative AI (Gen AI) and traditional Machine Learning (ML) models.</li>
+          </ul>
+          <h3>Mizuho Bank, Accenture</h3>
+          <ul>
+            <li>Developed and deployed PdfGPT, an AI-powered text summarization system, boosting document processing efficiency by 35%.</li>
+            <li>Leveraged Generative AI and Azure Cognitive Services to enable faster banking processes through key feature extraction and interactive chat functionality.</li>
+            <li>Facilitated the project's success from conception to implementation using expertise in LLM, Data Science, Machine Learning, Azure, Python, SQL, Banking, Data Analytics, and Business Analytics.</li>
+          </ul>
+          <h3>Ulster Bank, Accenture</h3>
+          <ul>
+            <li>Built and deployed automated machine learning pipelines for customer segmentation on AWS Cloud.</li>
+            <li>Leveraged expertise in ML, Python, SQL, Power BI, and Banking domain knowledge to derive meaningful insights and explain them to clients.</li>
+          </ul>
+          <h3>Facebook, Accenture</h3>
+          <ul>
+            <li>Examined and explored data from multiple disparate sources to discover insights providing competitive advantages for clients.</li>
+            <li>Designed and optimized machine learning pipelines, specializing in forecasting models, leveraging Machine Learning, Python, and AWS.</li>
+          </ul>
+          <h3>Waste Classification Code, Clean Harbors</h3>
+          <ul>
+            <li>Designed, developed, and fine-tuned Waste Classification Code Prediction models to streamline code assignment.</li>
+            <li>Leveraged a robust dataset, stringent data quality checks, and skills in Data Science, Machine Learning, Azure services, Python, SQL, Data Analytics, and Business Analytics to drive project success from ideation to implementation.</li>
+          </ul>
+          <h3>Invoice Audit, Clean Harbors</h3>
+          <ul>
+            <li>Developed and deployed an invoice audit and revenue prediction algorithm using machine learning and statistical analysis.</li>
+            <li>Streamlined the process by automating the pipeline, achieving significant improvements in accuracy and efficiency.</li>
+            <li>Leveraged expertise in Data Science, Machine Learning, Azure services, Python, SQL, Data Analytics, and Business Analytics.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
 
-    <section>
-      <h2>PROJECTS</h2>
-      <div class="projects">
-        <h3>AI Governance, IBM</h3>
-        <ul>
-          <li>Led the design and development of a comprehensive AI governance solution using IBM's Watsonx.Governance platform.</li>
-          <li>Ensured ethical and responsible development, deployment, and management of Generative AI (Gen AI) and traditional Machine Learning (ML) models.</li>
-        </ul>
-        <h3>Mizuho Bank, Accenture</h3>
-        <ul>
-          <li>Developed and deployed PdfGPT, an AI-powered text summarization system, boosting document processing efficiency by 35%.</li>
-          <li>Leveraged Generative AI and Azure Cognitive Services to enable faster banking processes through key feature extraction and interactive chat functionality.</li>
-          <li>Facilitated the project's success from conception to implementation using expertise in LLM, Data Science, Machine Learning, Azure, Python, SQL, Banking, Data Analytics, and Business Analytics.</li>
-        </ul>
-        <h3>Ulster Bank, Accenture</h3>
-        <ul>
-          <li>Built and deployed automated machine learning pipelines for customer segmentation on AWS Cloud.</li>
-          <li>Leveraged expertise in ML, Python, SQL, Power BI, and Banking domain knowledge to derive meaningful insights and explain them to clients.</li>
-        </ul>
-        <h3>Facebook, Accenture</h3>
-        <ul>
-          <li>Examined and explored data from multiple disparate sources to discover insights providing competitive advantages for clients.</li>
-          <li>Designed and optimized machine learning pipelines, specializing in forecasting models, leveraging Machine Learning, Python, and AWS.</li>
-        </ul>
-        <h3>Waste Classification Code, Clean Harbors</h3>
-        <ul>
-          <li>Designed, developed, and fine-tuned Waste Classification Code Prediction models to streamline code assignment.</li>
-          <li>Leveraged a robust dataset, stringent data quality checks, and skills in Data Science, Machine Learning, Azure services, Python, SQL, Data Analytics, and Business Analytics to drive project success from ideation to implementation.</li>
-        </ul>
-        <h3>Invoice Audit, Clean Harbors</h3>
-        <ul>
-          <li>Developed and deployed an invoice audit and revenue prediction algorithm using machine learning and statistical analysis.</li>
-          <li>Streamlined the process by automating the pipeline, achieving significant improvements in accuracy and efficiency.</li>
-          <li>Leveraged expertise in Data Science, Machine Learning, Azure services, Python, SQL, Data Analytics, and Business Analytics.</li>
-        </ul>
-      </div>
-    </section>
+    <div class="right-column">
+      <section>
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>IIT Dhanbad graduate with 6 years of expertise in Data Science, Generative AI, MLOps, responsible AI, and AI Governance. Skilled in Azure, AWS, GCP, Python, SQL, Power BI, Data Analytics and various data science tools. Led projects, seeking a leadership role for impactful data science and ML projects.</p>
+      </section>
 
-    <section>
-      <h2>EDUCATION</h2>
-      <div class="education">
-        <p><strong>IIT Dhanbad - B.Tech</strong><span class="date">2013 – 2017</span></p>
-        <p><strong>Super30, Patna</strong><span class="date">2012 – 2013</span></p>
-      </div>
-    </section>
+      <section>
+        <h2>EDUCATION</h2>
+        <div class="education">
+          <p><strong>IIT Dhanbad - B.Tech</strong><span class="date">2013 – 2017</span></p>
+          <p><strong>Super30, Patna</strong><span class="date">2012 – 2013</span></p>
+        </div>
+      </section>
 
-    <section>
-      <h2>CERTIFICATION</h2>
-      <div class="certification">
-        <ul>
-          <li>Northwestern University – Analytics & AI</li>
-          <li>Microsoft & LinkedIn – Generative AI</li>
-          <li>Microsoft – AZURE Machine Learning</li>
-          <li>Stanford University – Machine Learning</li>
-          <li>Duke University – DevOps, DataOps, MLOps</li>
-          <li>AWS – AWS Cloud</li>
-          <li>Microsoft – SQL Server</li>
-        </ul>
-      </div>
-    </section>
+      <section>
+        <h2>CERTIFICATION</h2>
+        <div class="certification">
+          <ul>
+            <li>Northwestern University – Analytics & AI</li>
+            <li>Microsoft & LinkedIn – Generative AI</li>
+            <li>Microsoft – AZURE Machine Learning</li>
+            <li>Stanford University – Machine Learning</li>
+            <li>Duke University – DevOps, DataOps, MLOps</li>
+            <li>AWS – AWS Cloud</li>
+            <li>Microsoft – SQL Server</li>
+          </ul>
+        </div>
+      </section>
 
-    <section>
-      <h2>ACHIEVEMENTS</h2>
-      <div class="achievements">
-        <ul>
-          <li>Rank #1 in HackerRank SQL.</li>
-          <li>Consistently appreciated by client leadership for error-free, timely project deliveries.</li>
-          <li>Led and managed a team of 5 analysts, successfully restoring team credibility and stability.</li>
-          <li>Cleared IIT JEE-2013, among top 1% of students who cleared JEE Advanced.</li>
-          <li>Student representative in Mess Committee, IIT Dhanbad (2015-16).</li>
-          <li>Silver medalist in 200m race at district level "Khel Kud Pratiyogita" in Bihar (2009).</li>
-        </ul>
-      </div>
-    </section>
+      <section>
+        <h2>ACHIEVEMENTS</h2>
+        <div class="achievements">
+          <ul>
+            <li>Rank #1 in HackerRank SQL.</li>
+            <li>Consistently appreciated by client leadership for error-free, timely project deliveries.</li>
+            <li>Led and managed a team of 5 analysts, successfully restoring team credibility and stability.</li>
+            <li>Cleared IIT JEE-2013, among top 1% of students who cleared JEE Advanced.</li>
+            <li>Student representative in Mess Committee, IIT Dhanbad (2015-16).</li>
+            <li>Silver medalist in 200m race at district level "Khel Kud Pratiyogita" in Bihar (2009).</li>
+          </ul>
+        </div>
+      </section>
 
-    <section>
-      <h2>SKILLS</h2>
-      <div class="skills">
-        <ul>
-          <li><strong>Data Science:</strong> Machine Learning, Deep Learning, AI Governance, responsible AI, MLOps, Generative AI, Python, SQL, Azure, AWS, GCP, Power BI, Statistical Analysis, Advanced analytics, Data Analytics, Financial Analytics, Business Analytics, Machine learning, Time Series, Algorithm, Model development, Model deployment, Modeling.</li>
-          <li><strong>Cloud Technologies:</strong> AZURE, AWS, GCP.</li>
-          <li><strong>Databases:</strong> Microsoft Azure SQL, SQL Server, MySQL, MongoDB, BigQuery.</li>
-          <li><strong>Programming:</strong> Python (Pandas, NumPy, Scikit-learn, matplotlib, seaborn, PyTorch, TensorFlow).</li>
-          <li><strong>Machine Learning:</strong> Supervised ML (Linear and Logistic Regression, Decision Trees, RF, XGBoost), Unsupervised ML, NLP, Time Series.</li>
-          <li><strong>Visualization Tools:</strong> Power BI, Matplotlib, Seaborn.</li>
-          <li><strong>Data Engineering:</strong> Azure Data Factory, Azure Data Bricks, Azure SQL, Azure SYNAPSE Analytics, AWS S3, AWS Athena, AWS Glue, AWS SageMaker, AWS Glacier, AWS DataSync, Vertex AI, BigQuery.</li>
-          <li><strong>Industry:</strong> Banking, Environmental, social media, Waste management, Risk Management.</li>
-        </ul>
-      </div>
-    </section>
+      <section>
+        <h2>SKILLS</h2>
+        <div class="skills">
+          <ul>
+            <li><strong>Data Science:</strong> Machine Learning, Deep Learning, AI Governance, responsible AI, MLOps, Generative AI, Python, SQL, Azure, AWS, GCP, Power BI, Statistical Analysis, Advanced analytics, Data Analytics, Financial Analytics, Business Analytics, Machine learning, Time Series, Algorithm, Model development, Model deployment, Modeling.</li>
+            <li><strong>Cloud Technologies:</strong> AZURE, AWS, GCP.</li>
+            <li><strong>Databases:</strong> Microsoft Azure SQL, SQL Server, MySQL, MongoDB, BigQuery.</li>
+            <li><strong>Programming:</strong> Python (Pandas, NumPy, Scikit-learn, matplotlib, seaborn, PyTorch, TensorFlow).</li>
+            <li><strong>Machine Learning:</strong> Supervised ML (Linear and Logistic Regression, Decision Trees, RF, XGBoost), Unsupervised ML, NLP, Time Series.</li>
+            <li><strong>Visualization Tools:</strong> Power BI, Matplotlib, Seaborn.</li>
+            <li><strong>Data Engineering:</strong> Azure Data Factory, Azure Data Bricks, Azure SQL, Azure SYNAPSE Analytics, AWS S3, AWS Athena, AWS Glue, AWS SageMaker, AWS Glacier, AWS DataSync, Vertex AI, BigQuery.</li>
+            <li><strong>Industry:</strong> Banking, Environmental, social media, Waste management, Risk Management.</li>
+          </ul>
+        </div>
+      </section>
 
-    <section>
-      <h2>CORE COMPETENCIES</h2>
-      <div class="core-competencies">
-        <ul>
-          <li>Project Management and Deployment</li>
-          <li>Data Strategy and Management</li>
-          <li>Business Strategy & Execution</li>
-          <li>Business and Data Analytics</li>
-          <li>Analytics & AI</li>
-        </ul>
-      </div>
-    </section>
+      <section>
+        <h2>CORE COMPETENCIES</h2>
+        <div class="core-competencies">
+          <ul>
+            <li>Project Management and Deployment</li>
+            <li>Data Strategy and Management</li>
+            <li>Business Strategy & Execution</li>
+            <li>Business and Data Analytics</li>
+            <li>Analytics & AI</li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </div>
 </body>
 </html>

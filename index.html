@@ -6,16 +6,45 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
 <title>Chandan Kumar</title>
+<style>
+  /* Add this CSS to style the horizontal navigation */
+  #header-nav {
+    background-color: #f8f8f8; /* Background color for the nav bar */
+    padding: 10px;
+    text-align: center; /* Center align the nav items */
+  }
+
+  #header-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #header-nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  #header-nav ul li a {
+    text-decoration: none;
+    color: #333; /* Link color */
+    font-weight: bold;
+  }
+
+  #header-nav ul li a.current {
+    color: #007bff; /* Color for the current page */
+  }
+</style>
 </head>
 <body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">Home</div>
-<div class="menu-item"><a href="index.html" class="current">Home</a></div>
-<div class="menu-item"><a href="resume.html">About&nbsp;me</a></div>
-</td>
-<td id="layout-content">
+<header>
+  <div id="header-nav">
+    <ul>
+      <li><a href="index.html" class="current">Home</a></li>
+      <li><a href="resume.html">About&nbsp;me</a></li>
+    </ul>
+  </div>
+</header>
 <div id="toptitle">
 <h1>Chandan Kumar</h1>
 </div>
@@ -59,8 +88,5 @@ Page generated 2019-05-11 18:27:29 India Standard Time, by <a href="https://gith
 (<a href="index.jemdoc">source</a>)
 </div>
 </div>
-</td>
-</tr>
-</table>
 </body>
 </html>

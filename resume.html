@@ -46,10 +46,16 @@
     }
 
     .left-column, .right-column {
-      width: 48%;
+      width: 100%;
       padding: 20px;
       box-sizing: border-box;
-      margin: 1%;
+    }
+
+    @media (min-width: 768px) {
+      .left-column, .right-column {
+        width: 48%;
+        margin: 1%;
+      }
     }
 
     section {

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chandan Kumar's Resume</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -97,10 +98,23 @@
       display: block;
       margin-bottom: 5px;
     }
+
+    #downloadButton {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+      background-color: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="resumeContent">
     <header>
       <h1>CHANDAN KUMAR</h1>
       <div class="contact-info">
@@ -234,5 +248,24 @@
       </section>
     </div>
   </div>
+  
+  <a id="downloadButton" onclick="downloadPDF()">Download as PDF</a>
+
+  <script>
+    async function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      
+      doc.html(document.getElementById('resumeContent'), {
+        callback: function (doc) {
+          doc.save('Chandan_Kumar_Resume.pdf');
+        },
+        x: 10,
+        y: 10,
+        width: 180,
+        windowWidth: 800
+      });
+    }
+  </script>
 </body>
 </html>

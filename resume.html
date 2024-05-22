@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chandan Kumar's Resume</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -256,14 +257,14 @@
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF();
       
-      doc.html(document.getElementById('resumeContent'), {
-        callback: function (doc) {
-          doc.save('Chandan_Kumar_Resume.pdf');
-        },
-        x: 10,
-        y: 10,
-        width: 180,
-        windowWidth: 800
+      html2canvas(document.getElementById('resumeContent')).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const imgProps = doc.getImageProperties(imgData);
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        doc.save('Chandan_Kumar_Resume.pdf');
       });
     }
   </script>

@@ -14,16 +14,17 @@
       background-color: #f4f4f4;
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 100%;
     }
 
     .container {
-      width: 210mm;
+      width: 100%;
+      max-width: 210mm;
       height: 297mm;
-      max-width: 100%;
-      margin: 20px auto;
-      padding: 20px;
       background-color: white;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
       box-sizing: border-box;
       overflow: hidden;
     }
@@ -58,6 +59,7 @@
     @media (min-width: 768px) {
       .left-column, .right-column {
         width: 48%;
+        float: left;
         margin: 1%;
       }
     }
@@ -272,14 +274,14 @@
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF('p', 'mm', 'a4');
       
-      html2canvas(document.getElementById('resumeContent')).then(canvas => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdfWidth = 210;
-        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      const resumeContent = document.getElementById('resumeContent');
+      const canvas = await html2canvas(resumeContent);
+      const imgData = canvas.toDataURL('image/png');
+      const pdfWidth = 210;
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-        doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        doc.save('Chandan_Kumar_Resume.pdf');
-      });
+      doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      doc.save('Chandan_Kumar_Resume.pdf');
     }
   </script>
 </body>

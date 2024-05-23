@@ -12,24 +12,25 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
     }
 
     .container {
       width: 210mm;
+      height: 297mm;
       max-width: 100%;
-      margin: 0 auto;
+      margin: 20px auto;
       padding: 20px;
       background-color: white;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-wrap: wrap;
       box-sizing: border-box;
+      overflow: hidden;
     }
 
     header {
       text-align: center;
       margin-bottom: 20px;
-      width: 100%;
     }
 
     header h1 {
@@ -118,9 +119,12 @@
       body, .container {
         margin: 0;
         box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+        overflow: hidden;
       }
       .container {
-        width: 100%;
+        margin: 0;
       }
     }
   </style>
@@ -270,9 +274,8 @@
       
       html2canvas(document.getElementById('resumeContent')).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
-        const imgProps = doc.getImageProperties(imgData);
-        const pdfWidth = doc.internal.pageSize.getWidth();
-        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        const pdfWidth = 210;
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
         doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         doc.save('Chandan_Kumar_Resume.pdf');

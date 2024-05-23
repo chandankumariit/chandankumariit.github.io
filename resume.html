@@ -12,26 +12,23 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
     }
 
     .container {
-      width: 100%;
-      max-width: 210mm;
-      height: 297mm;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
       background-color: white;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      box-sizing: border-box;
-      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
     }
 
     header {
       text-align: center;
       margin-bottom: 20px;
+      width: 100%;
     }
 
     header h1 {
@@ -59,7 +56,6 @@
     @media (min-width: 768px) {
       .left-column, .right-column {
         width: 48%;
-        float: left;
         margin: 1%;
       }
     }
@@ -115,19 +111,6 @@
       text-decoration: none;
       border-radius: 5px;
       cursor: pointer;
-    }
-
-    @media print {
-      body, .container {
-        margin: 0;
-        box-shadow: none;
-        width: 210mm;
-        height: 297mm;
-        overflow: hidden;
-      }
-      .container {
-        margin: 0;
-      }
     }
   </style>
 </head>
@@ -266,22 +249,23 @@
       </section>
     </div>
   </div>
-
+  
   <a id="downloadButton" onclick="downloadPDF()">Download as PDF</a>
 
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
-      const doc = new jsPDF('p', 'mm', 'a4');
+      const doc = new jsPDF();
       
-      const resumeContent = document.getElementById('resumeContent');
-      const canvas = await html2canvas(resumeContent);
-      const imgData = canvas.toDataURL('image/png');
-      const pdfWidth = 210;
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      html2canvas(document.getElementById('resumeContent')).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const imgProps = doc.getImageProperties(imgData);
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-      doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      doc.save('Chandan_Kumar_Resume.pdf');
+        doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        doc.save('Chandan_Kumar_Resume.pdf');
+      });
     }
   </script>
 </body>

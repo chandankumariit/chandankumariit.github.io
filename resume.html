@@ -15,14 +15,15 @@
     }
 
     .container {
-      width: 90%;
-      max-width: 1200px;
+      width: 210mm;
+      max-width: 100%;
       margin: 0 auto;
       padding: 20px;
       background-color: white;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-wrap: wrap;
+      box-sizing: border-box;
     }
 
     header {
@@ -111,6 +112,16 @@
       text-decoration: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+
+    @media print {
+      body, .container {
+        margin: 0;
+        box-shadow: none;
+      }
+      .container {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -249,13 +260,13 @@
       </section>
     </div>
   </div>
-  
+
   <a id="downloadButton" onclick="downloadPDF()">Download as PDF</a>
 
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
+      const doc = new jsPDF('p', 'mm', 'a4');
       
       html2canvas(document.getElementById('resumeContent')).then(canvas => {
         const imgData = canvas.toDataURL('image/png');

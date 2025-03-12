@@ -6,7 +6,6 @@
   <title>Chandan Kumar's Resume</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <!--Posted: true
   <!-- Font Awesome CDN for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
@@ -16,7 +15,7 @@
       padding: 0;
       background-color: #f5f5f5;
       color: #333;
-      font-size: 14px; /* Increased from 12px */
+      font-size: 14px;
       line-height: 1.4;
     }
     .container {
@@ -37,7 +36,7 @@
     }
     header h1 {
       margin: 0;
-      font-size: 20px; /* Increased from 18px */
+      font-size: 20px;
       text-transform: uppercase;
       font-weight: bold;
       letter-spacing: 1px;
@@ -57,14 +56,14 @@
     .contact-item a, .contact-item span {
       color: #e2e8f0;
       text-decoration: none;
-      font-size: 14px; /* Increased from 12px */
+      font-size: 14px;
     }
     .contact-item a:hover {
       text-decoration: underline;
     }
     .icon {
       margin-right: 5px;
-      font-size: 16px; /* Increased from 14px */
+      font-size: 16px;
       color: #e2e8f0;
     }
     .content {
@@ -86,7 +85,7 @@
       border-left: 3px solid #3366cc;
     }
     .section-title {
-      font-size: 16px; /* Increased from 14px */
+      font-size: 16px;
       text-transform: uppercase;
       font-weight: bold;
       color: #333;
@@ -101,12 +100,12 @@
       font-weight: bold;
       margin-bottom: 0;
       display: inline-block;
-      font-size: 15px; /* Increased from 13px */
+      font-size: 15px;
     }
     .job-period {
       float: right;
       color: #666;
-      font-size: 13px; /* Increased from 11px */
+      font-size: 13px;
     }
     .education-item {
       margin-bottom: 4px;
@@ -114,12 +113,12 @@
     .school-name {
       font-weight: bold;
       display: inline-block;
-      font-size: 15px; /* Increased from 13px */
+      font-size: 15px;
     }
     .education-period {
       float: right;
       color: #666;
-      font-size: 13px; /* Increased from 11px */
+      font-size: 13px;
     }
     .project {
       margin-bottom: 6px;
@@ -127,7 +126,7 @@
     .project-title {
       font-weight: bold;
       margin-bottom: 2px;
-      font-size: 15px; /* Increased from 13px */
+      font-size: 15px;
       color: #3366cc;
     }
     ul {
@@ -137,7 +136,7 @@
     }
     li {
       margin-bottom: 2px;
-      font-size: 13px; /* Increased from 11px */
+      font-size: 13px;
     }
     .skill-category {
       margin-bottom: 4px;
@@ -146,18 +145,18 @@
     }
     .skill-title {
       font-weight: bold;
-      font-size: 15px; /* Increased from 13px */
+      font-size: 15px;
       color: #3366cc;
       margin-right: 5px;
       flex-shrink: 0;
     }
     .skill-content {
-      font-size: 13px; /* Increased from 11px */
+      font-size: 13px;
     }
     .competencies-table {
       display: flex;
       justify-content: space-between;
-      font-size: 13px; /* Increased from 11px */
+      font-size: 13px;
     }
     .competencies-column {
       flex: 1;
@@ -167,7 +166,7 @@
       margin: 0;
     }
     p {
-      font-size: 13px; /* Increased from 11px */
+      font-size: 13px;
       margin: 4px 0;
     }
     @media (max-width: 768px) {
@@ -190,7 +189,7 @@
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
-      font-size: 16px; /* Increased from 14px */
+      font-size: 16px;
       border: none;
     }
     #downloadButton:hover {
@@ -286,8 +285,8 @@
             <ul>
               <li>Designed, developed, and fine-tuned Waste Classification Code Prediction models, enabling streamlined and autonomous Waste Classification Code assignment.</li>
               <li>Created a unified dataset encompassing vital features for all waste classes.</li>
-              <li>Applied logical data checks for input consistency prior to model prediction, facilitating classification of similar WCC based on physical properties.</li>
-              <li>Reduced manual classification errors by 30%, enhancing WCC efficiency.</li>
+              <li>Applied logical data checks for input consistency prior to model prediction, facilitating classification of similar Waste Classification Codes (WCC) based on physical properties.</li>
+              <li>Reduced manual classification errors by 30%, enhancing waste management efficiency.</li>
             </ul>
           </div>
           <div class="project">
@@ -388,7 +387,7 @@
           <div class="competencies-table">
             <div class="competencies-column">
               <ul>
-                <li>Data Science & ML </li>
+                <li>Data Science & Machine Learning</li>
                 <li>AI Governance & Ethics</li>
               </ul>
             </div>
@@ -410,37 +409,24 @@
       const doc = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
-        format: 'a4'
+        format: 'a4',
+        compress: true // Enable PDF compression
       });
 
       const element = document.getElementById('resumeContent');
       html2canvas(element, {
-        scale: 2,
+        scale: 1, // Reduced from 2 to lower resolution
         scrollY: -window.scrollY,
         useCORS: true,
         width: element.scrollWidth,
         height: element.scrollHeight
       }).then(canvas => {
-        const imgData = canvas.toDataURL('image/png');
+        const imgData = canvas.toDataURL('image/jpeg', 0.7); // Use JPEG with 70% quality
         const imgProps = doc.getImageProperties(imgData);
         const pdfWidth = doc.internal.pageSize.getWidth();
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-        if (pdfHeight > doc.internal.pageSize.getHeight()) {
-          const pageHeight = doc.internal.pageSize.getHeight();
-          let heightLeft = pdfHeight;
-          let position = 0;
-
-          while (heightLeft > 0) {
-            doc.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight);
-            heightLeft -= pageHeight;
-            position -= pageHeight;
-            if (heightLeft > 0) doc.addPage();
-          }
-        } else {
-          doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        }
-        
+        doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, null, 'FAST'); // Use 'FAST' compression
         doc.save('Chandan_Kumar_Resume.pdf');
       });
     }

@@ -13,7 +13,7 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      background-color: #fff; /* Changed from #f5f5f5 to default white */
       color: #333;
       font-size: 14px;
       line-height: 1.4;
@@ -21,7 +21,7 @@
     .container {
       max-width: 900px;
       margin: 10px auto;
-      background-color: #fff;
+      background-color: #fff; /* Already white, kept as is */
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
       padding: 15px;
       border-radius: 5px;
@@ -30,8 +30,8 @@
       text-align: center;
       margin-bottom: 12px;
       padding: 8px;
-      background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
-      color: #fff;
+      background: none; /* Removed gradient background */
+      color: #333; /* Changed text color to match body text */
       border-radius: 6px;
     }
     header h1 {
@@ -40,6 +40,7 @@
       text-transform: uppercase;
       font-weight: bold;
       letter-spacing: 1px;
+      color: #333; /* Changed to match body text */
     }
     .contact-info {
       display: flex;
@@ -54,7 +55,7 @@
       margin: 2px 6px;
     }
     .contact-item a, .contact-item span {
-      color: #e2e8f0;
+      color: #333; /* Changed from #e2e8f0 to match body text */
       text-decoration: none;
       font-size: 14px;
     }
@@ -64,7 +65,7 @@
     .icon {
       margin-right: 5px;
       font-size: 16px;
-      color: #e2e8f0;
+      color: #333; /* Changed from #e2e8f0 to match body text */
     }
     .content {
       display: flex;
@@ -80,7 +81,7 @@
     .section {
       margin-bottom: 10px;
       padding: 8px;
-      background-color: #eef2ff;
+      background-color: #fff; /* Changed from #eef2ff to default white */
       border-radius: 4px;
       border-left: 3px solid #3366cc;
     }
@@ -410,23 +411,23 @@
         orientation: 'portrait',
         unit: 'mm',
         format: 'a4',
-        compress: true // Enable PDF compression
+        compress: true // Enable compression
       });
 
       const element = document.getElementById('resumeContent');
       html2canvas(element, {
-        scale: 1, // Reduced from 2 to lower resolution
+        scale: 1, // Reduced scale for smaller file size
         scrollY: -window.scrollY,
         useCORS: true,
         width: element.scrollWidth,
         height: element.scrollHeight
       }).then(canvas => {
-        const imgData = canvas.toDataURL('image/jpeg', 0.7); // Use JPEG with 70% quality
+        const imgData = canvas.toDataURL('image/jpeg', 0.7); // JPEG with 70% quality
         const imgProps = doc.getImageProperties(imgData);
         const pdfWidth = doc.internal.pageSize.getWidth();
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-        doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, null, 'FAST'); // Use 'FAST' compression
+        doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, null, 'FAST'); // Fast compression
         doc.save('Chandan_Kumar_Resume.pdf');
       });
     }

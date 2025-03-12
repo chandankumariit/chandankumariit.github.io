@@ -207,6 +207,19 @@
     </header>
     <div class="content">
       <div class="left-column">
+        <!-- EDUCATION Section (Moved Above PROFESSIONAL SUMMARY) -->
+        <div class="section">
+          <div class="section-title">EDUCATION</div>
+          <div class="education-item">
+            <div class="school-name">IIT, Dhanbad – B.Tech</div>
+            <div class="education-period">(2013-17)</div>
+          </div>
+          <div class="education-item">
+            <div class="school-name">Super30, Patna</div>
+            <div class="education-period">(2012-13)</div>
+          </div>
+        </div>
+        
         <!-- PROFESSIONAL SUMMARY -->
         <div class="section">
           <div class="section-title">PROFESSIONAL SUMMARY</div>
@@ -214,19 +227,6 @@
         </div>
         
         <div class="top-section">
-          <!-- EDUCATION Section -->
-          <div class="section half-section">
-            <div class="section-title">EDUCATION</div>
-            <div class="education-item">
-              <div class="school-name">IIT, Dhanbad – B.Tech</div>
-              <div class="education-period">(2013-17)</div>
-            </div>
-            <div class="education-item">
-              <div class="school-name">Super30, Patna</div>
-              <div class="education-period">(2012-13)</div>
-            </div>
-          </div>
-
           <!-- EXPERIENCE Section -->
           <div class="section half-section">
             <div class="section-title">EXPERIENCE (6+ Years)</div>
@@ -246,6 +246,18 @@
               <div class="job-title">Clean Harbors (Data Scientist)</div>
               <div class="job-period">Jun 2018 – Jan 2021</div>
             </div>
+          </div>
+
+          <!-- CORE COMPETENCIES Section (Moved from right column) -->
+          <div class="section half-section">
+            <div class="section-title">CORE COMPETENCIES</div>
+            <ul>
+              <li>Project Management and Deployment</li>
+              <li>Data Strategy and Management</li>
+              <li>Business Strategy & Execution</li>
+              <li>Business and Data Analytics</li>
+              <li>Analytics & AI</li>
+            </ul>
           </div>
         </div>
 
@@ -334,16 +346,6 @@
             <span>Azure Data Factory, Azure Data Bricks, Azure SQL, Azure SYNAPSE Analytics, AWS S3, AWS Athena, AWS Glue, AWS SageMaker, AWS Glacier, AWS DataSync, Vertex AI, BigQuery.</span>
           </div>
         </div>
-        <div class="section">
-          <div class="section-title">CORE COMPETENCIES</div>
-          <ul>
-            <li>Project Management and Deployment</li>
-            <li>Data Strategy and Management</li>
-            <li>Business Strategy & Execution</li>
-            <li>Business and Data Analytics</li>
-            <li>Analytics & AI</li>
-          </ul>
-        </div>
       </div>
     </div>
   </div>
@@ -364,4 +366,13 @@
       }).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         const imgProps = doc.getImageProperties(imgData);
-        const pdfWidth = doc.internal.page
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        
+        doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        doc.save('Chandan_Kumar_Resume.pdf');
+      });
+    }
+  </script>
+</body>
+</html>

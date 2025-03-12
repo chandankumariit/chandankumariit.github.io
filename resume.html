@@ -13,7 +13,7 @@
       padding: 0;
       background-color: #f5f5f5;
       color: #333;
-      font-size: 12px; /* Reduced for one-page fit */
+      font-size: 12px;
       line-height: 1.3;
     }
     .container {
@@ -207,16 +207,24 @@
     </header>
     <div class="content">
       <div class="left-column">
-        <!-- EDUCATION Section (Moved Above PROFESSIONAL SUMMARY) -->
+        <!-- EXPERIENCE Section (Moved to Top) -->
         <div class="section">
-          <div class="section-title">EDUCATION</div>
-          <div class="education-item">
-            <div class="school-name">IIT, Dhanbad – B.Tech</div>
-            <div class="education-period">(2013-17)</div>
+          <div class="section-title">EXPERIENCE (6+ Years)</div>
+          <div class="job">
+            <div class="job-title">IBM (Data Scientist)</div>
+            <div class="job-period">Mar 2024 – Ongoing</div>
           </div>
-          <div class="education-item">
-            <div class="school-name">Super30, Patna</div>
-            <div class="education-period">(2012-13)</div>
+          <div class="job">
+            <div class="job-title">Accenture (Data Scientist)</div>
+            <div class="job-period">Apr 2021 – Feb 2024</div>
+          </div>
+          <div class="job">
+            <div class="job-title">Capgemini (Process Lead)</div>
+            <div class="job-period">Feb 2021 – Mar 2021</div>
+          </div>
+          <div class="job">
+            <div class="job-title">Clean Harbors (Data Scientist)</div>
+            <div class="job-period">Jun 2018 – Jan 2021</div>
           </div>
         </div>
         
@@ -224,41 +232,6 @@
         <div class="section">
           <div class="section-title">PROFESSIONAL SUMMARY</div>
           <p>IIT Dhanbad graduate with 6+ years of expertise in Data Science, Gen AI, Machine Learning, MLOps, responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a challenging role to apply advanced analytical, model development, and deployment skills in large-scale data science projects.</p>
-        </div>
-        
-        <div class="top-section">
-          <!-- EXPERIENCE Section -->
-          <div class="section half-section">
-            <div class="section-title">EXPERIENCE (6+ Years)</div>
-            <div class="job">
-              <div class="job-title">IBM (Data Scientist)</div>
-              <div class="job-period">Mar 2024 – Ongoing</div>
-            </div>
-            <div class="job">
-              <div class="job-title">Accenture (Data Scientist)</div>
-              <div class="job-period">Apr 2021 – Feb 2024</div>
-            </div>
-            <div class="job">
-              <div class="job-title">Capgemini (Process Lead)</div>
-              <div class="job-period">Feb 2021 – Mar 2021</div>
-            </div>
-            <div class="job">
-              <div class="job-title">Clean Harbors (Data Scientist)</div>
-              <div class="job-period">Jun 2018 – Jan 2021</div>
-            </div>
-          </div>
-
-          <!-- CORE COMPETENCIES Section (Moved from right column) -->
-          <div class="section half-section">
-            <div class="section-title">CORE COMPETENCIES</div>
-            <ul>
-              <li>Project Management and Deployment</li>
-              <li>Data Strategy and Management</li>
-              <li>Business Strategy & Execution</li>
-              <li>Business and Data Analytics</li>
-              <li>Analytics & AI</li>
-            </ul>
-          </div>
         </div>
 
         <!-- PROJECTS Section -->
@@ -296,6 +269,19 @@
         </div>
       </div>
       <div class="right-column">
+        <!-- EDUCATION Section (Moved to Right Top) -->
+        <div class="section">
+          <div class="section-title">EDUCATION</div>
+          <div class="education-item">
+            <div class="school-name">IIT, Dhanbad – B.Tech</div>
+            <div class="education-period">(2013-17)</div>
+          </div>
+          <div class="education-item">
+            <div class="school-name">Super30, Patna</div>
+            <div class="education-period">(2012-13)</div>
+          </div>
+        </div>
+
         <div class="section">
           <div class="section-title">CERTIFICATION</div>
           <ul>
@@ -308,6 +294,7 @@
             <li>Microsoft – SQL Server</li>
           </ul>
         </div>
+        
         <div class="section">
           <div class="section-title">ACHIEVEMENTS</div>
           <ul>
@@ -319,6 +306,7 @@
             <li>Silver medalist in 200m race at district level "Khel Kud Pratiyogita" in Bihar (2009).</li>
           </ul>
         </div>
+
         <div class="section">
           <div class="section-title">SKILL</div>
           <div class="skill-category">
@@ -346,6 +334,18 @@
             <span>Azure Data Factory, Azure Data Bricks, Azure SQL, Azure SYNAPSE Analytics, AWS S3, AWS Athena, AWS Glue, AWS SageMaker, AWS Glacier, AWS DataSync, Vertex AI, BigQuery.</span>
           </div>
         </div>
+
+        <!-- CORE COMPETENCIES Section (Moved to Right Bottom) -->
+        <div class="section">
+          <div class="section-title">CORE COMPETENCIES</div>
+          <ul>
+            <li>Project Management and Deployment</li>
+            <li>Data Strategy and Management</li>
+            <li>Business Strategy & Execution</li>
+            <li>Business and Data Analytics</li>
+            <li>Analytics & AI</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -359,7 +359,6 @@
         format: 'a4'
       });
 
-      // Capture the HTML content as a canvas
       html2canvas(document.getElementById('resumeContent'), {
         scale: 2,
         scrollY: -window.scrollY

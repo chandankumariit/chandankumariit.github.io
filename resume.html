@@ -10,66 +10,67 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Calibri', 'Helvetica', 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fff; /* Default white */
-      color: #333;
-      font-size: 14px;
-      line-height: 1.4;
+      background-color: #fff;
+      color: #2d2d2d;
+      font-size: 12px;
+      line-height: 1.5;
     }
     .container {
       max-width: 900px;
-      margin: 10px auto;
+      margin: 15px auto;
       background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-      padding: 15px;
-      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
     }
     header {
       text-align: center;
-      margin-bottom: 12px;
-      padding: 8px;
-      background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%); /* Restored older header background */
-      color: #fff; /* Restored white text */
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: #fff;
       border-radius: 6px;
+      border-bottom: 2px solid #1e3a8a;
     }
     header h1 {
       margin: 0;
-      font-size: 20px;
+      font-size: 22px;
       text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 1px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
     }
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 6px;
+      margin-top: 8px;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 12px;
     }
     .contact-item {
       display: flex;
       align-items: center;
-      margin: 2px 6px;
+      margin: 0 8px;
     }
     .contact-item a, .contact-item span {
-      color: #e2e8f0; /* Restored light gray for header text/icons */
+      color: #e2e8f0;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 12px;
     }
     .contact-item a:hover {
       text-decoration: underline;
     }
     .icon {
-      margin-right: 5px;
-      font-size: 16px;
-      color: #e2e8f0; /* Restored light gray for icons */
+      margin-right: 6px;
+      font-size: 14px;
+      color: #e2e8f0;
     }
     .content {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
     }
     .left-column {
       flex: 6;
@@ -78,96 +79,82 @@
       flex: 4;
     }
     .section {
-      margin-bottom: 10px;
-      padding: 8px;
-      background-color: #fff; /* Default white */
-      border-radius: 4px;
-      border-left: 3px solid #3366cc;
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      border-left: 4px solid #1e3a8a;
     }
     .section-title {
-      font-size: 16px;
+      font-size: 14px;
       text-transform: uppercase;
-      font-weight: bold;
-      color: #333;
-      border-bottom: 1px solid #3366cc;
-      padding-bottom: 4px;
-      margin-bottom: 6px;
+      font-weight: 700;
+      color: #1e3a8a;
+      border-bottom: 1px solid #1e3a8a;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
     }
-    .job {
-      margin-bottom: 4px;
+    .job, .education-item, .project {
+      margin-bottom: 8px;
     }
-    .job-title {
-      font-weight: bold;
-      margin-bottom: 0;
-      display: inline-block;
-      font-size: 15px;
-    }
-    .job-period {
-      float: right;
-      color: #666;
+    .job-title, .school-name, .project-title {
+      font-weight: 600;
       font-size: 13px;
+      color: #2d2d2d;
     }
-    .education-item {
-      margin-bottom: 4px;
-    }
-    .school-name {
-      font-weight: bold;
+    .job-title, .school-name {
       display: inline-block;
-      font-size: 15px;
-    }
-    .education-period {
-      float: right;
-      color: #666;
-      font-size: 13px;
-    }
-    .project {
-      margin-bottom: 6px;
     }
     .project-title {
-      font-weight: bold;
-      margin-bottom: 2px;
-      font-size: 15px;
-      color: #3366cc;
+      color: #1e3a8a;
+    }
+    .job-period, .education-period {
+      float: right;
+      color: #6b7280;
+      font-size: 11px;
     }
     ul {
-      padding-left: 15px;
-      margin-top: 2px;
-      margin-bottom: 6px;
+      padding-left: 18px;
+      margin: 5px 0;
     }
     li {
-      margin-bottom: 2px;
-      font-size: 13px;
+      margin-bottom: 4px;
+      font-size: 11px;
+      color: #374151;
     }
     .skill-category {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       display: flex;
       align-items: baseline;
     }
     .skill-title {
-      font-weight: bold;
-      font-size: 15px;
-      color: #3366cc;
-      margin-right: 5px;
+      font-weight: 600;
+      font-size: 13px;
+      color: #1e3a8a;
+      margin-right: 6px;
       flex-shrink: 0;
     }
     .skill-content {
-      font-size: 13px;
+      font-size: 11px;
+      color: #374151;
     }
     .competencies-table {
       display: flex;
       justify-content: space-between;
-      font-size: 13px;
+      font-size: 11px;
     }
     .competencies-column {
       flex: 1;
     }
     .competencies-column ul {
-      padding-left: 15px;
+      padding-left: 18px;
       margin: 0;
     }
     p {
-      font-size: 13px;
-      margin: 4px 0;
+      font-size: 11px;
+      margin: 5px 0;
+      color: #374151;
     }
     @media (max-width: 768px) {
       .content {
@@ -179,21 +166,22 @@
     }
     #downloadButton {
       display: block;
-      width: 180px;
-      margin: 15px auto;
-      padding: 8px;
-      background-color: #3366cc;
-      color: white;
+      width: 200px;
+      margin: 20px auto 0;
+      padding: 10px;
+      background-color: #1e3a8a;
+      color: #fff;
       text-align: center;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
-      font-weight: bold;
-      font-size: 16px;
+      font-weight: 600;
+      font-size: 14px;
       border: none;
+      transition: background-color 0.3s;
     }
     #downloadButton:hover {
-      background-color: #254e8a;
+      background-color: #1e40af;
     }
   </style>
 </head>
@@ -410,23 +398,23 @@
         orientation: 'portrait',
         unit: 'mm',
         format: 'a4',
-        compress: true // Enable compression
+        compress: true
       });
 
       const element = document.getElementById('resumeContent');
       html2canvas(element, {
-        scale: 1, // Reduced scale for smaller file size
+        scale: 1,
         scrollY: -window.scrollY,
         useCORS: true,
         width: element.scrollWidth,
         height: element.scrollHeight
       }).then(canvas => {
-        const imgData = canvas.toDataURL('image/jpeg', 0.7); // JPEG with 70% quality
+        const imgData = canvas.toDataURL('image/jpeg', 0.7);
         const imgProps = doc.getImageProperties(imgData);
         const pdfWidth = doc.internal.pageSize.getWidth();
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-        doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, null, 'FAST'); // Fast compression
+        doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, null, 'FAST');
         doc.save('Chandan_Kumar_Resume.pdf');
       });
     }

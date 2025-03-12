@@ -13,7 +13,6 @@
       padding: 0;
       background-color: #f5f5f5;
       color: #333;
-      font-size: 14px; /* Reduced global font size */
     }
     .container {
       max-width: 900px;
@@ -30,7 +29,7 @@
     }
     header h1 {
       margin: 0;
-      font-size: 24px; /* Reduced header font size */
+      font-size: 28px;
       text-transform: uppercase;
       font-weight: bold;
     }
@@ -47,7 +46,7 @@
     }
     .icon {
       margin-right: 5px;
-      font-size: 16px; /* Reduced icon size */
+      font-size: 18px;
       color: #333;
     }
     .content {
@@ -65,7 +64,7 @@
       margin-bottom: 20px;
     }
     .section-title {
-      font-size: 16px; /* Reduced section title font size */
+      font-size: 18px;
       text-transform: uppercase;
       font-weight: bold;
       color: #333;
@@ -74,31 +73,30 @@
       margin-bottom: 10px;
     }
     .job {
-      margin-bottom: 5px; /* Reduced space between jobs */
+      margin-bottom: 15px;
     }
     .job-title {
       font-weight: bold;
-      margin-bottom: 2px;
+      margin-bottom: 5px;
       display: inline-block;
-      font-size: 14px; /* Reduced job title font size */
     }
     .job-period {
       float: right;
       color: #666;
-      font-size: 12px; /* Reduced job period font size */
+    }
+    .job-description {
+      margin-top: 5px;
     }
     .education-item {
-      margin-bottom: 5px; /* Reduced spacing between education items */
+      margin-bottom: 10px;
     }
     .school-name {
       font-weight: bold;
       display: inline-block;
-      font-size: 14px; /* Reduced school name font size */
     }
     .education-period {
       float: right;
       color: #666;
-      font-size: 12px; /* Reduced education period font size */
     }
     .project {
       margin-bottom: 15px;
@@ -106,7 +104,9 @@
     .project-title {
       font-weight: bold;
       margin-bottom: 5px;
-      font-size: 14px; /* Reduced project title font size */
+    }
+    .project-description {
+      margin-top: 5px;
     }
     ul {
       padding-left: 20px;
@@ -115,7 +115,6 @@
     }
     li {
       margin-bottom: 5px;
-      font-size: 14px; /* Reduced list item font size */
     }
     .skills-list {
       display: flex;
@@ -127,8 +126,7 @@
     }
     .skill-title {
       font-weight: bold;
-      margin-bottom: 5px;
-      font-size: 14px; /* Reduced skill title font size */
+      margin-right: 5px; /* Add spacing between title and content */
     }
     @media (max-width: 768px) {
       .content {
@@ -150,7 +148,6 @@
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
-      font-size: 14px; /* Reduced button font size */
     }
     #downloadButton:hover {
       background-color: #254e8a;
@@ -182,20 +179,6 @@
     </header>
     <div class="content">
       <div class="left-column">
-        <!-- EDUCATION Section -->
-        <div class="section">
-          <div class="section-title">EDUCATION</div>
-          <div class="education-item">
-            <div class="school-name">IIT, Dhanbad – B.Tech</div>
-            <div class="education-period">(2013-17)</div>
-          </div>
-          <div class="education-item">
-            <div class="school-name">Super30, Patna</div>
-            <div class="education-period">(2012-13)</div>
-          </div>
-        </div>
-
-        <!-- EXPERIENCE Section -->
         <div class="section">
           <div class="section-title">EXPERIENCE (6+ Years)</div>
           <div class="job">
@@ -212,17 +195,13 @@
           </div>
           <div class="job">
             <div class="job-title">Clean Harbors (Data Scientist)</div>
-            <div class="job-period">Jun 2018 – Jan 2021</div>
+            <div class="job-period">JUN 2018 – JAN 2021</div>
           </div>
         </div>
-
-        <!-- PROFESSIONAL SUMMARY -->
         <div class="section">
           <div class="section-title">PROFESSIONAL SUMMARY</div>
           <p>IIT Dhanbad graduate with 6+ years of expertise in Data Science, Gen AI, Machine Learning, MLOps, responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a challenging role to apply advanced analytical, model development, and deployment skills in large-scale data science projects.</p>
         </div>
-
-        <!-- PROJECTS Section -->
         <div class="section">
           <div class="section-title">PROJECTS</div>
           <div class="project">
@@ -265,6 +244,17 @@
       </div>
       <div class="right-column">
         <div class="section">
+          <div class="section-title">EDUCATION</div>
+          <div class="education-item">
+            <div class="school-name">IIT, Dhanbad – B.Tech</div>
+            <div class="education-period">(2013-17)</div>
+          </div>
+          <div class="education-item">
+            <div class="school-name">Super30, Patna</div>
+            <div class="education-period">(2012-13)</div>
+          </div>
+        </div>
+        <div class="section">
           <div class="section-title">CERTIFICATION</div>
           <ul>
             <li>Northwestern university – Analytics & AI</li>
@@ -289,10 +279,6 @@
         </div>
         <div class="section">
           <div class="section-title">SKILL</div>
-          <div class="skill-category">
-            <div class="skill-title">Data Science:</div>
-            <span>Machine Learning, Deep Learning, AI Governance, responsible AI, MLOps, Generative AI, Python, SQL, Azure, AWS, GCP, Power Bi, Statistical Analysis, Advanced analytics, Data Analytics, Financial Analytics, Busines Analytics, Machine learning, Time Series, Algorithm, Model development, Model deployment, Modeling.</span>
-          </div>
           <div class="skill-category">
             <div class="skill-title">Cloud Technologies:</div>
             <span>AZURE, AWS, GCP, IBM.</span>
@@ -339,29 +325,13 @@
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
-      const doc = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4'
-      });
-
-      // Capture the HTML content as a canvas
-      html2canvas(document.getElementById('resumeContent'), {
-        scale: 2,
-        scrollY: -window.scrollY
-      }).then(canvas => {
+      const doc = new jsPDF();
+      html2canvas(document.getElementById('resumeContent')).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         const imgProps = doc.getImageProperties(imgData);
         const pdfWidth = doc.internal.pageSize.getWidth();
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-        // Scale the content to fit within one page
-        const scaleFactor = Math.min(pdfWidth / imgProps.width, pdfHeight / imgProps.height);
-        const scaledWidth = imgProps.width * scaleFactor;
-        const scaledHeight = imgProps.height * scaleFactor;
-
-        // Add the image to the PDF, centered and scaled
-        doc.addImage(imgData, 'PNG', (pdfWidth - scaledWidth) / 2, 0, scaledWidth, scaledHeight);
+        doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         doc.save('Chandan_Kumar_Resume.pdf');
       });
     }

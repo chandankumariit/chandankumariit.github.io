@@ -6,182 +6,154 @@
   <title>Chandan Kumar's Resume</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* Modern Color Palette */
-    :root {
-      --primary: #3B5998;
-      --secondary: #2A3F74;
-      --accent: #E6E6E6;
-      --text: #4A4A4A;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
-      color: var(--text);
-      line-height: 1.6;
+      background-color: #f7fafc;
+      color: #2d3748;
+      font-size: 13px;
+      line-height: 1.5;
     }
-
     .container {
-      max-width: 900px;
-      margin: 20px auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      padding: 30px;
-      font-size: 14px;
+      max-width: 950px;
+      margin: 30px auto;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      border-radius: 8px;
     }
-
     header {
       text-align: center;
-      margin-bottom: 30px;
-      padding: 20px 0;
-      border-bottom: 2px solid var(--primary);
+      margin-bottom: 20px;
+      padding: 15px;
+      background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
+      color: #fff;
+      border-radius: 6px;
     }
-
     header h1 {
-      font-size: 28px;
       margin: 0;
-      color: var(--secondary);
+      font-size: 26px;
+      text-transform: uppercase;
       font-weight: 600;
+      letter-spacing: 1px;
     }
-
     .contact-info {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      margin-top: 12px;
       flex-wrap: wrap;
-      margin-top: 15px;
+      gap: 15px;
     }
-
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 8px;
     }
-
-    .icon {
-      font-size: 18px;
-      color: var(--primary);
-    }
-
-    .content {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 30px;
-    }
-
-    .section {
-      background: var(--accent);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 25px;
-    }
-
-    .section-title {
-      font-size: 18px;
-      color: var(--secondary);
-      font-weight: 600;
-      margin-bottom: 15px;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 30px;
-      height: 3px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-
-    .job {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
-    }
-
-    .job-title {
-      font-weight: 600;
-      color: var(--secondary);
-    }
-
-    .job-period {
-      color: #6c757d;
-    }
-
-    .project {
-      margin-bottom: 15px;
-    }
-
-    .project-title {
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
-
-    .skill-category {
-      margin-bottom: 15px;
-    }
-
-    .skill-title {
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill-item {
-      padding: 6px 12px;
-      background: var(--primary);
-      color: white;
-      border-radius: 4px;
+    .contact-item a, .contact-item span {
+      color: #e2e8f0;
+      text-decoration: none;
       font-size: 12px;
     }
-
-    #downloadButton {
-      display: block;
-      width: 200px;
-      margin: 30px auto 0;
-      padding: 12px 20px;
-      background: var(--primary);
-      color: white;
-      border: none;
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+    .icon {
+      margin-right: 6px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: 6fr 4fr;
+      gap: 20px;
+    }
+    .section {
+      margin-bottom: 20px;
+      padding: 12px;
+      background-color: #f9fafb;
       border-radius: 6px;
+      border-left: 4px solid #2c5282;
+    }
+    .section-title {
       font-size: 16px;
+      text-transform: uppercase;
       font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      color: #2c5282;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
     }
-
-    #downloadButton:hover {
-      background: var(--secondary);
-      transform: translateY(-2px);
+    .job, .education-item, .project {
+      margin-bottom: 10px;
     }
-
+    .job-title, .school-name, .project-title {
+      font-weight: 600;
+      font-size: 13px;
+      color: #2d3748;
+    }
+    .job-period, .education-period {
+      float: right;
+      color: #718096;
+      font-size: 12px;
+    }
+    .project-title {
+      color: #2c5282;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 5px 0;
+    }
+    li {
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: #4a5568;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .skill-category {
+      margin-bottom: 8px;
+    }
+    .skill-title {
+      font-weight: 600;
+      font-size: 13px;
+      color: #2c5282;
+    }
+    p {
+      font-size: 12px;
+      margin: 6px 0;
+      color: #4a5568;
+    }
     @media (max-width: 768px) {
       .content {
         grid-template-columns: 1fr;
       }
+    }
+    #downloadButton {
+      display: block;
+      width: 220px;
+      margin: 25px auto;
+      padding: 12px;
+      background-color: #2c5282;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 14px;
+      border: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    #downloadButton:hover {
+      background-color: #2b6cb0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
   </style>
 </head>
@@ -191,183 +163,178 @@
       <h1>CHANDAN KUMAR</h1>
       <div class="contact-info">
         <div class="contact-item">
-          <span class="icon">📧</span>
+          <span class="icon"><i class="fas fa-envelope"></i></span>
           <a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a>
         </div>
         <div class="contact-item">
-          <span class="icon">📞</span>
+          <span class="icon"><i class="fas fa-phone"></i></span>
           <span>+91-9199000200</span>
         </div>
         <div class="contact-item">
-          <span class="icon">🔗</span>
-          <a href="https://github.com/chandaniit">GitHub</a>
+          <span class="icon"><i class="fab fa-github"></i></span>
+          <a href="https://github.com/chandaniit">chandaniit</a>
         </div>
         <div class="contact-item">
-          <span class="icon">🔗</span>
-          <a href="https://www.linkedin.com/in/chandaniit">LinkedIn</a>
+          <span class="icon"><i class="fab fa-linkedin"></i></span>
+          <a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/Chandaniit</a>
         </div>
       </div>
     </header>
-    
     <div class="content">
-      <!-- Left Column -->
-      <div>
-        <!-- Experience -->
+      <div class="left-column">
+        <!-- EXPERIENCE Section -->
         <div class="section">
-          <div class="section-title">Experience</div>
+          <div class="section-title">EXPERIENCE (6+ Years)</div>
           <div class="job">
-            <div class="job-title">Data Scientist</div>
-            <div class="job-period">IBM | Mar 2024 – Present</div>
+            <div class="job-title">IBM (Data Scientist)</div>
+            <div class="job-period">Mar 2024 – Ongoing</div>
           </div>
           <div class="job">
-            <div class="job-title">Data Scientist</div>
-            <div class="job-period">Accenture | Apr 2021 – Feb 2024</div>
+            <div class="job-title">Accenture (Data Scientist)</div>
+            <div class="job-period">Apr 2021 – Feb 2024</div>
           </div>
           <div class="job">
-            <div class="job-title">Process Lead</div>
-            <div class="job-period">Capgemini | Feb 2021 – Mar 2021</div>
+            <div class="job-title">Capgemini (Process Lead)</div>
+            <div class="job-period">Feb 2021 – Mar 2021</div>
           </div>
           <div class="job">
-            <div class="job-title">Data Scientist</div>
-            <div class="job-period">Clean Harbors | Jun 2018 – Jan 2021</div>
+            <div class="job-title">Clean Harbors (Data Scientist)</div>
+            <div class="job-period">Jun 2018 – Jan 2021</div>
           </div>
         </div>
-
-        <!-- Professional Summary -->
+        
+        <!-- PROFESSIONAL SUMMARY -->
         <div class="section">
-          <div class="section-title">Professional Summary</div>
-          <p>Graduate of IIT Dhanbad with 6+ years in Data Science, Gen AI, ML, MLOps, and AI Governance. Expertise in Azure/AWS/GCP, Python, SQL, Power BI, and cloud platforms. Proven track record of leading successful projects with strong analytical and deployment skills.</p>
+          <div class="section-title">PROFESSIONAL SUMMARY</div>
+          <p>IIT Dhanbad graduate with 6+ years of expertise in Data Science, Gen AI, Machine Learning, MLOps, responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a challenging role to apply advanced analytical, model development, and deployment skills in large-scale data science projects.</p>
         </div>
 
-        <!-- Projects -->
+        <!-- PROJECTS Section -->
         <div class="section">
-          <div class="section-title">Projects</div>
+          <div class="section-title">PROJECTS</div>
           <div class="project">
-            <div class="project-title">MARC Platform (IBM)</div>
+            <div class="project-title">MARC (Multi-Agent Resource Coordinator), IBM</div>
             <ul>
-              <li>Designed multi-agent collaboration platform with LLM integration</li>
-              <li>Improved document processing efficiency by 35% using PdfGPT</li>
-              <li>Deployed on Azure with Slack/WatsonX integration</li>
-              <li>Developed sample agents for domain-specific automation</li>
+              <li>Designed and developed IBM's MARC platform for seamless multi-agent collaboration and workflow automation.</li>
+              <li>Applied AI Governance principles to ensure ethical, secure, and compliant operation of automation agents within the platform.</li>
+              <li>Integrated LLMs for dynamic task orchestration and agent selection, with support for Slack and WatsonX Assistant.</li>
+              <li>Built and tested sample agents to showcase platform versatility across domains.</li>
             </ul>
           </div>
           <div class="project">
-            <div class="project-title">Banking Document Processing (Mizuho Bank)</div>
+            <div class="project-title">Mizuho Bank, Accenture</div>
             <ul>
-              <li>Developed PdfGPT system using Azure Cognitive Services</li>
-              <li>Increased document processing efficiency by 35%</li>
-              <li>Integrated LLMs for feature extraction and chat functionality</li>
+              <li>Developed and deployed PdfGPT, an AI-powered text summarization system, within a banking project. By leveraging Generative AI and Azure Cognitive Services, PdfGPT boosted document processing efficiency by 35%, enabling faster banking processes through key feature extraction and interactive chat functionality.</li>
             </ul>
           </div>
           <div class="project">
-            <div class="project-title">Waste Classification Code Prediction (Clean Harbors)</div>
+            <div class="project-title">Facebook, Accenture</div>
             <ul>
-              <li>Built machine learning models for autonomous waste classification</li>
-              <li>Created unified dataset with validation checks</li>
-              <li>Improved classification accuracy by 28%</li>
+              <li>Examined and explored data from multiple disparate sources to discover insights, providing a competitive advantage for clients.</li>
+              <li>Designed and optimized machine learning pipelines, specializing in forecasting models, using Machine Learning, Python, and AWS.</li>
             </ul>
           </div>
           <div class="project">
-            <div class="project-title">Invoice Audit System (Clean Harbors)</div>
+            <div class="project-title">Waste Classification Code, Clean Harbors</div>
             <ul>
-              <li>Developed ML-based revenue prediction algorithm</li>
-              <li>Automated ETL processes using Azure Data Factory</li>
-              <li>Deployed on Azure Machine Learning</li>
+              <li>Designed, developed, and fine-tuned Waste Classification Code Prediction models for autonomous waste classification.</li>
+              <li>Created a unified dataset with vital features for all waste classes, applying logical data checks for consistency.</li>
+            </ul>
+          </div>
+          <div class="project">
+            <div class="project-title">Invoice Audit, Clean Harbors</div>
+            <ul>
+              <li>Developed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.</li>
+              <li>Automated data loading to Azure SQL using Azure Data Factory, leveraging Python and Azure Machine Learning.</li>
             </ul>
           </div>
         </div>
       </div>
-
-      <!-- Right Column -->
-      <div>
-        <!-- Education -->
+      <div class="right-column">
+        <!-- EDUCATION Section -->
         <div class="section">
-          <div class="section-title">Education</div>
+          <div class="section-title">EDUCATION</div>
           <div class="education-item">
-            <div class="school-name">B.Tech, IIT Dhanbad</div>
-            <div class="education-period">2013-2017</div>
+            <div class="school-name">IIT, Dhanbad – B.Tech</div>
+            <div class="education-period">(2013-17)</div>
           </div>
           <div class="education-item">
             <div class="school-name">Super30, Patna</div>
-            <div class="education-period">2012-2013</div>
+            <div class="education-period">(2012-13)</div>
           </div>
         </div>
 
-        <!-- Certifications -->
+        <!-- CERTIFICATION Section -->
         <div class="section">
-          <div class="section-title">Certifications</div>
+          <div class="section-title">CERTIFICATION</div>
           <ul>
-            <li>Analytics & AI - Northwestern University</li>
-            <li>Generative AI - Microsoft & LinkedIn</li>
-            <li>Azure Machine Learning - Microsoft</li>
-            <li>Machine Learning - Stanford University</li>
-            <li>DevOps/DataOps/MLOps - Duke University</li>
-            <li>AWS Cloud - AWS</li>
-            <li>SQL Server - Microsoft</li>
+            <li>Northwestern University – Analytics & AI</li>
+            <li>Microsoft & LinkedIn – Generative AI</li>
+            <li>Microsoft – Azure Machine Learning</li>
+            <li>Stanford University – Machine Learning</li>
+            <li>Duke University – DevOps, DataOps, MLOps</li>
+            <li>AWS – AWS Cloud</li>
+            <li>Microsoft – SQL Server</li>
+          </ul>
+        </div>
+        
+        <!-- ACHIEVEMENTS Section -->
+        <div class="section">
+          <div class="section-title">ACHIEVEMENTS</div>
+          <ul>
+            <li>Rank #1 in HackerRank SQL.</li>
+            <li>Consistently appreciated by client leadership for error-free, timely project deliveries.</li>
+            <li>Led a team of 5 analysts, restoring team credibility and stability.</li>
+            <li>Cleared IIT JEE-2013, among top 1% of students in JEE Advanced.</li>
+            <li>Student representative in Mess Committee, IIT Dhanbad (2015-16).</li>
+            <li>Silver medalist in 200m race at district-level "Khel Kud Pratiyogita" in Bihar (2009).</li>
           </ul>
         </div>
 
-        <!-- Skills -->
+        <!-- SKILL Section -->
         <div class="section">
-          <div class="section-title">Skills</div>
+          <div class="section-title">SKILLS</div>
           <div class="skill-category">
-            <div class="skill-title">Data Science</div>
-            <div class="skill-list">
-              <span class="skill-item">Machine Learning</span>
-              <span class="skill-item">Deep Learning</span>
-              <span class="skill-item">AI Governance</span>
-              <span class="skill-item">MLOps</span>
-              <span class="skill-item">Gen AI</span>
-              <span class="skill-item">Python</span>
-              <span class="skill-item">SQL</span>
-              <span class="skill-item">Power BI</span>
-              <span class="skill-item">Azure</span>
-              <span class="skill-item">AWS</span>
-              <span class="skill-item">GCP</span>
-            </div>
+            <div class="skill-title">Data Science:</div>
+            <span>Machine Learning, Deep Learning, AI Governance, Responsible AI, MLOps, Generative AI, Python, SQL, Power BI, Statistical Analysis, Data Analytics, Business Analytics.</span>
           </div>
           <div class="skill-category">
-            <div class="skill-title">Cloud</div>
-            <div class="skill-list">
-              <span class="skill-item">Azure</span>
-              <span class="skill-item">AWS</span>
-              <span class="skill-item">GCP</span>
-              <span class="skill-item">IBM Cloud</span>
-              <span class="skill-item">Azure Data Factory</span>
-              <span class="skill-item">AWS SageMaker</span>
-            </div>
+            <div class="skill-title">Cloud Technologies:</div>
+            <span>Azure, AWS, GCP, IBM.</span>
           </div>
           <div class="skill-category">
-            <div class="skill-title">ML Engineering</div>
-            <div class="skill-list">
-              <span class="skill-item">Supervised ML</span>
-              <span class="skill-item">Unsupervised ML</span>
-              <span class="skill-item">NLP</span>
-              <span class="skill-item">Time Series</span>
-              <span class="skill-item">XGBoost</span>
-              <span class="skill-item">Decision Trees</span>
-            </div>
+            <div class="skill-title">Databases:</div>
+            <span>Azure SQL, SQL Server, MySQL, MongoDB, BigQuery.</span>
+          </div>
+          <div class="skill-category">
+            <div class="skill-title">Programming:</div>
+            <span>Python</span>
+          </div>
+          <div class="skill-category">
+            <div class="skill-title">Machine Learning:</div>
+            <span>Supervised ML (Regression, Decision Trees, RF, XGBoost), Unsupervised ML, NLP, Time Series.</span>
+          </div>
+          <div class="skill-category">
+            <div class="skill-title">Data Engineering:</div>
+            <span>Azure Data Factory, Databricks, Synapse Analytics, AWS S3, Glue, SageMaker, Vertex AI.</span>
           </div>
         </div>
 
-        <!-- Achievements -->
+        <!-- CORE COMPETENCIES Section -->
         <div class="section">
-          <div class="section-title">Achievements</div>
+          <div class="section-title">CORE COMPETENCIES</div>
           <ul>
-            <li>#1 Rank in HackerRank SQL</li>
-            <li>IIT JEE-2013 Top 1%</li>
-            <li>Consistently delivered error-free projects</li>
-            <li>Managed 5-person team at Accenture</li>
-            <li>Student representative at IIT Dhanbad</li>
-            <li>Silver medal in 200m sprint</li>
+            <li>Project Management and Deployment</li>
+            <li>Data Strategy and Management</li>
+            <li>Business Strategy & Execution</li>
+            <li>Business and Data Analytics</li>
+            <li>Analytics & AI</li>
           </ul>
         </div>
       </div>
     </div>
-
-    <button id="downloadButton" onclick="downloadPDF()">Download PDF</button>
   </div>
-
+  <button id="downloadButton" onclick="downloadPDF()">Download as PDF</button>
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
@@ -376,14 +343,17 @@
         unit: 'mm',
         format: 'a4'
       });
+
       html2canvas(document.getElementById('resumeContent'), {
         scale: 2,
-        scrollY: -window.scrollY
+        scrollY: -window.scrollY,
+        useCORS: true
       }).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         const imgProps = doc.getImageProperties(imgData);
         const pdfWidth = doc.internal.pageSize.getWidth();
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        
         doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         doc.save('Chandan_Kumar_Resume.pdf');
       });

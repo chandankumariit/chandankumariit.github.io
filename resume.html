@@ -145,12 +145,18 @@
     }
     .skill-category {
       margin-bottom: 4px;
+      display: flex; /* Make title and content inline */
+      align-items: baseline; /* Align items vertically */
     }
     .skill-title {
       font-weight: bold;
-      margin-bottom: 2px;
       font-size: 14px;
       color: #3366cc;
+      margin-right: 5px; /* Space between title and content */
+      flex-shrink: 0; /* Prevent title from shrinking */
+    }
+    .skill-content {
+      font-size: 13px;
     }
     .competencies-table {
       display: flex;
@@ -223,7 +229,7 @@
       <div class="left-column">
         <!-- EXPERIENCE Section -->
         <div class="section experience-section">
-          <div class="section-title">EXPERIENCE (7 Years)</div>
+          <div class="section-title">EXPERIENCE (6+ Years)</div>
           <div class="job">
             <div class="job-title">IBM (Data Scientist)</div>
             <div class="job-period">Mar 2024 – Ongoing</div>
@@ -245,7 +251,7 @@
         <!-- PROFESSIONAL SUMMARY -->
         <div class="section summary-section">
           <div class="section-title">PROFESSIONAL SUMMARY</div>
-          <p>IIT Dhanbad graduate with arround 7 years of expertise in Data Science, Gen AI, Machine Learning, MLOps, responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a challenging role to apply advanced analytical, model development, and deployment skills in large-scale data science projects.</p>
+          <p>IIT Dhanbad graduate with 6+ years of expertise in Data Science, Gen AI, Machine Learning, MLOps, responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a challenging role to apply advanced analytical, model development, and deployment skills in large-scale data science projects.</p>
         </div>
 
         <!-- PROJECTS Section -->
@@ -352,35 +358,35 @@
           <div class="section-title">SKILLS</div>
           <div class="skill-category">
             <div class="skill-title">Data Science:</div>
-            <span>Machine Learning, Deep Learning, AI Governance, Responsible AI, MLOps, Generative AI, Python, SQL, Azure, AWS, GCP, Power BI, Statistical Analysis, Advanced Analytics, Data Analytics, Financial Analytics, Business Analytics, Time Series, Algorithm, Model Development, Model Deployment, Modeling</span>
+            <span class="skill-content">Machine Learning, Deep Learning, AI Governance, Responsible AI, MLOps, Generative AI, Python, SQL, Azure, AWS, GCP, Power BI, Statistical Analysis, Advanced Analytics, Data Analytics, Financial Analytics, Business Analytics, Time Series, Algorithm, Model Development, Model Deployment, Modeling</span>
           </div>
           <div class="skill-category">
             <div class="skill-title">Cloud Technologies:</div>
-            <span>Azure, AWS, GCP, IBM</span>
+            <span class="skill-content">Azure, AWS, GCP, IBM</span>
           </div>
           <div class="skill-category">
             <div class="skill-title">Databases:</div>
-            <span>Microsoft Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</span>
+            <span class="skill-content">Microsoft Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</span>
           </div>
           <div class="skill-category">
             <div class="skill-title">Programming:</div>
-            <span>Python</span>
+            <span class="skill-content">Python</span>
           </div>
           <div class="skill-category">
             <div class="skill-title">Machine Learning:</div>
-            <span>Supervised ML (Linear and Logistic Regression, Decision Trees, RF, XGBoost), Unsupervised ML, NLP, Time Series</span>
+            <span class="skill-content">Supervised ML (Linear and Logistic Regression, Decision Trees, RF, XGBoost), Unsupervised ML, NLP, Time Series</span>
           </div>
           <div class="skill-category">
             <div class="skill-title">Visualization Tools:</div>
-            <span>Power BI, Matplotlib, Seaborn</span>
+            <span class="skill-content">Power BI, Matplotlib, Seaborn</span>
           </div>
           <div class="skill-category">
             <div class="skill-title">Data Engineering:</div>
-            <span>Azure Data Factory, Azure Data Bricks, Azure SQL, Azure Synapse Analytics, AWS S3, AWS Athena, AWS Glue, AWS SageMaker, AWS Glacier, AWS DataSync, Vertex AI, BigQuery</span>
+            <span class="skill-content">Azure Data Factory, Azure Data Bricks, Azure SQL, Azure Synapse Analytics, AWS S3, AWS Athena, AWS Glue, AWS SageMaker, AWS Glacier, AWS DataSync, Vertex AI, BigQuery</span>
           </div>
           <div class="skill-category">
             <div class="skill-title">Industry:</div>
-            <span>Banking, Environmental, Social Media, Waste Management, Risk Management</span>
+            <span class="skill-content">Banking, Environmental, Social Media, Waste Management, Risk Management</span>
           </div>
         </div>
       </div>

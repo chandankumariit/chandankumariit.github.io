@@ -6,7 +6,6 @@
   <title>Chandan Kumar's Resume</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <!-- Font Awesome CDN for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
@@ -15,169 +14,136 @@
       padding: 0;
       background-color: #f5f5f5;
       color: #333;
-      font-size: 16px; /* Increased for PDF readability */
-      line-height: 1.5;
+      font-size: 10px;
+      line-height: 1.2;
     }
     .container {
-      max-width: 794px; /* Matches A4 width at 96dpi (210mm) */
-      margin: 20px auto;
+      width: 190mm; /* A4 width minus margins */
+      margin: 5px auto;
       background-color: #fff;
-      padding: 25px; /* Increased padding */
-      border-radius: 5px;
-      box-shadow: none; /* Removed shadow for cleaner PDF rendering */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+      padding: 5px;
+      border-radius: 4px;
     }
     header {
       text-align: center;
-      margin-bottom: 15px;
-      padding: 15px;
-      background-color: #2c5282; /* Solid color instead of gradient for better PDF rendering */
+      margin-bottom: 4px;
+      padding: 4px;
+      background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
       color: #fff;
-      border-radius: 5px;
+      border-radius: 4px;
     }
     header h1 {
       margin: 0;
-      font-size: 24px; /* Increased for prominence */
+      font-size: 14px;
       text-transform: uppercase;
       font-weight: bold;
-      letter-spacing: 1.2px;
+      letter-spacing: 0.5px;
     }
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 10px;
+      margin-top: 2px;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 4px;
     }
     .contact-item {
       display: flex;
       align-items: center;
-      margin: 0 8px;
+      margin: 1px 3px;
     }
     .contact-item a, .contact-item span {
       color: #e2e8f0;
       text-decoration: none;
-      font-size: 15px; /* Increased for clarity */
+      font-size: 9px;
     }
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
+    .contact-item a:hover { text-decoration: underline; }
     .icon {
-      margin-right: 6px;
-      font-size: 18px; /* Increased for visibility */
+      margin-right: 2px;
+      font-size: 10px;
       color: #e2e8f0;
     }
     .content {
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+      gap: 6px;
     }
-    .left-column {
-      flex: 6;
-    }
-    .right-column {
-      flex: 4;
-    }
+    .left-column { flex: 6; min-width: 0; }
+    .right-column { flex: 4; min-width: 0; }
     .section {
-      margin-bottom: 15px;
-      padding: 12px;
+      margin-bottom: 4px;
+      padding: 4px;
       background-color: #eef2ff;
-      border-radius: 4px;
-      border-left: 4px solid #3366cc;
+      border-radius: 2px;
+      border-left: 2px solid #3366cc;
     }
     .section-title {
-      font-size: 18px; /* Increased for emphasis */
+      font-size: 11px;
       text-transform: uppercase;
       font-weight: bold;
       color: #333;
-      border-bottom: 2px solid #3366cc;
-      padding-bottom: 5px;
-      margin-bottom: 8px;
+      border-bottom: 1px solid #3366cc;
+      padding-bottom: 1px;
+      margin-bottom: 2px;
     }
-    .job, .education-item, .project {
-      margin-bottom: 8px;
-    }
+    .job, .education-item, .project { margin-bottom: 2px; }
     .job-title, .school-name, .project-title {
       font-weight: bold;
-      font-size: 16px; /* Increased for readability */
-      color: #333;
-    }
-    .job-title, .school-name {
+      font-size: 10px;
+      margin-bottom: 0;
       display: inline-block;
-    }
-    .project-title {
-      color: #3366cc;
     }
     .job-period, .education-period {
       float: right;
       color: #666;
-      font-size: 14px; /* Increased for clarity */
+      font-size: 8px;
     }
+    .project-title { color: #3366cc; }
     ul {
-      padding-left: 20px;
-      margin: 5px 0;
+      padding-left: 10px;
+      margin-top: 1px;
+      margin-bottom: 2px;
     }
-    li {
-      margin-bottom: 4px;
-      font-size: 14px; /* Increased for PDF */
-    }
+    li { margin-bottom: 1px; font-size: 9px; }
     .skill-category {
-      margin-bottom: 6px;
+      margin-bottom: 2px;
       display: flex;
       align-items: baseline;
     }
     .skill-title {
       font-weight: bold;
-      font-size: 16px; /* Increased for consistency */
+      font-size: 10px;
       color: #3366cc;
-      margin-right: 6px;
+      margin-right: 3px;
       flex-shrink: 0;
     }
-    .skill-content {
-      font-size: 14px; /* Increased for readability */
-    }
+    .skill-content { font-size: 9px; }
     .competencies-table {
       display: flex;
       justify-content: space-between;
-      font-size: 14px;
+      font-size: 9px;
     }
-    .competencies-column {
-      flex: 1;
-    }
-    .competencies-column ul {
-      padding-left: 20px;
-      margin: 0;
-    }
-    p {
-      font-size: 14px; /* Increased for visibility */
-      margin: 5px 0;
-    }
+    .competencies-column { flex: 1; }
+    .competencies-column ul { padding-left: 10px; margin: 0; }
+    p { font-size: 9px; margin: 1px 0; }
     @media (max-width: 768px) {
-      .content {
-        flex-direction: column;
-      }
-      .left-column, .right-column {
-        width: 100%;
-      }
+      .content { flex-direction: column; }
+      .left-column, .right-column { width: 100%; }
     }
     #downloadButton {
       display: block;
-      width: 200px;
-      margin: 20px auto;
-      padding: 10px;
+      width: 120px;
+      margin: 5px auto;
+      padding: 4px;
       background-color: #3366cc;
-      color: #fff;
+      color: white;
       text-align: center;
-      text-decoration: none;
-      border-radius: 5px;
+      border-radius: 3px;
       cursor: pointer;
       font-weight: bold;
-      font-size: 18px; /* Increased for prominence */
+      font-size: 11px;
       border: none;
-      transition: background-color 0.3s;
     }
-    #downloadButton:hover {
-      background-color: #254e8a;
-    }
+    #downloadButton:hover { background-color: #254e8a; }
   </style>
 </head>
 <body>
@@ -205,13 +171,10 @@
     </header>
     <div class="content">
       <div class="left-column">
-        <!-- PROFESSIONAL SUMMARY -->
         <div class="section summary-section">
           <div class="section-title">PROFESSIONAL SUMMARY</div>
           <p>IIT Dhanbad graduate with around 7 years of expertise in Data Science, Gen AI, Machine Learning, MLOps, responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a challenging role to apply advanced analytical, model development, and deployment skills in large-scale data science projects.</p>
         </div>
-
-        <!-- EXPERIENCE Section -->
         <div class="section experience-section">
           <div class="section-title">EXPERIENCE (7 Years)</div>
           <div class="job">
@@ -231,8 +194,6 @@
             <div class="job-period">Jun 2018 – Jan 2021</div>
           </div>
         </div>
-
-        <!-- PROJECTS Section -->
         <div class="section projects-section">
           <div class="section-title">PROJECTS</div>
           <div class="project">
@@ -283,7 +244,6 @@
         </div>
       </div>
       <div class="right-column">
-        <!-- EDUCATION Section -->
         <div class="section education-section">
           <div class="section-title">EDUCATION</div>
           <div class="education-item">
@@ -295,8 +255,6 @@
             <div class="education-period">(2012-13)</div>
           </div>
         </div>
-
-        <!-- CERTIFICATION Section -->
         <div class="section certification-section">
           <div class="section-title">CERTIFICATION</div>
           <ul>
@@ -309,8 +267,6 @@
             <li>Microsoft – <b>SQL Server</b></li>
           </ul>
         </div>
-
-        <!-- ACHIEVEMENTS Section -->
         <div class="section achievements-section">
           <div class="section-title">ACHIEVEMENTS</div>
           <ul>
@@ -322,8 +278,6 @@
             <li>Silver medalist, 200m race, district-level "Khel Kud Pratiyogita" (2009).</li>
           </ul>
         </div>
-
-        <!-- SKILLS Section -->
         <div class="section skills-section">
           <div class="section-title">SKILLS</div>
           <div class="skill-category">
@@ -363,8 +317,6 @@
             <span class="skill-content">Banking, Environmental, Social Media, Waste Management</span>
           </div>
         </div>
-
-        <!-- CORE COMPETENCIES Section -->
         <div class="section competencies-section">
           <div class="section-title">CORE COMPETENCIES</div>
           <div class="competencies-table">
@@ -389,40 +341,24 @@
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
-      const doc = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
-        compress: true
-      });
-
+      const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
       const element = document.getElementById('resumeContent');
-      const canvas = await html2canvas(element, {
-        scale: 3, // Increased for higher resolution
-        scrollY: -window.scrollY,
-        useCORS: true,
-        width: element.scrollWidth,
-        height: element.scrollHeight,
-        backgroundColor: '#fff' // Ensure white background
+      const canvas = await html2canvas(element, { 
+        scale: 2, 
+        useCORS: true, 
+        width: element.scrollWidth, 
+        height: element.scrollHeight 
       });
-
-      const imgData = canvas.toDataURL('image/png'); // PNG for lossless quality
-      const imgProps = doc.getImageProperties(imgData);
+      const imgData = canvas.toDataURL('image/png');
       const pdfWidth = doc.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      const pageHeight = doc.internal.pageSize.getHeight();
+      const pdfHeight = doc.internal.pageSize.getHeight();
+      const imgProps = doc.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-      let heightLeft = pdfHeight;
-      let position = 0;
-
-      // Multi-page support
-      while (heightLeft > 0) {
-        doc.addImage(imgData, 'PNG', 0, position, pdfWidth, pdfHeight, null, 'SLOW'); // 'SLOW' for best quality
-        heightLeft -= pageHeight;
-        position -= pageHeight;
-        if (heightLeft > 0) doc.addPage();
-      }
-
+      // Scale to fit one page
+      const scaleFactor = Math.min(1, pdfHeight / imgHeight);
+      const scaledHeight = imgHeight * scaleFactor;
+      doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, scaledHeight);
       doc.save('Chandan_Kumar_Resume.pdf');
     }
   </script>

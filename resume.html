@@ -14,7 +14,7 @@
       padding: 0;
       background-color: #f5f5f5;
       color: #333;
-      font-size: 11px;
+      font-size: 12px;
       line-height: 1.3;
     }
     .container {
@@ -22,113 +22,98 @@
       height: 287mm; /* A4 height minus margins */
       margin: 5px auto;
       background-color: #fff;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-      padding: 5px;
+      padding: 10px;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
     }
     header {
       text-align: center;
-      padding: 5px;
       background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
       color: #fff;
-      border-radius: 4px;
-      margin-bottom: 5px;
+      padding: 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #fff;
     }
     header h1 {
       margin: 0;
-      font-size: 16px;
-      text-transform: uppercase;
+      font-size: 20px;
       font-weight: bold;
-      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 3px;
+      margin-top: 6px;
       flex-wrap: wrap;
-      gap: 5px;
+      gap: 6px;
+      font-size: 11px;
     }
     .contact-item {
       display: flex;
       align-items: center;
-      margin: 1px 4px;
+      margin: 2px 4px;
     }
     .contact-item a, .contact-item span {
       color: #e2e8f0;
       text-decoration: none;
-      font-size: 10px;
     }
     .contact-item a:hover { text-decoration: underline; }
-    .icon {
-      margin-right: 3px;
-      font-size: 11px;
-      color: #e2e8f0;
-    }
+    .icon { margin-right: 5px; font-size: 12px; }
     .content {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       flex: 1;
     }
     .left-column { flex: 6; min-width: 0; }
     .right-column { flex: 4; min-width: 0; }
-    .section {
-      margin-bottom: 5px;
-      padding: 5px;
-      background-color: #eef2ff;
-      border-radius: 3px;
-      border-left: 2px solid #3366cc;
-    }
+    .section { margin-bottom: 10px; padding: 5px; border-radius: 4px; }
     .section-title {
-      font-size: 12px;
-      text-transform: uppercase;
+      font-size: 13px;
       font-weight: bold;
-      color: #333;
-      border-bottom: 1px solid #3366cc;
-      padding-bottom: 2px;
-      margin-bottom: 3px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #333;
     }
-    .job, .education-item, .project { margin-bottom: 3px; }
+    .job, .education-item, .project { margin-bottom: 5px; }
     .job-title, .school-name, .project-title {
       font-weight: bold;
-      font-size: 11px;
-      margin-bottom: 0;
+      font-size: 12px;
       display: inline-block;
     }
     .job-period, .education-period {
       float: right;
-      color: #666;
-      font-size: 9px;
-    }
-    .project-title { color: #3366cc; }
-    ul {
-      padding-left: 12px;
-      margin-top: 1px;
-      margin-bottom: 3px;
-    }
-    li { margin-bottom: 1px; font-size: 10px; }
-    .skill-category {
-      margin-bottom: 3px;
-      display: flex;
-      align-items: baseline;
-    }
-    .skill-title {
-      font-weight: bold;
       font-size: 11px;
-      color: #3366cc;
-      margin-right: 4px;
-      flex-shrink: 0;
     }
-    .skill-content { font-size: 10px; }
-    .competencies-table {
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-    }
-    .competencies-column { flex: 1; }
-    .competencies-column ul { padding-left: 12px; margin: 0; }
-    p { font-size: 10px; margin: 2px 0; }
+    .project-title { font-weight: bold; }
+    ul { padding-left: 15px; margin: 2px 0; }
+    li { font-size: 11px; margin-bottom: 2px; }
+    .skills-list { font-size: 11px; margin: 2px 0; }
+    .skills-list span { margin-right: 5px; }
+    .core-competencies { display: flex; justify-content: space-between; font-size: 11px; }
+    .core-competencies ul { padding-left: 15px; margin: 0; }
+    p { font-size: 11px; margin: 2px 0; }
+    /* Section Background Colors (Original) */
+    .summary-section { background-color: #e6f0fa; } /* Light Blue */
+    .experience-section { background-color: #e6ffe6; } /* Light Green */
+    .education-section { background-color: #fff9e6; } /* Light Yellow */
+    .certification-section { background-color: #f3e6ff; } /* Light Purple */
+    .projects-section { background-color: #fff0e6; } /* Light Orange */
+    .achievements-section { background-color: #ffe6f0; } /* Light Pink */
+    .skills-section { background-color: #f0f0f0; } /* Light Gray */
+    .competencies-section { background-color: #e6fff8; } /* Light Teal */
+    /* Section Title Font Colors */
+    .summary-section .section-title { color: #2c5282; } /* Dark Blue */
+    .experience-section .section-title { color: #2f855a; } /* Dark Green */
+    .education-section .section-title { color: #975a16; } /* Dark Yellow/Brown */
+    .certification-section .section-title { color: #6b46c1; } /* Dark Purple */
+    .projects-section .section-title { color: #9c4221; } /* Dark Orange */
+    .achievements-section .section-title { color: #97266d; } /* Dark Pink */
+    .skills-section .section-title { color: #2d3748; } /* Dark Gray */
+    .competencies-section .section-title { color: #285e61; } /* Dark Teal */
     @media (max-width: 768px) {
       .content { flex-direction: column; }
       .left-column, .right-column { width: 100%; }
@@ -138,7 +123,7 @@
       width: 120px;
       margin: 5px auto;
       padding: 5px;
-      background-color: #3366cc;
+      background-color: #333;
       color: white;
       text-align: center;
       border-radius: 4px;
@@ -147,7 +132,7 @@
       font-size: 12px;
       border: none;
     }
-    #downloadButton:hover { background-color: #254e8a; }
+    #downloadButton:hover { background-color: #555; }
   </style>
 </head>
 <body>
@@ -176,11 +161,11 @@
     <div class="content">
       <div class="left-column">
         <div class="section summary-section">
-          <div class="section-title">PROFESSIONAL SUMMARY</div>
-          <p>IIT Dhanbad graduate with around 7 years of expertise in Data Science, Gen AI, Machine Learning, MLOps, responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a challenging role to apply advanced analytical, model development, and deployment skills in large-scale data science projects.</p>
+          <div class="section-title">Professional Summary</div>
+          <p>IIT Dhanbad graduate with 6+ years of expertise in Data Science, Gen AI, Machine Learning, MLOps, responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a challenging role to apply advanced analytical, model development, and deployment skills in large-scale data science projects.</p>
         </div>
         <div class="section experience-section">
-          <div class="section-title">EXPERIENCE (7 Years)</div>
+          <div class="section-title">Experience (6+ Years)</div>
           <div class="job">
             <div class="job-title">IBM (Data Scientist)</div>
             <div class="job-period">Mar 2024 – Ongoing</div>
@@ -199,7 +184,7 @@
           </div>
         </div>
         <div class="section projects-section">
-          <div class="section-title">PROJECTS</div>
+          <div class="section-title">Projects</div>
           <div class="project">
             <div class="project-title">MARC (Multi-Agent Resource Coordinator), IBM</div>
             <ul>
@@ -249,7 +234,7 @@
       </div>
       <div class="right-column">
         <div class="section education-section">
-          <div class="section-title">EDUCATION</div>
+          <div class="section-title">Education</div>
           <div class="education-item">
             <div class="school-name">IIT, Dhanbad – B.Tech</div>
             <div class="education-period">(2013-17)</div>
@@ -260,80 +245,56 @@
           </div>
         </div>
         <div class="section certification-section">
-          <div class="section-title">CERTIFICATION</div>
+          <div class="section-title">Certification</div>
           <ul>
-            <li>Northwestern University – <b>Analytics & AI</b></li>
-            <li>Microsoft & LinkedIn – <b>Generative AI</b></li>
-            <li>Microsoft – <b>Azure Machine Learning</b></li>
-            <li>Stanford University – <b>Machine Learning</b></li>
-            <li>Duke University – <b>DevOps, DataOps, MLOps</b></li>
-            <li>AWS – <b>AWS Cloud</b></li>
-            <li>Microsoft – <b>SQL Server</b></li>
+            <li>Northwestern University – Analytics & AI</li>
+            <li>Microsoft & LinkedIn – Generative AI</li>
+            <li>Microsoft – Azure Machine Learning</li>
+            <li>Stanford University – Machine Learning</li>
+            <li>Duke University – DevOps, DataOps, MLOps</li>
+            <li>AWS – AWS Cloud</li>
+            <li>Microsoft – SQL Server</li>
           </ul>
         </div>
         <div class="section achievements-section">
-          <div class="section-title">ACHIEVEMENTS</div>
+          <div class="section-title">Achievements</div>
           <ul>
             <li>Rank #1 in HackerRank SQL.</li>
             <li>Consistently appreciated by clients for error-free, timely project deliveries.</li>
             <li>Led a team of 5 analysts, restoring team credibility and stability.</li>
-            <li>Cleared IIT JEE-2013, top 1% in JEE Advanced.</li>
-            <li>Student representative, Mess Committee, IIT Dhanbad (2015-16).</li>
-            <li>Silver medalist, 200m race, district-level "Khel Kud Pratiyogita" (2009).</li>
+            <li>Cleared IIT JEE-2013, among top 1% of students who cleared JEE Advanced.</li>
+            <li>Student representative in Mess Committee, IIT Dhanbad (2015-16).</li>
+            <li>Silver medalist in 200m race at district level "Khel Kud Pratiyogita" in Bihar (2009).</li>
           </ul>
         </div>
         <div class="section skills-section">
-          <div class="section-title">SKILLS</div>
-          <div class="skill-category">
-            <div class="skill-title">Data Science & AI:</div>
-            <span class="skill-content">Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face</span>
-          </div>
-          <div class="skill-category">
-            <div class="skill-title">Machine Learning:</div>
-            <span class="skill-content">Supervised (Regression, Decision Trees, RF, XGBoost), Unsupervised, NLP, Time Series, Model Development & Deployment</span>
-          </div>
-          <div class="skill-category">
-            <div class="skill-title">Cloud Platforms:</div>
-            <span class="skill-content">Azure, AWS, GCP, IBM Watson</span>
-          </div>
-          <div class="skill-category">
-            <div class="skill-title">Programming:</div>
-            <span class="skill-content">Python, SQL</span>
-          </div>
-          <div class="skill-category">
-            <div class="skill-title">Data Engineering:</div>
-            <span class="skill-content">Azure Data Factory, Databricks, Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy</span>
-          </div>
-          <div class="skill-category">
-            <div class="skill-title">Databases:</div>
-            <span class="skill-content">Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</span>
-          </div>
-          <div class="skill-category">
-            <div class="skill-title">Visualization:</div>
-            <span class="skill-content">Power BI, Matplotlib, Seaborn</span>
-          </div>
-          <div class="skill-category">
-            <div class="skill-title">DevOps:</div>
-            <span class="skill-content">Docker, Kubernetes, Git, CI/CD Pipelines</span>
-          </div>
-          <div class="skill-category">
-            <div class="skill-title">Domains:</div>
-            <span class="skill-content">Banking, Environmental, Social Media, Waste Management</span>
+          <div class="section-title">Skills</div>
+          <div class="skills-list">
+            <strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee<br>
+            <strong>Machine Learning:</strong> Supervised (Regression, Decision Trees, RF, XGBoost), Unsupervised, NLP, Time Series, Model Development & Deployment, Vector DB<br>
+            <strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM Watson<br>
+            <strong>Programming:</strong> Python, SQL<br>
+            <strong>Data Engineering:</strong> Azure Data Factory, Databricks, Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy<br>
+            <strong>Databases:</strong> Azure SQL, SQL Server, MySQL, MongoDB, BigQuery<br>
+            <strong>Visualization:</strong> Power BI, Matplotlib, Seaborn<br>
+            <strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD Pipelines<br>
+            <strong>Domains:</strong> Banking, Environmental, Social Media, Waste Management
           </div>
         </div>
         <div class="section competencies-section">
-          <div class="section-title">CORE COMPETENCIES</div>
-          <div class="competencies-table">
-            <div class="competencies-column">
+          <div class="section-title">Core Competencies</div>
+          <div class="core-competencies">
+            <div>
               <ul>
-                <li>Data Science & ML</li>
-                <li>AI Governance & Ethics</li>
+                <li>Project Management and Deployment</li>
+                <li>Data Strategy and Management</li>
               </ul>
             </div>
-            <div class="competencies-column">
+            <div>
               <ul>
-                <li>Cloud Computing</li>
-                <li>Project Management</li>
+                <li>Business Strategy & Execution</li>
+                <li>Business and Data Analytics</li>
+                <li>Analytics & AI</li>
               </ul>
             </div>
           </div>
@@ -348,18 +309,18 @@
       const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
       const element = document.getElementById('resumeContent');
       const canvas = await html2canvas(element, { 
-        scale: 1, // Reduced from 2 to lower file size
+        scale: 1, // Reduced for smaller file size
         useCORS: true, 
         width: element.scrollWidth, 
         height: element.scrollHeight 
       });
-      const imgData = canvas.toDataURL('image/png', 0.7); // Added quality compression
+      const imgData = canvas.toDataURL('image/png', 0.7); // Image compression
       const pdfWidth = doc.internal.pageSize.getWidth();
       const pdfHeight = doc.internal.pageSize.getHeight();
       const imgProps = doc.getImageProperties(imgData);
       const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-      doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, imgHeight);
       doc.save('Chandan_Kumar_Resume.pdf');
     }
   </script>

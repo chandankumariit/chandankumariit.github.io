@@ -14,28 +14,31 @@
       padding: 0;
       background-color: #f5f5f5;
       color: #333;
-      font-size: 10px;
-      line-height: 1.2;
+      font-size: 11px;
+      line-height: 1.3;
     }
     .container {
       width: 190mm; /* A4 width minus margins */
+      height: 287mm; /* A4 height minus margins */
       margin: 5px auto;
       background-color: #fff;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
       padding: 5px;
       border-radius: 4px;
+      display: flex;
+      flex-direction: column;
     }
     header {
       text-align: center;
-      margin-bottom: 4px;
-      padding: 4px;
+      padding: 5px;
       background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
       color: #fff;
       border-radius: 4px;
+      margin-bottom: 5px;
     }
     header h1 {
       margin: 0;
-      font-size: 14px;
+      font-size: 16px;
       text-transform: uppercase;
       font-weight: bold;
       letter-spacing: 0.5px;
@@ -43,88 +46,89 @@
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 2px;
+      margin-top: 3px;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 5px;
     }
     .contact-item {
       display: flex;
       align-items: center;
-      margin: 1px 3px;
+      margin: 1px 4px;
     }
     .contact-item a, .contact-item span {
       color: #e2e8f0;
       text-decoration: none;
-      font-size: 9px;
+      font-size: 10px;
     }
     .contact-item a:hover { text-decoration: underline; }
     .icon {
-      margin-right: 2px;
-      font-size: 10px;
+      margin-right: 3px;
+      font-size: 11px;
       color: #e2e8f0;
     }
     .content {
       display: flex;
-      gap: 6px;
+      gap: 8px;
+      flex: 1;
     }
     .left-column { flex: 6; min-width: 0; }
     .right-column { flex: 4; min-width: 0; }
     .section {
-      margin-bottom: 4px;
-      padding: 4px;
+      margin-bottom: 5px;
+      padding: 5px;
       background-color: #eef2ff;
-      border-radius: 2px;
+      border-radius: 3px;
       border-left: 2px solid #3366cc;
     }
     .section-title {
-      font-size: 11px;
+      font-size: 12px;
       text-transform: uppercase;
       font-weight: bold;
       color: #333;
       border-bottom: 1px solid #3366cc;
-      padding-bottom: 1px;
-      margin-bottom: 2px;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
     }
-    .job, .education-item, .project { margin-bottom: 2px; }
+    .job, .education-item, .project { margin-bottom: 3px; }
     .job-title, .school-name, .project-title {
       font-weight: bold;
-      font-size: 10px;
+      font-size: 11px;
       margin-bottom: 0;
       display: inline-block;
     }
     .job-period, .education-period {
       float: right;
       color: #666;
-      font-size: 8px;
+      font-size: 9px;
     }
     .project-title { color: #3366cc; }
     ul {
-      padding-left: 10px;
+      padding-left: 12px;
       margin-top: 1px;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
-    li { margin-bottom: 1px; font-size: 9px; }
+    li { margin-bottom: 1px; font-size: 10px; }
     .skill-category {
-      margin-bottom: 2px;
+      margin-bottom: 3px;
       display: flex;
       align-items: baseline;
     }
     .skill-title {
       font-weight: bold;
-      font-size: 10px;
+      font-size: 11px;
       color: #3366cc;
-      margin-right: 3px;
+      margin-right: 4px;
       flex-shrink: 0;
     }
-    .skill-content { font-size: 9px; }
+    .skill-content { font-size: 10px; }
     .competencies-table {
       display: flex;
       justify-content: space-between;
-      font-size: 9px;
+      font-size: 10px;
     }
     .competencies-column { flex: 1; }
-    .competencies-column ul { padding-left: 10px; margin: 0; }
-    p { font-size: 9px; margin: 1px 0; }
+    .competencies-column ul { padding-left: 12px; margin: 0; }
+    p { font-size: 10px; margin: 2px 0; }
     @media (max-width: 768px) {
       .content { flex-direction: column; }
       .left-column, .right-column { width: 100%; }
@@ -133,14 +137,14 @@
       display: block;
       width: 120px;
       margin: 5px auto;
-      padding: 4px;
+      padding: 5px;
       background-color: #3366cc;
       color: white;
       text-align: center;
-      border-radius: 3px;
+      border-radius: 4px;
       cursor: pointer;
       font-weight: bold;
-      font-size: 11px;
+      font-size: 12px;
       border: none;
     }
     #downloadButton:hover { background-color: #254e8a; }
@@ -344,21 +348,18 @@
       const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
       const element = document.getElementById('resumeContent');
       const canvas = await html2canvas(element, { 
-        scale: 2, 
+        scale: 1, // Reduced from 2 to lower file size
         useCORS: true, 
         width: element.scrollWidth, 
         height: element.scrollHeight 
       });
-      const imgData = canvas.toDataURL('image/png');
+      const imgData = canvas.toDataURL('image/png', 0.7); // Added quality compression
       const pdfWidth = doc.internal.pageSize.getWidth();
       const pdfHeight = doc.internal.pageSize.getHeight();
       const imgProps = doc.getImageProperties(imgData);
       const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-      // Scale to fit one page
-      const scaleFactor = Math.min(1, pdfHeight / imgHeight);
-      const scaledHeight = imgHeight * scaleFactor;
-      doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, scaledHeight);
+      doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
       doc.save('Chandan_Kumar_Resume.pdf');
     }
   </script>

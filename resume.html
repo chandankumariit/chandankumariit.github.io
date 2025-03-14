@@ -7,180 +7,194 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
+      background: #f0f4f8;
       color: #333;
       font-size: 12px;
-      line-height: 1.3;
+      line-height: 1.4;
     }
+
     .container {
       width: 190mm;
       min-height: 287mm;
       margin: 5px auto;
       background: #fff;
-      padding: 8px;
-      border-radius: 4px;
+      padding: 10px;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
     header {
-      text-align: center;
-      background: linear-gradient(135deg,#2c5282,#2b6cb0);
+      background: #343a40;
       color: #fff;
-      padding: 6px;
-      border-radius: 6px;
-      margin-bottom: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,.1);
-      border-bottom: 1px solid #fff;
+      padding: 12px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
     header h1 {
-      margin: 0;
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 700;
+      margin: 0;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
+
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 4px;
-      gap: 6px;
+      margin-top: 8px;
+      gap: 12px;
       font-size: 11px;
     }
+
     .contact-item {
       display: flex;
       align-items: center;
-      margin: 2px 4px;
+      margin: 2px 6px;
     }
-    .contact-item a, .contact-item span {
-      color: #e2e8f0;
+
+    .contact-item a,
+    .contact-item span {
+      color: #adb5bd;
       text-decoration: none;
     }
+
     .contact-item a:hover {
       text-decoration: underline;
+      color: #fff;
     }
+
     .icon {
-      margin-right: 5px;
-      font-size: 12px;
+      margin-right: 6px;
+      font-size: 14px;
     }
+
     .content {
       display: flex;
-      gap: 8px;
+      gap: 15px;
     }
+
     .left-column {
       flex: 6;
       min-width: 0;
     }
-    .left-column > div {
-      margin-bottom: 0 !important;
-      padding: 0 !important;
-    }
+
     .right-column {
       flex: 4;
       min-width: 0;
     }
-    .right-column > div {
-      margin-bottom: 0 !important;
-      padding: 0 !important;
-    }
+
     .section {
-      margin-bottom: 3px;
-      padding: 6px;
-      border-radius: 4px;
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 6px;
       background: #fff;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     }
+
     .section-title {
-      font-size: 13px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #6c757d;
+      color: #343a40;
       text-transform: uppercase;
-      margin-bottom: 2px;
-      border-bottom: 1px solid #333;
-      color: #2c5282;
+      letter-spacing: 0.8px;
     }
-    .job, .education-item, .project {
-      margin-bottom: 4px;
+
+    .job,
+    .education-item,
+    .project {
+      margin-bottom: 10px;
     }
-    .job-title, .school-name, .project-title {
-      font-weight: 700;
-      font-size: 12px;
+
+    .job-title,
+    .school-name,
+    .project-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #495057;
       display: inline-block;
     }
-    .job-period, .education-period {
+
+    .job-period,
+    .education-period {
       float: right;
       font-size: 11px;
+      color: #6c757d;
     }
+
     ul {
-      padding-left: 15px;
-      margin: 2px 0;
+      padding-left: 22px;
+      margin: 6px 0;
     }
+
     li {
       font-size: 12px;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
+
+    p {
+      font-size: 12px;
+      margin: 6px 0;
+    }
+
     .skills-list {
       font-size: 12px;
-      margin: 2px 0;
+      margin: 6px 0;
     }
+
     .skills-list ul {
-      padding-left: 15px;
+      padding-left: 0;
       list-style: none;
     }
+
     .skills-list li {
       margin-bottom: 4px;
     }
+
     .skills-list strong {
-      font-weight: 700;
+      font-weight: 500;
+      color: #495057;
     }
+
     .skills-list span {
       margin-right: 5px;
     }
+
     .core-competencies ul {
-      padding-left: 15px;
-      margin: 0;
-    }
-    p {
-      font-size: 12px;
-      margin: 2px 0;
-    }
-    @media (max-width: 768px) {
-      .content {
-        flex-direction: column;
-      }
-      .left-column, .right-column {
-        width: 100%;
-      }
-    }
-    #downloadButton {
-      display: block;
-      width: 120px;
-      margin: 5px auto;
-      padding: 5px;
-      background: #333;
-      color: #fff;
-      text-align: center;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 12px;
-      border: none;
-    }
-    #downloadButton:hover {
-      background: #555;
-    }
-    .skills-section ul {
-      list-style-type: disc;
-      padding-left: 20px;
+      padding-left: 0;
     }
 
-    .skills-section li {
-      margin-bottom: 8px;
+    #downloadButton {
+      display: block;
+      width: 150px;
+      margin: 15px auto;
+      padding: 10px 15px;
+      background: #343a40;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    #downloadButton:hover {
+      background: #495057;
     }
   </style>
 </head>
@@ -189,9 +203,18 @@
     <header>
       <h1>Chandan Kumar</h1>
       <div class="contact-info">
-        <div class="contact-item"><span class="icon"><i class="fas fa-envelope"></i></span><a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a></div>
-        <div class="contact-item"><span class="icon"><i class="fas fa-phone"></i></span><span>+91-9199000200</span></div>
-        <div class="contact-item"><span class="icon"><i class="fab fa-linkedin-in"></i></span><a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/chandaniit</a></div>
+        <div class="contact-item">
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+          <a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="icon"><i class="fas fa-phone"></i></span>
+          <span>+91-9199000200</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon"><i class="fab fa-linkedin-in"></i></span>
+          <a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/chandaniit</a>
+        </div>
       </div>
     </header>
     <div class="content">
@@ -303,7 +326,7 @@
             <li>Awarded Silver Medal in 200m race at district-level "Khel Kud Pratiyogita," Bihar (2009).</li>
           </ul>
         </div>
-        <div class="section skills-section">
+        <div class="section">
           <div class="section-title">Skills</div>
           <div class="skills-list">
             <ul>

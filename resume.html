@@ -200,6 +200,25 @@
     #downloadButton:hover {
       background: #555
     }
+
+    #downloadWordButton {
+      display: block;
+      width: 120px;
+      margin: 5px auto;
+      padding: 5px;
+      background: #28a745; /* Green color */
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 12px;
+      border: none
+    }
+
+    #downloadWordButton:hover {
+      background: #218838; /* Darker green color */
+    }
   </style>
 </head>
 
@@ -220,13 +239,13 @@
       <div class="left-column">
         <div class="section">
           <div class="section-title">Professional Summary</div>
-          <p>IIT Dhanbad Graduate with arround 7 years of expertise in Data Science, Generative AI, Machine Learning,
+          <p>Graduate of IIT Dhanbad with over six years of expertise in Data Science, Generative AI, Machine Learning,
             MLOps, Responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in
             Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a position to leverage
             advanced analytical, model development, and deployment skills in large-scale data science initiatives.</p>
         </div>
         <div class="section">
-          <div class="section-title">Experience (7 Years)</div>
+          <div class="section-title">Experience (6+ Years)</div>
           <div class="job">
             <div class="job-title">IBM - Data Scientist</div>
             <div class="job-period">Mar 2024 - Present</div>
@@ -364,6 +383,7 @@
     </div>
   </div>
   <button id="downloadButton" onclick="downloadPDF()">Download as PDF</button>
+  <button id="downloadWordButton" onclick="downloadWord()">Download as Word</button>
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
@@ -392,6 +412,42 @@
       doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, imgHeight, undefined, 'FAST');
       doc.save('Chandan_Kumar_Resume.pdf');
     }
+
+    function downloadWord() {
+      const preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+      const postHtml = "</body></html>";
+      const html = preHtml + document.getElementById('resumeContent').innerHTML + postHtml;
+
+      const blob = new Blob(['\ufeff', html], {
+        type: 'application/msword'
+      });
+
+      const url = URL.createObjectURL(blob);
+
+      // Specify file name
+      const filename = 'Chandan_Kumar_Resume.doc';
+
+      // Create download link element
+      const downloadLink = document.createElement("a");
+
+      document.body.appendChild(downloadLink);
+
+      if (navigator.msSaveOrOpenBlob) {
+        navigator.msSaveOrOpenBlob(blob, filename);
+      } else {
+        // Create a link to the file
+        downloadLink.href = url;
+
+        // Setting the file name
+        downloadLink.download = filename;
+
+        //triggering the function
+        downloadLink.click();
+      }
+
+      document.body.removeChild(downloadLink);
+    }
   </script>
 </body>
+
 </html>

@@ -88,6 +88,12 @@
       min-width: 0;
     }
 
+    /* Zero out margins on left column divs */
+    .left-column > div {
+      margin-bottom: 0 !important; /* Override any other rules */
+      padding: 0 !important;
+    }
+
     .right-column {
       flex: 4;
       min-width: 0;
@@ -291,7 +297,7 @@
       <div class="right-column">
         <div class="section">
           <div class="section-title">Education</div>
-          <div class="education-item">...
+          <div class="education-item">
             <div class="school-name">IIT Dhanbad - B.Tech</div>
             <div class="education-period">(2013-2017)</div>
           </div>
@@ -387,5 +393,4 @@
     }
   </script>
 </body>
-
 </html>

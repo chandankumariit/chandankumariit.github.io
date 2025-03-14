@@ -21,7 +21,12 @@
     .content{display:flex;gap:10px}
     .left-column{flex:6;min-width:0}
     .right-column{flex:4;min-width:0}
-    .section{margin-bottom:5px;padding:5px;border-radius:4px;background:#fff}
+    .section{
+      margin-bottom: 0px; /* Adjusted to remove space between sections */
+      padding:5px;
+      border-radius:4px;
+      background:#fff
+    }
     .section-title{font-size:13px;font-weight:700;text-transform:uppercase;margin-bottom:5px;border-bottom:1px solid #333;color:#2c5282}
     .job,.education-item,.project{margin-bottom:5px}
     .job-title,.school-name,.project-title{font-weight:700;font-size:12px;display:inline-block}
@@ -124,8 +129,7 @@
       <div class="right-column">
         <div class="section">
           <div class="section-title">Education</div>
-          <div class="education-item">
-            <div class="school-name">IIT Dhanbad - B.Tech</div>
+          <div class="education-item">... <div class="school-name">IIT Dhanbad - B.Tech</div>
             <div class="education-period">(2013-2017)</div>
           </div>
           <div class="education-item">

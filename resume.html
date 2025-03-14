@@ -23,19 +23,19 @@
       min-height: 287mm;
       margin: 5px auto;
       background: #fff;
-      padding: 8px; /* Adjusted padding */
+      padding: 8px;
       border-radius: 4px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Added subtle shadow */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     header {
       text-align: center;
       background: linear-gradient(135deg,#2c5282,#2b6cb0);
       color: #fff;
-      padding: 6px; /* Adjusted padding */
+      padding: 6px;
       border-radius: 6px;
-      margin-bottom: 8px; /* Adjusted margin */
+      margin-bottom: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,.1);
       border-bottom: 1px solid #fff;
     }
@@ -49,7 +49,7 @@
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 4px; /* Adjusted margin */
+      margin-top: 4px;
       gap: 6px;
       font-size: 11px;
     }
@@ -71,7 +71,7 @@
     }
     .content {
       display: flex;
-      gap: 8px; /* Adjusted gap */
+      gap: 8px;
     }
     .left-column {
       flex: 6;
@@ -90,11 +90,11 @@
       padding: 0 !important;
     }
     .section {
-      margin-bottom: 3px; /* Adjusted margin */
-      padding: 6px; /* Adjusted padding */
+      margin-bottom: 3px;
+      padding: 6px;
       border-radius: 4px;
       background: #fff;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Added subtle shadow */
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
     .section-title {
       font-size: 13px;
@@ -105,7 +105,7 @@
       color: #2c5282;
     }
     .job, .education-item, .project {
-      margin-bottom: 4px; /* Adjusted margin */
+      margin-bottom: 4px;
     }
     .job-title, .school-name, .project-title {
       font-weight: 700;
@@ -129,11 +129,8 @@
       margin: 2px 0;
     }
     .skills-list ul {
-      padding-left: 0;
+      padding-left: 15px;
       list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 4px;
     }
     .skills-list li {
       margin-bottom: 4px;
@@ -176,6 +173,14 @@
     }
     #downloadButton:hover {
       background: #555;
+    }
+    .skills-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .skills-section li {
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -298,7 +303,7 @@
             <li>Awarded Silver Medal in 200m race at district-level "Khel Kud Pratiyogita," Bihar (2009).</li>
           </ul>
         </div>
-        <div class="section">
+        <div class="section skills-section">
           <div class="section-title">Skills</div>
           <div class="skills-list">
             <ul>

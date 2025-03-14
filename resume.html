@@ -6,7 +6,6 @@
   <title>Chandan Kumar Resume</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <!--  Removed Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -20,19 +19,20 @@
     }
 
     .container {
-      width: 7.5in; /* A4 width in inches */
-      height: 11in; /* A4 height in inches */
+      width: 7.5in;
+      /* A4 width in inches */
+      height: 11in;
+      /* A4 height in inches */
       margin: 0.2in auto;
       background: #fff;
       padding: 0.2in;
       border-radius: 4px;
-      /*display: flex;  Removed flexbox */
-      /*flex-direction: column;  Removed flexbox */
     }
 
     header {
       text-align: center;
-      background-color: #2c5282; /* Solid color instead of gradient */
+      background-color: #2c5282;
+      /* Solid color instead of gradient */
       color: #fff;
       padding: 0.1in;
       border-radius: 6px;
@@ -73,25 +73,20 @@
       text-decoration: underline;
     }
 
-    .icon {
-      margin-right: 0.05in;
-      font-size: 12px;
-    }
-
     .content {
-      /*display: flex;  Removed flexbox */
-      gap: 0.1in;
+      width: 100%;
+      display: table;
     }
 
     .left-column {
-      /*flex: 6;  Removed flexbox */
-      width: 58%; /* Adjusted width */
+      width: 58%;
+      display: table-cell;
       vertical-align: top;
     }
 
     .right-column {
-      /*flex: 4; Removed flexbox */
-      width: 40%; /* Adjusted width */
+      width: 40%;
+      display: table-cell;
       vertical-align: top;
     }
 
@@ -160,18 +155,6 @@
       margin: 0.02in 0;
     }
 
-    /* Ensure columns stay side-by-side */
-    @media (max-width: 768px) {
-      .content {
-        /*flex-direction: column;*/ /* Removed flexbox */
-      }
-
-      .left-column,
-      .right-column {
-        width: 100%
-      }
-    }
-
     #downloadButton {
       display: block;
       width: 120px;
@@ -196,7 +179,8 @@
       width: 120px;
       margin: 5px auto;
       padding: 5px;
-      background: #28a745; /* Green color */
+      background: #28a745;
+      /* Green color */
       color: #fff;
       text-align: center;
       border-radius: 4px;
@@ -207,7 +191,8 @@
     }
 
     #downloadWordButton:hover {
-      background: #218838; /* Darker green color */
+      background: #218838;
+      /* Darker green color */
     }
   </style>
 </head>
@@ -217,170 +202,166 @@
     <header>
       <h1>Chandan Kumar</h1>
       <div class="contact-info">
-        <!-- Removed icons -->
         <div class="contact-item"><a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a></div>
         <div class="contact-item">+91-9199000200</div>
         <div class="contact-item"><a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/chandaniit</a>
         </div>
       </div>
     </header>
-    <!-- Table for two-column layout -->
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr>
-        <td class="left-column">
-          <div class="section">
-            <div class="section-title">Professional Summary</div>
-            <p>Graduate of IIT Dhanbad with over six years of expertise in Data Science, Generative AI, Machine Learning,
-              MLOps, Responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled
-              in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a position to
-              leverage advanced analytical, model development, and deployment skills in large-scale data science
-              initiatives.</p>
+    <div class="content">
+      <div class="left-column">
+        <div class="section">
+          <div class="section-title">Professional Summary</div>
+          <p>Graduate of IIT Dhanbad with over six years of expertise in Data Science, Generative AI, Machine Learning,
+            MLOps, Responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled
+            in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a position to
+            leverage advanced analytical, model development, and deployment skills in large-scale data science
+            initiatives.</p>
+        </div>
+        <div class="section">
+          <div class="section-title">Experience (6+ Years)</div>
+          <div class="job">
+            <div class="job-title">IBM - Data Scientist</div>
+            <div class="job-period">Mar 2024 - Present</div>
           </div>
-          <div class="section">
-            <div class="section-title">Experience (6+ Years)</div>
-            <div class="job">
-              <div class="job-title">IBM - Data Scientist</div>
-              <div class="job-period">Mar 2024 - Present</div>
-            </div>
-            <div class="job">
-              <div class="job-title">Accenture - Data Scientist</div>
-              <div class="job-period">Apr 2021 - Feb 2024</div>
-            </div>
-            <div class="job">
-              <div class="job-title">Capgemini - Process Lead</div>
-              <div class="job-period">Feb 2021 - Mar 2021</div>
-            </div>
-            <div class="job">
-              <div class="job-title">Clean Harbors - Data Scientist</div>
-              <div class="job-period">Jun 2018 - Jan 2021</div>
-            </div>
+          <div class="job">
+            <div class="job-title">Accenture - Data Scientist</div>
+            <div class="job-period">Apr 2021 - Feb 2024</div>
           </div>
-          <div class="section">
-            <div class="section-title">Projects</div>
-            <div class="project">
-              <div class="project-title">MARC (Multi-Agent Resource Coordinator), IBM</div>
-              <ul>
-                <li>Designed and developed IBM's MARC platform for multi-agent collaboration and workflow automation.
-                </li>
-                <li>Implemented AI Governance principles to ensure ethical and compliant automation agent operations.
-                </li>
-                <li>Integrated LLMs for task orchestration and agent selection, supporting Slack and WatsonX Assistant.
-                </li>
-                <li>Developed sample agents to demonstrate platform versatility across domains.</li>
-                <li>Optimized agent coordination, reducing operational latency by 40%.</li>
-              </ul>
-            </div>
-            <div class="project">
-              <div class="project-title">Mizuho Bank, Accenture</div>
-              <ul>
-                <li>Developed and deployed PdfGPT, an AI-powered text summarization system for banking.</li>
-                <li>Leveraged Generative AI and Azure Cognitive Services, improving document processing efficiency by
-                  35%.
-                </li>
-                <li>Utilized expertise in LLM, Data Science, Machine Learning, and Azure to drive project success.</li>
-                <li>Achieved 95% accuracy in extracting critical financial insights from unstructured data.</li>
-              </ul>
-            </div>
-            <div class="project">
-              <div class="project-title">Facebook, Accenture</div>
-              <ul>
-                <li>Analyzed data from diverse sources to provide actionable insights for competitive advantage.</li>
-                <li>Designed and optimized machine learning pipelines for forecasting models.</li>
-                <li>Enhanced decision-making processes using Machine Learning, Python, and AWS.</li>
-                <li>Improved prediction accuracy by 25% for social media engagement metrics.</li>
-              </ul>
-            </div>
-            <div class="project">
-              <div class="project-title">Waste Classification Code, Clean Harbors</div>
-              <ul>
-                <li>Developed and fine-tuned Waste Classification Code Prediction models for autonomous assignment.</li>
-                <li>Created a unified dataset with essential features for all waste classes.</li>
-                <li>Applied data consistency checks to improve classification based on physical properties.</li>
-                <li>Reduced manual classification errors by 30%, enhancing efficiency.</li>
-              </ul>
-            </div>
-            <div class="project">
-              <div class="project-title">Invoice Audit, Clean Harbors</div>
-              <ul>
-                <li>Developed an invoice auditing and revenue prediction algorithm using machine learning.</li>
-                <li>Automated data loading to Azure SQL with Azure Data Factory and Machine Learning tools.</li>
-                <li>Streamlined invoice verification, reducing audit time by 20%.</li>
-              </ul>
-            </div>
+          <div class="job">
+            <div class="job-title">Capgemini - Process Lead</div>
+            <div class="job-period">Feb 2021 - Mar 2021</div>
           </div>
-        </td>
-        <td class="right-column">
-          <div class="section">
-            <div class="section-title">Education</div>
-            <div class="education-item">
-              <div class="school-name">IIT Dhanbad - B.Tech</div>
-              <div class="education-period">(2013-2017)</div>
-            </div>
-            <div class="education-item">
-              <div class="school-name">Super30, Patna</div>
-              <div class="education-period">(2012-2013)</div>
-            </div>
+          <div class="job">
+            <div class="job-title">Clean Harbors - Data Scientist</div>
+            <div class="job-period">Jun 2018 - Jan 2021</div>
           </div>
-          <div class="section">
-            <div class="section-title">Certification</div>
+        </div>
+        <div class="section">
+          <div class="section-title">Projects</div>
+          <div class="project">
+            <div class="project-title">MARC (Multi-Agent Resource Coordinator), IBM</div>
             <ul>
-              <li>Northwestern University - Analytics & AI</li>
-              <li>Microsoft & LinkedIn - Generative AI</li>
-              <li>Microsoft - Azure Machine Learning</li>
-              <li>Stanford University - Machine Learning</li>
-              <li>Duke University - DevOps, DataOps, MLOps</li>
-              <li>GraphAcademy(Neo4j) - Neo4j & LLM Fundamentals</li>
-              <li>AWS - AWS Cloud</li>
-              <li>Microsoft - SQL Server</li>
+              <li>Designed and developed IBM's MARC platform for multi-agent collaboration and workflow automation.
+              </li>
+              <li>Implemented AI Governance principles to ensure ethical and compliant automation agent operations.
+              </li>
+              <li>Integrated LLMs for task orchestration and agent selection, supporting Slack and WatsonX Assistant.
+              </li>
+              <li>Developed sample agents to demonstrate platform versatility across domains.</li>
+              <li>Optimized agent coordination, reducing operational latency by 40%.</li>
             </ul>
           </div>
-          <div class="section">
-            <div class="section-title">Achievements</div>
+          <div class="project">
+            <div class="project-title">Mizuho Bank, Accenture</div>
             <ul>
-              <li>Ranked #1 in HackerRank SQL.</li>
-              <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
-              <li>Led a team of five analysts, restoring team credibility and stability.</li>
-              <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
-              <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
-              <li>Awarded Silver Medal in 200m race at district-level "Khel Kud Pratiyogita," Bihar (2009).</li>
+              <li>Developed and deployed PdfGPT, an AI-powered text summarization system for banking.</li>
+              <li>Leveraged Generative AI and Azure Cognitive Services, improving document processing efficiency by
+                35%.
+              </li>
+              <li>Utilized expertise in LLM, Data Science, Machine Learning, and Azure to drive project success.</li>
+              <li>Achieved 95% accuracy in extracting critical financial insights from unstructured data.</li>
             </ul>
           </div>
-          <div class="section">
-            <div class="section-title">Skills</div>
-            <div class="skills-list">
-              <ul>
-                <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI,
-                  MLOps,
-                  Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI,
-                  AutoGen, Bee</li>
-                <li><strong>Machine Learning:</strong> Supervised (Regression, Decision Trees, RF, XGBoost), Unsupervised,
-                  NLP,
-                  Time Series, Model Development & Deployment, Vector DB</li>
-                <li><strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM Watson</li>
-                <li><strong>Programming:</strong> Python, SQL</li>
-                <li><strong>Data Engineering:</strong> Azure Data Factory, Databricks, Synapse Analytics, AWS S3, Glue,
-                  SageMaker,
-                  BigQuery, Pandas, NumPy</li>
-                <li><strong>Databases:</strong> Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
-                <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
-                <li><strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD Pipelines</li>
-                <li><strong>Domains:</strong> Banking, Environmental, Social Media, Waste Management</li>
-              </ul>
-            </div>
-          </div>
-          <div class="section">
-            <div class="section-title">Core Competencies</div>
+          <div class="project">
+            <div class="project-title">Facebook, Accenture</div>
             <ul>
-              <li>Project Management and Deployment</li>
-              <li>Data Strategy and Management</li>
-              <li>Business Strategy & Execution</li>
-              <li>Business and Data Analytics</li>
-              <li>Analytics & AI</li>
+              <li>Analyzed data from diverse sources to provide actionable insights for competitive advantage.</li>
+              <li>Designed and optimized machine learning pipelines for forecasting models.</li>
+              <li>Enhanced decision-making processes using Machine Learning, Python, and AWS.</li>
+              <li>Improved prediction accuracy by 25% for social media engagement metrics.</li>
             </ul>
           </div>
-        </td>
-      </tr>
-    </table>
+          <div class="project">
+            <div class="project-title">Waste Classification Code, Clean Harbors</div>
+            <ul>
+              <li>Developed and fine-tuned Waste Classification Code Prediction models for autonomous assignment.</li>
+              <li>Created a unified dataset with essential features for all waste classes.</li>
+              <li>Applied data consistency checks to improve classification based on physical properties.</li>
+              <li>Reduced manual classification errors by 30%, enhancing efficiency.</li>
+            </ul>
+          </div>
+          <div class="project">
+            <div class="project-title">Invoice Audit, Clean Harbors</div>
+            <ul>
+              <li>Developed an invoice auditing and revenue prediction algorithm using machine learning.</li>
+              <li>Automated data loading to Azure SQL with Azure Data Factory and Machine Learning tools.</li>
+              <li>Streamlined invoice verification, reducing audit time by 20%.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="right-column">
+        <div class="section">
+          <div class="section-title">Education</div>
+          <div class="education-item">
+            <div class="school-name">IIT Dhanbad - B.Tech</div>
+            <div class="education-period">(2013-2017)</div>
+          </div>
+          <div class="education-item">
+            <div class="school-name">Super30, Patna</div>
+            <div class="education-period">(2012-2013)</div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-title">Certification</div>
+          <ul>
+            <li>Northwestern University - Analytics & AI</li>
+            <li>Microsoft & LinkedIn - Generative AI</li>
+            <li>Microsoft - Azure Machine Learning</li>
+            <li>Stanford University - Machine Learning</li>
+            <li>Duke University - DevOps, DataOps, MLOps</li>
+            <li>GraphAcademy(Neo4j) - Neo4j & LLM Fundamentals</li>
+            <li>AWS - AWS Cloud</li>
+            <li>Microsoft - SQL Server</li>
+          </ul>
+        </div>
+        <div class="section">
+          <div class="section-title">Achievements</div>
+          <ul>
+            <li>Ranked #1 in HackerRank SQL.</li>
+            <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
+            <li>Led a team of five analysts, restoring team credibility and stability.</li>
+            <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
+            <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
+            <li>Awarded Silver Medal in 200m race at district-level "Khel Kud Pratiyogita," Bihar (2009).</li>
+          </ul>
+        </div>
+        <div class="section">
+          <div class="section-title">Skills</div>
+          <div class="skills-list">
+            <ul>
+              <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI,
+                MLOps,
+                Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI,
+                AutoGen, Bee</li>
+              <li><strong>Machine Learning:</strong> Supervised (Regression, Decision Trees, RF, XGBoost), Unsupervised,
+                NLP,
+                Time Series, Model Development & Deployment, Vector DB</li>
+              <li><strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM Watson</li>
+              <li><strong>Programming:</strong> Python, SQL</li>
+              <li><strong>Data Engineering:</strong> Azure Data Factory, Databricks, Synapse Analytics, AWS S3, Glue,
+                SageMaker,
+                BigQuery, Pandas, NumPy</li>
+              <li><strong>Databases:</strong> Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
+              <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
+              <li><strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD Pipelines</li>
+              <li><strong>Domains:</strong> Banking, Environmental, Social Media, Waste Management</li>
+            </ul>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-title">Core Competencies</div>
+          <ul>
+            <li>Project Management and Deployment</li>
+            <li>Data Strategy and Management</li>
+            <li>Business Strategy & Execution</li>
+            <li>Business and Data Analytics</li>
+            <li>Analytics & AI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
   <button id="downloadButton" onclick="downloadPDF()">Download as PDF</button>
   <button id="downloadWordButton" onclick="downloadWord()">Download as Word</button>
@@ -423,25 +404,15 @@
       });
 
       const url = URL.createObjectURL(blob);
-
-      // Specify file name
       const filename = 'Chandan_Kumar_Resume.doc';
-
-      // Create download link element
       const downloadLink = document.createElement("a");
-
       document.body.appendChild(downloadLink);
 
       if (navigator.msSaveOrOpenBlob) {
         navigator.msSaveOrOpenBlob(blob, filename);
       } else {
-        // Create a link to the file
         downloadLink.href = url;
-
-        // Setting the file name
         downloadLink.download = filename;
-
-        //triggering the function
         downloadLink.click();
       }
 

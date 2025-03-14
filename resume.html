@@ -4,226 +4,163 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chandan Kumar Resume</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* General Styles */
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0f4f8;
+      background: #f5f5f5;
       color: #333;
-      font-size: 12px;
-      line-height: 1.4;
+      font-size: 9px; /* Reduced font size */
+      line-height: 1.2; /* Adjusted line height */
     }
-
     .container {
-      width: 210mm; /* A4 width */
-      min-height: 297mm; /* A4 height */
-      margin: 10mm auto;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto; /* Reduced margin */
       background: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 5mm; /* Reduced padding */
+      border-radius: 4px;
       display: flex;
       flex-direction: column;
-      padding: 20mm;
     }
-
-    /* Header Styles */
     header {
-      background: #343a40;
-      color: #fff;
-      padding: 20px;
       text-align: center;
-      border-radius: 8px;
-      margin-bottom: 20px;
+      background: linear-gradient(135deg,#2c5282,#2b6cb0);
+      color: #fff;
+      padding: 6px; /* Reduced padding */
+      border-radius: 6px;
+      margin-bottom: 8px; /* Reduced margin */
+      box-shadow: 0 2px 4px rgba(0,0,0,.1);
+      border-bottom: 1px solid #fff;
     }
-
     header h1 {
-      font-size: 2.5em;
-      font-weight: 700;
       margin: 0;
-      letter-spacing: 1.2px;
+      font-size: 16px; /* Reduced font size */
+      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.8px; /* Reduced letter spacing */
     }
-
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 10px;
-      gap: 15px;
-      font-size: 0.9em;
+      margin-top: 4px; /* Reduced margin */
+      gap: 4px; /* Reduced gap */
+      font-size: 9px; /* Reduced font size */
     }
-
     .contact-item {
       display: flex;
       align-items: center;
-      margin: 5px;
+      margin: 1px 2px; /* Reduced margin */
     }
-
-    .contact-item a,
-    .contact-item span {
-      color: #adb5bd;
+    .contact-item a, .contact-item span {
+      color: #e2e8f0;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
-
     .contact-item a:hover {
       text-decoration: underline;
-      color: #fff;
     }
-
     .icon {
-      margin-right: 8px;
-      font-size: 1.1em;
+      margin-right: 3px; /* Reduced margin */
+      font-size: 10px; /* Reduced font size */
     }
-
-    /* Content Styles */
     .content {
       display: flex;
-      gap: 30px;
+      gap: 8px; /* Reduced gap */
     }
-
     .left-column {
       flex: 6;
+      min-width: 0;
     }
-
+    .left-column > div {
+      margin-bottom: 0 !important;
+      padding: 0 !important;
+    }
     .right-column {
       flex: 4;
+      min-width: 0;
     }
-
+    .right-column > div {
+      margin-bottom: 0 !important;
+      padding: 0 !important;
+    }
     .section {
-      margin-bottom: 25px;
-      padding: 15px;
-      border-radius: 6px;
+      margin-bottom: 0px;
+      padding: 4px; /* Reduced padding */
+      border-radius: 4px;
       background: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     }
-
     .section-title {
-      font-size: 1.3em;
-      font-weight: 600;
-      margin-bottom: 10px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #6c757d;
-      color: #343a40;
+      font-size: 11px; /* Reduced font size */
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      margin-bottom: 1px; /* Reduced margin */
+      border-bottom: 1px solid #333;
+      color: #2c5282;
     }
-
-    .job,
-    .education-item,
-    .project {
-      margin-bottom: 12px;
+    .job, .education-item, .project {
+      margin-bottom: 3px; /* Reduced margin */
     }
-
-    .job-title,
-    .school-name,
-    .project-title {
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #495057;
+    .job-title, .school-name, .project-title {
+      font-weight: 700;
+      font-size: 10px; /* Reduced font size */
       display: inline-block;
     }
-
-    .job-period,
-    .education-period {
+    .job-period, .education-period {
       float: right;
-      font-size: 0.9em;
-      color: #6c757d;
+      font-size: 9px; /* Reduced font size */
     }
-
     ul {
-      padding-left: 25px;
-      margin: 8px 0;
-      list-style-type: square;
+      padding-left: 12px; /* Reduced padding */
+      margin: 1px 0; /* Reduced margin */
     }
-
     li {
-      font-size: 0.95em;
-      margin-bottom: 6px;
-      color: #343a40;
+      font-size: 10px; /* Reduced font size */
+      margin-bottom: 1px; /* Reduced margin */
     }
-
-    p {
-      font-size: 0.95em;
-      margin: 8px 0;
-      color: #343a40;
-    }
-
-    /* Skills Section */
     .skills-list {
-      font-size: 0.95em;
-      margin: 8px 0;
+      font-size: 10px; /* Reduced font size */
+      margin: 1px 0; /* Reduced margin */
     }
-
-    .skills-list ul {
-      padding-left: 0;
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 5px;
+    .skills-list span {
+      margin-right: 3px; /* Reduced margin */
     }
-
-    .skills-list li {
-      margin-bottom: 5px;
-    }
-
-    .skills-list strong {
-      font-weight: 500;
-      color: #495057;
-    }
-
-    /* Core Competencies */
     .core-competencies ul {
-      list-style: none;
-      padding-left: 0;
+      padding-left: 12px; /* Reduced padding */
+      margin: 0;
     }
-
-    .core-competencies li {
-      margin-bottom: 8px;
-      font-size: 0.95em;
-      color: #343a40;
+    p {
+      font-size: 10px; /* Reduced font size */
+      margin: 1px 0; /* Reduced margin */
     }
-
-    /* Download Button */
-    #downloadButton {
-      display: block;
-      width: 150px;
-      margin: 20px auto;
-      padding: 10px 15px;
-      background: #343a40;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1em;
-      border: none;
-      transition: background 0.3s ease;
-    }
-
-    #downloadButton:hover {
-      background: #495057;
-    }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-      .container {
-        width: 95%;
-        margin: 5mm auto;
-        padding: 10mm;
-      }
-
+    @media(max-width:768px) {
       .content {
         flex-direction: column;
-        gap: 20px;
       }
-
-      .left-column,
-      .right-column {
+      .left-column, .right-column {
         width: 100%;
       }
+    }
+    #downloadButton {
+      display: block;
+      width: 100px; /* Reduced width */
+      margin: 3px auto; /* Reduced margin */
+      padding: 4px; /* Reduced padding */
+      background: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 10px; /* Reduced font size */
+      border: none;
+    }
+    #downloadButton:hover {
+      background: #555;
     }
   </style>
 </head>
@@ -232,18 +169,9 @@
     <header>
       <h1>Chandan Kumar</h1>
       <div class="contact-info">
-        <div class="contact-item">
-          <span class="icon"><i class="fas fa-envelope"></i></span>
-          <a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a>
-        </div>
-        <div class="contact-item">
-          <span class="icon"><i class="fas fa-phone"></i></span>
-          <span>+91-9199000200</span>
-        </div>
-        <div class="contact-item">
-          <span class="icon"><i class="fab fa-linkedin-in"></i></span>
-          <a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/chandaniit</a>
-        </div>
+        <div class="contact-item"><span class="icon"><i class="fas fa-envelope"></i></span><a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a></div>
+        <div class="contact-item"><span class="icon"><i class="fas fa-phone"></i></span><span>+91-9199000200</span></div>
+        <div class="contact-item"><span class="icon"><i class="fab fa-linkedin-in"></i></span><a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/chandaniit</a></div>
       </div>
     </header>
     <div class="content">
@@ -385,8 +313,6 @@
     </div>
   </div>
   <button id="downloadButton" onclick="downloadPDF()">Download as PDF</button>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;

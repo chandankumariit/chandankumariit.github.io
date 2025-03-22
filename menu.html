@@ -1,182 +1,351 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<title>Marriage BioData - Chandan Kumar</title>
-<style>
-  body {
-    font-family: 'Georgia', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #800000; /* Maroon background */
-    color: #ffffff; /* White text */
-    background-image: url('https://www.transparenttextures.com/patterns/arabesque.png'); /* Gold pattern overlay */
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  .container {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: rgba(128, 0, 0, 0.9); /* Semi-transparent maroon */
-    padding: 30px;
-    border-radius: 15px;
-    border: 3px solid #ffd700; /* Gold border */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  }
-  .header {
-    text-align: center;
-    padding: 20px;
-    background-image: url('https://i.imgur.com/your-ganesha-image.jpg'); /* Replace with the URL of the attached Ganesha image */
-    background-size: cover;
-    background-position: center;
-    height: 200px; /* Adjust height to fit the Ganesha design */
-    border-bottom: 3px solid #ffd700; /* Gold border */
-    margin: -30px -30px 20px;
-    position: relative;
-  }
-  .img-container {
-    text-align: center;
-    margin: 20px 0;
-    position: relative;
-  }
-  .img-container img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    border: 5px solid #ffd700; /* Gold border */
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-  }
-  .name-header {
-    text-align: center;
-    font-size: 2.5em;
-    color: #ffd700; /* Gold text */
-    text-shadow: 2px 2px 4px #000000;
-    margin: 10px 0;
-    font-family: 'Times New Roman', serif;
-    letter-spacing: 2px;
-  }
-  section {
-    margin-bottom: 25px;
-    padding: 15px;
-    border-bottom: 2px solid #ffd700; /* Gold divider */
-  }
-  section h2 {
-    color: #ffd700; /* Gold header */
-    font-size: 1.8em;
-    text-align: center;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1px solid #ffd700;
-    padding-bottom: 5px;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  ul li {
-    margin-bottom: 12px;
-    font-size: 1.1em;
-    color: #ffffff; /* White text */
-  }
-  ul li strong {
-    display: inline-block;
-    width: 180px;
-    color: #ffd700; /* Gold labels */
-    font-weight: normal;
-  }
-  ul li a {
-    color: #ffd700; /* Gold links */
-    text-decoration: none;
-  }
-  #footer {
-    text-align: center;
-    padding: 15px;
-    color: #ffffff; /* White text */
-    font-size: 0.9em;
-    margin-top: 20px;
-    border-top: 2px solid #ffd700; /* Gold divider */
-  }
-  #footer a {
-    color: #ffd700; /* Gold link */
-    text-decoration: none;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marriage BioData - Chandan Kumar</title>
+  <style>
+    :root {
+      --primary-color: #8b0000;
+      --accent-color: #ffd700;
+      --light-accent: #fff1b8;
+      --text-color: #333;
+      --light-text: #ffffff;
+    }
+    
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f1e5;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: #fff;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, var(--primary-color), #5a0000);
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('/api/placeholder/400/200');
+      background-size: 120px;
+      background-position: center;
+      opacity: 0.1;
+    }
+    
+    .decoration {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 50px;
+      height: 50px;
+    }
+    
+    .decoration.right {
+      left: auto;
+      right: 15px;
+    }
+    
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #fff;
+      position: relative;
+      margin-top: -60px;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .img-container {
+      margin-top: -60px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .img-container img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .name-header {
+      font-size: 2.2em;
+      color: var(--primary-color);
+      font-weight: bold;
+      margin: 20px 0 5px;
+      text-align: center;
+    }
+    
+    .subtitle {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    .quick-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .info-pill {
+      background-color: var(--light-accent);
+      color: var(--primary-color);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    section {
+      padding: 25px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    section:last-child {
+      border-bottom: none;
+    }
+    
+    section h2 {
+      color: var(--primary-color);
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent-color);
+      position: relative;
+    }
+    
+    section h2::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background-color: var(--primary-color);
+    }
+    
+    .detail-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .detail-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: baseline;
+      font-size: 1em;
+    }
+    
+    .detail-list li strong {
+      color: var(--primary-color);
+      width: 150px;
+      margin-right: 10px;
+      font-weight: 600;
+    }
+    
+    .full-width-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .expectations-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #555;
+    }
+    
+    .expectations-list li {
+      margin-bottom: 10px;
+      display: list-item;
+    }
+    
+    .contact-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .contact-button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+    
+    .contact-button:hover {
+      background-color: #6b0000;
+    }
+    
+    #footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 0.8em;
+      border-top: 1px solid #eee;
+    }
+    
+    @media (max-width: 600px) {
+      .detail-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .quick-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="container">
   <div class="header">
-    <!-- Ganesha design is set as the background image -->
+    <!-- Decorative elements that suggest traditional design -->
   </div>
 
-  <div class="img-container">
-    <img src="ck.jpg" alt="Chandan Kumar" />
-  </div>
+  <div class="profile-section">
+    <div class="img-container">
+      <img src="/api/placeholder/400/400" alt="Chandan Kumar" />
+    </div>
 
-  <div class="name-header">
-    CHANDAN KUMAR
+    <h1 class="name-header">Chandan Kumar</h1>
+    <p class="subtitle">B.Tech IIT Dhanbad | Data Scientist at IBM</p>
+    
+    <div class="quick-info">
+      <div class="info-pill">Age: 28</div>
+      <div class="info-pill">Height: 5'8" (173 cm)</div>
+      <div class="info-pill">Hindu, Yadav</div>
+      <div class="info-pill">Non-Manglik</div>
+    </div>
   </div>
 
   <section>
     <h2>Personal Details</h2>
-    <ul>
-      <li><strong>Name:</strong> Chandan Kumar</li>
-      <li><strong>Date of Birth:</strong> 15/05/1996</li>
+    <ul class="detail-list">
+      <li><strong>Date of Birth:</strong> May 15, 1996</li>
       <li><strong>Place of Birth:</strong> Gaya, Bihar</li>
       <li><strong>Complexion:</strong> Fair</li>
       <li><strong>Height:</strong> 5'8" (173 cm)</li>
       <li><strong>Religion:</strong> Hindu</li>
-      <li><strong>Caste:</strong> Yadav</li>
-      <li><strong>Sub-caste:</strong> Krishnaut</li>
-      <li><strong>Manglik:</strong> No</li>
+      <li><strong>Caste:</strong> Yadav (Krishnaut)</li>
+      <li><strong>Manglik Status:</strong> Non-Manglik</li>
       <li><strong>Education:</strong> B.Tech from IIT Dhanbad</li>
       <li><strong>Occupation:</strong> Data Scientist at IBM</li>
     </ul>
   </section>
 
   <section>
-    <h2>Family Details</h2>
-    <ul>
+    <h2>Family Background</h2>
+    <ul class="detail-list">
       <li><strong>Father's Name:</strong> Ajay Kumar Singh</li>
+      <li><strong>Occupation:</strong> [Add father's profession]</li>
       <li><strong>Mother's Name:</strong> Shyama Devi</li>
+      <li><strong>Occupation:</strong> [Add mother's profession]</li>
       <li><strong>Siblings:</strong> 3 brothers, 1 sister</li>
-      <li><strong>Family Background:</strong> Upper-class with traditional values</li>
+      <li><strong>Family Type:</strong> Upper-class with traditional values</li>
+      <li><strong>Family Location:</strong> Gaya, Bihar</li>
     </ul>
   </section>
 
   <section>
-    <h2>Contact Details</h2>
-    <ul>
-      <li><strong>Contact Number:</strong> +91-9199000200</li>
-      <li><strong>Email:</strong> <a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a></li>
-      <li><strong>Address:</strong> Gaya, Bihar, India</li>
+    <h2>Educational & Professional Background</h2>
+    <ul class="detail-list full-width-list">
+      <li><strong>Highest Degree:</strong> Bachelor of Technology (B.Tech)</li>
+      <li><strong>Institute:</strong> Indian Institute of Technology (IIT), Dhanbad</li>
+      <li><strong>Current Company:</strong> IBM</li>
+      <li><strong>Designation:</strong> Data Scientist</li>
+      <li><strong>Work Experience:</strong> [Add years of experience]</li>
+      <li><strong>Annual Income:</strong> [Add income range if comfortable sharing]</li>
     </ul>
   </section>
 
   <section>
-    <h2>Hobbies & Interests</h2>
-    <ul>
+    <h2>Lifestyle & Interests</h2>
+    <ul class="detail-list full-width-list">
       <li><strong>Hobbies:</strong> Reading, Traveling, Cooking</li>
       <li><strong>Interests:</strong> Technology, Sports, Music</li>
+      <li><strong>Languages Known:</strong> Hindi, English [Add more if applicable]</li>
+      <li><strong>Diet Preference:</strong> [Add dietary preferences]</li>
     </ul>
   </section>
 
   <section>
-    <h2>Expectations</h2>
-    <ul>
-      <li>Looking for a partner who is well-educated, understanding, and respects family values.</li>
-      <li>Preferably someone who is career-oriented and has a balance between professional and personal life.</li>
+    <h2>Partner Preferences</h2>
+    <ul class="expectations-list">
+      <li>A well-educated partner who values both career and family</li>
+      <li>Someone who understands and respects traditional family values</li>
+      <li>A balance between professional aspirations and personal life</li>
+      <li>Preferably from a similar educational background</li>
+      <li>Age range: [Add preferred age range]</li>
+      <li>Height: [Add preferred height range if applicable]</li>
+      <li>Education: [Add educational preferences]</li>
     </ul>
   </section>
-</div>
 
-<div id="footer">
-  Page generated on <span id="date"></span>, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+  <section>
+    <h2>Contact Information</h2>
+    <div class="contact-buttons">
+      <a href="tel:+919199000200" class="contact-button">Call: +91-9199000200</a>
+      <a href="mailto:ckism.iit@gmail.com" class="contact-button">Email: ckism.iit@gmail.com</a>
+    </div>
+    <ul class="detail-list full-width-list" style="margin-top: 20px;">
+      <li><strong>Address:</strong> Gaya, Bihar, India</li>
+      <li><strong>Best time to contact:</strong> [Add preferred contact hours]</li>
+    </ul>
+  </section>
+
+  <div id="footer">
+    <p>This biodata was last updated on <span id="date"></span></p>
+  </div>
 </div>
 
 <script>
-  document.getElementById('date').textContent = new Date().toLocaleDateString();
+  document.getElementById('date').textContent = new Date().toLocaleDateString('en-IN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
 </script>
 </body>
 </html>

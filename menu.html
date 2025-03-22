@@ -10,7 +10,7 @@
       --accent-color: #D4A373; /* Light Gold/Beige */
       --light-accent: #F5E7D5; /* Very Light Beige */
       --text-color: #FFFFFF; /* White text for better visibility on maroon background */
-      --bg-color: #8b0000; /* Maroon Background */
+       --bg-color: #6b2a2a; /* Ganesh Background Color */
       --section-bg-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for sections */
     }
 
@@ -21,6 +21,9 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
+      display: flex; /* Added to potentially help with layout issues */
+      flex-direction: column; /* Stack content vertically */
+      min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
     }
 
     .container {
@@ -245,7 +248,7 @@
 <div class="container">
   <div class="header">
     <div class="decoration left">
-      <img src="https://pplx-res.cloudinary.com/image/upload/v1742664401/user_uploads/SQptYFLWxkUduoJ/image.jpg" alt="Ganesh" style="width: 100%; height: auto;">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1742664717/user_uploads/EQYuUgJmEWkyznw/image.jpg" alt="Ganesh" style="width: 100%; height: auto;">
     </div>
     <h1>Chandan Kumar</h1>
     <p>Marriage Biodata</p>

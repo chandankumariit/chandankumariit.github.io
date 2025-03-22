@@ -39,7 +39,7 @@
     
     .header {
       background: linear-gradient(135deg, var(--primary-color), #5a0000);
-      padding: 40px 20px;
+      padding: 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -59,48 +59,21 @@
       opacity: 0.1;
     }
     
-    .decoration {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      width: 50px;
-      height: 50px;
-    }
-    
-    .decoration.right {
-      left: auto;
-      right: 15px;
-    }
-    
     .profile-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      padding: 15px 20px;
       background-color: rgba(128, 0, 0, 0.9);
       position: relative;
       border-radius: 10px 10px 0 0;
-    }
-    
-    .img-container {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .img-container img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--accent-color);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
     
     .name-header {
       font-size: 2.2em;
       color: var(--accent-color);
       font-weight: bold;
-      margin: 20px 0 5px;
+      margin: 10px 0 5px;
       text-align: center;
     }
     
@@ -249,10 +222,6 @@
   </div>
 
   <div class="profile-section">
-    <div class="img-container">
-      <img src="/api/placeholder/400/400" alt="Chandan Kumar" />
-    </div>
-
     <h1 class="name-header">Chandan Kumar</h1>
     <p class="subtitle">B.Tech IIT Dhanbad | Data Scientist at IBM</p>
     

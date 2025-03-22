@@ -1,286 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Doe - Data Scientist</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* Header Styles */
-    header {
-      background: linear-gradient(135deg, #3498db, #2c3e50);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-      margin-bottom: 30px;
-    }
-
-    header h1 {
-      font-size: 3.5em;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    header p {
-      font-size: 1.4em;
-      color: #ecf0f1;
-    }
-
-    /* Container for Content */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-      background: white;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-
-    /* Section Styling */
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section-title {
-      font-size: 2.2em;
-      color: #2c3e50;
-      border-bottom: 3px solid #3498db;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    /* Grid Layout for Projects and Skills */
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    /* Card Styling */
-    .card {
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      font-size: 1.6em;
-      color: #3498db;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 1.1em;
-      line-height: 1.4;
-    }
-
-    .card ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .card ul li {
-      margin-bottom: 8px;
-      font-size: 1.1em;
-    }
-
-    /* Footer Styles */
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: #2c3e50;
-      color: white;
-      margin-top: 30px;
-    }
-
-    footer p {
-      font-size: 1.1em;
-    }
-
-    footer a {
-      color: #3498db;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover {
-      color: #ecf0f1;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.8em;
-      }
-
-      header p {
-        font-size: 1.2em;
-      }
-
-      .container {
-        padding: 10px;
-      }
-
-      .section-title {
-        font-size: 1.8em;
-      }
-    }
-  </style>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Marriage BioData - Chandan Kumar</title>
+<style>
+  body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #800000; /* Maroon background */
+    color: #333;
+  }
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff8e1; /* Light cream background for contrast */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #ffd700; /* Gold border for elegance */
+  }
+  header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #ffd700, #ff9800); /* Gold to orange gradient */
+    border-radius: 10px 10px 0 0;
+    margin: -30px -30px 20px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #800000; /* Maroon text */
+    text-shadow: 1px 1px 2px #fff;
+  }
+  .ganesh-img {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .ganesh-img img {
+    width: 150px;
+    height: auto;
+  }
+  .img-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .img-container img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 5px solid #ffd700; /* Gold border for photo */
+  }
+  section {
+    margin-bottom: 25px;
+  }
+  section h2 {
+    background-color: #800000; /* Maroon header */
+    color: white;
+    padding: 12px;
+    margin: 0 -30px 15px;
+    font-size: 1.8em;
+    border-radius: 5px;
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul li {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+  }
+  ul li strong {
+    display: inline-block;
+    width: 180px;
+    color: #800000; /* Maroon labels */
+  }
+  #footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #800000;
+    color: white;
+    border-radius: 0 0 10px 10px;
+    margin: 20px -30px -30px;
+  }
+  #footer a {
+    color: #ffd700; /* Gold link */
+    text-decoration: none;
+  }
+</style>
 </head>
 <body>
-
-  <!-- Header Section -->
+<div class="container">
   <header>
-    <h1>John Doe</h1>
-    <p>Passionate Data Scientist | AI Enthusiast | Problem Solver</p>
+    <h1>Marriage BioData</h1>
   </header>
 
-  <!-- Main Content Container -->
-  <div class="container">
-
-    <!-- About Me Section -->
-    <section class="section">
-      <h2 class="section-title">About Me</h2>
-      <p>
-        A highly motivated and skilled data scientist with a strong background in machine learning, statistical analysis, and data visualization. Proven ability to develop and implement data-driven solutions that drive business impact. Eager to apply my expertise and passion for data to solve complex problems and contribute to innovative projects.
-      </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section">
-      <h2 class="section-title">Skills</h2>
-      <div class="grid-container">
-        <div class="card">
-          <h3>Programming Languages</h3>
-          <ul>
-            <li>Python</li>
-            <li>R</li>
-            <li>SQL</li>
-            <li>Java</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Machine Learning</h3>
-          <ul>
-            <li>Regression</li>
-            <li>Classification</li>
-            <li>Clustering</li>
-            <li>Deep Learning</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Data Visualization</h3>
-          <ul>
-            <li>Tableau</li>
-            <li>Power BI</li>
-            <li>Matplotlib</li>
-            <li>Seaborn</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Cloud Technologies</h3>
-          <ul>
-            <li>AWS</li>
-            <li>Azure</li>
-            <li>Google Cloud</li>
-            <li>Docker</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section">
-      <h2 class="section-title">Projects</h2>
-      <div class="grid-container">
-        <div class="card">
-          <h3>Customer Churn Prediction</h3>
-          <p>
-            Developed a machine learning model to predict customer churn for a telecommunications company, resulting in a 15% reduction in churn rate.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Sales Forecasting</h3>
-          <p>
-            Built a time series model to forecast sales for a retail company, improving forecast accuracy by 20%.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Image Recognition</h3>
-          <p>
-            Implemented a deep learning model for image recognition, achieving 95% accuracy on a benchmark dataset.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="section">
-      <h2 class="section-title">Experience</h2>
-      <div class="card">
-        <h3>Data Scientist - Tech Solutions Inc.</h3>
-        <p>
-          Developed and implemented machine learning models for various business applications. Conducted statistical analysis and data visualization to identify trends and insights. Collaborated with cross-functional teams to deliver data-driven solutions.
-        </p>
-        <p><strong>Dates:</strong> June 2018 - Present</p>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="section">
-      <h2 class="section-title">Education</h2>
-      <div class="card">
-        <h3>Master of Science in Data Science - University of California, Berkeley</h3>
-        <p>GPA: 3.9/4.0</p>
-        <p><strong>Dates:</strong> August 2016 - May 2018</p>
-      </div>
-      <div class="card">
-        <h3>Bachelor of Science in Computer Science - Stanford University</h3>
-        <p>GPA: 3.8/4.0</p>
-        <p><strong>Dates:</strong> September 2012 - June 2016</p>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section">
-      <h2 class="section-title">Contact</h2>
-      <p>
-        Feel free to reach out to me!
-      </p>
-      <p>
-        <i class="fas fa-envelope"></i> Email: john.doe@example.com
-      </p>
-      <p>
-        <i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a>
-      </p>
-      <p>
-        <i class="fab fa-github"></i> GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a>
-      </p>
-    </section>
-
+  <div class="ganesh-img">
+    <img src="https://i.imgur.com/5eQ8g7v.png" alt="Lord Ganesha" /> <!-- Ganesha image URL -->
   </div>
 
-  <!-- Footer Section -->
-  <footer>
-    <p>© 2025 John Doe | Designed with <i class="fas fa-heart"></i></p>
-  </footer>
+  <div class="img-container">
+    <img src="ck.jpg" alt="Chandan Kumar" />
+  </div>
 
+  <section>
+    <h2>Personal Details</h2>
+    <ul>
+      <li><strong>Name:</strong> Chandan Kumar</li>
+      <li><strong>Date of Birth:</strong> 15/05/1996</li>
+      <li><strong>Place of Birth:</strong> Gaya, Bihar</li>
+      <li><strong>Complexion:</strong> Fair</li>
+      <li><strong>Height:</strong> 5'8" (173 cm)</li>
+      <li><strong>Religion:</strong> Hindu</li>
+      <li><strong>Caste:</strong> Yadav</li>
+      <li><strong>Sub-caste:</strong> Krishnaut</li>
+      <li><strong>Manglik:</strong> No</li>
+      <li><strong>Education:</strong> B.Tech from IIT Dhanbad</li>
+      <li><strong>Occupation:</strong> Data Scientist at IBM</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Family Details</h2>
+    <ul>
+      <li><strong>Father's Name:</strong> Ajay Kumar Singh</li>
+      <li><strong>Mother's Name:</strong> Shyama Devi</li>
+      <li><strong>Siblings:</strong> 3 brothers, 1 sister</li>
+      <li><strong>Family Background:</strong> Upper-class with traditional values</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact Details</h2>
+    <ul>
+      <li><strong>Contact Number:</strong> +91-9199000200</li>
+      <li><strong>Email:</strong> <a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a></li>
+      <li><strong>Address:</strong> Gaya, Bihar, India</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Hobbies & Interests</h2>
+    <ul>
+      <li><strong>Hobbies:</strong> Reading, Traveling, Cooking</li>
+      <li><strong>Interests:</strong> Technology, Sports, Music</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Expectations</h2>
+    <ul>
+      <li>Looking for a partner who is well-educated, understanding, and respects family values.</li>
+      <li>Preferably someone who is career-oriented and has a balance between professional and personal life.</li>
+    </ul>
+  </section>
+</div>
+
+<div id="footer">
+  Page generated on <span id="date"></span>, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+
+<script>
+  document.getElementById('date').textContent = new Date().toLocaleDateString();
+</script>
 </body>
 </html>

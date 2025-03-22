@@ -6,11 +6,12 @@
   <title>Marriage BioData - Chandan Kumar</title>
   <style>
     :root {
-      --primary-color: #800000; /* Maroon */
+      --primary-color: #8b0000; /* Maroon */
       --accent-color: #D4A373; /* Light Gold/Beige */
       --light-accent: #F5E7D5; /* Very Light Beige */
-      --text-color: #444;
-      --bg-color: #F8E8D8; /* Light Beige Background */
+      --text-color: #FFFFFF; /* White text for better visibility on maroon background */
+      --bg-color: #8b0000; /* Maroon Background */
+      --section-bg-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for sections */
     }
 
     body {
@@ -26,8 +27,8 @@
       width: 90%;
       max-width: 800px;
       margin: 30px auto;
-      background-color: #fff;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      background-color: var(--section-bg-color); /* Use transparent white */
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); /* Darker shadow for contrast */
       border-radius: 10px;
       overflow: hidden;
       position: relative;
@@ -39,7 +40,7 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-      color: var(--light-text);
+      color: var(--text-color);
     }
 
     .header h1 {
@@ -53,7 +54,7 @@
       margin-top: 10px;
     }
 
-    .decoration {
+   .decoration {
       position: absolute;
       width: 60px;
       height: 60px;
@@ -74,7 +75,7 @@
       flex-direction: column;
       align-items: center;
       padding: 20px;
-      background-color: #fff;
+      background-color: var(--section-bg-color); /* Use transparent white */
       position: relative;
       margin-top: -60px;
       border-radius: 10px 10px 0 0;
@@ -98,7 +99,7 @@
 
     .name-header {
       font-size: 2.2em;
-      color: var(--primary-color);
+      color: var(--accent-color); /* Gold for name */
       font-weight: bold;
       margin: 20px 0 5px;
       text-align: center;
@@ -106,7 +107,7 @@
 
     .subtitle {
       font-size: 1.1em;
-      color: #666;
+      color: #ddd; /* Lighter grey for subtitle */
       margin-bottom: 20px;
     }
 
@@ -131,7 +132,7 @@
 
     section {
       padding: 25px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid rgba(255,255,255,0.2); /* Lighter border */
     }
 
     section:last-child {
@@ -139,7 +140,7 @@
     }
 
     section h2 {
-      color: var(--primary-color);
+      color: var(--accent-color); /* Gold for headings */
       font-size: 1.5em;
       margin-bottom: 20px;
       padding-bottom: 8px;
@@ -154,7 +155,7 @@
       left: 0;
       width: 60px;
       height: 2px;
-      background-color: var(--primary-color);
+      background-color: var(--accent-color);
     }
 
     .detail-list {
@@ -173,7 +174,7 @@
     }
 
     .detail-list li strong {
-      color: var(--primary-color);
+      color: var(--accent-color); /* Gold for labels */
       width: 150px;
       margin-right: 10px;
       font-weight: 600;
@@ -186,7 +187,7 @@
     .expectations-list {
       list-style-type: disc;
       padding-left: 20px;
-      color: #555;
+      color: #ddd; /* Lighter color for list */
     }
 
     .expectations-list li {
@@ -201,8 +202,8 @@
     }
 
     .contact-button {
-      background-color: var(--primary-color);
-      color: white;
+      background-color: var(--accent-color); /* Gold for buttons */
+      color: var(--primary-color); /* Maroon text on button */
       border: none;
       padding: 10px 15px;
       border-radius: 5px;
@@ -216,15 +217,15 @@
     }
 
     .contact-button:hover {
-      background-color: #6b0000;
+      background-color: #ffd700; /* Slightly brighter gold on hover */
     }
 
     #footer {
       text-align: center;
       padding: 20px;
-      color: #888;
+      color: #aaa; /* Lighter grey for footer text */
       font-size: 0.8em;
-      border-top: 1px solid #eee;
+      border-top: 1px solid rgba(255,255,255,0.2); /* Lighter border */
     }
 
     @media (max-width: 600px) {
@@ -244,7 +245,7 @@
 <div class="container">
   <div class="header">
     <div class="decoration left">
-      <img src="https://pngimg.com/uploads/ganesh/ganesh_PNG47.png" alt="Ganesh" style="width: 100%; height: auto;">
+      <img src="https://pplx-res.cloudinary.com/image/upload/v1742664401/user_uploads/SQptYFLWxkUduoJ/image.jpg" alt="Ganesh" style="width: 100%; height: auto;">
     </div>
     <h1>Chandan Kumar</h1>
     <p>Marriage Biodata</p>
@@ -341,7 +342,7 @@
 
   <div id="footer">
     <p>This biodata was last updated on <span id="date"></span></p>
-     <button id="downloadButton">Download as PDF</button>
+    <button id="downloadButton">Download as PDF</button>
   </div>
 </div>
 
@@ -351,7 +352,7 @@
     month: 'long',
     day: 'numeric'
   });
-   document.getElementById('downloadButton').addEventListener('click', function() {
+  document.getElementById('downloadButton').addEventListener('click', function() {
       // Trigger the download
       downloadBioData();
     });

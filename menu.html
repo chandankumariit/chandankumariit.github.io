@@ -18,10 +18,14 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #500000;
-      color: var(--text-color);
+      background-color: #f0f0f0; /* Light grey background for the entire body */
+      color: #333; /* Darker text color for better readability on light background */
       line-height: 1.4;
-      font-size: 12px; /* Reduced font size */
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center the content horizontally */
+      min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
     }
 
     .container {
@@ -245,48 +249,15 @@
       margin-right: 5px;
     }
 
-    .download-button {
-      position: absolute;
-      bottom: 10px; /* Adjusted position */
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(to right, var(--accent-color), #e6ba00);
-      color: var(--primary-color);
-      border: none;
-      padding: 8px 20px; /* Reduced padding */
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 14px; /* Reduced font size */
-      font-weight: 600;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-      display: flex;
-      align-items: center;
-    }
-
-    .download-button i {
-      margin-right: 5px;
-    }
-
-    .contact-button:hover, .download-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-      background-color: #ffdf4d;
-    }
-
-    .download-button:hover {
-      transform: translateX(-50%) translateY(-2px);
-    }
-
     #footer {
       text-align: center;
-      padding: 8px; /* Reduced padding */
+      padding: 8px;
       color: #ddd;
-      font-size: 10px; /* Reduced font size */
+      font-size: 10px;
       border-top: 1px solid rgba(255, 215, 0, 0.2);
       background-color: rgba(0, 0, 0, 0.2);
-      position: absolute;
-      bottom: 10px; /* Adjusted to fit above download button */
       width: 100%;
+      box-sizing: border-box;
     }
 
     .section-icon {
@@ -298,13 +269,44 @@
       position: absolute;
       color: var(--accent-color);
       opacity: 0.2;
-      font-size: 30px; /* Reduced size */
+      font-size: 30px;
     }
 
     .ornament-tl { top: 10px; left: 10px; }
     .ornament-tr { top: 10px; right: 10px; }
     .ornament-bl { bottom: 50px; left: 10px; }
     .ornament-br { bottom: 50px; right: 10px; }
+
+    /* Styles for the download button outside the container */
+    .download-container {
+      text-align: center;
+      margin-top: 20px; /* Add some space between the container and the button */
+    }
+
+    .download-button {
+      background: linear-gradient(to right, var(--accent-color), #e6ba00);
+      color: var(--primary-color);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      text-decoration: none; /* Remove underline from the link */
+    }
+
+    .download-button i {
+      margin-right: 5px;
+    }
+
+    .download-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      background-color: #ffdf4d;
+    }
 
     @media (max-width: 600px) {
       .detail-list { grid-template-columns: 1fr; }
@@ -367,7 +369,7 @@
 
   <section>
     <h2><i class="fas fa-graduation-cap section-icon"></i>Education & Career</h2>
-     <ul class="education-career-container">
+    <ul class="education-career-container">
       <li class="education-career-item"><strong>Degree:</strong> B.Tech, IIT Dhanbad</li>
       <li class="education-career-item"><strong>Company:</strong> IBM, Data Scientist</li>
       <li class="education-career-item"><strong>Experience:</strong> 6.5 Years</li>
@@ -376,7 +378,7 @@
 
   <section>
     <h2><i class="fas fa-heart section-icon"></i>Lifestyle</h2>
-     <ul class="lifestyle-container">
+    <ul class="lifestyle-container">
       <li class="lifestyle-item"><strong>Hobbies:</strong> Reading, Traveling, Cooking</li>
       <li class="lifestyle-item"><strong>Languages:</strong> Hindi, English</li>
       <li class="lifestyle-item"><strong>Diet:</strong> Vegetarian</li>
@@ -404,7 +406,11 @@
     <div class="ornament ornament-bl"><i class="fas fa-om"></i></div>
     <div class="ornament ornament-br"><i class="fas fa-om"></i></div>
   </div>
-  <button class="download-button" onclick="downloadPDF()"><i class="fas fa-download"></i> Download as PDF</button>
+</div>
+
+<!-- Download button outside the container -->
+<div class="download-container">
+  <a href="#" class="download-button" onclick="downloadPDF()"><i class="fas fa-download"></i> Download as PDF</a>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
@@ -417,8 +423,8 @@
 
   function downloadPDF() {
     const element = document.querySelector('.container');
-    const downloadBtn = element.querySelector('.download-button');
-    downloadBtn.style.display = 'none';
+    // No need to hide download button here, since it's outside container
+
     const opt = {
       margin: 0.25, /* Reduced margin for A4 */
       filename: 'Chandan_Kumar_Biodata.pdf',
@@ -426,9 +432,7 @@
       html2canvas: { scale: 2 },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
-    html2pdf().set(opt).from(element).save().then(() => {
-      downloadBtn.style.display = 'flex';
-    });
+    html2pdf().set(opt).from(element).save(); // No then() needed
   }
 </script>
 </body>

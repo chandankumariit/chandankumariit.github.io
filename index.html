@@ -25,7 +25,7 @@
       background: #f8f9fa;
       color: #333;
       margin: 0;
-      padding-top: 80px; /* Space for fixed header */
+      padding-top: 80px;
     }
     #header {
       background: linear-gradient(135deg, #1e3c72, #2a5298);
@@ -48,10 +48,6 @@
       font-size: 1.5rem;
       font-weight: 700;
       margin: 0;
-    }
-    .nav-menu {
-      margin: 0;
-      padding: 0;
     }
     .nav-menu .nav-link {
       color: #fff;
@@ -85,7 +81,7 @@
       max-width: 1000px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       display: none;
-      min-height: calc(100vh - 120px); /* Full height minus header */
+      min-height: calc(100vh - 120px);
       overflow-y: auto;
     }
     .content-section.active {
@@ -118,17 +114,49 @@
       background: #ffd700;
       color: #1e3c72;
     }
-    footer {
-      background: #1e3c72;
-      color: #fff;
-      padding: 15px 0;
-      text-align: center;
+    /* Attractive Boxes for Experience, Education, Certification */
+    .experience-box, .education-box, .certification-box {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
     }
+    .experience-box:hover, .education-box:hover, .certification-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .experience-box {
+      border-left: 5px solid #2a5298; /* Blue for Experience */
+    }
+    .education-box {
+      border-left: 5px solid #28a745; /* Green for Education */
+    }
+    .certification-box {
+      border-left: 5px solid #fd7e14; /* Orange for Certification */
+    }
+    .box-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: #ccc;
+    }
+    .experience-box .box-icon { color: #2a5298; }
+    .education-box .box-icon { color: #28a745; }
+    .certification-box .box-icon { color: #fd7e14; }
     ul {
       padding-left: 20px;
     }
     ul li {
       margin-bottom: 10px;
+    }
+    footer {
+      background: #1e3c72;
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
     }
     @media (max-width: 991px) {
       .nav-menu .nav-link {
@@ -195,12 +223,26 @@
       <div class="section-title">
         <h2>Experience</h2>
       </div>
-      <ul>
-        <li><strong>IBM - Data Scientist</strong> <span class="float-end">Mar 2024 – Present</span></li>
-        <li><strong>Accenture - Data Scientist</strong> <span class="float-end">Apr 2021 – Feb 2024</span></li>
-        <li><strong>Capgemini - Process Lead</strong> <span class="float-end">Feb 2021 – Mar 2021</span></li>
-        <li><strong>Clean Harbors - Data Scientist</strong> <span class="float-end">Jun 2018 – Jan 2021</span></li>
-      </ul>
+      <div class="experience-box">
+        <i class="fas fa-briefcase box-icon"></i>
+        <h5>IBM - Data Scientist</h5>
+        <p><span class="float-end">Mar 2024 – Present</span></p>
+      </div>
+      <div class="experience-box">
+        <i class="fas fa-briefcase box-icon"></i>
+        <h5>Accenture - Data Scientist</h5>
+        <p><span class="float-end">Apr 2021 – Feb 2024</span></p>
+      </div>
+      <div class="experience-box">
+        <i class="fas fa-briefcase box-icon"></i>
+        <h5>Capgemini - Process Lead</h5>
+        <p><span class="float-end">Feb 2021 – Mar 2021</span></p>
+      </div>
+      <div class="experience-box">
+        <i class="fas fa-briefcase box-icon"></i>
+        <h5>Clean Harbors - Data Scientist</h5>
+        <p><span class="float-end">Jun 2018 – Jan 2021</span></p>
+      </div>
     </section>
 
     <!-- Projects Section -->
@@ -260,10 +302,16 @@
       <div class="section-title">
         <h2>Education</h2>
       </div>
-      <ul>
-        <li><strong>IIT Dhanbad - B.Tech</strong> <span class="float-end">2013 – 2017</span></li>
-        <li><strong>Super30, Patna</strong> <span class="float-end">2012 – 2013</span></li>
-      </ul>
+      <div class="education-box">
+        <i class="fas fa-graduation-cap box-icon"></i>
+        <h5>IIT Dhanbad - B.Tech</h5>
+        <p><span class="float-end">2013 – 2017</span></p>
+      </div>
+      <div class="education-box">
+        <i class="fas fa-graduation-cap box-icon"></i>
+        <h5>Super30, Patna</h5>
+        <p><span class="float-end">2012 – 2013</span></p>
+      </div>
     </section>
 
     <!-- Certification Section -->
@@ -271,16 +319,19 @@
       <div class="section-title">
         <h2>Certification</h2>
       </div>
-      <ul>
-        <li>Northwestern University - Analytics & AI</li>
-        <li>Microsoft & LinkedIn - Generative AI</li>
-        <li>Microsoft - Azure Machine Learning</li>
-        <li>Stanford University - Machine Learning</li>
-        <li>Duke University - DevOps, DataOps, MLOps</li>
-        <li>Neo4j - Neo4j & LM Fundamentals</li>
-        <li>AWS - AWS Cloud</li>
-        <li>Microsoft - SQL Server</li>
-      </ul>
+      <div class="certification-box">
+        <i class="fas fa-certificate box-icon"></i>
+        <ul class="list-unstyled">
+          <li>Northwestern University - Analytics & AI</li>
+          <li>Microsoft & LinkedIn - Generative AI</li>
+          <li>Microsoft - Azure Machine Learning</li>
+          <li>Stanford University - Machine Learning</li>
+          <li>Duke University - DevOps, DataOps, MLOps</li>
+          <li>Neo4j - Neo4j & LM Fundamentals</li>
+          <li>AWS - AWS Cloud</li>
+          <li>Microsoft - SQL Server</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Achievements Section -->
@@ -343,24 +394,15 @@
   <!-- Custom JS -->
   <script>
     $(document).ready(function() {
-      // Handle navigation clicks
       $('.nav-link').on('click', function(e) {
         e.preventDefault();
         const sectionId = $(this).data('section');
-        
-        // Remove active class from all links and sections
         $('.nav-link').removeClass('active');
         $('.content-section').removeClass('active');
-        
-        // Add active class to clicked link and show corresponding section
         $(this).addClass('active');
         $('#' + sectionId).addClass('active');
-
-        // Ensure content starts at top of viewport
         window.scrollTo(0, 0);
       });
-
-      // Show Home section by default
       $('#home').addClass('active');
     });
   </script>

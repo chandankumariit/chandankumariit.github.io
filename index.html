@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chandan Kumar - Data Scientist and AI Expert Portfolio. Explore my skills, experience, and projects in Generative AI and MLOps.">
+  <meta name="description" content="Chandan Kumar - Data Scientist Portfolio showcasing expertise in Generative AI, MLOps, and AI Governance.">
   <meta name="keywords" content="Chandan Kumar, Data Science, Generative AI, MLOps, AI Governance, IIT Dhanbad, Python, Azure, AWS">
   <meta name="author" content="Chandan Kumar">
   <title>Chandan Kumar | Data Science & AI Portfolio</title>
@@ -32,6 +32,8 @@
       padding: 40px 0;
       min-height: 100vh;
       position: relative;
+      display: flex;
+      align-items: center;
     }
     #header h1 {
       font-size: 2.5rem;
@@ -48,7 +50,10 @@
       border-radius: 30px;
       padding: 10px;
       margin: 20px auto;
-      max-width: 800px;
+      max-width: 1000px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .nav-menu .nav-link {
       color: #fff;
@@ -57,6 +62,7 @@
       transition: all 0.3s ease;
       text-decoration: none;
       border-radius: 25px;
+      margin: 5px;
     }
     .nav-menu .nav-link:hover,
     .nav-menu .nav-link.active {
@@ -74,23 +80,23 @@
       color: #ffd700;
     }
     .content-section {
-      padding: 40px 0;
+      padding: 40px;
       background: #fff;
       border-radius: 10px;
       margin: 20px auto;
       max-width: 900px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      display: none; /* Hidden by default */
+      display: none;
     }
     .content-section.active {
-      display: block; /* Show when active */
+      display: block;
     }
     .section-title h2 {
       font-size: 2rem;
       font-weight: 600;
       color: #2a5298;
-      position: relative;
       margin-bottom: 20px;
+      position: relative;
     }
     .section-title h2::after {
       content: '';
@@ -100,15 +106,6 @@
       position: absolute;
       bottom: -10px;
       left: 0;
-    }
-    .progress {
-      height: 25px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-    .progress-bar {
-      background-color: #2a5298;
-      transition: width 1s ease-in-out;
     }
     .btn-custom {
       background: #2a5298;
@@ -126,6 +123,12 @@
       color: #fff;
       padding: 20px 0;
       margin-top: 40px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
     }
     @media (max-width: 768px) {
       .nav-menu .nav-link {
@@ -146,15 +149,17 @@
   <header id="header" class="text-center">
     <div class="container">
       <h1>Chandan Kumar</h1>
-      <p class="intro-text">IIT Dhanbad Graduate | Data Scientist | 6+ Years in Generative AI, MLOps, and AI Governance</p>
+      <p class="intro-text">Data Scientist | AI & Machine Learning Expert</p>
 
-      <nav class="nav-menu d-flex justify-content-center flex-wrap">
+      <nav class="nav-menu">
         <a href="#home" class="nav-link active" data-section="home">Home</a>
-        <a href="#about" class="nav-link" data-section="about">About</a>
+        <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#education" class="nav-link" data-section="education">Education</a>
+        <a href="#certification" class="nav-link" data-section="certification">Certification</a>
+        <a href="#achievements" class="nav-link" data-section="achievements">Achievements</a>
         <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-        <a href="#resume" class="nav-link" data-section="resume">Resume</a>
-        <a href="#certifications" class="nav-link" data-section="certifications">Certifications</a>
-        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        <a href="#core-competencies" class="nav-link" data-section="core-competencies">Core Competencies</a>
       </nav>
 
       <div class="social-links mt-4">
@@ -169,34 +174,120 @@
     <!-- Home Section -->
     <section id="home" class="content-section active">
       <div class="section-title">
-        <h2>Welcome</h2>
+        <h2>Home</h2>
       </div>
-      <p class="text-center">Hi, I’m Chandan Kumar, a passionate Data Scientist with expertise in Generative AI, MLOps, and AI Governance. Explore my journey and see how I can bring value to your projects.</p>
+      <p>IIT Dhanbad Graduate with around 7 years of expertise in Data Science, Generative AI, Machine Learning, MLOps, Responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a position to leverage advanced analytical, model development, and deployment skills in large-scale data science initiatives.</p>
       <div class="text-center mt-4">
-        <a href="#about" class="btn btn-custom" data-section="about">Learn More About Me</a>
+        <a href="#experience" class="btn btn-custom" data-section="experience">View Experience</a>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="content-section">
+    <!-- Experience Section -->
+    <section id="experience" class="content-section">
       <div class="section-title">
-        <h2>About Me</h2>
+        <h2>Experience</h2>
       </div>
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          <img src="assets/img/dp.jpg" class="img-fluid rounded shadow" alt="Chandan Kumar Profile">
-        </div>
-        <div class="col-md-8">
-          <p><strong>Data Scientist at IBM, Bangalore</strong></p>
-          <ul class="list-unstyled">
-            <li><i class="fas fa-calendar-alt"></i> <strong>Birthday:</strong> 15 May 1996</li>
-            <li><i class="fas fa-map-marker-alt"></i> <strong>City:</strong> Bangalore, India</li>
-            <li><i class="fas fa-graduation-cap"></i> <strong>Degree:</strong> B.Tech, IIT Dhanbad</li>
-            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a></li>
-          </ul>
-          <p>With 6+ years of experience, I specialize in leveraging Azure, AWS, Python, and SQL to deliver innovative AI solutions across industries.</p>
-        </div>
+      <ul>
+        <li><strong>IBM - Data Scientist</strong> <span class="float-end">Mar 2024 – Present</span></li>
+        <li><strong>Accenture - Data Scientist</strong> <span class="float-end">Apr 2021 – Feb 2024</span></li>
+        <li><strong>Capgemini - Process Lead</strong> <span class="float-end">Feb 2021 – Mar 2021</span></li>
+        <li><strong>Clean Harbors - Data Scientist</strong> <span class="float-end">Jun 2018 – Jan 2021</span></li>
+      </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="content-section">
+      <div class="section-title">
+        <h2>Projects</h2>
       </div>
+      <div class="mb-4">
+        <h5>MARC (Multi-Agent Resource Coordinator), IBM</h5>
+        <ul>
+          <li>Designed and developed IBM's MARC platform for multi-agent collaboration and workflow automation.</li>
+          <li>Implemented AI Governance principles to ensure ethical and compliant automation agent operations.</li>
+          <li>Integrated LLMs for task orchestration and agent selection, supporting Slack and WatsonX Assistant.</li>
+          <li>Developed sample agents to demonstrate platform versatility across domains.</li>
+          <li>Optimized agent coordination, reducing operational latency by 40%.</li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <h5>Mizuho Bank, Accenture</h5>
+        <ul>
+          <li>Developed and deployed PdfGPT, an AI-powered text summarization system for banking.</li>
+          <li>Leveraged Generative AI and Azure Cognitive Services, improving document processing efficiency by 35%.</li>
+          <li>Utilized expertise in LLM, Data Science, Machine Learning, and Azure to drive project success.</li>
+          <li>Achieved 95% accuracy in extracting critical financial insights from unstructured data.</li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <h5>Facebook, Accenture</h5>
+        <ul>
+          <li>Analyzed data from diverse sources to provide actionable insights for competitive advantage.</li>
+          <li>Designed and optimized machine learning pipelines for forecasting models.</li>
+          <li>Enhanced decision-making processes using Machine Learning, Python, and AWS.</li>
+          <li>Improved prediction accuracy by 25% for social media engagement metrics.</li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <h5>Waste Classification Code, Clean Harbors</h5>
+        <ul>
+          <li>Developed and fine-tuned Waste Classification Code Prediction models for autonomous assignment.</li>
+          <li>Created a unified dataset with essential features for all waste classes.</li>
+          <li>Applied data consistency checks to improve classification based on physical properties.</li>
+          <li>Reduced manual classification errors by 30%, enhancing efficiency.</li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <h5>Invoice Audit, Clean Harbors</h5>
+        <ul>
+          <li>Developed an invoice auditing and revenue prediction algorithm using machine learning.</li>
+          <li>Automated data loading to Azure SQL with Azure Data Factory and Machine Learning tools.</li>
+          <li>Streamlined invoice verification, reducing audit time by 20%.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="content-section">
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+      <ul>
+        <li><strong>IIT Dhanbad - B.Tech</strong> <span class="float-end">2013 – 2017</span></li>
+        <li><strong>Super30, Patna</strong> <span class="float-end">2012 – 2013</span></li>
+      </ul>
+    </section>
+
+    <!-- Certification Section -->
+    <section id="certification" class="content-section">
+      <div class="section-title">
+        <h2>Certification</h2>
+      </div>
+      <ul>
+        <li>Northwestern University - Analytics & AI</li>
+        <li>Microsoft & LinkedIn - Generative AI</li>
+        <li>Microsoft - Azure Machine Learning</li>
+        <li>Stanford University - Machine Learning</li>
+        <li>Duke University - DevOps, DataOps, MLOps</li>
+        <li>Neo4j - Neo4j & LM Fundamentals</li>
+        <li>AWS - AWS Cloud</li>
+        <li>Microsoft - SQL Server</li>
+      </ul>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="content-section">
+      <div class="section-title">
+        <h2>Achievements</h2>
+      </div>
+      <ul>
+        <li>Ranked #1 in HackerRank SQL.</li>
+        <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
+        <li>Led a team of five analysts, restoring team credibility and stability.</li>
+        <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
+        <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
+        <li>Awarded Silver Medal in 200m race at district-level "Khel Kud Pratiyogita," Bihar (2009).</li>
+      </ul>
     </section>
 
     <!-- Skills Section -->
@@ -204,102 +295,31 @@
       <div class="section-title">
         <h2>Skills</h2>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="progress">
-            <span class="skill d-block mb-1">Data Science <span class="float-end">80%</span></span>
-            <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <div class="progress">
-            <span class="skill d-block mb-1">Machine Learning <span class="float-end">70%</span></span>
-            <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="progress">
-            <span class="skill d-block mb-1">Generative AI <span class="float-end">80%</span></span>
-            <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <div class="progress">
-            <span class="skill d-block mb-1">AWS <span class="float-end">75%</span></span>
-            <div class="progress-bar" role="progressbar" style="width: 0%;" data-width="75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="content-section">
-      <div class="section-title">
-        <h2>Resume</h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <h4>Experience</h4>
-          <div class="mb-3">
-            <h5>Data Scientist, IBM</h5>
-            <p><em>Mar 2024 – Present</em></p>
-            <ul>
-              <li>Led AI governance with Watsonx.</li>
-              <li>Ensured ethical AI deployment.</li>
-            </ul>
-          </div>
-          <div class="mb-3">
-            <h5>Data Scientist, Accenture</h5>
-            <p><em>Apr 2021 – Feb 2024</em></p>
-            <ul>
-              <li>Developed PdfGPT, boosting efficiency by 35%.</li>
-              <li>Built ML pipelines for banking.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <h4>Education</h4>
-          <div class="mb-3">
-            <h5>B.Tech, IIT Dhanbad</h5>
-            <p><em>2013 – 2017</em></p>
-          </div>
-          <h4>Certifications</h4>
-          <ul>
-            <li>Generative AI – Microsoft & LinkedIn</li>
-            <li>Machine Learning – Stanford University</li>
-            <li>AWS Cloud – AWS</li>
-          </ul>
-        </div>
-      </div>
-      <div class="text-center mt-4">
-        <a href="assets/resume.pdf" class="btn btn-custom" download>Download Resume</a>
-      </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="content-section">
-      <div class="section-title">
-        <h2>Certifications</h2>
-      </div>
-      <ul class="list-unstyled">
-        <li><i class="fas fa-certificate"></i> Analytics & AI – Northwestern University</li>
-        <li><i class="fas fa-certificate"></i> Generative AI – Microsoft & LinkedIn</li>
-        <li><i class="fas fa-certificate"></i> Azure Machine Learning – Microsoft</li>
-        <li><i class="fas fa-certificate"></i> Machine Learning – Stanford University</li>
+      <ul>
+        <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee</li>
+        <li><strong>Machine Learning:</strong> Supervised (Regression, Decision Trees, RF, XGBoost), Unsupervised, NLP, Time Series, Model Development & Deployment, Vector DB</li>
+        <li><strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM Watson</li>
+        <li><strong>Programming:</strong> Python, SQL</li>
+        <li><strong>Data Engineering:</strong> Azure Data Factory, Databricks, Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy</li>
+        <li><strong>Databases:</strong> Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
+        <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
+        <li><strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD Pipelines</li>
+        <li><strong>Domains:</strong> Banking, Environmental, Social Media, Waste Management</li>
       </ul>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="content-section">
+    <!-- Core Competencies Section -->
+    <section id="core-competencies" class="content-section">
       <div class="section-title">
-        <h2>Contact</h2>
+        <h2>Core Competencies</h2>
       </div>
-      <div class="row text-center">
-        <div class="col-md-6">
-          <p><i class="fas fa-map-marker-alt fa-2x"></i></p>
-          <p><strong>Location:</strong> Bangalore, India</p>
-        </div>
-        <div class="col-md-6">
-          <p><i class="fas fa-envelope fa-2x"></i></p>
-          <p><strong>Email:</strong> <a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a></p>
-        </div>
-      </div>
+      <ul>
+        <li>Project Management and Deployment</li>
+        <li>Data Strategy and Management</li>
+        <li>Business Strategy & Execution</li>
+        <li>Business and Data Analytics</li>
+        <li>Analytics & AI</li>
+      </ul>
     </section>
   </main><!-- End Content Area -->
 
@@ -328,15 +348,8 @@
         $(this).addClass('active');
         $('#' + sectionId).addClass('active');
 
-        // Animate progress bars when Skills section is active
-        if (sectionId === 'skills') {
-          $('.progress-bar').each(function() {
-            const width = $(this).data('width');
-            $(this).css('width', width + '%');
-          });
-        } else {
-          $('.progress-bar').css('width', '0%'); // Reset when leaving Skills
-        }
+        // Smooth scroll to content
+        $('html, body').animate({ scrollTop: $('#' + sectionId).offset().top - 100 }, 500);
       });
 
       // Show Home section by default

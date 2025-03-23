@@ -6,33 +6,33 @@
   <title>Marriage BioData - Chandan Kumar</title>
   <style>
     :root {
-      --primary-color: #800000;
-      --secondary-color: #600000;
-      --accent-color: #ffd700;
-      --light-accent: #fff1b8;
-      --text-color: #ffffff;
-      --highlight-color: #ffebaa;
+      --primary-color: #800000; /* Maroon */
+      --secondary-color: #600000; /* Darker maroon */
+      --accent-color: #ffd700; /* Gold */
+      --light-accent: #fff1b8; /* Light gold */
+      --text-color: #f5f5f5; /* Soft white for readability */
+      --highlight-color: #ffebaa; /* Warm highlight */
     }
 
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0; /* Light grey background for the entire body */
-      color: #333; /* Darker text color for better readability on light background */
+      background-color: #f0f0f0;
+      color: #333;
       line-height: 1.4;
       font-size: 12px;
       display: flex;
       flex-direction: column;
-      align-items: center; /* Center the content horizontally */
-      min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+      align-items: center;
+      min-height: 100vh;
     }
 
     .container {
       width: 100%;
-      max-width: 7.5in; /* Adjusted for A4 width with margins */
-      height: 10.5in; /* Adjusted for A4 height with margins */
-      margin: 0.25in auto; /* Reduced margin for A4 fit */
+      max-width: 7.5in;
+      height: 10.5in;
+      margin: 0.25in auto;
       background-color: var(--primary-color);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
       border-radius: 8px;
@@ -40,30 +40,33 @@
       position: relative;
       border: 1px solid var(--accent-color);
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
     }
 
     .header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      padding: 10px 15px; /* Further reduced padding */
+      padding: 10px 15px;
       text-align: center;
       border-bottom: 2px solid var(--accent-color);
     }
 
     .header-text {
-      font-size: 18px; /* Reduced font size */
+      font-size: 18px;
       color: var(--accent-color);
       font-weight: 600;
       margin: 5px 0;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .profile-section {
-      padding: 15px; /* Reduced padding */
+      padding: 15px;
       text-align: center;
       background: linear-gradient(135deg, rgba(128, 0, 0, 0.95), rgba(90, 0, 0, 0.95));
     }
 
     .profile-image {
-      width: 100px; /* Reduced image size */
+      width: 100px;
       height: 100px;
       border-radius: 50%;
       background-color: #fff;
@@ -81,7 +84,7 @@
     }
 
     .profile-initial {
-      font-size: 40px; /* Reduced size */
+      font-size: 40px;
       color: var(--primary-color);
       font-weight: bold;
       position: absolute;
@@ -92,14 +95,15 @@
     }
 
     .name-header {
-      font-size: 24px; /* Reduced font size */
+      font-size: 24px;
       color: var(--accent-color);
       margin: 5px 0;
       font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     }
 
     .subtitle {
-      font-size: 14px; /* Reduced font size */
+      font-size: 14px;
       color: var(--light-accent);
       margin: 0 0 10px;
     }
@@ -115,16 +119,18 @@
     .info-pill {
       background-color: rgba(255, 255, 255, 0.1);
       color: var(--accent-color);
-      padding: 4px 12px; /* Reduced padding */
+      padding: 4px 12px;
       border-radius: 20px;
-      font-size: 11px; /* Reduced font size */
+      font-size: 11px;
       font-weight: 600;
       border: 1px solid var(--accent-color);
     }
 
     section {
-      padding: 10px 15px; /* Reduced padding */
+      padding: 10px 15px;
       border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      flex-grow: 0;
+      color: var(--text-color); /* Improved readability */
     }
 
     section:nth-child(odd) {
@@ -137,17 +143,18 @@
 
     section h2 {
       color: var(--accent-color);
-      font-size: 16px; /* Reduced font size */
+      font-size: 16px;
       margin: 0 0 8px;
       padding-bottom: 5px;
       border-bottom: 1px solid var(--accent-color);
       display: inline-block;
       font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .detail-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted for compactness */
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 8px;
       list-style-type: none;
       padding: 0;
@@ -162,42 +169,25 @@
 
     .detail-list li strong {
       color: var(--light-accent);
-      width: 100px; /* Reduced width */
+      width: 100px;
       margin-right: 8px;
       font-weight: 600;
       flex-shrink: 0;
     }
 
-    /* Styles for single-line lifestyle */
-    .lifestyle-container {
+    .lifestyle-container, .education-career-container {
       display: flex;
       justify-content: flex-start;
-      gap: 15px; /* Space between items */
+      gap: 15px;
       list-style-type: none;
       padding: 0;
       margin: 0;
     }
 
-    .lifestyle-item {
-      flex: 1; /* Distribute available space evenly */
-      min-width: 100px; /* Minimum width for each item */
-      font-size: 12px; /* Adjust font size as needed */
-    }
-
-    /* Styles for single-line Education & Career */
-    .education-career-container {
-      display: flex;
-      justify-content: flex-start;
-      gap: 15px; /* Space between items */
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .education-career-item {
-      flex: 1; /* Distribute available space evenly */
-      min-width: 100px; /* Minimum width for each item */
-      font-size: 12px; /* Adjust font size as needed */
+    .lifestyle-item, .education-career-item {
+      flex: 1;
+      min-width: 100px;
+      font-size: 12px;
     }
 
     .expectations-list {
@@ -211,7 +201,7 @@
       margin-bottom: 6px;
       padding-left: 20px;
       position: relative;
-      font-size: 11px; /* Reduced font size */
+      font-size: 11px;
     }
 
     .expectations-list li:before {
@@ -234,15 +224,21 @@
       background-color: var(--accent-color);
       color: var(--primary-color);
       border: none;
-      padding: 6px 12px; /* Reduced padding */
+      padding: 6px 12px;
       border-radius: 6px;
       cursor: pointer;
       text-decoration: none;
-      font-size: 12px; /* Reduced font size */
+      font-size: 12px;
       font-weight: 600;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-2px);
+      background-color: #ffdf4d;
     }
 
     .contact-button i {
@@ -251,13 +247,16 @@
 
     #footer {
       text-align: center;
-      padding: 8px;
-      color: #ddd;
+      padding: 10px;
+      color: var(--light-accent);
       font-size: 10px;
       border-top: 1px solid rgba(255, 215, 0, 0.2);
       background-color: rgba(0, 0, 0, 0.2);
       width: 100%;
       box-sizing: border-box;
+      flex-shrink: 0;
+      position: relative;
+      min-height: 40px; /* Increased height for ornaments and text */
     }
 
     .section-icon {
@@ -268,19 +267,19 @@
     .ornament {
       position: absolute;
       color: var(--accent-color);
-      opacity: 0.2;
+      opacity: 0.3;
       font-size: 30px;
+      font-family: 'Arial', sans-serif; /* Ensure Unicode renders correctly */
     }
 
     .ornament-tl { top: 10px; left: 10px; }
     .ornament-tr { top: 10px; right: 10px; }
-    .ornament-bl { bottom: 50px; left: 10px; }
-    .ornament-br { bottom: 50px; right: 10px; }
+    .ornament-bl { bottom: 5px; left: 10px; }
+    .ornament-br { bottom: 5px; right: 10px; }
 
-    /* Styles for the download button outside the container */
     .download-container {
       text-align: center;
-      margin-top: 20px; /* Add some space between the container and the button */
+      margin-top: 20px;
     }
 
     .download-button {
@@ -295,17 +294,17 @@
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
-      text-decoration: none; /* Remove underline from the link */
-    }
-
-    .download-button i {
-      margin-right: 5px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .download-button:hover {
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-      background-color: #ffdf4d;
+    }
+
+    .download-button i {
+      margin-right: 5px;
     }
 
     @media (max-width: 600px) {
@@ -323,8 +322,8 @@
 <body>
 <div class="container">
   <div class="header">
-    <div class="ornament ornament-tl"><i class="fas fa-om"></i></div>
-    <div class="ornament ornament-tr"><i class="fas fa-om"></i></div>
+    <div class="ornament ornament-tl">ॐ</div>
+    <div class="ornament ornament-tr">ॐ</div>
     <div class="header-text">श्री गणेशाय नमः</div>
   </div>
   <div class="profile-section">
@@ -403,12 +402,12 @@
   </section>
 
   <div id="footer">
-    <div class="ornament ornament-bl"><i class="fas fa-om"></i></div>
-    <div class="ornament ornament-br"><i class="fas fa-om"></i></div>
+    <div class="ornament ornament-bl">ॐ</div>
+    <div class="ornament ornament-br">ॐ</div>
+    <p>Best Wishes | Generated on March 23, 2025</p>
   </div>
 </div>
 
-<!-- Download button outside the container -->
 <div class="download-container">
   <a href="#" class="download-button" onclick="downloadPDF()"><i class="fas fa-download"></i> Download as PDF</a>
 </div>
@@ -423,16 +422,14 @@
 
   function downloadPDF() {
     const element = document.querySelector('.container');
-    // No need to hide download button here, since it's outside container
-
     const opt = {
-      margin: 0.25, /* Reduced margin for A4 */
+      margin: 0.25,
       filename: 'Chandan_Kumar_Biodata.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
-    html2pdf().set(opt).from(element).save(); // No then() needed
+    html2pdf().set(opt).from(element).save();
   }
 </script>
 </body>

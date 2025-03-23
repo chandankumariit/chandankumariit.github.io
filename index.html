@@ -109,12 +109,13 @@
       padding: 8px 20px;
       border-radius: 20px;
       transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
     .btn-custom:hover {
       background: #ffd700;
       color: #1e3c72;
     }
-    /* Attractive Boxes for Experience, Education, Certification */
     .experience-box, .education-box, .certification-box {
       background: #fff;
       border-radius: 15px;
@@ -127,15 +128,9 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
-    .experience-box {
-      border-left: 5px solid #2a5298; /* Blue for Experience */
-    }
-    .education-box {
-      border-left: 5px solid #28a745; /* Green for Education */
-    }
-    .certification-box {
-      border-left: 5px solid #fd7e14; /* Orange for Certification */
-    }
+    .experience-box { border-left: 5px solid #2a5298; }
+    .education-box { border-left: 5px solid #28a745; }
+    .certification-box { border-left: 5px solid #fd7e14; }
     .box-icon {
       position: absolute;
       top: 20px;
@@ -167,18 +162,11 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      .social-links {
-        margin-top: 10px;
-      }
+      .social-links { margin-top: 10px; }
     }
     @media (max-width: 576px) {
-      #header h1 {
-        font-size: 1.2rem;
-      }
-      .nav-menu .nav-link {
-        padding: 6px 8px;
-        font-size: 0.75rem;
-      }
+      #header h1 { font-size: 1.2rem; }
+      .nav-menu .nav-link { padding: 6px 8px; font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -215,6 +203,7 @@
       <p>IIT Dhanbad Graduate with around 7 years of expertise in Data Science, Generative AI, Machine Learning, MLOps, Responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a position to leverage advanced analytical, model development, and deployment skills in large-scale data science initiatives.</p>
       <div class="text-center mt-4">
         <a href="#experience" class="btn btn-custom" data-section="experience">View Experience</a>
+        <a href="https://chandankumariit.github.io/Chandan_Kumar_Resume.pdf" class="btn btn-custom" download="Chandan_Kumar_Resume.pdf">Download Resume</a>
       </div>
     </section>
 

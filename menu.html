@@ -7,75 +7,120 @@
   <style>
     :root {
       --primary-color: #800000;
+      --secondary-color: #600000;
       --accent-color: #ffd700;
       --light-accent: #fff1b8;
       --text-color: #ffffff;
+      --highlight-color: #ffebaa;
     }
     
     body {
-      font-family: 'Georgia', serif;
+      font-family: 'Roboto', 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--primary-color);
+      background-color: #500000;
       color: var(--text-color);
-      line-height: 1.3;
-      font-size: 11px;
+      line-height: 1.6;
+      font-size: 14px;
     }
     
     .container {
       width: 95%;
-      max-width: 700px;
-      margin: 10px auto;
-      background-color: rgba(128, 0, 0, 0.9);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      border-radius: 5px;
-      border: 1px solid var(--accent-color);
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: var(--primary-color);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid var(--accent-color);
     }
     
     .header {
-      background: linear-gradient(135deg, var(--primary-color), #5a0000);
-      padding: 5px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      padding: 20px;
       text-align: center;
-      border-bottom: 1px solid var(--accent-color);
+      position: relative;
+      border-bottom: 3px solid var(--accent-color);
     }
     
     .profile-section {
-      padding: 8px;
+      padding: 25px;
       text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, rgba(128, 0, 0, 0.95), rgba(90, 0, 0, 0.95));
+    }
+    
+    .profile-image {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin: 0 auto 20px;
+      border: 5px solid var(--accent-color);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .profile-initial {
+      font-size: 60px;
+      color: var(--primary-color);
+      font-weight: bold;
     }
     
     .name-header {
-      font-size: 20px;
+      font-size: 36px;
       color: var(--accent-color);
-      margin: 3px 0;
+      margin: 10px 0 5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     .subtitle {
-      font-size: 10px;
-      color: #ccc;
-      margin-bottom: 5px;
+      font-size: 18px;
+      color: var(--light-accent);
+      margin: 0 0 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
     
     .quick-info {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 5px;
-      margin-bottom: 5px;
+      gap: 15px;
+      margin-bottom: 15px;
     }
     
     .info-pill {
-      background-color: var(--light-accent);
-      color: var(--primary-color);
-      padding: 2px 6px;
-      border-radius: 12px;
-      font-size: 9px;
-      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--accent-color);
+      padding: 6px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--accent-color);
+      transition: all 0.3s ease;
+    }
+    
+    .info-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
     }
     
     section {
-      padding: 10px;
-      border-bottom: 1px solid var(--accent-color);
+      padding: 20px 25px;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+      position: relative;
+    }
+    
+    section:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1);
     }
     
     section:last-child {
@@ -84,30 +129,36 @@
     
     section h2 {
       color: var(--accent-color);
-      font-size: 14px;
-      margin-bottom: 5px;
-      padding-bottom: 2px;
-      border-bottom: 1px solid var(--accent-color);
+      font-size: 20px;
+      margin: 0 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      font-weight: 600;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
     
     .detail-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 5px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
       list-style-type: none;
       padding: 0;
+      margin: 0;
     }
     
     .detail-list li {
-      margin-bottom: 4px;
-      font-size: 10px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
     }
     
     .detail-list li strong {
-      color: var(--accent-color);
-      width: 110px;
-      margin-right: 5px;
+      color: var(--light-accent);
+      width: 140px;
+      margin-right: 12px;
       font-weight: 600;
+      flex-shrink: 0;
     }
     
     .full-width-list {
@@ -115,73 +166,183 @@
     }
     
     .expectations-list {
-      list-style-type: disc;
-      padding-left: 15px;
-      color: #ddd;
-      font-size: 10px;
+      list-style-type: none;
+      padding-left: 5px;
+      color: var(--text-color);
+      margin: 0;
     }
     
     .expectations-list li {
-      margin-bottom: 3px;
+      margin-bottom: 10px;
+      padding-left: 30px;
+      position: relative;
+    }
+    
+    .expectations-list li:before {
+      content: "✦";
+      color: var(--accent-color);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: bold;
+      font-size: 18px;
     }
     
     .contact-buttons {
       display: flex;
-      gap: 8px;
+      gap: 15px;
       flex-wrap: wrap;
+      margin-bottom: 15px;
     }
     
-    .contact-button, .download-button {
+    .contact-button {
       background-color: var(--accent-color);
       color: var(--primary-color);
       border: none;
-      padding: 4px 8px;
-      border-radius: 3px;
+      padding: 10px 20px;
+      border-radius: 8px;
       cursor: pointer;
       text-decoration: none;
-      font-size: 10px;
-      font-weight: bold;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-button i {
+      margin-right: 10px;
+    }
+    
+    .download-button {
+      position: absolute;
+      bottom: -55px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(to right, var(--accent-color), #e6ba00);
+      color: var(--primary-color);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
     }
     
     .contact-button:hover, .download-button:hover {
-      background-color: #e6c200;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background-color: #ffdf4d;
+    }
+    
+    .download-button:hover {
+      transform: translateX(-50%) translateY(-3px);
     }
     
     #footer {
       text-align: center;
-      padding: 5px;
-      color: #ccc;
-      font-size: 9px;
-      border-top: 1px solid var(--accent-color);
+      padding: 15px;
+      color: #ddd;
+      font-size: 12px;
+      border-top: 1px solid rgba(255, 215, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .section-icon {
+      display: inline-block;
+      margin-right: 10px;
+      color: var(--accent-color);
+    }
+    
+    .gold-glow {
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    
+    .ornament {
+      position: absolute;
+      color: var(--accent-color);
+      opacity: 0.2;
+      font-size: 40px;
+    }
+    
+    .ornament-tl {
+      top: 10px;
+      left: 10px;
+    }
+    
+    .ornament-tr {
+      top: 10px;
+      right: 10px;
+    }
+    
+    .ornament-bl {
+      bottom: 10px;
+      left: 10px;
+    }
+    
+    .ornament-br {
+      bottom: 10px;
+      right: 10px;
     }
     
     @media (max-width: 600px) {
       .detail-list {
         grid-template-columns: 1fr;
       }
+      
       .quick-info {
         flex-direction: column;
-        gap: 3px;
+        gap: 8px;
+        align-items: center;
+      }
+      
+      .name-header {
+        font-size: 28px;
+      }
+      
+      .subtitle {
+        font-size: 16px;
+      }
+      
+      .contact-buttons {
+        flex-direction: column;
+      }
+      
+      .contact-button {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 <div class="container">
-  <div class="header"></div>
+  <div class="header">
+    <div class="ornament ornament-tl"><i class="fas fa-om"></i></div>
+    <div class="ornament ornament-tr"><i class="fas fa-om"></i></div>
+  </div>
   <div class="profile-section">
-    <h1 class="name-header">Chandan Kumar</h1>
+    <div class="profile-image">
+      <div class="profile-initial">C</div>
+    </div>
+    <h1 class="name-header gold-glow">Chandan Kumar</h1>
     <p class="subtitle">B.Tech IIT Dhanbad | Data Scientist at IBM</p>
     <div class="quick-info">
-      <div class="info-pill">Age: 28</div>
-      <div class="info-pill">Height: 5'8" (173 cm)</div>
-      <div class="info-pill">Hindu, Yadav</div>
-      <div class="info-pill">Non-Manglik</div>
+      <div class="info-pill"><i class="fas fa-birthday-cake"></i> 28 Years</div>
+      <div class="info-pill"><i class="fas fa-ruler-vertical"></i> 5'8" (173 cm)</div>
+      <div class="info-pill"><i class="fas fa-om"></i> Hindu, Yadav</div>
+      <div class="info-pill"><i class="fas fa-star"></i> Non-Manglik</div>
     </div>
   </div>
 
   <section>
-    <h2>Personal Details</h2>
+    <h2><i class="fas fa-user section-icon"></i>Personal Details</h2>
     <ul class="detail-list">
       <li><strong>Date of Birth:</strong> May 15, 1996</li>
       <li><strong>Place of Birth:</strong> Gaya, Bihar</li>
@@ -195,7 +356,7 @@
   </section>
 
   <section>
-    <h2>Family Background</h2>
+    <h2><i class="fas fa-home section-icon"></i>Family Background</h2>
     <ul class="detail-list">
       <li><strong>Father's Name:</strong> Ajay Kumar Singh</li>
       <li><strong>Mother's Name:</strong> Shyama Devi</li>
@@ -206,7 +367,7 @@
   </section>
 
   <section>
-    <h2>Educational & Professional Background</h2>
+    <h2><i class="fas fa-graduation-cap section-icon"></i>Educational & Professional Background</h2>
     <ul class="detail-list full-width-list">
       <li><strong>Highest Degree:</strong> Bachelor of Technology (B.Tech)</li>
       <li><strong>Institute:</strong> Indian Institute of Technology (IIT), Dhanbad</li>
@@ -217,7 +378,7 @@
   </section>
 
   <section>
-    <h2>Lifestyle & Interests</h2>
+    <h2><i class="fas fa-heart section-icon"></i>Lifestyle & Interests</h2>
     <ul class="detail-list full-width-list">
       <li><strong>Hobbies:</strong> Reading, Traveling, Cooking</li>
       <li><strong>Interests:</strong> Technology, Sports, Music</li>
@@ -227,7 +388,7 @@
   </section>
 
   <section>
-    <h2>Partner Preferences</h2>
+    <h2><i class="fas fa-search section-icon"></i>Partner Preferences</h2>
     <ul class="expectations-list">
       <li>A well-educated partner who values both career and family</li>
       <li>Someone who understands and respects traditional family values</li>
@@ -237,13 +398,12 @@
   </section>
 
   <section>
-    <h2>Contact Information</h2>
+    <h2><i class="fas fa-address-card section-icon"></i>Contact Information</h2>
     <div class="contact-buttons">
-      <a href="tel:+919199000200" class="contact-button">Call: +91-9199000200</a>
-      <a href="mailto:ckism.iit@gmail.com" class="contact-button">Email: ckism.iit@gmail.com</a>
-      <button class="download-button" onclick="downloadPDF()">Download Biodata</button>
+      <a href="tel:+919199000200" class="contact-button"><i class="fas fa-phone"></i> Call: +91-9199000200</a>
+      <a href="mailto:ckism.iit@gmail.com" class="contact-button"><i class="fas fa-envelope"></i> Email: ckism.iit@gmail.com</a>
     </div>
-    <ul class="detail-list full-width-list" style="margin-top: 5px;">
+    <ul class="detail-list full-width-list">
       <li><strong>Address:</strong> Gaya, Bihar, India</li>
       <li><strong>Best time to contact:</strong> Saturday and Sunday</li>
     </ul>
@@ -251,7 +411,10 @@
 
   <div id="footer">
     <p>This biodata was last updated on <span id="date"></span></p>
+    <div class="ornament ornament-bl"><i class="fas fa-om"></i></div>
+    <div class="ornament ornament-br"><i class="fas fa-om"></i></div>
   </div>
+  <button class="download-button" onclick="downloadPDF()"><i class="fas fa-download"></i> Download Biodata</button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
@@ -264,14 +427,17 @@
 
   function downloadPDF() {
     const element = document.querySelector('.container');
+    element.querySelector('.download-button').style.display = 'none';
     const opt = {
-      margin: 0.1,
+      margin: 0.5,
       filename: 'Chandan_Kumar_Biodata.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
-    html2pdf().set(opt).from(element).save();
+    html2pdf().set(opt).from(element).save().then(() => {
+      element.querySelector('.download-button').style.display = 'block';
+    });
   }
 </script>
 </body>

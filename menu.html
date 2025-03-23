@@ -38,7 +38,7 @@
     
     .header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      padding: 30px 20px 20px 20px; /* Adjusted padding to prevent cutting */
+      padding: 30px 20px 20px 20px;
       text-align: center;
       position: relative;
       border-bottom: 3px solid var(--accent-color);
@@ -73,10 +73,17 @@
       overflow: hidden;
     }
     
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image fits well within the circle */
+    }
+    
     .profile-initial {
       font-size: 60px;
       color: var(--primary-color);
       font-weight: bold;
+      display: none; /* Hide the initial when an image is present */
     }
     
     .name-header {
@@ -279,12 +286,12 @@
     }
     
     .ornament-tl {
-      top: 15px; /* Adjusted position */
+      top: 15px;
       left: 15px;
     }
     
     .ornament-tr {
-      top: 15px; /* Adjusted position */
+      top: 15px;
       right: 15px;
     }
     
@@ -336,12 +343,15 @@
 <body>
 <div class="container">
   <div class="header">
-    <div class="ornament ornament-tl">ॐ</div>
-    <div class="ornament ornament-tr">ॐ</div>
+    <div class="ornament ornament-tl"><i class="fas fa-om"></i></div>
+    <div class="ornament ornament-tr"><i class="fas fa-om"></i></div>
     <div class="header-text">श्री गणेशाय नमः</div>
   </div>
   <div class="profile-section">
     <div class="profile-image">
+      <!-- Replace the src with the path to your photo -->
+      <img src="path/to/your/photo.jpg" alt="Chandan Kumar">
+      <!-- Fallback initial in case the image doesn't load -->
       <div class="profile-initial">C</div>
     </div>
     <h1 class="name-header gold-glow">Chandan Kumar</h1>

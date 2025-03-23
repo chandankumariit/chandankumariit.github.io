@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marriage BioData - Chandan Kumar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #800000; /* Maroon */
       --secondary-color: #600000; /* Darker maroon */
       --accent-color: #ffd700; /* Gold */
       --light-accent: #fff1b8; /* Light gold */
-      --text-color: #f5f5f5; /* Soft white for readability */
+      --text-color: #f5f5f5; /* Soft white */
       --highlight-color: #ffebaa; /* Warm highlight */
     }
 
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Roboto', 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f0f0f0;
-      color: #333;
+      color: var(--text-color);
       line-height: 1.4;
       font-size: 12px;
       display: flex;
@@ -54,9 +55,9 @@
     .header-text {
       font-size: 18px;
       color: var(--accent-color);
-      font-weight: 600;
+      font-weight: 700;
       margin: 5px 0;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .profile-section {
@@ -99,13 +100,15 @@
       color: var(--accent-color);
       margin: 5px 0;
       font-weight: 700;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     .subtitle {
       font-size: 14px;
-      color: var(--light-accent);
+      color: #ffffff; /* Changed to pure white */
+      font-weight: 700; /* Made bold */
       margin: 0 0 10px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Added subtle shadow for depth */
     }
 
     .quick-info {
@@ -130,7 +133,7 @@
       padding: 10px 15px;
       border-bottom: 1px solid rgba(255, 215, 0, 0.2);
       flex-grow: 0;
-      color: var(--text-color); /* Improved readability */
+      color: var(--text-color);
     }
 
     section:nth-child(odd) {
@@ -148,8 +151,8 @@
       padding-bottom: 5px;
       border-bottom: 1px solid var(--accent-color);
       display: inline-block;
-      font-weight: 600;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      font-weight: 700;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .detail-list {
@@ -165,6 +168,7 @@
       margin-bottom: 6px;
       display: flex;
       align-items: flex-start;
+      color: var(--text-color);
     }
 
     .detail-list li strong {
@@ -188,6 +192,11 @@
       flex: 1;
       min-width: 100px;
       font-size: 12px;
+      color: var(--text-color);
+    }
+
+    .lifestyle-item strong, .education-career-item strong {
+      color: var(--light-accent);
     }
 
     .expectations-list {
@@ -221,7 +230,7 @@
     }
 
     .contact-button {
-      background-color: var(--accent-color);
+      background: linear-gradient(to right, var(--accent-color), #e6ba00);
       color: var(--primary-color);
       border: none;
       padding: 6px 12px;
@@ -233,12 +242,12 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
-      transition: transform 0.2s, background-color 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .contact-button:hover {
       transform: translateY(-2px);
-      background-color: #ffdf4d;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
 
     .contact-button i {
@@ -256,7 +265,7 @@
       box-sizing: border-box;
       flex-shrink: 0;
       position: relative;
-      min-height: 40px; /* Increased height for ornaments and text */
+      min-height: 40px;
     }
 
     .section-icon {
@@ -267,9 +276,9 @@
     .ornament {
       position: absolute;
       color: var(--accent-color);
-      opacity: 0.3;
+      opacity: 0.4;
       font-size: 30px;
-      font-family: 'Arial', sans-serif; /* Ensure Unicode renders correctly */
+      font-family: 'Arial', sans-serif;
     }
 
     .ornament-tl { top: 10px; left: 10px; }

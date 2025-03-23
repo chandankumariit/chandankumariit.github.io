@@ -15,56 +15,57 @@
     }
     
     body {
-      font-family: 'Roboto', 'Arial', sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #500000;
       color: var(--text-color);
-      line-height: 1.6;
-      font-size: 14px;
+      line-height: 1.4;
+      font-size: 12px; /* Reduced font size */
     }
     
     .container {
-      width: 95%;
-      max-width: 800px;
-      margin: 20px auto;
+      width: 100%;
+      max-width: 7.5in; /* Adjusted for A4 width with margins */
+      height: 10.5in; /* Adjusted for A4 height with margins */
+      margin: 0.25in auto; /* Reduced margin for A4 fit */
       background-color: var(--primary-color);
-      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
-      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
       overflow: hidden;
       position: relative;
-      border: 2px solid var(--accent-color);
+      border: 1px solid var(--accent-color);
+      box-sizing: border-box;
     }
     
     .header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      padding: 15px 20px 10px 20px;  /* Reduced header space */
+      padding: 10px 15px; /* Further reduced padding */
       text-align: center;
-      border-bottom: 3px solid var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
     }
     
     .header-text {
-      font-size: 24px;
+      font-size: 18px; /* Reduced font size */
       color: var(--accent-color);
       font-weight: 600;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      margin: 10px 0;
+      margin: 5px 0;
     }
     
     .profile-section {
-      padding: 25px;
+      padding: 15px; /* Reduced padding */
       text-align: center;
       background: linear-gradient(135deg, rgba(128, 0, 0, 0.95), rgba(90, 0, 0, 0.95));
     }
     
     .profile-image {
-      width: 130px;
-      height: 130px;
+      width: 100px; /* Reduced image size */
+      height: 100px;
       border-radius: 50%;
       background-color: #fff;
-      margin: 0 auto 20px;
-      border: 5px solid var(--accent-color);
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      margin: 0 auto 10px;
+      border: 3px solid var(--accent-color);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
       overflow: hidden;
       position: relative;
     }
@@ -76,7 +77,7 @@
     }
     
     .profile-initial {
-      font-size: 60px;
+      font-size: 40px; /* Reduced size */
       color: var(--primary-color);
       font-weight: bold;
       position: absolute;
@@ -87,50 +88,39 @@
     }
     
     .name-header {
-      font-size: 36px;
+      font-size: 24px; /* Reduced font size */
       color: var(--accent-color);
-      margin: 10px 0 5px;
+      margin: 5px 0;
       font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     .subtitle {
-      font-size: 18px;
+      font-size: 14px; /* Reduced font size */
       color: var(--light-accent);
-      margin: 0 0 20px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      margin: 0 0 10px;
     }
     
     .quick-info {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 15px;
+      gap: 10px;
+      margin-bottom: 10px;
     }
     
     .info-pill {
       background-color: rgba(255, 255, 255, 0.1);
       color: var(--accent-color);
-      padding: 6px 18px;
-      border-radius: 25px;
-      font-size: 14px;
+      padding: 4px 12px; /* Reduced padding */
+      border-radius: 20px;
+      font-size: 11px; /* Reduced font size */
       font-weight: 600;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
       border: 1px solid var(--accent-color);
-      transition: all 0.3s ease;
-    }
-    
-    .info-pill:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
     }
     
     section {
-      padding: 20px 25px;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+      padding: 10px 15px; /* Reduced padding */
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
     }
     
     section:nth-child(odd) {
@@ -143,34 +133,33 @@
     
     section h2 {
       color: var(--accent-color);
-      font-size: 20px;
-      margin: 0 0 15px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--accent-color);
+      font-size: 16px; /* Reduced font size */
+      margin: 0 0 8px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--accent-color);
       display: inline-block;
       font-weight: 600;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
     
     .detail-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted for compactness */
+      gap: 8px;
       list-style-type: none;
       padding: 0;
       margin: 0;
     }
     
     .detail-list li {
-      margin-bottom: 12px;
+      margin-bottom: 6px;
       display: flex;
       align-items: flex-start;
     }
     
     .detail-list li strong {
       color: var(--light-accent);
-      width: 140px;
-      margin-right: 12px;
+      width: 100px; /* Reduced width */
+      margin-right: 8px;
       font-weight: 600;
       flex-shrink: 0;
     }
@@ -187,9 +176,10 @@
     }
     
     .expectations-list li {
-      margin-bottom: 10px;
-      padding-left: 30px;
+      margin-bottom: 6px;
+      padding-left: 20px;
       position: relative;
+      font-size: 11px; /* Reduced font size */
     }
     
     .expectations-list li:before {
@@ -198,108 +188,104 @@
       position: absolute;
       left: 0;
       top: 0;
-      font-weight: bold;
-      font-size: 18px;
+      font-size: 14px;
     }
     
     .contact-buttons {
       display: flex;
-      gap: 15px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     
     .contact-button {
       background-color: var(--accent-color);
       color: var(--primary-color);
       border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
+      padding: 6px 12px; /* Reduced padding */
+      border-radius: 6px;
       cursor: pointer;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 12px; /* Reduced font size */
       font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
-      transition: all 0.3s ease;
     }
     
     .contact-button i {
-      margin-right: 10px;
+      margin-right: 5px;
     }
     
     .download-button {
       position: absolute;
-      bottom: -55px;
+      bottom: 10px; /* Adjusted position */
       left: 50%;
       transform: translateX(-50%);
       background: linear-gradient(to right, var(--accent-color), #e6ba00);
       color: var(--primary-color);
       border: none;
-      padding: 12px 25px;
-      border-radius: 30px;
+      padding: 8px 20px; /* Reduced padding */
+      border-radius: 20px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 14px; /* Reduced font size */
       font-weight: 600;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
     }
     
     .download-button i {
-      margin-right: 8px;
+      margin-right: 5px;
     }
     
     .contact-button:hover, .download-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
       background-color: #ffdf4d;
     }
     
     .download-button:hover {
-      transform: translateX(-50%) translateY(-3px);
+      transform: translateX(-50%) translateY(-2px);
     }
     
     #footer {
       text-align: center;
-      padding: 15px;
+      padding: 8px; /* Reduced padding */
       color: #ddd;
-      font-size: 12px;
-      border-top: 1px solid rgba(255, 215, 0, 0.3);
+      font-size: 10px; /* Reduced font size */
+      border-top: 1px solid rgba(255, 215, 0, 0.2);
       background-color: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      bottom: 40px; /* Adjusted to fit above download button */
+      width: 100%;
     }
     
     .section-icon {
-      margin-right: 10px;
+      margin-right: 5px;
       color: var(--accent-color);
-    }
-    
-    .gold-glow {
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
     }
     
     .ornament {
       position: absolute;
       color: var(--accent-color);
       opacity: 0.2;
-      font-size: 40px;
+      font-size: 30px; /* Reduced size */
     }
     
-    .ornament-tl { top: 15px; left: 15px; }
-    .ornament-tr { top: 15px; right: 15px; }
-    .ornament-bl { bottom: 10px; left: 10px; }
-    .ornament-br { bottom: 10px; right: 10px; }
+    .ornament-tl { top: 10px; left: 10px; }
+    .ornament-tr { top: 10px; right: 10px; }
+    .ornament-bl { bottom: 50px; left: 10px; }
+    .ornament-br { bottom: 50px; right: 10px; }
     
     @media (max-width: 600px) {
       .detail-list { grid-template-columns: 1fr; }
-      .quick-info { flex-direction: column; gap: 8px; align-items: center; }
-      .name-header { font-size: 28px; }
-      .subtitle { font-size: 16px; }
+      .quick-info { flex-direction: column; gap: 5px; align-items: center; }
+      .name-header { font-size: 20px; }
+      .subtitle { font-size: 12px; }
       .contact-buttons { flex-direction: column; }
       .contact-button { width: 100%; justify-content: center; }
-      .header-text { font-size: 20px; }
+      .header-text { font-size: 16px; }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -313,15 +299,14 @@
   </div>
   <div class="profile-section">
     <div class="profile-image">
-      <!-- Replace with your actual photo path -->
       <img src="ck.jpg" alt="Chandan Kumar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
       <div class="profile-initial">C</div>
     </div>
-    <h1 class="name-header gold-glow">Chandan Kumar</h1>
+    <h1 class="name-header">Chandan Kumar</h1>
     <p class="subtitle">B.Tech IIT Dhanbad | Data Scientist at IBM</p>
     <div class="quick-info">
       <div class="info-pill"><i class="fas fa-birthday-cake"></i> 28 Years</div>
-      <div class="info-pill"><i class="fas fa-ruler-vertical"></i> 5'8" (173 cm)</div>
+      <div class="info-pill"><i class="fas fa-ruler-vertical"></i> 5'8"</div>
       <div class="info-pill">Hindu, Yadav</div>
       <div class="info-pill"><i class="fas fa-star"></i> Non-Manglik</div>
     </div>
@@ -330,88 +315,79 @@
   <section>
     <h2><i class="fas fa-user section-icon"></i>Personal Details</h2>
     <ul class="detail-list">
-      <li><strong>Date of Birth:</strong> May 15, 1996</li>
-      <li><strong>Place of Birth:</strong> Gaya, Bihar</li>
+      <li><strong>DOB:</strong> May 15, 1996</li>
+      <li><strong>Place:</strong> Gaya, Bihar</li>
       <li><strong>Complexion:</strong> Fair</li>
       <li><strong>Height:</strong> 5'8" (173 cm)</li>
       <li><strong>Religion:</strong> Hindu</li>
-      <li><strong>Caste:</strong> Yadav (Krishnaut)</li>
-      <li><strong>Manglik Status:</strong> Non-Manglik</li>
-      <li><strong>Occupation:</strong> Data Scientist at IBM</li>
+      <li><strong>Caste:</strong> Yadav</li>
+      <li><strong>Manglik:</strong> No</li>
+      <li><strong>Occupation:</strong> Data Scientist</li>
     </ul>
   </section>
 
   <section>
     <h2><i class="fas fa-home section-icon"></i>Family Background</h2>
     <ul class="detail-list">
-      <li><strong>Father's Name:</strong> Ajay Kumar Singh</li>
-      <li><strong>Mother's Name:</strong> Shyama Devi</li>
+      <li><strong>Father:</strong> Ajay Kumar Singh</li>
+      <li><strong>Mother:</strong> Shyama Devi</li>
       <li><strong>Siblings:</strong> 3 brothers, 1 sister</li>
-      <li><strong>Family Type:</strong> Upper-class with traditional values</li>
-      <li><strong>Family Location:</strong> Gaya, Bihar</li>
+      <li><strong>Family Type:</strong> Upper-class</li>
+      <li><strong>Location:</strong> Gaya, Bihar</li>
     </ul>
   </section>
 
   <section>
-    <h2><i class="fas fa-graduation-cap section-icon"></i>Educational & Professional Background</h2>
+    <h2><i class="fas fa-graduation-cap section-icon"></i>Education & Career</h2>
     <ul class="detail-list full-width-list">
-      <li><strong>Highest Degree:</strong> Bachelor of Technology (B.Tech)</li>
-      <li><strong>Institute:</strong> Indian Institute of Technology (IIT), Dhanbad</li>
-      <li><strong>Current Company:</strong> IBM</li>
-      <li><strong>Designation:</strong> Data Scientist</li>
-      <li><strong>Work Experience:</strong> 6.5 Years</li>
+      <li><strong>Degree:</strong> B.Tech, IIT Dhanbad</li>
+      <li><strong>Company:</strong> IBM, Data Scientist</li>
+      <li><strong>Experience:</strong> 6.5 Years</li>
     </ul>
   </section>
 
   <section>
-    <h2><i class="fas fa-heart section-icon"></i>Lifestyle & Interests</h2>
+    <h2><i class="fas fa-heart section-icon"></i>Lifestyle</h2>
     <ul class="detail-list full-width-list">
       <li><strong>Hobbies:</strong> Reading, Traveling, Cooking</li>
-      <li><strong>Interests:</strong> Technology, Sports, Music</li>
-      <li><strong>Languages Known:</strong> Hindi, English</li>
-      <li><strong>Diet Preference:</strong> Vegetarian</li>
+      <li><strong>Languages:</strong> Hindi, English</li>
+      <li><strong>Diet:</strong> Vegetarian</li>
     </ul>
   </section>
 
   <section>
     <h2><i class="fas fa-search section-icon"></i>Partner Preferences</h2>
     <ul class="expectations-list">
-      <li>A well-educated partner who values both career and family</li>
-      <li>Someone who understands and respects traditional family values</li>
-      <li>A balance between professional aspirations and personal life</li>
-      <li>Preferably from a similar educational background</li>
+      <li>Well-educated, values career & family</li>
+      <li>Respects traditional values</li>
+      <li>Balanced professional & personal life</li>
     </ul>
   </section>
 
   <section>
-    <h2><i class="fas fa-address-card section-icon"></i>Contact Information</h2>
+    <h2><i class="fas fa-address-card section-icon"></i>Contact</h2>
     <div class="contact-buttons">
-      <a href="tel:+919199000200" class="contact-button"><i class="fas fa-phone"></i> Call: +91-9199000200</a>
-      <a href="mailto:ckism.iit@gmail.com" class="contact-button"><i class="fas fa-envelope"></i> Email: ckism.iit@gmail.com</a>
+      <a href="tel:+919199000200" class="contact-button"><i class="fas fa-phone"></i> +91-9199000200</a>
+      <a href="mailto:ckism.iit@gmail.com" class="contact-button"><i class="fas fa-envelope"></i> ckism.iit@gmail.com</a>
     </div>
-    <ul class="detail-list full-width-list">
-      <li><strong>Address:</strong> Gaya, Bihar, India</li>
-      <li><strong>Best time to contact:</strong> Saturday and Sunday</li>
-    </ul>
   </section>
 
   <div id="footer">
-    <p>This biodata was last updated on <span id="date"></span></p>
+    <p>Updated: <span id="date"></span></p>
     <div class="ornament ornament-bl"><i class="fas fa-om"></i></div>
     <div class="ornament ornament-br"><i class="fas fa-om"></i></div>
   </div>
-  <button class="download-button" onclick="downloadPDF()"><i class="fas fa-download"></i> Download Biodata</button>
+  <button class="download-button" onclick="downloadPDF()"><i class="fas fa-download"></i> Download as PDF</button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 <script>
   document.getElementById('date').textContent = new Date().toLocaleDateString('en-IN', {
     year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric'
   });
 
-  // Show initial if image fails to load
   const img = document.querySelector('.profile-image img');
   img.addEventListener('error', () => {
     img.style.display = 'none';
@@ -423,7 +399,7 @@
     const downloadBtn = element.querySelector('.download-button');
     downloadBtn.style.display = 'none';
     const opt = {
-      margin: 0.5,
+      margin: 0.25, /* Reduced margin for A4 */
       filename: 'Chandan_Kumar_Biodata.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },

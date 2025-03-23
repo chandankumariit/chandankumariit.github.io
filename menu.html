@@ -179,6 +179,10 @@
       flex-shrink: 0;
     }
 
+    .detail-list li span { /* Added to bold the values */
+      font-weight: 700;
+    }
+
     .lifestyle-container, .education-career-container {
       display: flex;
       justify-content: flex-start;
@@ -197,6 +201,10 @@
 
     .lifestyle-item strong, .education-career-item strong {
       color: var(--light-accent);
+    }
+
+    .lifestyle-item span, .education-career-item span { /* Added to bold the values */
+      font-weight: 700;
     }
 
     .expectations-list {
@@ -355,43 +363,43 @@
   <section>
     <h2><i class="fas fa-user section-icon"></i>Personal Details</h2>
     <ul class="detail-list">
-      <li><strong>DOB:</strong> May 15, 1996</li>
-      <li><strong>Place:</strong> Gaya, Bihar</li>
-      <li><strong>Complexion:</strong> Fair</li>
-      <li><strong>Height:</strong> 5'8" (173 cm)</li>
-      <li><strong>Religion:</strong> Hindu</li>
-      <li><strong>Caste:</strong> Yadav</li>
-      <li><strong>Manglik:</strong> No</li>
-      <li><strong>Occupation:</strong> Data Scientist</li>
+      <li><strong>DOB:</strong> <span>May 15, 1996</span></li>
+      <li><strong>Place:</strong> <span>Gaya, Bihar</span></li>
+      <li><strong>Complexion:</strong> <span>Fair</span></li>
+      <li><strong>Height:</strong> <span>5'8" (173 cm)</span></li>
+      <li><strong>Religion:</strong> <span>Hindu</span></li>
+      <li><strong>Caste:</strong> <span>Yadav</span></li>
+      <li><strong>Manglik:</strong> <span>No</span></li>
+      <li><strong>Occupation:</strong> <span>Data Scientist</span></li>
     </ul>
   </section>
 
   <section>
     <h2><i class="fas fa-home section-icon"></i>Family Background</h2>
     <ul class="detail-list">
-      <li><strong>Father:</strong> Ajay Kumar Singh</li>
-      <li><strong>Mother:</strong> Shyama Devi</li>
-      <li><strong>Siblings:</strong> 3 brothers, 1 sister</li>
-      <li><strong>Family Type:</strong> Upper-class</li>
-      <li><strong>Location:</strong> Gaya, Bihar</li>
+      <li><strong>Father:</strong> <span>Ajay Kumar Singh</span></li>
+      <li><strong>Mother:</strong> <span>Shyama Devi</span></li>
+      <li><strong>Siblings:</strong> <span>3 brothers, 1 sister</span></li>
+      <li><strong>Family Type:</strong> <span>Upper-class</span></li>
+      <li><strong>Location:</strong> <span>Gaya, Bihar</span></li>
     </ul>
   </section>
 
   <section>
     <h2><i class="fas fa-graduation-cap section-icon"></i>Education & Career</h2>
     <ul class="education-career-container">
-      <li class="education-career-item"><strong>Degree:</strong> B.Tech, IIT Dhanbad</li>
-      <li class="education-career-item"><strong>Company:</strong> IBM, Data Scientist</li>
-      <li class="education-career-item"><strong>Experience:</strong> 6.5 Years</li>
+      <li class="education-career-item"><strong>Degree:</strong> <span>B.Tech, IIT Dhanbad</span></li>
+      <li class="education-career-item"><strong>Company:</strong> <span>IBM, Data Scientist</span></li>
+      <li class="education-career-item"><strong>Experience:</strong> <span>6.5 Years</span></li>
     </ul>
   </section>
 
   <section>
     <h2><i class="fas fa-heart section-icon"></i>Lifestyle</h2>
     <ul class="lifestyle-container">
-      <li class="lifestyle-item"><strong>Hobbies:</strong> Reading, Traveling, Cooking</li>
-      <li class="lifestyle-item"><strong>Languages:</strong> Hindi, English</li>
-      <li class="lifestyle-item"><strong>Diet:</strong> Vegetarian</li>
+      <li class="lifestyle-item"><strong>Hobbies:</strong> <span>Reading, Traveling, Cooking</span></li>
+      <li class="lifestyle-item"><strong>Languages:</strong> <span>Hindi, English</span></li>
+      <li class="lifestyle-item"><strong>Diet:</strong> <span>Vegetarian</span></li>
     </ul>
   </section>
 
@@ -415,7 +423,7 @@
   <div id="footer">
     <div class="ornament ornament-bl">ॐ</div>
     <div class="ornament ornament-br">ॐ</div>
-    <p>Best Wishes</p> <!-- Removed "Generated on March 23, 2025" -->
+    <p>Best Wishes</p>
   </div>
 </div>
 

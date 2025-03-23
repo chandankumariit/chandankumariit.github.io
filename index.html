@@ -24,45 +24,43 @@
       font-family: 'Poppins', sans-serif;
       background: #f8f9fa;
       color: #333;
-      line-height: 1.6;
+      margin: 0;
+      padding-top: 80px; /* Space for fixed header */
     }
     #header {
       background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: white;
-      padding: 40px 0;
-      min-height: 100vh;
-      position: relative;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    #header .container {
       display: flex;
+      justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
     #header h1 {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 20px;
-    }
-    #header .intro-text {
-      max-width: 700px;
-      margin: 0 auto 30px;
-      font-size: 1.1rem;
+      margin: 0;
     }
     .nav-menu {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 30px;
-      padding: 10px;
-      margin: 20px auto;
-      max-width: 1000px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      margin: 0;
+      padding: 0;
     }
     .nav-menu .nav-link {
       color: #fff;
       font-weight: 500;
-      padding: 12px 20px;
+      padding: 10px 15px;
       transition: all 0.3s ease;
       text-decoration: none;
-      border-radius: 25px;
-      margin: 5px;
+      border-radius: 20px;
+      font-size: 0.9rem;
     }
     .nav-menu .nav-link:hover,
     .nav-menu .nav-link.active {
@@ -71,8 +69,8 @@
     }
     .social-links a {
       color: #fff;
-      font-size: 1.5rem;
-      margin: 0 15px;
+      font-size: 1.2rem;
+      margin-left: 15px;
       transition: transform 0.3s;
     }
     .social-links a:hover {
@@ -80,19 +78,21 @@
       color: #ffd700;
     }
     .content-section {
-      padding: 40px;
+      padding: 30px;
       background: #fff;
       border-radius: 10px;
       margin: 20px auto;
-      max-width: 900px;
+      max-width: 1000px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       display: none;
+      min-height: calc(100vh - 120px); /* Full height minus header */
+      overflow-y: auto;
     }
     .content-section.active {
       display: block;
     }
     .section-title h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 600;
       color: #2a5298;
       margin-bottom: 20px;
@@ -110,8 +110,8 @@
     .btn-custom {
       background: #2a5298;
       color: #fff;
-      padding: 10px 25px;
-      border-radius: 25px;
+      padding: 8px 20px;
+      border-radius: 20px;
       transition: all 0.3s;
     }
     .btn-custom:hover {
@@ -121,8 +121,8 @@
     footer {
       background: #1e3c72;
       color: #fff;
-      padding: 20px 0;
-      margin-top: 40px;
+      padding: 15px 0;
+      text-align: center;
     }
     ul {
       padding-left: 20px;
@@ -130,15 +130,26 @@
     ul li {
       margin-bottom: 10px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       .nav-menu .nav-link {
-        display: block;
-        text-align: center;
-        margin: 5px 0;
+        padding: 8px 10px;
+        font-size: 0.85rem;
       }
-      #header {
-        min-height: 80vh;
-        padding: 20px 0;
+      #header .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .social-links {
+        margin-top: 10px;
+      }
+    }
+    @media (max-width: 576px) {
+      #header h1 {
+        font-size: 1.2rem;
+      }
+      .nav-menu .nav-link {
+        padding: 6px 8px;
+        font-size: 0.75rem;
       }
     }
   </style>
@@ -146,12 +157,10 @@
 
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="text-center">
+  <header id="header">
     <div class="container">
       <h1>Chandan Kumar</h1>
-      <p class="intro-text">Data Scientist | AI & Machine Learning Expert</p>
-
-      <nav class="nav-menu">
+      <nav class="nav-menu d-flex flex-wrap">
         <a href="#home" class="nav-link active" data-section="home">Home</a>
         <a href="#experience" class="nav-link" data-section="experience">Experience</a>
         <a href="#projects" class="nav-link" data-section="projects">Projects</a>
@@ -161,8 +170,7 @@
         <a href="#skills" class="nav-link" data-section="skills">Skills</a>
         <a href="#core-competencies" class="nav-link" data-section="core-competencies">Core Competencies</a>
       </nav>
-
-      <div class="social-links mt-4">
+      <div class="social-links">
         <a href="mailto:ckism.iit@gmail.com" target="_blank"><i class="fab fa-google-plus-g"></i></a>
         <a href="https://www.linkedin.com/in/chandaniit/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       </div>
@@ -324,7 +332,7 @@
   </main><!-- End Content Area -->
 
   <!-- ======= Footer ======= -->
-  <footer class="text-center">
+  <footer>
     <p>Designed by <a href="#" class="text-white">Chandan Kumar</a> | © 2025</p>
   </footer>
 
@@ -348,8 +356,8 @@
         $(this).addClass('active');
         $('#' + sectionId).addClass('active');
 
-        // Smooth scroll to content
-        $('html, body').animate({ scrollTop: $('#' + sectionId).offset().top - 100 }, 500);
+        // Ensure content starts at top of viewport
+        window.scrollTo(0, 0);
       });
 
       // Show Home section by default

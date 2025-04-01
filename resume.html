@@ -20,7 +20,7 @@
     }
 
     .container {
-      width: 200mm; /* Reduced from 210mm to reduce canvas size */
+      width: 200mm;
       min-height: 297mm;
       margin: 20px auto;
       background: #fff;
@@ -28,22 +28,22 @@
       border-radius: 5px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Simplified shadow */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     header {
-      background: #000000; /* Changed to solid black */
-      color: #fff;
+      background: none;
+      color: #2d3748;
       padding: 6px 12px;
       text-align: center;
-      border-radius: 5px;
+      border-radius: 0;
       margin-bottom: 8px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Simplified shadow */
+      border-bottom: 2px solid #d3d3d3; /* Changed to default light gray */
     }
 
     header h1 {
       font-size: 24px;
-      font-weight: 400; /* Adjusted to match single font weight */
+      font-weight: 400;
       margin: 0;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -65,9 +65,9 @@
 
     .contact-item a,
     .contact-item span {
-      color: #ffffff;
+      color: #2d3748;
       text-decoration: none;
-      font-weight: 400; /* Adjusted to match single font weight */
+      font-weight: 400;
       font-size: 13px;
     }
 
@@ -78,7 +78,7 @@
     .icon {
       margin-right: 4px;
       font-size: 14px;
-      color: #d3d3d3; /* Changed to light gray for contrast on black background */
+      color: #4a5568;
     }
 
     .content {
@@ -107,10 +107,10 @@
 
     .section-title {
       font-size: 14px;
-      font-weight: 400; /* Adjusted to match single font weight */
+      font-weight: 400;
       text-transform: uppercase;
       margin-bottom: 3px;
-      border-bottom: 2px solid #3182ce;
+      border-bottom: 2px solid #d3d3d3; /* Changed to default light gray */
       padding-bottom: 2px;
       color: #2c5282;
       letter-spacing: 0.5px;
@@ -126,7 +126,7 @@
     .school-name,
     .project-title {
       font-size: 13px;
-      font-weight: 400; /* Adjusted to match single font weight */
+      font-weight: 400;
       display: inline-block;
       color: #2d3748;
     }
@@ -136,7 +136,7 @@
       float: right;
       font-size: 12px;
       color: #4a5568;
-      font-weight: 400; /* Adjusted to match single font weight */
+      font-weight: 400;
     }
 
     ul {
@@ -168,7 +168,7 @@
 
     strong {
       color: #2c5282;
-      font-weight: 400; /* Adjusted to match single font weight */
+      font-weight: 400;
     }
 
     .project ul {
@@ -193,22 +193,22 @@
       width: 140px;
       margin: 15px auto;
       padding: 8px;
-      background: #3182ce; /* Simplified to solid color */
+      background: #3182ce;
       color: #fff;
       text-align: center;
       border-radius: 5px;
       cursor: pointer;
-      font-weight: 400; /* Adjusted to match single font weight */
+      font-weight: 400;
       font-size: 14px;
       border: none;
       transition: all 0.3s ease;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Simplified shadow */
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     #downloadButton:hover {
-      background: #2c5282; /* Simplified to solid color */
+      background: #2c5282;
       transform: translateY(-1px);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Simplified shadow */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     }
   </style>
 </head>
@@ -395,7 +395,7 @@
       
       // Capture the content with html2canvas
       const canvas = await html2canvas(element, {
-        scale: 2, // Kept as per your instruction
+        scale: 2,
         useCORS: true,
         logging: false,
         width: element.offsetWidth,
@@ -407,4 +407,17 @@
       // Restore the original height
       element.style.height = originalHeight;
 
-      const imgData = canvas.toDataURL('image/jpeg
+      const imgData = canvas.toDataURL('image/jpeg', 1.0);
+      
+      // A4 dimensions in mm
+      const pdfWidth = doc.internal.pageSize.getWidth(); // 210mm
+      const pdfHeight = doc.internal.pageSize.getHeight(); // 297mm
+
+      // Add the image to the PDF
+      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+      
+      doc.save('Chandan_Kumar_Resume.pdf');
+    }
+  </script>
+</body>
+</html>

@@ -21,10 +21,11 @@
 
     .container {
       width: 210mm;
-      height: 297mm;
+      /* Removed fixed height to allow content to grow */
+      min-height: 297mm; /* Minimum height for A4, but can grow */
       margin: 20px auto;
       background: #fff;
-      padding: 10px;
+      padding: 8px; /* Reduced from 10px to save space */
       border-radius: 5px;
       display: flex;
       flex-direction: column;
@@ -34,10 +35,10 @@
     header {
       background: linear-gradient(135deg, #3182ce, #2c5282);
       color: #fff;
-      padding: 8px 15px;
+      padding: 6px 12px; /* Reduced padding to save space */
       text-align: center;
       border-radius: 5px;
-      margin-bottom: 10px;
+      margin-bottom: 8px; /* Reduced from 10px */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
@@ -52,8 +53,8 @@
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 5px;
-      gap: 15px;
+      margin-top: 4px; /* Reduced from 5px */
+      gap: 12px; /* Reduced from 15px */
       flex-wrap: wrap;
     }
 
@@ -83,7 +84,7 @@
 
     .content {
       display: flex;
-      gap: 12px;
+      gap: 10px; /* Reduced from 12px */
       flex: 1;
       overflow: hidden;
     }
@@ -101,7 +102,7 @@
     }
 
     .section {
-      margin-bottom: 6px;
+      margin-bottom: 4px; /* Reduced from 6px */
       padding: 0 0 2px 0;
     }
 
@@ -109,7 +110,7 @@
       font-size: 14px; /* Increased from 12px to 14px */
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 3px; /* Reduced from 4px */
       border-bottom: 2px solid #3182ce;
       padding-bottom: 2px;
       color: #2c5282;
@@ -119,7 +120,7 @@
     .job,
     .education-item,
     .project {
-      margin-bottom: 3px;
+      margin-bottom: 2px; /* Reduced from 3px */
     }
 
     .job-title,
@@ -141,12 +142,12 @@
 
     ul {
       padding-left: 15px; /* Adjusted for better bullet alignment */
-      margin: 3px 0;
+      margin: 2px 0; /* Reduced from 3px */
     }
 
     li {
       font-size: 12px; /* Increased from 10px to 12px */
-      margin-bottom: 2px; /* Slightly increased for spacing */
+      margin-bottom: 1px; /* Reduced from 2px */
       position: relative;
       padding-left: 3px;
     }
@@ -157,12 +158,12 @@
     }
 
     .skills-list ul li {
-      margin-bottom: 3px; /* Slightly increased for spacing */
+      margin-bottom: 2px; /* Reduced from 3px */
     }
 
     p {
       font-size: 12px; /* Increased from 10px to 12px */
-      margin: 3px 0;
+      margin: 2px 0; /* Reduced from 3px */
       text-align: justify;
     }
 
@@ -172,7 +173,7 @@
     }
 
     .project ul {
-      border-left: none; /* Removed the border as per screenshot */
+      border-left: none; /* Removed the border as per previous request */
       padding-left: 15px; /* Adjusted to align with other lists */
       margin-left: 0; /* Reset margin to align properly */
     }
@@ -390,31 +391,52 @@
 
       const element = document.getElementById('resumeContent');
       
-      // Set a fixed height for the container when generating PDF
-      const originalHeight = element.style.height;
-      element.style.height = '297mm';
-      
+      // Capture the full content with html2canvas
       const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
         logging: false,
         width: element.offsetWidth,
-        height: element.offsetHeight,
+        height: element.scrollHeight, // Use scrollHeight to capture all content
         windowWidth: element.offsetWidth,
-        windowHeight: element.offsetHeight
+        windowHeight: element.scrollHeight
       });
-      
-      // Restore original height
-      element.style.height = originalHeight;
 
       const imgData = canvas.toDataURL('image/jpeg', 1.0);
       
-      // Get dimensions of the PDF
-      const pdfWidth = doc.internal.pageSize.getWidth();
-      const pdfHeight = doc.internal.pageSize.getHeight();
-      
-      // Add image to fill exactly one page
-      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+      // A4 dimensions in mm
+      const pdfWidth = doc.internal.pageSize.getWidth(); // 210mm
+      const pdfHeight = doc.internal.pageSize.getHeight(); // 297mm
+
+      // Calculate the height of the content in mm
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = pdfWidth / imgWidth;
+      const scaledImgHeight = imgHeight * ratio; // Height of the content scaled to fit the PDF width
+
+      // Calculate the number of pages needed
+      const pageHeightInPixels = pdfHeight / ratio; // Height of one A4 page in pixels
+      const totalPages = Math.ceil(imgHeight / pageHeightInPixels);
+
+      // Add each page to the PDF
+      for (let i = 0; i < totalPages; i++) {
+        if (i > 0) {
+          doc.addPage();
+        }
+        const srcY = i * pageHeightInPixels; // Starting Y position in the canvas for this page
+        const clippedHeight = Math.min(pageHeightInPixels, imgHeight - srcY); // Height to clip for this page
+
+        // Create a temporary canvas to clip the image for the current page
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = imgWidth;
+        tempCanvas.height = clippedHeight;
+        const tempCtx = tempCanvas.getContext('2d');
+        tempCtx.drawImage(canvas, 0, srcY, imgWidth, clippedHeight, 0, 0, imgWidth, clippedHeight);
+
+        const pageImgData = tempCanvas.toDataURL('image/jpeg', 1.0);
+        doc.addImage(pageImgData, 'JPEG', 0, 0, pdfWidth, clippedHeight * ratio, undefined, 'FAST');
+      }
+
       doc.save('Chandan_Kumar_Resume.pdf');
     }
   </script>

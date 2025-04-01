@@ -106,11 +106,15 @@
     .section-title {
       font-size: 13px;
       font-weight: 700;
-      color: var(--primary-color);
+      color: #2980b9; /* All section headers in Darker Blue */
       text-transform: uppercase;
       margin-bottom: 6px;
       border-bottom: 1px solid var(--secondary-color);
       padding-bottom: 3px;
+    }
+
+    .section-title:hover {
+      opacity: 0.8;
     }
 
     .job, .education-item, .project {
@@ -311,7 +315,7 @@
         <div class="section">
           <div class="section-title">Education</div>
           <div class="education-item">
-             <div class="school-name">IIT Dhanbad - B.Tech</div>
+            <div class="school-name">IIT Dhanbad - B.Tech</div>
             <div class="education-period">(2013-2017)</div>
           </div>
           <div class="education-item">
@@ -388,7 +392,6 @@
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
       
-      // Create a new PDF document in portrait orientation
       const doc = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
@@ -399,13 +402,11 @@
       const element = document.getElementById('resumeContent');
       
       try {
-        // Show loading status on button
         const button = document.getElementById('downloadButton');
         const originalText = button.innerHTML;
         button.innerHTML = "Generating PDF...";
         button.disabled = true;
         
-        // Capture the HTML element as a canvas
         const canvas = await html2canvas(element, {
           scale: 2,
           useCORS: true,
@@ -414,35 +415,28 @@
           backgroundColor: '#ffffff'
         });
         
-        // Get page dimensions
         const imgWidth = 210;
         const pageHeight = 297;
         const imgHeight = canvas.height * imgWidth / canvas.width;
         
-        // Add image to PDF (high quality)
         const imgData = canvas.toDataURL('image/jpeg', 0.92);
         doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight, undefined, 'MEDIUM');
         
-        // Save the PDF
         doc.save('Chandan_Kumar_Resume.pdf');
         
-        // Restore button state
         button.innerHTML = originalText;
         button.disabled = false;
       } catch (error) {
         console.error('Error generating PDF:', error);
         alert('Failed to generate PDF. Please try again.');
         
-        // Restore button state on error
         const button = document.getElementById('downloadButton');
         button.innerHTML = "Try Again";
         button.disabled = false;
       }
     }
     
-    // Add event listener to detect print requests
     window.addEventListener('beforeprint', function() {
-      // Optimize for print view
       document.body.style.background = 'white';
     });
   </script>

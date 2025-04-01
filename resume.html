@@ -19,7 +19,7 @@
       width: 210mm;
       min-height: 297mm;
       margin: 20px auto;
-      padding: 8px;
+      padding: 10px; /* Slightly increased padding for better spacing */
       border-radius: 5px;
       display: flex;
       flex-direction: column;
@@ -27,26 +27,26 @@
     }
 
     header {
-      padding: 6px 12px;
+      padding: 8px 12px; /* Slightly increased top/bottom padding */
       text-align: center;
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0; /* Rounded only at top */
       margin-bottom: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid #000; /* Added black line to separate header */
     }
 
     header h1 {
-      font-size: 24px;
+      font-size: 26px; /* Slightly larger for emphasis */
       font-weight: 700;
       margin: 0;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px; /* Slightly increased for better readability */
       text-transform: uppercase;
     }
 
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 4px;
-      gap: 12px;
+      margin-top: 6px; /* Increased spacing */
+      gap: 15px; /* Increased gap for better separation */
       flex-wrap: wrap;
     }
 
@@ -68,13 +68,13 @@
     }
 
     .icon {
-      margin-right: 4px;
+      margin-right: 5px; /* Slightly increased for balance */
       font-size: 14px;
     }
 
     .content {
       display: flex;
-      gap: 10px;
+      gap: 12px; /* Slightly increased for better column separation */
       flex: 1;
       overflow: hidden;
     }
@@ -92,7 +92,7 @@
     }
 
     .section {
-      margin-bottom: 4px;
+      margin-bottom: 6px; /* Increased for better section separation */
       padding: 0 0 2px 0;
     }
 
@@ -100,8 +100,8 @@
       font-size: 14px;
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: 3px;
-      border-bottom: 2px solid;
+      margin-bottom: 4px; /* Slightly increased spacing */
+      border-bottom: 2px solid #000; /* Consistent black line */
       padding-bottom: 2px;
       letter-spacing: 0.5px;
     }
@@ -109,7 +109,7 @@
     .job,
     .education-item,
     .project {
-      margin-bottom: 2px;
+      margin-bottom: 3px; /* Slightly increased for readability */
     }
 
     .job-title,
@@ -134,7 +134,7 @@
 
     li {
       font-size: 12px;
-      margin-bottom: 1px;
+      margin-bottom: 2px; /* Increased for better list spacing */
       position: relative;
       padding-left: 3px;
     }
@@ -177,15 +177,15 @@
 
     #downloadButton {
       display: block;
-      width: 140px;
+      width: 150px; /* Slightly wider button */
       margin: 15px auto;
-      padding: 8px;
+      padding: 10px; /* Increased padding for better click area */
       text-align: center;
       border-radius: 5px;
       cursor: pointer;
       font-weight: 600;
       font-size: 14px;
-      border: none;
+      border: 1px solid #000; /* Added subtle border */
       transition: all 0.3s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
@@ -368,40 +368,35 @@
         orientation: 'portrait',
         unit: 'mm',
         format: 'a4',
-        compress: true,
+        compress: false, // Disabled compression for higher quality
         putOnlyUsedFonts: true,
-        floatPrecision: 16 // Higher precision for better quality
+        floatPrecision: 16
       });
 
       const element = document.getElementById('resumeContent');
       
-      // Temporarily set the container height to A4 dimensions
       const originalHeight = element.style.height;
       element.style.height = '297mm';
       
-      // Increase scale for better resolution
       const canvas = await html2canvas(element, {
-        scale: 3, // Increased from 2 to 3 for sharper output
+        scale: 4, // Increased from 3 to 4 for even higher resolution
         useCORS: true,
         logging: false,
         width: element.offsetWidth,
         height: element.offsetHeight,
         windowWidth: element.offsetWidth,
         windowHeight: element.offsetHeight,
-        dpi: 300 // Higher DPI for print quality
+        dpi: 300
       });
 
-      // Restore original height
       element.style.height = originalHeight;
 
-      // Use higher quality JPEG compression
-      const imgData = canvas.toDataURL('image/jpeg', 0.95); // Increased quality from 1.0 to 0.95 (still high quality but better compression)
+      const imgData = canvas.toDataURL('image/jpeg', 1.0); // Max quality JPEG
       
       const pdfWidth = doc.internal.pageSize.getWidth();
       const pdfHeight = doc.internal.pageSize.getHeight();
 
-      // Add image with better compression settings
-      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'SLOW'); // Changed from 'FAST' to 'SLOW' for better quality
+      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'NONE'); // No compression for max quality
       
       doc.save('Chandan_Kumar_Resume.pdf');
     }

@@ -8,198 +8,205 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <style>
-    body {
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --border-color: #e0e0e0;
+      --text-color: #333;
+      --light-bg: #f9f9f9;
+    }
+    
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-size: 12px;
-      line-height: 1.4;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      line-height: 1.5;
+      background-color: #f0f0f0;
     }
 
     .container {
       width: 210mm;
       min-height: 297mm;
       margin: 20px auto;
-      padding: 8px;
-      border-radius: 5px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      padding: 12px;
+      position: relative;
     }
 
     header {
-      padding: 6px 12px;
+      margin-bottom: 12px;
       text-align: center;
-      border-radius: 5px;
-      margin-bottom: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 8px;
     }
 
     header h1 {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 700;
-      margin: 0;
+      color: var(--primary-color);
+      margin-bottom: 6px;
       letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 4px;
-      gap: 12px;
+      gap: 16px;
       flex-wrap: wrap;
+      margin-top: 6px;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      margin: 0;
+    }
+
+    .contact-item .icon {
+      color: var(--secondary-color);
+      margin-right: 6px;
+      font-size: 14px;
     }
 
     .contact-item a,
     .contact-item span {
+      color: var(--text-color);
       text-decoration: none;
-      font-weight: 500;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .contact-item a:hover {
+      color: var(--secondary-color);
       text-decoration: underline;
-    }
-
-    .icon {
-      margin-right: 4px;
-      font-size: 14px;
     }
 
     .content {
       display: flex;
-      gap: 10px;
-      flex: 1;
-      overflow: hidden;
+      gap: 15px;
     }
 
     .left-column {
       flex: 6;
-      min-width: 0;
-      overflow: hidden;
     }
 
     .right-column {
       flex: 4;
-      min-width: 0;
-      overflow: hidden;
     }
 
     .section {
-      margin-bottom: 4px;
-      padding: 0 0 2px 0;
+      margin-bottom: 12px;
     }
 
     .section-title {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
+      color: var(--primary-color);
       text-transform: uppercase;
-      margin-bottom: 3px;
-      border-bottom: 2px solid;
-      padding-bottom: 2px;
-      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--secondary-color);
+      padding-bottom: 4px;
     }
 
-    .job,
-    .education-item,
-    .project {
-      margin-bottom: 2px;
+    .job, .education-item, .project {
+      margin-bottom: 6px;
     }
 
-    .job-title,
-    .school-name,
-    .project-title {
-      font-size: 13px;
+    .job-title, .school-name, .project-title {
+      font-size: 14px;
       font-weight: 600;
       display: inline-block;
+      color: var(--secondary-color);
     }
 
-    .job-period,
-    .education-period {
+    .job-period, .education-period {
       float: right;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
+      color: var(--text-color);
     }
 
     ul {
-      padding-left: 15px;
-      margin: 2px 0;
+      padding-left: 16px;
+      margin: 4px 0;
     }
 
     li {
-      font-size: 12px;
-      margin-bottom: 1px;
-      position: relative;
-      padding-left: 3px;
-    }
-
-    .skills-list {
-      font-size: 12px;
-      margin: 0;
+      font-size: 13px;
+      margin-bottom: 3px;
+      text-align: justify;
     }
 
     .skills-list ul li {
-      margin-bottom: 2px;
+      margin-bottom: 5px;
     }
 
     p {
-      font-size: 12px;
-      margin: 2px 0;
+      font-size: 13px;
+      margin: 4px 0;
       text-align: justify;
+      line-height: 1.5;
     }
 
     strong {
       font-weight: 600;
+      color: var(--primary-color);
     }
 
-    .project ul {
-      border-left: none;
-      padding-left: 15px;
-      margin-left: 0;
+    #downloadButton {
+      display: block;
+      width: 180px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #downloadButton:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @media print {
+      body {
+        background: none;
+      }
+      .container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+      }
+      #downloadButton {
+        display: none;
+      }
     }
 
     @media (max-width: 768px) {
       .content {
         flex-direction: column;
       }
-
-      .left-column,
-      .right-column {
-        width: 100%;
+      .container {
+        width: 95%;
       }
-    }
-
-    #downloadButton {
-      display: block;
-      width: 140px;
-      margin: 15px auto;
-      padding: 8px;
-      text-align: center;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 14px;
-      border: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    #downloadButton:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
     }
   </style>
 </head>
 <body>
   <div class="container" id="resumeContent">
     <header>
-      <h1>Chandan Kumar</h1>
+      <h1>CHANDAN KUMAR</h1>
       <div class="contact-info">
         <div class="contact-item">
           <span class="icon"><i class="fas fa-envelope"></i></span>
@@ -215,12 +222,14 @@
         </div>
       </div>
     </header>
+    
     <div class="content">
       <div class="left-column">
         <div class="section">
           <div class="section-title">Professional Summary</div>
           <p>IIT Dhanbad Graduate with around 7 years of expertise in Data Science, Generative AI, Machine Learning, MLOps, Responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading innovative projects, seeking to leverage advanced analytical, model development, and deployment skills in transformative data science initiatives.</p>
         </div>
+        
         <div class="section">
           <div class="section-title">Experience</div>
           <div class="job">
@@ -240,6 +249,7 @@
             <div class="job-period">Jun 2018 - Jan 2021</div>
           </div>
         </div>
+        
         <div class="section">
           <div class="section-title">Projects</div>
           <div class="project">
@@ -290,6 +300,7 @@
           </div>
         </div>
       </div>
+      
       <div class="right-column">
         <div class="section">
           <div class="section-title">Education</div>
@@ -302,6 +313,7 @@
             <div class="education-period">(2012-2013)</div>
           </div>
         </div>
+        
         <div class="section">
           <div class="section-title">Certification</div>
           <ul>
@@ -320,6 +332,7 @@
             <li>Microsoft - SQL Server</li>
           </ul>
         </div>
+        
         <div class="section">
           <div class="section-title">Achievements</div>
           <ul>
@@ -330,6 +343,7 @@
             <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
           </ul>
         </div>
+        
         <div class="section">
           <div class="section-title">Skills</div>
           <div class="skills-list">
@@ -345,6 +359,7 @@
             </ul>
           </div>
         </div>
+        
         <div class="section">
           <div class="section-title">Core Competencies</div>
           <ul>
@@ -360,51 +375,70 @@
       </div>
     </div>
   </div>
-  <button id="downloadButton" onclick="downloadPDF()">Download as PDF</button>
+  
+  <button id="downloadButton" onclick="downloadPDF()">Download Resume as PDF</button>
+  
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
+      
+      // Create a new PDF document in portrait orientation
       const doc = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
         format: 'a4',
-        compress: true,
-        putOnlyUsedFonts: true,
-        floatPrecision: 16 // Higher precision for better quality
+        compress: true
       });
 
       const element = document.getElementById('resumeContent');
       
-      // Temporarily set the container height to A4 dimensions
-      const originalHeight = element.style.height;
-      element.style.height = '297mm';
-      
-      // Increase scale for better resolution
-      const canvas = await html2canvas(element, {
-        scale: 3, // Increased from 2 to 3 for sharper output
-        useCORS: true,
-        logging: false,
-        width: element.offsetWidth,
-        height: element.offsetHeight,
-        windowWidth: element.offsetWidth,
-        windowHeight: element.offsetHeight,
-        dpi: 300 // Higher DPI for print quality
-      });
-
-      // Restore original height
-      element.style.height = originalHeight;
-
-      // Use higher quality JPEG compression
-      const imgData = canvas.toDataURL('image/jpeg', 0.95); // Increased quality from 1.0 to 0.95 (still high quality but better compression)
-      
-      const pdfWidth = doc.internal.pageSize.getWidth();
-      const pdfHeight = doc.internal.pageSize.getHeight();
-
-      // Add image with better compression settings
-      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'SLOW'); // Changed from 'FAST' to 'SLOW' for better quality
-      
-      doc.save('Chandan_Kumar_Resume.pdf');
+      try {
+        // Show loading status on button
+        const button = document.getElementById('downloadButton');
+        const originalText = button.innerHTML;
+        button.innerHTML = "Generating PDF...";
+        button.disabled = true;
+        
+        // Capture the HTML element as a canvas
+        const canvas = await html2canvas(element, {
+          scale: 2,
+          useCORS: true,
+          logging: false,
+          allowTaint: true,
+          backgroundColor: '#ffffff'
+        });
+        
+        // Get page dimensions
+        const imgWidth = 210;
+        const pageHeight = 297;
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        
+        // Add image to PDF (high quality)
+        const imgData = canvas.toDataURL('image/jpeg', 0.92);
+        doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight, undefined, 'MEDIUM');
+        
+        // Save the PDF
+        doc.save('Chandan_Kumar_Resume.pdf');
+        
+        // Restore button state
+        button.innerHTML = originalText;
+        button.disabled = false;
+      } catch (error) {
+        console.error('Error generating PDF:', error);
+        alert('Failed to generate PDF. Please try again.');
+        
+        // Restore button state on error
+        const button = document.getElementById('downloadButton');
+        button.innerHTML = "Try Again";
+        button.disabled = false;
+      }
     }
+    
+    // Add event listener to detect print requests
+    window.addEventListener('beforeprint', function() {
+      // Optimize for print view
+      document.body.style.background = 'white';
+    });
   </script>
 </body>
 </html>

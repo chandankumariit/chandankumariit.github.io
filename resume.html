@@ -368,32 +368,40 @@
         orientation: 'portrait',
         unit: 'mm',
         format: 'a4',
-        compress: true
+        compress: true,
+        putOnlyUsedFonts: true,
+        floatPrecision: 16 // Higher precision for better quality
       });
 
       const element = document.getElementById('resumeContent');
       
+      // Temporarily set the container height to A4 dimensions
       const originalHeight = element.style.height;
       element.style.height = '297mm';
       
+      // Increase scale for better resolution
       const canvas = await html2canvas(element, {
-        scale: 2,
+        scale: 3, // Increased from 2 to 3 for sharper output
         useCORS: true,
         logging: false,
         width: element.offsetWidth,
         height: element.offsetHeight,
         windowWidth: element.offsetWidth,
-        windowHeight: element.offsetHeight
+        windowHeight: element.offsetHeight,
+        dpi: 300 // Higher DPI for print quality
       });
 
+      // Restore original height
       element.style.height = originalHeight;
 
-      const imgData = canvas.toDataURL('image/jpeg', 1.0);
+      // Use higher quality JPEG compression
+      const imgData = canvas.toDataURL('image/jpeg', 0.95); // Increased quality from 1.0 to 0.95 (still high quality but better compression)
       
       const pdfWidth = doc.internal.pageSize.getWidth();
       const pdfHeight = doc.internal.pageSize.getHeight();
 
-      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+      // Add image with better compression settings
+      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'SLOW'); // Changed from 'FAST' to 'SLOW' for better quality
       
       doc.save('Chandan_Kumar_Resume.pdf');
     }

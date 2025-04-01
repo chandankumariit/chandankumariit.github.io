@@ -15,17 +15,16 @@
       padding: 0;
       background: #f0f4f8;
       color: #2d3748;
-      font-size: 12px; /* Increased from 10px to 12px */
-      line-height: 1.4; /* Slightly increased for better readability */
+      font-size: 12px;
+      line-height: 1.4;
     }
 
     .container {
       width: 210mm;
-      /* Removed fixed height to allow content to grow */
-      min-height: 297mm; /* Minimum height for A4, but can grow */
+      min-height: 297mm;
       margin: 20px auto;
       background: #fff;
-      padding: 8px; /* Reduced from 10px to save space */
+      padding: 8px;
       border-radius: 5px;
       display: flex;
       flex-direction: column;
@@ -35,15 +34,15 @@
     header {
       background: linear-gradient(135deg, #3182ce, #2c5282);
       color: #fff;
-      padding: 6px 12px; /* Reduced padding to save space */
+      padding: 6px 12px;
       text-align: center;
       border-radius: 5px;
-      margin-bottom: 8px; /* Reduced from 10px */
+      margin-bottom: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      font-size: 24px; /* Increased from 20px to 24px */
+      font-size: 24px;
       font-weight: 700;
       margin: 0;
       letter-spacing: 1px;
@@ -53,8 +52,8 @@
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 4px; /* Reduced from 5px */
-      gap: 12px; /* Reduced from 15px */
+      margin-top: 4px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
@@ -69,7 +68,7 @@
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
-      font-size: 13px; /* Increased from 11px to 13px */
+      font-size: 13px;
     }
 
     .contact-item a:hover {
@@ -78,13 +77,13 @@
 
     .icon {
       margin-right: 4px;
-      font-size: 14px; /* Increased from 12px to 14px */
+      font-size: 14px;
       color: #bee3f8;
     }
 
     .content {
       display: flex;
-      gap: 10px; /* Reduced from 12px */
+      gap: 10px;
       flex: 1;
       overflow: hidden;
     }
@@ -102,15 +101,15 @@
     }
 
     .section {
-      margin-bottom: 4px; /* Reduced from 6px */
+      margin-bottom: 4px;
       padding: 0 0 2px 0;
     }
 
     .section-title {
-      font-size: 14px; /* Increased from 12px to 14px */
+      font-size: 14px;
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: 3px; /* Reduced from 4px */
+      margin-bottom: 3px;
       border-bottom: 2px solid #3182ce;
       padding-bottom: 2px;
       color: #2c5282;
@@ -120,13 +119,13 @@
     .job,
     .education-item,
     .project {
-      margin-bottom: 2px; /* Reduced from 3px */
+      margin-bottom: 2px;
     }
 
     .job-title,
     .school-name,
     .project-title {
-      font-size: 13px; /* Increased from 11px to 13px */
+      font-size: 13px;
       font-weight: 600;
       display: inline-block;
       color: #2d3748;
@@ -135,35 +134,35 @@
     .job-period,
     .education-period {
       float: right;
-      font-size: 12px; /* Increased from 10px to 12px */
+      font-size: 12px;
       color: #4a5568;
       font-weight: 500;
     }
 
     ul {
-      padding-left: 15px; /* Adjusted for better bullet alignment */
-      margin: 2px 0; /* Reduced from 3px */
+      padding-left: 15px;
+      margin: 2px 0;
     }
 
     li {
-      font-size: 12px; /* Increased from 10px to 12px */
-      margin-bottom: 1px; /* Reduced from 2px */
+      font-size: 12px;
+      margin-bottom: 1px;
       position: relative;
       padding-left: 3px;
     }
 
     .skills-list {
-      font-size: 12px; /* Increased from 10px to 12px */
+      font-size: 12px;
       margin: 0;
     }
 
     .skills-list ul li {
-      margin-bottom: 2px; /* Reduced from 3px */
+      margin-bottom: 2px;
     }
 
     p {
-      font-size: 12px; /* Increased from 10px to 12px */
-      margin: 2px 0; /* Reduced from 3px */
+      font-size: 12px;
+      margin: 2px 0;
       text-align: justify;
     }
 
@@ -173,9 +172,9 @@
     }
 
     .project ul {
-      border-left: none; /* Removed the border as per previous request */
-      padding-left: 15px; /* Adjusted to align with other lists */
-      margin-left: 0; /* Reset margin to align properly */
+      border-left: none;
+      padding-left: 15px;
+      margin-left: 0;
     }
 
     @media (max-width: 768px) {
@@ -200,7 +199,7 @@
       border-radius: 5px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 14px; /* Increased from 12px to 14px */
+      font-size: 14px;
       border: none;
       transition: all 0.3s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -391,16 +390,23 @@
 
       const element = document.getElementById('resumeContent');
       
-      // Capture the full content with html2canvas
+      // Temporarily set the container height to A4 dimensions for rendering
+      const originalHeight = element.style.height;
+      element.style.height = '297mm'; // Fix height to A4 for consistent rendering
+      
+      // Capture the content with html2canvas
       const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
         logging: false,
         width: element.offsetWidth,
-        height: element.scrollHeight, // Use scrollHeight to capture all content
+        height: element.offsetHeight, // Use offsetHeight since height is fixed to 297mm
         windowWidth: element.offsetWidth,
-        windowHeight: element.scrollHeight
+        windowHeight: element.offsetHeight
       });
+
+      // Restore the original height
+      element.style.height = originalHeight;
 
       const imgData = canvas.toDataURL('image/jpeg', 1.0);
       
@@ -414,29 +420,10 @@
       const ratio = pdfWidth / imgWidth;
       const scaledImgHeight = imgHeight * ratio; // Height of the content scaled to fit the PDF width
 
-      // Calculate the number of pages needed
-      const pageHeightInPixels = pdfHeight / ratio; // Height of one A4 page in pixels
-      const totalPages = Math.ceil(imgHeight / pageHeightInPixels);
-
-      // Add each page to the PDF
-      for (let i = 0; i < totalPages; i++) {
-        if (i > 0) {
-          doc.addPage();
-        }
-        const srcY = i * pageHeightInPixels; // Starting Y position in the canvas for this page
-        const clippedHeight = Math.min(pageHeightInPixels, imgHeight - srcY); // Height to clip for this page
-
-        // Create a temporary canvas to clip the image for the current page
-        const tempCanvas = document.createElement('canvas');
-        tempCanvas.width = imgWidth;
-        tempCanvas.height = clippedHeight;
-        const tempCtx = tempCanvas.getContext('2d');
-        tempCtx.drawImage(canvas, 0, srcY, imgWidth, clippedHeight, 0, 0, imgWidth, clippedHeight);
-
-        const pageImgData = tempCanvas.toDataURL('image/jpeg', 1.0);
-        doc.addImage(pageImgData, 'JPEG', 0, 0, pdfWidth, clippedHeight * ratio, undefined, 'FAST');
-      }
-
+      // Since content fits on one page (as confirmed), we only need one page
+      // Add the image to the PDF
+      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+      
       doc.save('Chandan_Kumar_Resume.pdf');
     }
   </script>

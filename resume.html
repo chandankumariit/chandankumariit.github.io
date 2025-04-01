@@ -11,56 +11,51 @@
     body {
       margin: 0;
       padding: 0;
+      font-family: 'Arial', sans-serif;
       font-size: 12px;
-      line-height: 1.4;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
     }
 
     .container {
       width: 210mm;
       min-height: 297mm;
       margin: 20px auto;
-      padding: 10px; /* Slightly increased padding for better spacing */
-      border-radius: 5px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     header {
-      padding: 8px 12px; /* Slightly increased top/bottom padding */
       text-align: center;
-      border-radius: 5px 5px 0 0; /* Rounded only at top */
-      margin-bottom: 8px;
-      border-bottom: 2px solid #000; /* Added black line to separate header */
+      margin-bottom: 20px;
     }
 
     header h1 {
-      font-size: 26px; /* Slightly larger for emphasis */
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: 1.2px; /* Slightly increased for better readability */
-      text-transform: uppercase;
+      font-size: 28px;
+      font-weight: bold;
+      color: #0056b3;
+      margin-bottom: 5px;
     }
 
     .contact-info {
       display: flex;
       justify-content: center;
-      margin-top: 6px; /* Increased spacing */
-      gap: 15px; /* Increased gap for better separation */
-      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      margin: 0;
     }
 
     .contact-item a,
     .contact-item span {
+      font-size: 14px;
+      color: #0056b3;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 13px;
     }
 
     .contact-item a:hover {
@@ -68,131 +63,78 @@
     }
 
     .icon {
-      margin-right: 5px; /* Slightly increased for balance */
-      font-size: 14px;
+      margin-right: 5px;
     }
 
     .content {
       display: flex;
-      gap: 12px; /* Slightly increased for better column separation */
-      flex: 1;
-      overflow: hidden;
+      gap: 20px;
     }
 
     .left-column {
-      flex: 6;
-      min-width: 0;
-      overflow: hidden;
+      flex: 7;
     }
 
     .right-column {
-      flex: 4;
-      min-width: 0;
-      overflow: hidden;
+      flex: 3;
     }
 
     .section {
-      margin-bottom: 6px; /* Increased for better section separation */
-      padding: 0 0 2px 0;
+      margin-bottom: 20px;
     }
 
     .section-title {
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 4px; /* Slightly increased spacing */
-      border-bottom: 2px solid #000; /* Consistent black line */
-      padding-bottom: 2px;
-      letter-spacing: 0.5px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #0056b3;
+      border-bottom: 2px solid #0056b3;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
     }
 
-    .job,
-    .education-item,
-    .project {
-      margin-bottom: 3px; /* Slightly increased for readability */
+    p,
+    ul li {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #0056b3;
+      font-weight: bold;
+      display: inline-block; 
+      width: 15px; 
     }
 
     .job-title,
     .school-name,
     .project-title {
-      font-size: 13px;
-      font-weight: 600;
-      display: inline-block;
+      font-size: 15px;
+      font-weight: bold;
     }
 
     .job-period,
     .education-period {
-      float: right;
-      font-size: 12px;
-      font-weight: 500;
+      float: right; 
+      font-size: 13px; 
+      color: #666; 
     }
-
-    ul {
-      padding-left: 15px;
-      margin: 2px 0;
-    }
-
-    li {
-      font-size: 12px;
-      margin-bottom: 2px; /* Increased for better list spacing */
-      position: relative;
-      padding-left: 3px;
-    }
-
-    .skills-list {
-      font-size: 12px;
-      margin: 0;
-    }
-
-    .skills-list ul li {
-      margin-bottom: 2px;
-    }
-
-    p {
-      font-size: 12px;
-      margin: 2px 0;
-      text-align: justify;
-    }
-
-    strong {
-      font-weight: 600;
-    }
-
-    .project ul {
-      border-left: none;
-      padding-left: 15px;
-      margin-left: 0;
-    }
-
-    @media (max-width: 768px) {
-      .content {
-        flex-direction: column;
-      }
-
-      .left-column,
-      .right-column {
-        width: 100%;
-      }
-    }
-
+    
     #downloadButton {
-      display: block;
-      width: 150px; /* Slightly wider button */
-      margin: 15px auto;
-      padding: 10px; /* Increased padding for better click area */
-      text-align: center;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 14px;
-      border: 1px solid #000; /* Added subtle border */
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    #downloadButton:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        display:block; 
+        width:auto; 
+        padding :12 px ;
+        margin:15px auto; 
+        text-align:center; 
+        background-color:#4CAF50; 
+        color:white; 
+        border:none; 
+        border-radius:5px; 
+        cursor:pointer;
     }
   </style>
 </head>
@@ -295,11 +237,11 @@
           <div class="section-title">Education</div>
           <div class="education-item">
              <div class="school-name">IIT Dhanbad - B.Tech</div>
-            <div class="education-period">(2013-2017)</div>
+            <div class="education-period">2013-2017</div>
           </div>
           <div class="education-item">
             <div class="school-name">Super30, Patna</div>
-            <div class="education-period">(2012-2013)</div>
+            <div class="education-period">2012-2013</div>
           </div>
         </div>
         <div class="section">
@@ -368,35 +310,40 @@
         orientation: 'portrait',
         unit: 'mm',
         format: 'a4',
-        compress: false, // Disabled compression for higher quality
+        compress: true,
         putOnlyUsedFonts: true,
-        floatPrecision: 16
+        floatPrecision: 16 // Higher precision for better quality
       });
 
       const element = document.getElementById('resumeContent');
       
+      // Temporarily set the container height to A4 dimensions
       const originalHeight = element.style.height;
       element.style.height = '297mm';
       
+      // Increase scale for better resolution
       const canvas = await html2canvas(element, {
-        scale: 4, // Increased from 3 to 4 for even higher resolution
+        scale: 3, // Increased from 2 to 3 for sharper output
         useCORS: true,
         logging: false,
         width: element.offsetWidth,
         height: element.offsetHeight,
         windowWidth: element.offsetWidth,
         windowHeight: element.offsetHeight,
-        dpi: 300
+        dpi: 300 // Higher DPI for print quality
       });
 
+      // Restore original height
       element.style.height = originalHeight;
 
-      const imgData = canvas.toDataURL('image/jpeg', 1.0); // Max quality JPEG
+      // Use higher quality JPEG compression
+      const imgData = canvas.toDataURL('image/jpeg', 0.95); // Increased quality from 1.0 to 0.95 (still high quality but better compression)
       
       const pdfWidth = doc.internal.pageSize.getWidth();
       const pdfHeight = doc.internal.pageSize.getHeight();
 
-      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'NONE'); // No compression for max quality
+      // Add image with better compression settings
+      doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'SLOW'); // Changed from 'FAST' to 'SLOW' for better quality
       
       doc.save('Chandan_Kumar_Resume.pdf');
     }

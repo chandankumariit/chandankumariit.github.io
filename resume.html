@@ -9,37 +9,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <style>
     body {
-      font-family: Times New Roman, Times, serif; /* Default font */
       margin: 0;
       padding: 0;
-      background: none; /* Default background */
-      color: #000; /* Default text color (black) */
       font-size: 12px;
       line-height: 1.4;
     }
 
     .container {
-      width: 200mm; /* Kept for PDF size optimization */
+      width: 210mm;
       min-height: 297mm;
       margin: 20px auto;
-      background: #fff; /* Default white background */
       padding: 8px;
+      border-radius: 5px;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     header {
-      background: none;
-      color: #000; /* Default text color */
       padding: 6px 12px;
       text-align: center;
+      border-radius: 5px;
       margin-bottom: 8px;
-      border-bottom: 2px solid #d3d3d3; /* Default border color as set previously */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
       font-size: 24px;
+      font-weight: 700;
       margin: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .contact-info {
@@ -58,23 +58,18 @@
 
     .contact-item a,
     .contact-item span {
-      color: #000; /* Default text color for spans */
+      text-decoration: none;
+      font-weight: 500;
       font-size: 13px;
     }
 
-    .contact-item a {
-      color: #0000EE; /* Default link color (blue) */
-      text-decoration: underline; /* Default link style */
-    }
-
     .contact-item a:hover {
-      text-decoration: none; /* Default hover behavior */
+      text-decoration: underline;
     }
 
     .icon {
       margin-right: 4px;
       font-size: 14px;
-      color: #000; /* Default color */
     }
 
     .content {
@@ -103,9 +98,12 @@
 
     .section-title {
       font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
       margin-bottom: 3px;
-      border-bottom: 2px solid #d3d3d3; /* Default border color */
+      border-bottom: 2px solid;
       padding-bottom: 2px;
+      letter-spacing: 0.5px;
     }
 
     .job,
@@ -118,6 +116,7 @@
     .school-name,
     .project-title {
       font-size: 13px;
+      font-weight: 600;
       display: inline-block;
     }
 
@@ -125,6 +124,7 @@
     .education-period {
       float: right;
       font-size: 12px;
+      font-weight: 500;
     }
 
     ul {
@@ -155,7 +155,7 @@
     }
 
     strong {
-      font-weight: bold; /* Default bold */
+      font-weight: 600;
     }
 
     .project ul {
@@ -180,16 +180,19 @@
       width: 140px;
       margin: 15px auto;
       padding: 8px;
-      background: none; /* Default button background */
-      color: #0000EE; /* Default link color */
       text-align: center;
-      border: 1px solid #000; /* Default border */
+      border-radius: 5px;
       cursor: pointer;
+      font-weight: 600;
       font-size: 14px;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     #downloadButton:hover {
-      background: #f0f0f0; /* Default hover background */
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
     }
   </style>
 </head>
@@ -370,11 +373,9 @@
 
       const element = document.getElementById('resumeContent');
       
-      // Temporarily set the container height to A4 dimensions for rendering
       const originalHeight = element.style.height;
-      element.style.height = '297mm'; // Fix height to A4 for consistent rendering
+      element.style.height = '297mm';
       
-      // Capture the content with html2canvas
       const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
@@ -385,16 +386,13 @@
         windowHeight: element.offsetHeight
       });
 
-      // Restore the original height
       element.style.height = originalHeight;
 
       const imgData = canvas.toDataURL('image/jpeg', 1.0);
       
-      // A4 dimensions in mm
-      const pdfWidth = doc.internal.pageSize.getWidth(); // 210mm
-      const pdfHeight = doc.internal.pageSize.getHeight(); // 297mm
+      const pdfWidth = doc.internal.pageSize.getWidth();
+      const pdfHeight = doc.internal.pageSize.getHeight();
 
-      // Add the image to the PDF
       doc.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
       
       doc.save('Chandan_Kumar_Resume.pdf');

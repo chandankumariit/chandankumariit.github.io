@@ -7,13 +7,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #2c3e50;
+      --primary-color: #1a4977;
       --secondary-color: #3498db;
       --border-color: #e0e0e0;
-      --text-color: #333;
+      --text-color: #333333;
       --light-bg: #f9f9f9;
     }
     
@@ -24,9 +24,9 @@
     }
     
     body {
-      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Open Sans', Arial, sans-serif;
       color: var(--text-color);
-      line-height: 1.4;
+      line-height: 1.5;
       background-color: #f0f0f0;
       font-size: 11px;
     }
@@ -37,32 +37,32 @@
       margin: 20px auto;
       background-color: white;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-      padding: 10px;
+      padding: 15px;
       position: relative;
     }
 
     header {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       text-align: center;
       border-bottom: 2px solid var(--primary-color);
-      padding-bottom: 6px;
+      padding-bottom: 8px;
     }
 
     header h1 {
-      font-family: 'Roboto Condensed', 'Roboto', 'Helvetica Neue', sans-serif;
-      font-size: 22px;
+      font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
+      font-size: 24px;
       font-weight: 700;
       color: var(--primary-color);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       letter-spacing: 1px;
     }
 
     .contact-info {
       display: flex;
       justify-content: center;
-      gap: 14px;
+      gap: 16px;
       flex-wrap: wrap;
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
     .contact-item {
@@ -72,7 +72,7 @@
 
     .contact-item .icon {
       color: var(--secondary-color);
-      margin-right: 5px;
+      margin-right: 6px;
       font-size: 12px;
     }
 
@@ -90,7 +90,7 @@
 
     .content {
       display: flex;
-      gap: 12px;
+      gap: 15px;
     }
 
     .left-column {
@@ -102,26 +102,22 @@
     }
 
     .section {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .section-title {
-      font-family: 'Roboto Condensed', 'Roboto', 'Helvetica Neue', sans-serif;
+      font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
       font-size: 13px;
       font-weight: 700;
-      color: #2980b9;
+      color: var(--primary-color);
       text-transform: uppercase;
       margin-bottom: 6px;
       border-bottom: 1px solid var(--secondary-color);
       padding-bottom: 3px;
     }
 
-    .section-title:hover {
-      opacity: 0.8;
-    }
-
     .job, .education-item, .project {
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .job-title, .school-name, .project-title {
@@ -131,20 +127,11 @@
       color: #000000;
     }
 
-    .project-title {
-      color: #000000;
-      font-weight: 500;
-    }
-
     .project-title .company-name {
       font-weight: 400;
       font-style: italic;
-      color: #2c3e50;
+      color: var(--primary-color);
       margin-left: 5px;
-    }
-
-    .project-title u {
-      text-decoration: underline;
     }
 
     .job-period, .education-period {
@@ -161,19 +148,15 @@
 
     li {
       font-size: 11px;
-      margin-bottom: 2px;
-      text-align: justify;
-    }
-
-    .skills-list ul li {
       margin-bottom: 3px;
+      text-align: justify;
     }
 
     p {
       font-size: 11px;
-      margin: 3px 0;
+      margin: 4px 0;
       text-align: justify;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     strong {
@@ -181,19 +164,23 @@
       color: var(--primary-color);
     }
 
+    .skills-list ul li {
+      margin-bottom: 4px;
+    }
+
     #downloadButton {
       display: block;
-      width: 160px;
+      width: 180px;
       margin: 20px auto;
-      padding: 8px;
+      padding: 10px;
       background-color: var(--secondary-color);
       color: white;
       text-align: center;
-      border-radius: 5px;
+      border-radius: 4px;
       cursor: pointer;
-      font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-      font-weight: 500;
-      font-size: 12px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
       border: none;
       transition: all 0.3s ease;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -212,7 +199,8 @@
       .container {
         box-shadow: none;
         margin: 0;
-        padding: 0;
+        padding: 10px;
+        width: 100%;
       }
       #downloadButton {
         display: none;
@@ -366,7 +354,7 @@
             <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
             <li>Led a team of five analysts, restoring team credibility and stability.</li>
             <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
-            <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015unchanged-2016).</li>
+            <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
           </ul>
         </div>
         
@@ -419,12 +407,11 @@
       
       try {
         const button = document.getElementById('downloadButton');
-        const originalText = button.innerHTML;
         button.innerHTML = "Generating PDF...";
         button.disabled = true;
         
         const canvas = await html2canvas(element, {
-          scale: 3,
+          scale: 4, // Higher scale for better quality
           useCORS: true,
           logging: false,
           allowTaint: true,
@@ -432,29 +419,24 @@
         });
         
         const imgWidth = 210;
-        const pageHeight = 297;
         const imgHeight = canvas.height * imgWidth / canvas.width;
         
         const imgData = canvas.toDataURL('image/jpeg', 1.0);
-        doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight, undefined, 'SLOW');
+        doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
         
         doc.save('Chandan_Kumar_Resume.pdf');
         
-        button.innerHTML = originalText;
+        button.innerHTML = "Download Resume as PDF";
         button.disabled = false;
       } catch (error) {
         console.error('Error generating PDF:', error);
         alert('Failed to generate PDF. Please try again.');
         
         const button = document.getElementById('downloadButton');
-        button.innerHTML = "Try Again";
+        button.innerHTML = "Download Resume as PDF";
         button.disabled = false;
       }
     }
-    
-    window.addEventListener('beforeprint', function() {
-      document.body.style.background = 'white';
-    });
   </script>
 </body>
 </html>

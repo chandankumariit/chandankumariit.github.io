@@ -98,8 +98,8 @@
     }
 
     .section {
-      margin-bottom: 8px;
-      padding: 6px;
+      margin-bottom: 0px; /* Ensure no margin between sections */
+      padding: 4px 6px 0px 6px; /* Reduced bottom padding to minimize space */
     }
 
     .section-title {
@@ -114,7 +114,7 @@
     .job,
     .education-item,
     .project {
-      margin-bottom: 5px;
+      margin-bottom: 2px; /* Reduced from 5px to minimize space */
     }
 
     .job-title,
@@ -133,17 +133,17 @@
 
     ul {
       padding-left: 15px;
-      margin: 2px 0;
+      margin: 0; /* Removed default margin to reduce space */
     }
 
     li {
       font-size: 12px;
-      margin-bottom: 2px;
+      margin-bottom: 1px; /* Reduced from 2px to minimize space */
     }
 
     .skills-list {
       font-size: 12px;
-      margin: 2px 0;
+      margin: 0; /* Removed default margin */
     }
 
     .skills-list span {
@@ -157,7 +157,7 @@
 
     p {
       font-size: 12px;
-      margin: 2px 0;
+      margin: 0; /* Removed default margin to reduce space */
     }
 
     @media (max-width: 768px) {
@@ -309,6 +309,9 @@
             <li>Duke University - DevOps, DataOps, MLOps</li>
             <li>Neo4j - Neo4j & LLM Fundamentals</li>
             <li>AWS - AWS Cloud</li>
+            <li>Udemy - Project Management Fundamentals</li>
+            <li>Udemy - Product Management Fundamentals</li>
+            <li>Udemy - MCP(Model Context Protocol)</li>
             <li>Microsoft - SQL Server</li>
           </ul>
         </div>

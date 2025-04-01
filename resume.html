@@ -106,7 +106,7 @@
     .section-title {
       font-size: 13px;
       font-weight: 700;
-      color: #2980b9; /* All section headers in Darker Blue */
+      color: #2980b9;
       text-transform: uppercase;
       margin-bottom: 6px;
       border-bottom: 1px solid var(--secondary-color);
@@ -123,21 +123,25 @@
 
     .job-title, .school-name, .project-title {
       font-size: 12px;
-      font-weight: 400; /* Unbold all titles by default */
+      font-weight: 400;
       display: inline-block;
-      color: #000000; /* Black for all titles */
+      color: #000000;
     }
 
     .project-title {
-      color: #000000; /* Explicitly black for project titles */
-      font-weight: 400; /* Unbold project titles */
+      color: #000000;
+      font-weight: 400;
     }
 
     .project-title .company-name {
-      font-weight: 400; /* Normal weight for company unless overridden */
-      font-style: italic; /* Italicize company name */
-      color: #2c3e50; /* Slightly darker shade for contrast */
-      margin-left: 5px; /* Small space after comma */
+      font-weight: 400;
+      font-style: italic;
+      color: #2c3e50;
+      margin-left: 5px;
+    }
+
+    .project-title u {
+      text-decoration: underline;
     }
 
     .job-period, .education-period {
@@ -245,25 +249,25 @@
       <div class="left-column">
         <div class="section">
           <div class="section-title">Professional Summary</div>
-          <p><strong>IIT Dhanbad</strong> Graduate with around 7 years of expertise in Data Science, Generative AI, Machine Learning, MLOps, Responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading innovative projects, seeking to leverage advanced analytical, model development, and deployment skills in transformative data science initiatives.</p>
+          <p>IIT Dhanbad Graduate with around 7 years of expertise in delivering innovative data science and AI solutions across diverse industries including finance, banking, and environmental management. Demonstrated success in developing and deploying advanced machine learning models, generative AI systems, and multi-agent platforms using Python, SQL, and cloud technologies (Azure, AWS, GCP, IBM Watson). Adept at leading cross-functional teams, optimizing workflows through MLOps and AI governance, and driving business impact with a proven track record of reducing operational latency by 40% and enhancing decision-making processes.</p>
         </div>
         
         <div class="section">
           <div class="section-title">Experience</div>
           <div class="job">
-            <div class="job-title">IBM - Data Scientist</div>
+            <div class="job-title"><strong>IBM</strong> - Data Scientist</div>
             <div class="job-period">Mar 2024 - Present</div>
           </div>
           <div class="job">
-            <div class="job-title">Accenture - Data Scientist</div>
+            <div class="job-title"><strong>Accenture</strong> - Data Scientist</div>
             <div class="job-period">Apr 2021 - Feb 2024</div>
           </div>
           <div class="job">
-            <div class="job-title">Capgemini - Process Lead</div>
+            <div class="job-title"><strong>Capgemini</strong> - Process Lead</div>
             <div class="job-period">Feb 2021 - Mar 2021</div>
           </div>
           <div class="job">
-            <div class="job-title">Clean Harbors - Data Scientist</div>
+            <div class="job-title"><strong>Clean Harbors</strong> - Data Scientist</div>
             <div class="job-period">Jun 2018 - Jan 2021</div>
           </div>
         </div>
@@ -271,7 +275,7 @@
         <div class="section">
           <div class="section-title">Projects</div>
           <div class="project">
-            <div class="project-title">MARC (Multi-Agent Resource Coordinator), <span class="company-name">IBM</span></div>
+            <div class="project-title"><u>MARC (Multi-Agent Resource Coordinator)</u>, <span class="company-name"><strong>IBM</strong></span></div>
             <ul>
               <li>Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation.</li>
               <li>Applied AI Governance principles to ensure ethical and compliant operations of automation agents.</li>
@@ -280,21 +284,21 @@
             </ul>
           </div>
           <div class="project">
-            <div class="project-title">Mizuho Bank, <span class="company-name">Accenture</span></div>
+            <div class="project-title"><u>Mizuho Bank</u>, <span class="company-name"><strong>Accenture</strong></span></div>
             <ul>
               <li>Developed and deployed PdfGPT, an AI-powered text summarization system, for a banking project, enhancing the efficiency of document processing workflows.</li>
               <li>Implemented key feature extraction capabilities and enabled PDF text summarization through interactive chat functionality.</li>
             </ul>
           </div>
           <div class="project">
-            <div class="project-title">Ulster Bank, <span class="company-name">Accenture</span></div>
+            <div class="project-title"><u>Ulster Bank</u>, <span class="company-name"><strong>Accenture</strong></span></div>
             <ul>
               <li>Automated and authored machine learning pipelines for customer segmentation algorithms, employing advanced machine learning techniques Python, Glue and Athena.</li>
               <li>Derived meaningful insights after creating and validating Data Models and explained that to client.</li>
             </ul>
           </div>
           <div class="project">
-            <div class="project-title">Facebook, <span class="company-name">Accenture</span></div>
+            <div class="project-title"><u>Facebook</u>, <span class="company-name"><strong>Accenture</strong></span></div>
             <ul>
               <li>Examined and explored data from multiple disparate sources with the goal of discovering insights which in turn can provide competitive advantage for our clients.</li>
               <li>Designed and optimized machine learning pipelines, specializing in the creation of forecasting models.</li>
@@ -302,7 +306,7 @@
             </ul>
           </div>
           <div class="project">
-            <div class="project-title">Waste Classification Code, <span class="company-name">Clean Harbors</span></div>
+            <div class="project-title"><u>Waste Classification Code</u>, <span class="company-name"><strong>Clean Harbors</strong></span></div>
             <ul>
               <li>Designed, developed, and fine-tuned Waste Classification Code Prediction models, enabling streamlined and autonomous Waste Classification Code assignment.</li>
               <li>Created a unified dataset encompassing vital features for all waste classes.</li>
@@ -310,7 +314,7 @@
             </ul>
           </div>
           <div class="project">
-            <div class="project-title">Invoice Audit, <span class="company-name">Clean Harbors</span></div>
+            <div class="project-title"><u>Invoice Audit</u>, <span class="company-name"><strong>Clean Harbors</strong></span></div>
             <ul>
               <li>Developed and deployed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.</li>
               <li>Streamlined invoice verification, reducing audit time by 20%.</li>
@@ -335,19 +339,19 @@
         <div class="section">
           <div class="section-title">Certification</div>
           <ul>
-            <li><strong>Northwestern University</strong> - Analytics & AI</li>
-            <li>IBM - IBM watsonx.ai Technical Essentials</li>
-            <li>IBM - IBM watsonx Essentials</li>
-            <li><strong>Microsoft & LinkedIn</strong> - Generative AI</li>
-            <li><strong>Microsoft</strong> - Azure Machine Learning</li>
-            <li><strong>Stanford University</strong> - Machine Learning</li>
-            <li><strong>Duke University</strong> - DevOps, DataOps, MLOps</li>
-            <li><strong>Neo4j</strong> - Neo4j & LLM Fundamentals</li>
-            <li><strong>AWS</strong> - AWS Cloud</li>
-            <li><strong>Udemy</strong> - Project Management Fundamentals</li>
-            <li><strong>Udemy</strong> - Product Management Fundamentals</li>
-            <li><strong>Udemy</strong> - MCP(Model Context Protocol)</li>
-            <li><strong>Microsoft</strong> - SQL Server</li>
+            <li>Northwestern University - <strong>Analytics & AI</strong></li>
+            <li>IBM - <strong>IBM watsonx.ai Technical Essentials</strong></li>
+            <li>IBM - <strong>IBM watsonx Essentials</strong></li>
+            <li>Microsoft & LinkedIn - <strong>Generative AI</strong></li>
+            <li>Microsoft - <strong>Azure Machine Learning</strong></li>
+            <li>Stanford University - <strong>Machine Learning</strong></li>
+            <li>Duke University - <strong>DevOps, DataOps, MLOps</strong></li>
+            <li>Neo4j - <strong>Neo4j & LLM Fundamentals</strong></li>
+            <li>AWS - <strong>AWS Cloud</strong></li>
+            <li>Udemy - <strong>Project Management Fundamentals</strong></li>
+            <li>Udemy - <strong>Product Management Fundamentals</strong></li>
+            <li>Udemy - <strong>MCP(Model Context Protocol)</strong></li>
+            <li>Microsoft - <strong>SQL Server</strong></li>
           </ul>
         </div>
         
@@ -358,7 +362,7 @@
             <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
             <li>Led a team of five analysts, restoring team credibility and stability.</li>
             <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
-            <li>Served as Student Representative in Mess Committee, <strong>IIT Dhanbad</strong> (2015-2016).</li>
+            <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
           </ul>
         </div>
         
@@ -428,29 +432,25 @@
         const imgHeight = canvas.height * imgWidth / canvas.width;
         
         const imgData = canvas.toDataURL('image/jpeg', 0.92);
-        doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight, undefined, 'FAST');
+        doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight, undefined, 'MEDIUM');
         
-        let position = imgHeight - pageHeight;
-        let heightLeft = imgHeight;
+        doc.save('Chandan_Kumar_Resume.pdf');
         
-        while (heightLeft >= 0) {
-          position = heightLeft - pageHeight;
-          doc.addPage();
-          doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
-          heightLeft -= pageHeight;
-        }
-        
-        doc.deletePage(1);
-        
-        doc.save('chandan_kumar_resume.pdf');
-      } catch (error) {
-        console.error("Error generating PDF:", error);
-        alert("Could not generate PDF. Please check the console for details.");
-      } finally {
         button.innerHTML = originalText;
+        button.disabled = false;
+      } catch (error) {
+        console.error('Error generating PDF:', error);
+        alert('Failed to generate PDF. Please try again.');
+        
+        const button = document.getElementById('downloadButton');
+        button.innerHTML = "Try Again";
         button.disabled = false;
       }
     }
+    
+    window.addEventListener('beforeprint', function() {
+      document.body.style.background = 'white';
+    });
   </script>
 </body>
 </html>

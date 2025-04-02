@@ -37,18 +37,18 @@
       margin: 10px auto;
       background-color: white;
       box-shadow: 0 3px 15px rgba(0,0,0,0.15);
-      padding: 10mm;
+      padding: 5mm 10mm 10mm 10mm; /* Reduced top padding from 10mm to 5mm */
     }
 
     header {
       text-align: center;
       border-bottom: 1px solid var(--primary-color);
-      padding-bottom: 5px;
-      margin-bottom: 8px;
+      padding-bottom: 2px; /* Reduced from 3px */
+      margin-bottom: 3px;  /* Reduced from 5px */
     }
 
     header h1 {
-      font-size: 22px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--primary-color);
       letter-spacing: 0.5px;
@@ -60,6 +60,7 @@
       justify-content: center;
       gap: 10px;
       flex-wrap: wrap;
+      font-size: 10px;
     }
 
     .contact-item {
@@ -70,7 +71,7 @@
     .contact-item .icon {
       color: var(--secondary-color);
       margin-right: 4px;
-      font-size: 12px;
+      font-size: 10px;
     }
 
     .contact-item a,
@@ -169,7 +170,7 @@
       .container {
         box-shadow: none;
         margin: 0;
-        padding: 8mm;
+        padding: 5mm 8mm 8mm 8mm; /* Adjusted for print */
         width: 100%;
       }
       #downloadButton { display: none; }

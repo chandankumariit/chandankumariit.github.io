@@ -25,27 +25,28 @@
     body {
       font-family: 'Open Sans', sans-serif;
       color: var(--text-color);
-      line-height: 1.25;
+      line-height: 1.15;
       background-color: #f0f0f0;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 400;
     }
 
     .container {
       width: 210mm;
       height: 297mm;
-      margin: 10px auto;
+      margin: 5px auto;
       background-color: white;
       box-shadow: 0 3px 15px rgba(0,0,0,0.15);
-      padding: 3mm 10mm 8mm 10mm;
+      padding: 4mm 6mm;
       position: relative;
+      overflow: hidden;
     }
 
     header {
       text-align: center;
       border-bottom: 1px solid var(--primary-color);
-      padding-bottom: 2px;
-      margin-bottom: 3px;
+      padding-bottom: 1px;
+      margin-bottom: 2px;
     }
 
     header h1 {
@@ -53,15 +54,15 @@
       font-weight: 700;
       color: var(--primary-color);
       letter-spacing: 0.5px;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .contact-info {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
       flex-wrap: wrap;
-      font-size: 12px;
+      font-size: 13px;
     }
 
     .contact-item {
@@ -71,8 +72,8 @@
 
     .contact-item .icon {
       color: var(--secondary-color);
-      margin-right: 4px;
-      font-size: 12px;
+      margin-right: 3px;
+      font-size: 13px;
     }
 
     .contact-item a,
@@ -88,16 +89,16 @@
 
     .content {
       display: flex;
-      gap: 12px;
-      margin-top: 5px;
+      gap: 8px;
+      margin-top: 3px;
     }
 
     .left-column { flex: 6; }
     .right-column { flex: 4; }
-    .section { margin-bottom: 8px; }
+    .section { margin-bottom: 4px; }
 
     .section-title {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--primary-color);
       text-transform: uppercase;
@@ -109,7 +110,7 @@
     .job, .education-item, .project { margin-bottom: 2px; }
 
     .job-title, .school-name, .project-title {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       color: #000000;
       display: inline-block;
@@ -125,11 +126,11 @@
     .job-period, .education-period {
       float: right;
       font-weight: 600;
-      font-size: 12px;
+      font-size: 13px;
     }
 
     ul {
-      padding-left: 12px;
+      padding-left: 10px;
       margin: 1px 0;
     }
 
@@ -139,7 +140,7 @@
     }
 
     p {
-      margin: 2px 0;
+      margin: 1px 0;
       text-align: justify;
     }
 
@@ -151,8 +152,8 @@
     #downloadButton {
       display: block;
       width: 180px;
-      margin: 10px auto;
-      padding: 10px;
+      margin: 8px auto;
+      padding: 6px;
       background-color: var(--secondary-color);
       color: white;
       text-align: center;
@@ -170,7 +171,7 @@
     }
 
     .skills-list ul li {
-      margin-bottom: 3px;
+      margin-bottom: 1px;
     }
 
     @media print {
@@ -178,7 +179,7 @@
       .container {
         box-shadow: none;
         margin: 0;
-        padding: 3mm 8mm 8mm 8mm;
+        padding: 4mm 6mm;
         width: 100%;
         height: 100%;
       }
@@ -188,11 +189,6 @@
     @media (max-width: 768px) {
       .content { flex-direction: column; }
       .container { width: 95%; }
-    }
-    
-    .page-break {
-      page-break-before: always;
-      height: 0;
     }
   </style>
 </head>
@@ -389,33 +385,23 @@
         button.disabled = true;
         
         const canvas = await html2canvas(element, {
-          scale: 2, // Set back to 2 as requested
+          scale: 2,
           useCORS: true,
           logging: false,
-          backgroundColor: '#ffffff'
+          backgroundColor: '#ffffff',
+          windowHeight: element.scrollHeight
         });
         
         const imgWidth = 210;
         const pageHeight = 297;
         const imgHeight = canvas.height * imgWidth / canvas.width;
+        const imgData = canvas.toDataURL('image/jpeg', 0.95);
         
-        const imgData = canvas.toDataURL('image/jpeg', 1.0); // Keep high quality
+        // Scale content to fit one page
+        let heightRatio = pageHeight / imgHeight;
+        let adjustedHeight = imgHeight * heightRatio;
         
-        // Add image to PDF
-        doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
-        
-        // If the content is longer than one page, add more pages
-        if (imgHeight > pageHeight) {
-          let heightLeft = imgHeight - pageHeight;
-          let position = -pageHeight;
-          
-          while (heightLeft > 0) {
-            position = position - pageHeight;
-            doc.addPage();
-            doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-          }
-        }
+        doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, adjustedHeight);
         
         doc.save('Chandan_Kumar_Resume.pdf');
         

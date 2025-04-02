@@ -8,7 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Roboto+Condensed:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
     
     :root {
       --primary-color: #1a4977;
@@ -23,11 +23,12 @@
     }
     
     body {
-      font-family: 'Open Sans', Arial, sans-serif;
+      font-family: 'Open Sans', sans-serif;
       color: var(--text-color);
       line-height: 1.3;
       background-color: #f0f0f0;
       font-size: 12px;
+      font-weight: 400;
     }
 
     .container {
@@ -35,25 +36,23 @@
       min-height: 297mm;
       margin: 10px auto;
       background-color: white;
-      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
-      padding: 10px;
-      position: relative;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+      padding: 10mm;
     }
 
     header {
-      margin-bottom: 8px;
       text-align: center;
       border-bottom: 1px solid var(--primary-color);
       padding-bottom: 5px;
+      margin-bottom: 8px;
     }
 
     header h1 {
-      font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
       font-size: 22px;
       font-weight: 700;
       color: var(--primary-color);
-      margin-bottom: 3px;
       letter-spacing: 0.5px;
+      margin-bottom: 3px;
     }
 
     .contact-info {
@@ -61,7 +60,6 @@
       justify-content: center;
       gap: 10px;
       flex-wrap: wrap;
-      margin-top: 3px;
     }
 
     .contact-item {
@@ -79,7 +77,6 @@
     .contact-item span {
       color: var(--text-color);
       text-decoration: none;
-      font-size: 12px;
     }
 
     .contact-item a:hover {
@@ -91,38 +88,27 @@
       gap: 10px;
     }
 
-    .left-column {
-      flex: 6;
-    }
-
-    .right-column {
-      flex: 4;
-    }
-
-    .section {
-      margin-bottom: 6px;
-    }
+    .left-column { flex: 6; }
+    .right-column { flex: 4; }
+    .section { margin-bottom: 6px; }
 
     .section-title {
-      font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
       font-size: 14px;
       font-weight: 700;
       color: var(--primary-color);
       text-transform: uppercase;
-      margin-bottom: 3px;
       border-bottom: 1px solid var(--secondary-color);
       padding-bottom: 2px;
-    }
-
-    .job, .education-item, .project {
       margin-bottom: 3px;
     }
+
+    .job, .education-item, .project { margin-bottom: 3px; }
 
     .job-title, .school-name, .project-title {
       font-size: 13px;
-      font-weight: 500;
-      display: inline-block;
+      font-weight: 600;
       color: #000000;
+      display: inline-block;
     }
 
     .project-title .company-name {
@@ -134,9 +120,7 @@
 
     .job-period, .education-period {
       float: right;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-color);
+      font-weight: 600;
     }
 
     ul {
@@ -145,27 +129,18 @@
     }
 
     li {
-      font-size: 12px;
       margin-bottom: 2px;
       text-align: justify;
     }
 
     p {
-      font-size: 12px;
       margin: 2px 0;
       text-align: justify;
-      line-height: 1.3;
     }
 
     strong {
       font-weight: 700;
-      color: var(--primary-color);
-    }
-
-    .skills-list ul li {
-      margin-bottom: 2px;
-      font-weight: 400;
-      color: var(--text-color);
+      color: #000000;
     }
 
     #downloadButton {
@@ -178,12 +153,11 @@
       text-align: center;
       border-radius: 3px;
       cursor: pointer;
-      font-family: 'Open Sans', sans-serif;
       font-weight: 600;
       font-size: 14px;
       border: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }
 
     #downloadButton:hover {
@@ -191,27 +165,19 @@
     }
 
     @media print {
-      body {
-        background: none;
-      }
+      body { background: none; }
       .container {
         box-shadow: none;
         margin: 0;
-        padding: 8px;
+        padding: 8mm;
         width: 100%;
       }
-      #downloadButton {
-        display: none;
-      }
+      #downloadButton { display: none; }
     }
 
     @media (max-width: 768px) {
-      .content {
-        flex-direction: column;
-      }
-      .container {
-        width: 95%;
-      }
+      .content { flex-direction: column; }
+      .container { width: 95%; }
     }
   </style>
 </head>
@@ -329,19 +295,19 @@
         <div class="section">
           <div class="section-title">Certification</div>
           <ul>
-            <li>Northwestern University - <strong>Analytics & AI</strong></li>
-            <li>IBM - <strong>IBM watsonx.ai Technical Essentials</strong></li>
-            <li>IBM - <strong>IBM watsonx Essentials</strong></li>
-            <li>Microsoft & LinkedIn - <strong>Generative AI</strong></li>
-            <li>Microsoft - <strong>Azure Machine Learning</strong></li>
-            <li>Stanford University - <strong>Machine Learning</strong></li>
-            <li>Duke University - <strong>DevOps, DataOps, MLOps</strong></li>
-            <li>Neo4j - <strong>Neo4j & LLM Fundamentals</strong></li>
-            <li>AWS - <strong>AWS Cloud</strong></li>
-            <li>Udemy - <strong>Project Management Fundamentals</strong></li>
-            <li>Udemy - <strong>Product Management Fundamentals</strong></li>
-            <li>Udemy - <strong>MCP(Model Context Protocol)</strong></li>
-            <li>Microsoft - <strong>SQL Server</strong></li>
+            <li>Northwestern University - Analytics & AI</li>
+            <li>IBM - IBM watsonx.ai Technical Essentials</li>
+            <li>IBM - IBM watsonx Essentials</li>
+            <li>Microsoft & LinkedIn - Generative AI</li>
+            <li>Microsoft - Azure Machine Learning</li>
+            <li>Stanford University - Machine Learning</li>
+            <li>Duke University - DevOps, DataOps, MLOps</li>
+            <li>Neo4j - Neo4j & LLM Fundamentals</li>
+            <li>AWS - AWS Cloud</li>
+            <li>Udemy - Project Management Fundamentals</li>
+            <li>Udemy - Product Management Fundamentals</li>
+            <li>Udemy - MCP(Model Context Protocol)</li>
+            <li>Microsoft - SQL Server</li>
           </ul>
         </div>
         
@@ -360,14 +326,14 @@
           <div class="section-title">Skills</div>
           <div class="skills-list">
             <ul>
-              <li>Data Science & AI: Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee, Supervised ML (Regression, Decision Trees, RF, XGBoost), Unsupervised ML, NLP, Time Series, Model Development & Deployment, Vector DB</li>
-              <li>Cloud Platforms: Azure, AWS, GCP, IBM Watson</li>
-              <li>Programming: Python, SQL</li>
-              <li>Data Engineering: Azure Data Factory, Azure Databricks, Azure Synapse Analytics, AWS S3, AWS Glue, AWS SageMaker, BigQuery, Pandas, NumPy</li>
-              <li>Databases: Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
-              <li>Visualization: Power BI, Matplotlib, Seaborn</li>
-              <li>DevOps: Docker, Kubernetes, Git, CI/CD Pipelines</li>
-              <li>Domains: Finance, Banking, Environmental, Social Media, Waste Management, Oil & Gas, Energy</li>
+              <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee, Supervised ML (Regression, Decision Trees, RF, XGBoost), Unsupervised ML, NLP, Time Series, Model Development & Deployment, Vector DB</li>
+              <li><strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM Watson</li>
+              <li><strong>Programming:</strong> Python, SQL</li>
+              <li><strong>Data Engineering:</strong> Azure Data Factory, Azure Databricks, Azure Synapse Analytics, AWS S3, AWS Glue, AWS SageMaker, BigQuery, Pandas, NumPy</li>
+              <li><strong>Databases:</strong> Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
+              <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
+              <li><strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD Pipelines</li>
+              <li><strong>Domains:</strong> Finance, Banking, Environmental, Social Media, Waste Management, Oil & Gas, Energy</li>
             </ul>
           </div>
         </div>
@@ -393,7 +359,6 @@
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
-      
       const doc = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
@@ -411,32 +376,21 @@
         const canvas = await html2canvas(element, {
           scale: 2,
           useCORS: true,
-          logging: false,
-          allowTaint: true,
           backgroundColor: '#ffffff'
         });
         
         const imgWidth = 210;
         const imgHeight = canvas.height * imgWidth / canvas.width;
-        
         const imgData = canvas.toDataURL('image/jpeg', 0.8);
         
         doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
-        
-        const options = {
-          compress: true,
-          precision: 2
-        };
-        
-        doc.save('Chandan_Kumar_Resume.pdf', options);
+        doc.save('Chandan_Kumar_Resume.pdf', { compress: true });
         
         button.innerHTML = "Download Resume as PDF";
         button.disabled = false;
       } catch (error) {
         console.error('Error generating PDF:', error);
         alert('Failed to generate PDF. Please try again.');
-        
-        const button = document.getElementById('downloadButton');
         button.innerHTML = "Download Resume as PDF";
         button.disabled = false;
       }

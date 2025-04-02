@@ -25,9 +25,9 @@
     body {
       font-family: 'Open Sans', sans-serif;
       color: var(--text-color);
-      line-height: 1.3;
+      line-height: 1.5;
       background-color: #f0f0f0;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 400;
     }
 
@@ -37,28 +37,29 @@
       margin: 10px auto;
       background-color: white;
       box-shadow: 0 3px 15px rgba(0,0,0,0.15);
-      padding: 10mm;
+      padding: 12mm;
+      position: relative;
     }
 
     header {
       text-align: center;
-      border-bottom: 1px solid var(--primary-color);
-      padding-bottom: 5px;
-      margin-bottom: 8px;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     header h1 {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
       color: var(--primary-color);
       letter-spacing: 0.5px;
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
 
     .contact-info {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
@@ -69,8 +70,8 @@
 
     .contact-item .icon {
       color: var(--secondary-color);
-      margin-right: 4px;
-      font-size: 12px;
+      margin-right: 6px;
+      font-size: 14px;
     }
 
     .contact-item a,
@@ -85,27 +86,27 @@
 
     .content {
       display: flex;
-      gap: 10px;
+      gap: 16px;
     }
 
     .left-column { flex: 6; }
     .right-column { flex: 4; }
-    .section { margin-bottom: 6px; }
+    .section { margin-bottom: 12px; }
 
     .section-title {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--primary-color);
       text-transform: uppercase;
       border-bottom: 1px solid var(--secondary-color);
-      padding-bottom: 2px;
-      margin-bottom: 3px;
+      padding-bottom: 4px;
+      margin-bottom: 6px;
     }
 
-    .job, .education-item, .project { margin-bottom: 3px; }
+    .job, .education-item, .project { margin-bottom: 6px; }
 
     .job-title, .school-name, .project-title {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       color: #000000;
       display: inline-block;
@@ -124,18 +125,21 @@
     }
 
     ul {
-      padding-left: 12px;
-      margin: 2px 0;
+      padding-left: 18px;
+      margin: 4px 0;
+      list-style-type: square;
     }
 
     li {
-      margin-bottom: 2px;
+      margin-bottom: 4px;
       text-align: justify;
+      line-height: 1.45;
     }
 
     p {
-      margin: 2px 0;
+      margin: 4px 0;
       text-align: justify;
+      line-height: 1.45;
     }
 
     strong {
@@ -145,23 +149,53 @@
 
     #downloadButton {
       display: block;
-      width: 150px;
-      margin: 10px auto;
-      padding: 8px;
+      width: 180px;
+      margin: 15px auto;
+      padding: 10px;
       background-color: var(--secondary-color);
       color: white;
       text-align: center;
-      border-radius: 3px;
+      border-radius: 4px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 15px;
       border: none;
       transition: background-color 0.3s ease;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     #downloadButton:hover {
       background-color: var(--primary-color);
+    }
+
+    .pdf-loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1000;
+      display: none;
+    }
+
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid var(--secondary-color);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     @media print {
@@ -169,10 +203,10 @@
       .container {
         box-shadow: none;
         margin: 0;
-        padding: 8mm;
+        padding: 10mm;
         width: 100%;
       }
-      #downloadButton { display: none; }
+      #downloadButton, .pdf-loading { display: none; }
     }
 
     @media (max-width: 768px) {
@@ -182,6 +216,11 @@
   </style>
 </head>
 <body>
+  <div class="pdf-loading" id="loadingOverlay">
+    <div class="spinner"></div>
+    <p>Generating high-quality PDF...</p>
+  </div>
+
   <div class="container" id="resumeContent">
     <header>
       <h1>CHANDAN KUMAR</h1>
@@ -359,38 +398,62 @@
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
-      const doc = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
-        compress: true
-      });
-
-      const element = document.getElementById('resumeContent');
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      loadingOverlay.style.display = 'flex';
       
       try {
         const button = document.getElementById('downloadButton');
         button.innerHTML = "Generating PDF...";
         button.disabled = true;
         
+        // Wait a moment to ensure loading overlay is visible
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
+        const element = document.getElementById('resumeContent');
+        
+        // Optimize quality settings
         const canvas = await html2canvas(element, {
-          scale: 2,
+          scale: 3, // Higher scale for better quality
           useCORS: true,
-          backgroundColor: '#ffffff'
+          logging: false, // Disable logging for performance
+          backgroundColor: '#ffffff',
+          imageTimeout: 0, // No timeout
+          allowTaint: false,
+          removeContainer: true // Clean up after rendering
         });
         
+        // Calculate dimensions that maintain aspect ratio
         const imgWidth = 210;
-        const imgHeight = canvas.height * imgWidth / canvas.width;
-        const imgData = canvas.toDataURL('image/jpeg', 0.8);
+        const pageHeight = 297;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
         
-        doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
-        doc.save('Chandan_Kumar_Resume.pdf', { compress: true });
+        // Create PDF with compression
+        const doc = new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: 'a4',
+          compress: true,
+          hotfixes: ["px_scaling"]
+        });
         
-        button.innerHTML = "Download Resume as PDF";
-        button.disabled = false;
+        // Handle multi-page if needed
+        let position = 0;
+        
+        // For single page - optimize quality while keeping under 2MB
+        const quality = 0.85; // Balanced quality setting
+        const imgData = canvas.toDataURL('image/jpeg', quality);
+        
+        doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
+        
+        // Optimize file size with specific compression
+        doc.save('Chandan_Kumar_Resume.pdf');
+        
       } catch (error) {
         console.error('Error generating PDF:', error);
         alert('Failed to generate PDF. Please try again.');
+      } finally {
+        loadingOverlay.style.display = 'none';
+        const button = document.getElementById('downloadButton');
         button.innerHTML = "Download Resume as PDF";
         button.disabled = false;
       }

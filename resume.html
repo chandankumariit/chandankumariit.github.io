@@ -164,35 +164,6 @@
       background-color: var(--primary-color);
     }
 
-    .pdf-loading {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255,0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      display: none;
-    }
-
-    .spinner {
-      border: 3px solid #f3f3f3;
-      border-top: 3px solid var(--secondary-color);
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      animation: spin 1s linear infinite;
-      margin-right: 10px;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
     @media print {
       body { background: none; }
       .container {
@@ -201,7 +172,7 @@
         padding: 8mm;
         width: 100%;
       }
-      #downloadButton, .pdf-loading { display: none; }
+      #downloadButton { display: none; }
     }
 
     @media (max-width: 768px) {
@@ -211,11 +182,6 @@
   </style>
 </head>
 <body>
-  <div class="pdf-loading" id="loadingOverlay">
-    <div class="spinner"></div>
-    <span>Generating PDF...</span>
-  </div>
-
   <div class="container" id="resumeContent">
     <header>
       <h1>CHANDAN KUMAR</h1>
@@ -380,6 +346,7 @@
             <li>Business Strategy & Execution</li>
             <li>Business and Data Analytics</li>
             <li>Analytics & AI</li>
+            <li>Consulting</li>
             <li>Product Management</li>
           </ul>
         </div>
@@ -392,86 +359,40 @@
   <script>
     async function downloadPDF() {
       const { jsPDF } = window.jspdf;
-      const loadingOverlay = document.getElementById('loadingOverlay');
-      loadingOverlay.style.display = 'flex';
+      const doc = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+        compress: true
+      });
+
+      const element = document.getElementById('resumeContent');
       
       try {
         const button = document.getElementById('downloadButton');
         button.innerHTML = "Generating PDF...";
         button.disabled = true;
         
-        const element = document.getElementById('resumeContent');
-        
-        // Improved PDF generation settings
         const canvas = await html2canvas(element, {
-          scale: 4, // Higher scale for better quality
+          scale: 2,
           useCORS: true,
-          backgroundColor: '#ffffff',
-          allowTaint: false,
-          scrollX: 0,
-          scrollY: 0,
-          windowWidth: document.documentElement.offsetWidth,
-          windowHeight: document.documentElement.offsetHeight
+          backgroundColor: '#ffffff'
         });
         
         const imgWidth = 210;
-        const contentHeight = element.clientHeight;
-        const pageHeight = 295; // A4 height in mm - small margin
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        const imgData = canvas.toDataURL('image/jpeg', 0.8);
         
-        const pdfDoc = new jsPDF({
-          orientation: 'portrait',
-          unit: 'mm',
-          format: 'a4',
-          compress: true,
-          hotfixes: ["px_scaling"]
-        });
+        doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
+        doc.save('Chandan_Kumar_Resume.pdf', { compress: true });
         
-        // Calculate the total number of pages needed
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
-        const pageCount = Math.ceil(imgHeight / pageHeight);
-        
-        // Handle potential multi-page output
-        let heightLeft = imgHeight;
-        let position = 0;
-        
-        // Use the best quality that keeps file size reasonable
-        const qualitySetting = 0.9;
-        
-        // For single page documents
-        if (pageCount <= 1) {
-          const imgData = canvas.toDataURL('image/jpeg', qualitySetting);
-          pdfDoc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight, null, 'FAST');
-        } else {
-          // For multi-page documents
-          let page = 0;
-          
-          while (heightLeft > 0) {
-            const imgData = canvas.toDataURL('image/jpeg', qualitySetting);
-            
-            // Add new page after first page
-            if (page > 0) {
-              pdfDoc.addPage();
-            }
-            
-            // Add image to current page
-            pdfDoc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight, null, 'FAST');
-            
-            // Prepare for next page
-            heightLeft -= pageHeight;
-            position -= pageHeight;
-            page++;
-          }
-        }
-        
-        pdfDoc.save('Chandan_Kumar_Resume.pdf');
-        
+        button.innerHTML = "Download Resume as PDF";
+        button.disabled = false;
       } catch (error) {
         console.error('Error generating PDF:', error);
         alert('Failed to generate PDF. Please try again.');
-      } finally {
-        loadingOverlay.style.display = 'none';
-        document.getElementById('downloadButton').innerHTML = "Download Resume as PDF";
-        document.getElementById('downloadButton').disabled = false;
+        button.innerHTML = "Download Resume as PDF";
+        button.disabled = false;
       }
     }
   </script>

@@ -25,35 +25,34 @@
     body {
       font-family: 'Open Sans', sans-serif;
       color: var(--text-color);
-      line-height: 1.25;
+      line-height: 1.4;
       background-color: #f0f0f0;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 400;
     }
 
     .container {
       width: 210mm;
-      height: 297mm;
+      min-height: 297mm;
       margin: 10px auto;
       background-color: white;
       box-shadow: 0 3px 15px rgba(0,0,0,0.15);
-      padding: 3mm 10mm 8mm 10mm;
-      position: relative;
+      padding: 10mm;
     }
 
     header {
       text-align: center;
       border-bottom: 1px solid var(--primary-color);
-      padding-bottom: 2px;
-      margin-bottom: 3px;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     header h1 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       color: var(--primary-color);
       letter-spacing: 0.5px;
-      margin-bottom: 3px;
+      margin-bottom: 5px;
     }
 
     .contact-info {
@@ -61,7 +60,7 @@
       justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
-      font-size: 11px;
+      font-size: 12px;
     }
 
     .contact-item {
@@ -71,75 +70,56 @@
 
     .contact-item .icon {
       color: var(--secondary-color);
-      margin-right: 4px;
-      font-size: 11px;
-    }
-
-    .contact-item a,
-    .contact-item span {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .contact-item a:hover {
-      color: var(--secondary-color);
+      margin-right: 5px;
+      font-size: 12px;
     }
 
     .content {
       display: flex;
-      gap: 12px;
-      margin-top: 5px;
+      gap: 20px;
     }
 
     .left-column { flex: 6; }
     .right-column { flex: 4; }
-    .section { margin-bottom: 8px; }
+    .section { margin-bottom: 10px; }
 
     .section-title {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--primary-color);
       text-transform: uppercase;
       border-bottom: 1px solid var(--secondary-color);
-      padding-bottom: 1px;
-      margin-bottom: 2px;
+      padding-bottom: 3px;
+      margin-bottom: 5px;
     }
 
-    .job, .education-item, .project { margin-bottom: 2px; }
+    .job, .education-item, .project { margin-bottom: 5px; }
 
     .job-title, .school-name, .project-title {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 600;
       color: #000000;
       display: inline-block;
     }
 
-    .project-title .company-name {
-      font-weight: 400;
-      font-style: italic;
-      color: var(--primary-color);
-      margin-left: 3px;
-    }
-
     .job-period, .education-period {
       float: right;
       font-weight: 600;
-      font-size: 11px;
+      font-size: 12px;
     }
 
     ul {
       padding-left: 12px;
-      margin: 1px 0;
+      margin: 2px 0;
     }
 
     li {
-      margin-bottom: 1px;
+      margin-bottom: 3px;
       text-align: justify;
     }
 
     p {
-      margin: 2px 0;
+      margin: 3px 0;
       text-align: justify;
     }
 
@@ -150,13 +130,13 @@
 
     #downloadButton {
       display: block;
-      width: 180px;
-      margin: 10px auto;
+      width: 150px;
+      margin: 20px auto;
       padding: 10px;
       background-color: var(--secondary-color);
       color: white;
       text-align: center;
-      border-radius: 3px;
+      border-radius: 5px;
       cursor: pointer;
       font-weight: 600;
       font-size: 14px;
@@ -169,18 +149,13 @@
       background-color: var(--primary-color);
     }
 
-    .skills-list ul li {
-      margin-bottom: 3px;
-    }
-
     @media print {
       body { background: none; }
       .container {
         box-shadow: none;
         margin: 0;
-        padding: 3mm 8mm 8mm 8mm;
+        padding: 5mm;
         width: 100%;
-        height: 100%;
       }
       #downloadButton { display: none; }
     }
@@ -188,11 +163,6 @@
     @media (max-width: 768px) {
       .content { flex-direction: column; }
       .container { width: 95%; }
-    }
-    
-    .page-break {
-      page-break-before: always;
-      height: 0;
     }
   </style>
 </head>
@@ -203,15 +173,15 @@
       <div class="contact-info">
         <div class="contact-item">
           <span class="icon"><i class="fas fa-envelope"></i></span>
-          <a href="mailto:ckism.iit@gmail.com"><strong>ckism.iit@gmail.com</strong></a>
+          <a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a>
         </div>
         <div class="contact-item">
           <span class="icon"><i class="fas fa-phone"></i></span>
-          <span><strong>+91-9199000200</strong></span>
+          <span>+91-9199000200</span>
         </div>
         <div class="contact-item">
           <span class="icon"><i class="fab fa-linkedin-in"></i></span>
-          <a href="https://www.linkedin.com/in/chandaniit"><strong>linkedin.com/in/chandaniit</strong></a>
+          <a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/chandaniit</a>
         </div>
       </div>
     </header>
@@ -220,7 +190,7 @@
       <div class="left-column">
         <div class="section">
           <div class="section-title">Professional Summary</div>
-          <p>IIT Dhanbad Graduate with 7 years of expertise in data science and AI solutions across product development, service delivery, and consulting in finance, banking, and environmental management. Proven success in designing and deploying advanced machine learning models, generative AI systems, and multi-agent platforms using Python, SQL, and cloud technologies (Azure, AWS, GCP, IBM). Skilled in leading cross-functional teams, optimizing workflows through MLOps and AI governance, reducing operational latency by 40% and enhancing decision-making processes.</p>
+          <p>IIT Dhanbad Graduate with around 7 years of expertise in delivering innovative data science and AI solutions across product development, service delivery, and consulting engagements in diverse industries including finance, banking, and environmental management. Proven success in designing and deploying advanced machine learning models, generative AI systems, and multi-agent platforms using Python, SQL, and cloud technologies (Azure, AWS, GCP, IBM). Skilled in leading cross-functional teams, optimizing workflows through MLOps and AI governance, and driving business impact through strategic consulting, reducing operational latency by 40% and enhancing decision-making processes.</p>
         </div>
         
         <div class="section">
@@ -248,47 +218,47 @@
           <div class="project">
             <div class="project-title"><strong>MARC (Multi-Agent Resource Coordinator)</strong>, <span class="company-name"><strong>IBM</strong></span></div>
             <ul>
-              <li>Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation</li>
-              <li>Applied AI Governance principles to ensure ethical and compliant operations of automation agents</li>
-              <li>Utilized advanced Large Language Models (LLMs) for intelligent task orchestration and agent selection</li>
-              <li>Optimized agent coordination algorithms, reducing operational latency by 40% and boosting overall performance</li>
+              <li>Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation.</li>
+              <li>Applied AI Governance principles to ensure ethical and compliant operations of automation agents.</li>
+              <li>Utilized advanced Large Language Models (LLMs) for intelligent task orchestration and agent selection, improving system responsiveness.</li>
+              <li>Optimized agent coordination algorithms, reducing operational latency by 40% and boosting overall performance.</li>
             </ul>
           </div>
           <div class="project">
             <div class="project-title"><strong>Mizuho Bank</strong>, <span class="company-name"><strong>Accenture</strong></span></div>
             <ul>
-              <li>Developed and deployed PdfGPT, an AI-powered text summarization system, enhancing document processing workflows</li>
-              <li>Implemented key feature extraction capabilities and PDF text summarization through interactive chat functionality</li>
+              <li>Developed and deployed PdfGPT, an AI-powered text summarization system, for a banking project, enhancing the efficiency of document processing workflows.</li>
+              <li>Implemented key feature extraction capabilities and enabled PDF text summarization through interactive chat functionality.</li>
             </ul>
           </div>
           <div class="project">
             <div class="project-title"><strong>Ulster Bank</strong>, <span class="company-name"><strong>Accenture</strong></span></div>
             <ul>
-              <li>Automated machine learning pipelines for customer segmentation algorithms using Python, Glue and Athena</li>
-              <li>Created and validated Data Models, deriving meaningful insights and explaining them to client stakeholders</li>
+              <li>Automated and authored machine learning pipelines for customer segmentation algorithms, employing advanced machine learning techniques Python, Glue and Athena.</li>
+              <li>Derived meaningful insights after creating and validating Data Models and explained that to client.</li>
             </ul>
           </div>
           <div class="project">
             <div class="project-title"><strong>Facebook</strong>, <span class="company-name"><strong>Accenture</strong></span></div>
             <ul>
-              <li>Examined data from multiple disparate sources to discover insights providing competitive advantage for clients</li>
-              <li>Designed and optimized machine learning pipelines, specializing in the creation of forecasting models</li>
-              <li>Leveraged Machine Learning, Python, Glue, Athena, and Sagemaker to enhance decision-making processes</li>
+              <li>Examined and explored data from multiple disparate sources with the goal of discovering insights which in turn can provide competitive advantage for our clients.</li>
+              <li>Designed and optimized machine learning pipelines, specializing in the creation of forecasting models.</li>
+              <li>Leveraged Machine Learning, Python, Glue, Athena, and Sagemaker to enhance and streamline decision-making processes.</li>
             </ul>
           </div>
           <div class="project">
             <div class="project-title"><strong>Waste Classification Code</strong>, <span class="company-name"><strong>Clean Harbors</strong></span></div>
             <ul>
-              <li>Designed and fine-tuned Waste Classification Code Prediction models, enabling autonomous WCC assignment</li>
-              <li>Created a unified dataset encompassing vital features for all waste classes</li>
-              <li>Applied logical data checks for input consistency, facilitating classification based on physical properties</li>
+              <li>Designed, developed, and fine-tuned Waste Classification Code Prediction models, enabling streamlined and autonomous Waste Classification Code assignment.</li>
+              <li>Created a unified dataset encompassing vital features for all waste classes.</li>
+              <li>Applied logical data checks for input consistency prior to model prediction, facilitating classification of similar Waste Classification Codes (WCC) based on physical properties.</li>
             </ul>
           </div>
           <div class="project">
             <div class="project-title"><strong>Invoice Audit</strong>, <span class="company-name"><strong>Clean Harbors</strong></span></div>
             <ul>
-              <li>Developed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis</li>
-              <li>Streamlined invoice verification, reducing audit time by 20%</li>
+              <li>Developed and deployed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.</li>
+              <li>Streamlined invoice verification, reducing audit time by 20%.</li>
             </ul>
           </div>
         </div>
@@ -329,11 +299,11 @@
         <div class="section">
           <div class="section-title">Achievements</div>
           <ul>
-            <li>Ranked #1 in HackerRank SQL</li>
-            <li>Consistently recognized by clients for error-free, timely project deliveries</li>
-            <li>Led a team of five analysts, restoring team credibility and stability</li>
-            <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers</li>
-            <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016)</li>
+            <li>Ranked #1 in HackerRank SQL.</li>
+            <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
+            <li>Led a team of five analysts, restoring team credibility and stability.</li>
+            <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
+            <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
           </ul>
         </div>
         
@@ -341,7 +311,7 @@
           <div class="section-title">Skills</div>
           <div class="skills-list">
             <ul>
-              <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee, Supervised ML, Unsupervised ML, NLP, Time Series, Model Development & Deployment, Vector DB</li>
+              <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee, Supervised ML (Regression, Decision Trees, RF, XGBoost), Unsupervised ML, NLP, Time Series, Model Development & Deployment, Vector DB</li>
               <li><strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM</li>
               <li><strong>Programming:</strong> Python, SQL</li>
               <li><strong>Data Engineering:</strong> Azure Data Factory, Azure Databricks, Azure Synapse Analytics, AWS S3, AWS Glue, AWS SageMaker, BigQuery, Pandas, NumPy</li>
@@ -389,35 +359,17 @@
         button.disabled = true;
         
         const canvas = await html2canvas(element, {
-          scale: 3, // Increased for better quality
+          scale: 2,
           useCORS: true,
-          logging: false,
           backgroundColor: '#ffffff'
         });
         
         const imgWidth = 210;
-        const pageHeight = 297;
         const imgHeight = canvas.height * imgWidth / canvas.width;
+        const imgData = canvas.toDataURL('image/jpeg', 0.8);
         
-        const imgData = canvas.toDataURL('image/jpeg', 1.0); // Higher quality
-        
-        // Add image to PDF
         doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
-        
-        // If the content is longer than one page, add more pages
-        if (imgHeight > pageHeight) {
-          let heightLeft = imgHeight - pageHeight;
-          let position = -pageHeight;
-          
-          while (heightLeft > 0) {
-            position = position - pageHeight;
-            doc.addPage();
-            doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-          }
-        }
-        
-        doc.save('Chandan_Kumar_Resume.pdf');
+        doc.save('Chandan_Kumar_Resume.pdf', { compress: true });
         
         button.innerHTML = "Download Resume as PDF";
         button.disabled = false;

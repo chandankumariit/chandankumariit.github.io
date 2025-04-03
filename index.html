@@ -1,419 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chandan Kumar - Data Scientist Portfolio showcasing expertise in Generative AI, MLOps, and AI Governance.">
-  <meta name="keywords" content="Chandan Kumar, Data Science, Generative AI, MLOps, AI Governance, IIT Dhanbad, Python, Azure, AWS">
-  <meta name="author" content="Chandan Kumar">
-  <title>Chandan Kumar | Data Science & AI Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chandan Kumar - Data Scientist Portfolio showcasing expertise in Generative AI, MLOps, and AI Governance.">
+    <meta name="keywords" content="Chandan Kumar, Data Science, Generative AI, MLOps, AI Governance, IIT Dhanbad, Python, Azure, AWS">
+    <meta name="author" content="Chandan Kumar">
+    <title>Chandan Kumar | Data Science & AI Portfolio</title>
 
-  <!-- Favicons -->
-  <link rel="shortcut icon" href="assets/img/favicon2.png.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon2.png.ico" type="image/x-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-      margin: 0;
-      padding-top: 80px;
-    }
-    #header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
-      padding: 15px 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-    #header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    #header h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0;
-    }
-    .nav-menu .nav-link {
-      color: #fff;
-      font-weight: 500;
-      padding: 10px 15px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-    .nav-menu .nav-link:hover,
-    .nav-menu .nav-link.active {
-      background: #ffd700;
-      color: #1e3c72;
-    }
-    .social-links a {
-      color: #fff;
-      font-size: 1.2rem;
-      margin-left: 15px;
-      transition: transform 0.3s;
-    }
-    .social-links a:hover {
-      transform: scale(1.2);
-      color: #ffd700;
-    }
-    .content-section {
-      padding: 30px;
-      background: #fff;
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 1000px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      display: none;
-      min-height: calc(100vh - 120px);
-      overflow-y: auto;
-    }
-    .content-section.active {
-      display: block;
-    }
-    .section-title h2 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #2a5298;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    .section-title h2::after {
-      content: '';
-      width: 50px;
-      height: 3px;
-      background: #ffd700;
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-    }
-    .btn-custom {
-      background: #2a5298;
-      color: #fff;
-      padding: 8px 20px;
-      border-radius: 20px;
-      transition: all 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-custom:hover {
-      background: #ffd700;
-      color: #1e3c72;
-    }
-    .experience-box, .education-box, .certification-box {
-      background: #fff;
-      border-radius: 15px;
-      padding: 20px;
-      margin-bottom: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-    }
-    .experience-box:hover, .education-box:hover, .certification-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-    .experience-box { border-left: 5px solid #2a5298; }
-    .education-box { border-left: 5px solid #28a745; }
-    .certification-box { border-left: 5px solid #fd7e14; }
-    .box-icon {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 1.5rem;
-      color: #ccc;
-    }
-    .experience-box .box-icon { color: #2a5298; }
-    .education-box .box-icon { color: #28a745; }
-    .certification-box .box-icon { color: #fd7e14; }
-    ul {
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 10px;
-    }
-    footer {
-      background: #1e3c72;
-      color: #fff;
-      padding: 15px 0;
-      text-align: center;
-    }
-    .resume-section iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 10px;
-    }
-    @media (max-width: 991px) {
-      .nav-menu .nav-link {
-        padding: 8px 10px;
-        font-size: 0.85rem;
-      }
-      #header .container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .social-links { margin-top: 10px; }
-    }
-    @media (max-width: 576px) {
-      #header h1 { font-size: 1.2rem; }
-      .nav-menu .nav-link { padding: 6px 8px; font-size: 0.75rem; }
-    }
-  </style>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding-top: 80px;
+        }
+        #header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        #header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .nav-menu .nav-link {
+            color: #fff;
+            font-weight: 500;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .nav-menu .nav-link:hover,
+        .nav-menu .nav-link.active {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+        .social-links a {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: transform 0.3s;
+        }
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: #ffd700;
+        }
+        .content-section {
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 1000px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+            min-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .section-title h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2a5298;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .section-title h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: #ffd700;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+        }
+        .btn-custom {
+            background: #2a5298;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-custom:hover {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+        .experience-box, .education-box, .certification-box {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .experience-box:hover, .education-box:hover, .certification-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .experience-box { border-left: 5px solid #2a5298; }
+        .education-box { border-left: 5px solid #28a745; }
+        .certification-box { border-left: 5px solid #fd7e14; }
+        .box-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #ccc;
+        }
+        .experience-box .box-icon { color: #2a5298; }
+        .education-box .box-icon { color: #28a745; }
+        .certification-box .box-icon { color: #fd7e14; }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #1e3c72;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .resume-section iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+        }
+        @media (max-width: 991px) {
+            .nav-menu .nav-link {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+            #header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .social-links { margin-top: 10px; }
+        }
+        @media (max-width: 576px) {
+            #header h1 { font-size: 1.2rem; }
+            .nav-menu .nav-link { padding: 6px 8px; font-size: 0.75rem; }
+        }
+    </style>
 </head>
 
 <body>
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container">
-      <h1>Chandan Kumar</h1>
-      <nav class="nav-menu d-flex flex-wrap">
-        <a href="#home" class="nav-link active" data-section="home">Home</a>
-        <a href="#experience" class="nav-link" data-section="experience">Experience</a>
-        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-        <a href="#education" class="nav-link" data-section="education">Education</a>
-        <a href="#certification" class="nav-link" data-section="certification">Certification</a>
-        <a href="#achievements" class="nav-link" data-section="achievements">Achievements</a>
-        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-        <a href="#core-competencies" class="nav-link" data-section="core-competencies">Core Competencies</a>
-        <a href="#resume" class="nav-link" data-section="resume">Resume</a>
-      </nav>
-      <div class="social-links">
-        <a href="mailto:ckism.iit@gmail.com" target="_blank"><i class="fab fa-google-plus-g"></i></a>
-        <a href="https://www.linkedin.com/in/chandaniit/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </header><!-- End Header -->
+    <header id="header">
+        <div class="container">
+            <h1>Chandan Kumar</h1>
+            <nav class="nav-menu d-flex flex-wrap">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#education" class="nav-link" data-section="education">Education</a>
+                <a href="#certification" class="nav-link" data-section="certification">Certification</a>
+                <a href="#achievements" class="nav-link" data-section="achievements">Achievements</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#core-competencies" class="nav-link" data-section="core-competencies">Core Competencies</a>
+                <a href="#resume" class="nav-link" data-section="resume">Resume</a>
+            </nav>
+            <div class="social-links">
+                <a href="mailto:ckism.iit@gmail.com" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                <a href="https://www.linkedin.com/in/chandaniit/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </header><main class="container">
+        <section id="home" class="content-section active">
+            <div class="section-title">
+                <h2>Home</h2>
+            </div>
+            <p>IIT Dhanbad Graduate with around 7 years of expertise in Data Science, Generative AI, Machine Learning, MLOps, Responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a position to leverage advanced analytical, model development, and deployment skills in large-scale data science initiatives.</p>
+            <div class="text-center mt-4">
+                <a href="#experience" class="btn btn-custom" data-section="experience">View Experience</a>
+                <a href="https://chandankumariit.github.io/Chandan_Kumar_Resume.pdf" class="btn btn-custom" download="Chandan_Kumar_Resume.pdf">Download Resume</a>
+            </div>
+        </section>
 
-  <!-- ======= Content Area ======= -->
-  <main class="container">
-    <!-- Home Section -->
-    <section id="home" class="content-section active">
-      <div class="section-title">
-        <h2>Home</h2>
-      </div>
-      <p>IIT Dhanbad Graduate with around 7 years of expertise in Data Science, Generative AI, Machine Learning, MLOps, Responsible AI, and AI Governance. Proficient in cloud platforms (Azure, AWS, GCP, IBM) and skilled in Python, SQL, Power BI, and data analysis. Experienced in leading projects, seeking a position to leverage advanced analytical, model development, and deployment skills in large-scale data science initiatives.</p>
-      <div class="text-center mt-4">
-        <a href="#experience" class="btn btn-custom" data-section="experience">View Experience</a>
-        <a href="https://chandankumariit.github.io/Chandan_Kumar_Resume.pdf" class="btn btn-custom" download="Chandan_Kumar_Resume.pdf">Download Resume</a>
-      </div>
-    </section>
+        <section id="experience" class="content-section">
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+            <div class="experience-box">
+                <i class="fas fa-briefcase box-icon"></i>
+                <h5>IBM - Data Scientist</h5>
+                <p><span class="float-end">Mar 2024 – Present</span></p>
+            </div>
+            <div class="experience-box">
+                <i class="fas fa-briefcase box-icon"></i>
+                <h5>Accenture - Data Scientist</h5>
+                <p><span class="float-end">Apr 2021 – Feb 2024</span></p>
+            </div>
+            <div class="experience-box">
+                <i class="fas fa-briefcase box-icon"></i>
+                <h5>Capgemini - Process Lead</h5>
+                <p><span class="float-end">Feb 2021 – Mar 2021</span></p>
+            </div>
+            <div class="experience-box">
+                <i class="fas fa-briefcase box-icon"></i>
+                <h5>Clean Harbors - Data Scientist</h5>
+                <p><span class="float-end">Jun 2018 – Jan 2021</span></p>
+            </div>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="content-section">
-      <div class="section-title">
-        <h2>Experience</h2>
-      </div>
-      <div class="experience-box">
-        <i class="fas fa-briefcase box-icon"></i>
-        <h5>IBM - Data Scientist</h5>
-        <p><span class="float-end">Mar 2024 – Present</span></p>
-      </div>
-      <div class="experience-box">
-        <i class="fas fa-briefcase box-icon"></i>
-        <h5>Accenture - Data Scientist</h5>
-        <p><span class="float-end">Apr 2021 – Feb 2024</span></p>
-      </div>
-      <div class="experience-box">
-        <i class="fas fa-briefcase box-icon"></i>
-        <h5>Capgemini - Process Lead</h5>
-        <p><span class="float-end">Feb 2021 – Mar 2021</span></p>
-      </div>
-      <div class="experience-box">
-        <i class="fas fa-briefcase box-icon"></i>
-        <h5>Clean Harbors - Data Scientist</h5>
-        <p><span class="float-end">Jun 2018 – Jan 2021</span></p>
-      </div>
-    </section>
+        <section id="projects" class="content-section">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            <div class="mb-4">
+                <h5>MARC (Multi-Agent Resource Coordinator), IBM</h5>
+                <ul>
+                    <li>Designed and developed IBM's MARC platform for multi-agent collaboration and workflow automation.</li>
+                    <li>Implemented AI Governance principles to ensure ethical and compliant automation agent operations.</li>
+                    <li>Integrated LLMs for task orchestration and agent selection, supporting Slack and WatsonX Assistant.</li>
+                    <li>Developed sample agents to demonstrate platform versatility across domains.</li>
+                    <li>Optimized agent coordination, reducing operational latency by 40%.</li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h5>Mizuho Bank, Accenture</h5>
+                <ul>
+                    <li>Developed and deployed PdfGPT, an AI-powered text summarization system for banking.</li>
+                    <li>Leveraged Generative AI and Azure Cognitive Services, improving document processing efficiency by 35%.</li>
+                    <li>Utilized expertise in LLM, Data Science, Machine Learning, and Azure to drive project success.</li>
+                    <li>Achieved 95% accuracy in extracting critical financial insights from unstructured data.</li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h5>Facebook, Accenture</h5>
+                <ul>
+                    <li>Analyzed data from diverse sources to provide actionable insights for competitive advantage.</li>
+                    <li>Designed and optimized machine learning pipelines for forecasting models.</li>
+                    <li>Enhanced decision-making processes using Machine Learning, Python, and AWS.</li>
+                    <li>Improved prediction accuracy by 25% for social media engagement metrics.</li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h5>Waste Classification Code, Clean Harbors</h5>
+                <ul>
+                    <li>Developed and fine-tuned Waste Classification Code Prediction models for autonomous assignment.</li>
+                    <li>Created a unified dataset with essential features for all waste classes.</li>
+                    <li>Applied data consistency checks to improve classification based on physical properties.</li>
+                    <li>Reduced manual classification errors by 30%, enhancing efficiency.</li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h5>Invoice Audit, Clean Harbors</h5>
+                <ul>
+                    <li>Developed an invoice auditing and revenue prediction algorithm using machine learning.</li>
+                    <li>Automated data loading to Azure SQL with Azure Data Factory and Machine Learning tools.</li>
+                    <li>Streamlined invoice verification, reducing audit time by 20%.</li>
+                </ul>
+            </div>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="content-section">
-      <div class="section-title">
-        <h2>Projects</h2>
-      </div>
-      <div class="mb-4">
-        <h5>MARC (Multi-Agent Resource Coordinator), IBM</h5>
-        <ul>
-          <li>Designed and developed IBM's MARC platform for multi-agent collaboration and workflow automation.</li>
-          <li>Implemented AI Governance principles to ensure ethical and compliant automation agent operations.</li>
-          <li>Integrated LLMs for task orchestration and agent selection, supporting Slack and WatsonX Assistant.</li>
-          <li>Developed sample agents to demonstrate platform versatility across domains.</li>
-          <li>Optimized agent coordination, reducing operational latency by 40%.</li>
-        </ul>
-      </div>
-      <div class="mb-4">
-        <h5>Mizuho Bank, Accenture</h5>
-        <ul>
-          <li>Developed and deployed PdfGPT, an AI-powered text summarization system for banking.</li>
-          <li>Leveraged Generative AI and Azure Cognitive Services, improving document processing efficiency by 35%.</li>
-          <li>Utilized expertise in LLM, Data Science, Machine Learning, and Azure to drive project success.</li>
-          <li>Achieved 95% accuracy in extracting critical financial insights from unstructured data.</li>
-        </ul>
-      </div>
-      <div class="mb-4">
-        <h5>Facebook, Accenture</h5>
-        <ul>
-          <li>Analyzed data from diverse sources to provide actionable insights for competitive advantage.</li>
-          <li>Designed and optimized machine learning pipelines for forecasting models.</li>
-          <li>Enhanced decision-making processes using Machine Learning, Python, and AWS.</li>
-          <li>Improved prediction accuracy by 25% for social media engagement metrics.</li>
-        </ul>
-      </div>
-      <div class="mb-4">
-        <h5>Waste Classification Code, Clean Harbors</h5>
-        <ul>
-          <li>Developed and fine-tuned Waste Classification Code Prediction models for autonomous assignment.</li>
-          <li>Created a unified dataset with essential features for all waste classes.</li>
-          <li>Applied data consistency checks to improve classification based on physical properties.</li>
-          <li>Reduced manual classification errors by 30%, enhancing efficiency.</li>
-        </ul>
-      </div>
-      <div class="mb-4">
-        <h5>Invoice Audit, Clean Harbors</h5>
-        <ul>
-          <li>Developed an invoice auditing and revenue prediction algorithm using machine learning.</li>
-          <li>Automated data loading to Azure SQL with Azure Data Factory and Machine Learning tools.</li>
-          <li>Streamlined invoice verification, reducing audit time by 20%.</li>
-        </ul>
-      </div>
-    </section>
+        <section id="education" class="content-section">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-box">
+                <i class="fas fa-graduation-cap box-icon"></i>
+                <h5>IIT Dhanbad - B.Tech</h5>
+                <p><span class="float-end">2013 – 2017</span></p>
+            </div>
+            <div class="education-box">
+                <i class="fas fa-graduation-cap box-icon"></i>
+                <h5>Super30, Patna</h5>
+                <p><span class="float-end">2012 – 2013</span></p>
+            </div>
+        </section>
 
-    <!-- Education Section -->
-    <section id="education" class="content-section">
-      <div class="section-title">
-        <h2>Education</h2>
-      </div>
-      <div class="education-box">
-        <i class="fas fa-graduation-cap box-icon"></i>
-        <h5>IIT Dhanbad - B.Tech</h5>
-        <p><span class="float-end">2013 – 2017</span></p>
-      </div>
-      <div class="education-box">
-        <i class="fas fa-graduation-cap box-icon"></i>
-        <h5>Super30, Patna</h5>
-        <p><span class="float-end">2012 – 2013</span></p>
-      </div>
-    </section>
+        <section id="certification" class="content-section">
+            <div class="section-title">
+                <h2>Certification</h2>
+            </div>
+            <div class="certification-box">
+                <i class="fas fa-certificate box-icon"></i>
+                <ul class="list-unstyled">
+                    <li>Northwestern University - Analytics & AI</li>
+                    <li>Microsoft & LinkedIn - Generative AI</li>
+                    <li>Microsoft - Azure Machine Learning</li>
+                    <li>Stanford University - Machine Learning</li>
+                    <li>Duke University - DevOps, DataOps, MLOps</li>
+                    <li>Neo4j - Neo4j & LM Fundamentals</li>
+                    <li>AWS - AWS Cloud</li>
+                    <li>Microsoft - SQL Server</li>
+                </ul>
+            </div>
+        </section>
 
-    <!-- Certification Section -->
-    <section id="certification" class="content-section">
-      <div class="section-title">
-        <h2>Certification</h2>
-      </div>
-      <div class="certification-box">
-        <i class="fas fa-certificate box-icon"></i>
-        <ul class="list-unstyled">
-          <li>Northwestern University - Analytics & AI</li>
-          <li>Microsoft & LinkedIn - Generative AI</li>
-          <li>Microsoft - Azure Machine Learning</li>
-          <li>Stanford University - Machine Learning</li>
-          <li>Duke University - DevOps, DataOps, MLOps</li>
-          <li>Neo4j - Neo4j & LM Fundamentals</li>
-          <li>AWS - AWS Cloud</li>
-          <li>Microsoft - SQL Server</li>
-        </ul>
-      </div>
-    </section>
+        <section id="achievements" class="content-section">
+            <div class="section-title">
+                <h2>Achievements</h2>
+            </div>
+            <ul>
+                <li>Ranked #1 in HackerRank SQL.</li>
+                <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
+                <li>Led a team of five analysts, restoring team credibility and stability.</li>
+                <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
+                <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
+                <li>Awarded Silver Medal in 200m race at district-level "Khel Kud Pratiyogita," Bihar (2009).</li>
+            </ul>
+        </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="content-section">
-      <div class="section-title">
-        <h2>Achievements</h2>
-      </div>
-      <ul>
-        <li>Ranked #1 in HackerRank SQL.</li>
-        <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
-        <li>Led a team of five analysts, restoring team credibility and stability.</li>
-        <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
-        <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
-        <li>Awarded Silver Medal in 200m race at district-level "Khel Kud Pratiyogita," Bihar (2009).</li>
-      </ul>
-    </section>
+        <section id="skills" class="content-section">
+            <div class="section-title">
+                <h2>Skills</h2>
+            </div>
+            <ul>
+                <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee</li>
+                <li><strong>Machine Learning:</strong> Supervised (Regression, Decision Trees, RF, XGBoost), Unsupervised, NLP, Time Series, Model Development & Deployment, Vector DB</li>
+                <li><strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM Watson</li>
+                <li><strong>Programming:</strong> Python, SQL</li>
+                <li><strong>Data Engineering:</strong> Azure Data Factory, Databricks, Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy</li>
+                <li><strong>Databases:</strong> Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
+                <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
+                <li><strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD Pipelines</li>
+                <li><strong>Domains:</strong> Banking, Environmental, Social Media, Waste Management</li>
+            </ul>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="content-section">
-      <div class="section-title">
-        <h2>Skills</h2>
-      </div>
-      <ul>
-        <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee</li>
-        <li><strong>Machine Learning:</strong> Supervised (Regression, Decision Trees, RF, XGBoost), Unsupervised, NLP, Time Series, Model Development & Deployment, Vector DB</li>
-        <li><strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM Watson</li>
-        <li><strong>Programming:</strong> Python, SQL</li>
-        <li><strong>Data Engineering:</strong> Azure Data Factory, Databricks, Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy</li>
-        <li><strong>Databases:</strong> Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
-        <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
-        <li><strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD Pipelines</li>
-        <li><strong>Domains:</strong> Banking, Environmental,社会的 Media, Waste Management</li>
-      </ul>
-    </section>
+        <section id="core-competencies" class="content-section">
+            <div class="section-title">
+                <h2>Core Competencies</h2>
+            </div>
+            <ul>
+                <li>Project Management and Deployment</li>
+                <li>Data Strategy and Management</li>
+                <li>Business Strategy & Execution</li>
+                <li>Business and Data Analytics</li>
+                <li>Analytics & AI</li>
+            </ul>
+        </section>
 
-    <!-- Core Competencies Section -->
-    <section id="core-competencies" class="content-section">
-      <div class="section-title">
-        <h2>Core Competencies</h2>
-      </div>
-      <ul>
-        <li>Project Management and Deployment</li>
-        <li>Data Strategy and Management</li>
-        <li>Business Strategy & Execution</li>
-        <li>Business and Data Analytics</li>
-        <li>Analytics & AI</li>
-      </ul>
-    </section>
+        <section id="resume" class="content-section">
+            <div class="section-title">
+                <h2>Resume</h2>
+            </div>
+            <p>Download my detailed resume below to learn more about my professional journey and skills.</p>
+            <div class="text-center mb-4">
+                <a href="https://chandankumariit.github.io/Chandan_Kumar_Resume.pdf" class="btn btn-custom" download="Chandan_Kumar_Resume.pdf">Download Resume (PDF)</a>
+            </div>
+            <p>Preview my resume below (based on the HTML version):</p>
+            <iframe src="resume.html" class="resume-section"></iframe>
+        </section>
+    </main><footer>
+        <p>Designed by <a href="#" class="text-white">Chandan Kumar</a> | © 2025</p>
+    </footer>
 
-    <!-- Resume Section -->
-    <section id="resume" class="content-section">
-      <div class="section-title">
-        <h2>Resume</h2>
-      </div>
-      <p>Download my detailed resume below to learn more about my professional journey and skills.</p>
-      <div class="text-center mb-4">
-        <a href="https://chandankumariit.github.io/Chandan_Kumar_Resume.pdf" class="btn btn-custom" download="Chandan_Kumar_Resume.pdf">Download Resume (PDF)</a>
-      </div>
-      <p>Preview my resume below (based on the HTML version):</p>
-      <iframe src="resume.html" class="resume-section"></iframe>
-    </section>
-  </main><!-- End Content Area -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <!-- ======= Footer ======= -->
-  <footer>
-    <p>Designed by <a href="#" class="text-white">Chandan Kumar</a> | © 2025</p>
-  </footer>
-
-  <!-- Vendor JS Files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  <!-- Custom JS -->
-  <script>
-    $(document).ready(function() {
-      $('.nav-link').on('click', function(e) {
-        e.preventDefault();
-        const sectionId = $(this).data('section');
-        $('.nav-link').removeClass('active');
-        $('.content-section').removeClass('active');
-        $(this).addClass('active');
-        $('#' + sectionId).addClass('active');
-        window.scrollTo(0, 0);
-      });
-      $('#home').addClass('active');
-    });
-  </script>
+    <script>
+        $(document).ready(function() {
+            $('.nav-link').on('click', function(e) {
+                e.preventDefault();
+                const sectionId = $(this).data('section');
+                $('.nav-link').removeClass('active');
+                $('.content-section').removeClass('active');
+                $(this).addClass('active');
+                $('#' + sectionId).addClass('active');
+                window.scrollTo(0, 0);
+            });
+            $('#home').addClass('active');
+        });
+    </script>
 </body>
 </html>

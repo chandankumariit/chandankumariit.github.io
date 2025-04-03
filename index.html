@@ -121,7 +121,7 @@
             transform: translateY(-4px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
-        .experience-box, .education-box, .certification-box {
+        .experience-box, .education-box {
             background: #f9fafb;
             border-radius: 15px;
             padding: 30px;
@@ -129,13 +129,12 @@
             transition: all 0.3s ease;
             border-left: 8px solid;
         }
-        .experience-box:hover, .education-box:hover, .certification-box:hover {
+        .experience-box:hover, .education-box:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
         .experience-box { border-left-color: #3b82f6; }
         .education-box { border-left-color: #10b981; }
-        .certification-box { border-left-color: #f59e0b; }
         .box-icon {
             position: absolute;
             top: 30px;
@@ -146,7 +145,6 @@
         }
         .experience-box:hover .box-icon { opacity: 0.5; color: #3b82f6; }
         .education-box:hover .box-icon { opacity: 0.5; color: #10b981; }
-        .certification-box:hover .box-icon { opacity: 0.5; color: #f59e0b; }
         ul {
             padding-left: 20px;
         }
@@ -154,21 +152,66 @@
             margin-bottom: 15px;
             line-height: 1.8;
         }
+        /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
         .skills-grid li {
-            background: #f9fafb;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 20px;
+            border-radius: 15px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
         .skills-grid li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
+        .skills-grid li:nth-child(1) { background: #e0f2fe; border-left: 6px solid #3b82f6; }
+        .skills-grid li:nth-child(2) { background: #dcfce7; border-left: 6px solid #10b981; }
+        .skills-grid li:nth-child(3) { background: #fef3c7; border-left: 6px solid #f59e0b; }
+        .skills-grid li:nth-child(4) { background: #fce7f3; border-left: 6px solid #ec4899; }
+        .skills-grid li:nth-child(5) { background: #e5e7eb; border-left: 6px solid #6b7280; }
+        .skills-grid li:nth-child(6) { background: #e0f2fe; border-left: 6px solid #3b82f6; }
+        .skills-grid li:nth-child(7) { background: #dcfce7; border-left: 6px solid #10b981; }
+        .skills-grid li:nth-child(8) { background: #fef3c7; border-left: 6px solid #f59e0b; }
+        .skills-grid li:nth-child(9) { background: #fce7f3; border-left: 6px solid #ec4899; }
+
+        /* Certification Section */
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .certification-box {
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        .certification-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .certification-box .institution {
+            font-weight: 600;
+            color: #1e2a44;
+        }
+        .certification-box .course {
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+        .certification-box:nth-child(1) { background: #e0f2fe; border-left: 6px solid #3b82f6; }
+        .certification-box:nth-child(2) { background: #dcfce7; border-left: 6px solid #10b981; }
+        .certification-box:nth-child(3) { background: #fef3c7; border-left: 6px solid #f59e0b; }
+        .certification-box:nth-child(4) { background: #fce7f3; border-left: 6px solid #ec4899; }
+        .certification-box:nth-child(5) { background: #e5e7eb; border-left: 6px solid #6b7280; }
+        .certification-box:nth-child(6) { background: #e0f2fe; border-left: 6px solid #3b82f6; }
+        .certification-box:nth-child(7) { background: #dcfce7; border-left: 6px solid #10b981; }
+        .certification-box:nth-child(8) { background: #fef3c7; border-left: 6px solid #f59e0b; }
+
         footer {
             background: linear-gradient(135deg, #1e2a44, #3b82f6);
             color: #fff;
@@ -203,6 +246,7 @@
             .content-section { padding: 30px; }
             .section-title h2 { font-size: 1.8rem; }
             .resume-iframe { height: 550px; }
+            .skills-grid, .certification-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -338,18 +382,39 @@
             <div class="section-title">
                 <h2>Certification</h2>
             </div>
-            <div class="certification-box">
-                <i class="fas fa-certificate box-icon"></i>
-                <ul class="list-unstyled">
-                    <li>Northwestern University - Analytics & AI</li>
-                    <li>Microsoft & LinkedIn - Generative AI</li>
-                    <li>Microsoft - Azure Machine Learning</li>
-                    <li>Stanford University - Machine Learning</li>
-                    <li>Duke University - DevOps, DataOps, MLOps</li>
-                    <li>Neo4j - Neo4j & LM Fundamentals</li>
-                    <li>AWS - AWS Cloud</li>
-                    <li>Microsoft - SQL Server</li>
-                </ul>
+            <div class="certification-grid">
+                <div class="certification-box">
+                    <span class="institution">Northwestern University</span><br>
+                    <span class="course">Analytics & AI</span>
+                </div>
+                <div class="certification-box">
+                    <span class="institution">Microsoft & LinkedIn</span><br>
+                    <span class="course">Generative AI</span>
+                </div>
+                <div class="certification-box">
+                    <span class="institution">Microsoft</span><br>
+                    <span class="course">Azure Machine Learning</span>
+                </div>
+                <div class="certification-box">
+                    <span class="institution">Stanford University</span><br>
+                    <span class="course">Machine Learning</span>
+                </div>
+                <div class="certification-box">
+                    <span class="institution">Duke University</span><br>
+                    <span class="course">DevOps, DataOps, MLOps</span>
+                </div>
+                <div class="certification-box">
+                    <span class="institution">Neo4j</span><br>
+                    <span class="course">Neo4j & LM Fundamentals</span>
+                </div>
+                <div class="certification-box">
+                    <span class="institution">AWS</span><br>
+                    <span class="course">AWS Cloud</span>
+                </div>
+                <div class="certification-box">
+                    <span class="institution">Microsoft</span><br>
+                    <span class="course">SQL Server</span>
+                </div>
             </div>
         </section>
 

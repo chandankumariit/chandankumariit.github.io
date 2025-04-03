@@ -12,8 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
     <style>
         :root {
@@ -162,6 +160,51 @@
         .education-box:nth-child(1) { background: #e0f2fe; border-left: 6px solid var(--primary-color); }
         .education-box:nth-child(2) { background: #dcfce7; border-left: 6px solid #10b981; }
 
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .project-box {
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .project-box h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        .project-box .company {
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+            margin-left: 5px;
+        }
+        .project-box ul {
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+        .project-box ul li {
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+        .project-box:nth-child(1) { background: #e0f2fe; border-left: 6px solid var(--primary-color); }
+        .project-box:nth-child(2) { background: #dcfce7; border-left: 6px solid #10b981; }
+        .project-box:nth-child(3) { background: #fef3c7; border-left: 6px solid #f59e0b; }
+        .project-box:nth-child(4) { background: #fce7f3; border-left: 6px solid #ec4899; }
+        .project-box:nth-child(5) { background: #e5e7eb; border-left: 6px solid #6b7280; }
+        .project-box:nth-child(6) { background: #e0f2fe; border-left: 6px solid var(--primary-color); }
+
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -225,16 +268,8 @@
         .certification-box:nth-child(12) { background: #dcfce7; border-left: 6px solid #10b981; }
         .certification-box:nth-child(13) { background: #fef3c7; border-left: 6px solid #f59e0b; }
 
-        /* Resume and Download */
-        .resume-iframe {
-            width: 100%;
-            height: 700px;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-            margin-top: 30px;
-        }
-        #downloadButton {
+        /* Resume Button and Iframe */
+        #viewResumeButton {
             display: block;
             width: 200px;
             margin: 20px auto;
@@ -250,9 +285,18 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        #downloadButton:hover {
+        #viewResumeButton:hover {
             background-color: #074e91;
             transform: translateY(-3px);
+        }
+        #resumeIframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
+            display: none;
         }
 
         footer {
@@ -280,8 +324,8 @@
             .nav-menu .nav-link { padding: 6px 12px; font-size: 0.85rem; }
             .content-section { padding: 30px; }
             .section-title h2 { font-size: 1.8rem; }
-            .resume-iframe { height: 550px; }
-            .experience-grid, .education-grid, .skills-grid, .certification-grid { grid-template-columns: 1fr; }
+            #resumeIframe { height: 550px; }
+            .experience-grid, .education-grid, .projects-grid, .skills-grid, .certification-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -312,11 +356,9 @@
             <div class="section-title">
                 <h2>Home</h2>
             </div>
-            <p class="lead">IIT graduate and AI Researcher with around 7 years of expertise in Data Science, AI, and Product Development, specializing in Generative AI, AI governance, and advanced automation. Proven ability to design, deploy, and optimize AI/ML solutions across finance, banking, energy, and environmental sectors, driving business transformation and efficiency. Skilled in machine learning, deep learning, NLP, and AI-driven
-
- automation, with hands-on experience in Python, SQL, LangChain, CrewAI, TensorFlow, PyTorch, and cloud platforms (Azure, AWS, GCP, IBM). Led AI-driven initiatives, driving efficiency, scalability, and innovation across diverse applications. Experienced in AI model deployment, workflow automation, and strategy implementation, delivering measurable business impact.</p>
-            <iframe src="https://chandankumariit.github.io/resume.html" class="resume-iframe" id="resumeContent"></iframe>
-            <button id="downloadButton" onclick="downloadPDF()">Download Resume as PDF</button>
+            <p class="lead">IIT graduate and AI Researcher with around 7 years of expertise in Data Science, AI, and Product Development, specializing in Generative AI, AI governance, and advanced automation. Proven ability to design, deploy, and optimize AI/ML solutions across finance, banking, energy, and environmental sectors, driving business transformation and efficiency. Skilled in machine learning, deep learning, NLP, and AI-driven automation, with hands-on experience in Python, SQL, LangChain, CrewAI, TensorFlow, PyTorch, and cloud platforms (Azure, AWS, GCP, IBM). Led AI-driven initiatives, driving efficiency, scalability, and innovation across diverse applications. Experienced in AI model deployment, workflow automation, and strategy implementation, delivering measurable business impact.</p>
+            <button id="viewResumeButton" onclick="showResume()">View Resume</button>
+            <iframe id="resumeIframe" src="https://chandankumariit.github.io/resume.html"></iframe>
         </section>
 
         <section id="experience" class="content-section">
@@ -347,52 +389,54 @@
             <div class="section-title">
                 <h2>Projects</h2>
             </div>
-            <div class="mb-4">
-                <h5><strong>MARC (Multi-Agent Resource Coordinator)</strong>, <span style="font-style: italic; color: var(--primary-color);">IBM</span></h5>
-                <ul>
-                    <li>Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation.</li>
-                    <li>Applied AI Governance principles to ensure ethical and compliant operations of automation agents.</li>
-                    <li>Utilized advanced Large Language Models (LLMs) for intelligent task orchestration and agent selection.</li>
-                    <li>Streamlined enterprise workflows with a scalable multi-agent AI system.</li>
-                </ul>
-            </div>
-            <div class="mb-4">
-                <h5><strong>Mizuho Bank</strong>, <span style="font-style: italic; color: var(--primary-color);">Accenture</span></h5>
-                <ul>
-                    <li>Developed and deployed PdfGPT, an AI-powered text summarization system, enhancing document processing workflows.</li>
-                    <li>Implemented key feature extraction capabilities and PDF text summarization through interactive chat functionality.</li>
-                    <li>Reduced document review time by 30% with AI-driven system.</li>
-                </ul>
-            </div>
-            <div class="mb-4">
-                <h5><strong>Ulster Bank</strong>, <span style="font-style: italic; color: var(--primary-color);">Accenture</span></h5>
-                <ul>
-                    <li>Automated machine learning pipelines for customer segmentation algorithms using Python, Glue, and Athena.</li>
-                    <li>Created and validated Data Models, deriving meaningful insights and explaining them to client stakeholders.</li>
-                </ul>
-            </div>
-            <div class="mb-4">
-                <h5><strong>Facebook</strong>, <span style="font-style: italic; color: var(--primary-color);">Accenture</span></h5>
-                <ul>
-                    <li>Examined data from multiple disparate sources to discover insights providing competitive advantage for clients.</li>
-                    <li>Designed and optimized machine learning pipelines, specializing in the creation of forecasting models.</li>
-                    <li>Leveraged Machine Learning, Python, Glue, Athena, and SageMaker to enhance decision-making processes.</li>
-                </ul>
-            </div>
-            <div class="mb-4">
-                <h5><strong>Waste Classification Code</strong>, <span style="font-style: italic; color: var(--primary-color);">Clean Harbors</span></h5>
-                <ul>
-                    <li>Designed and fine-tuned Waste Classification Code Prediction models, enabling autonomous WCC assignment.</li>
-                    <li>Created a unified dataset encompassing vital features for all waste classes.</li>
-                    <li>Applied logical data checks for input consistency, facilitating classification based on physical properties.</li>
-                </ul>
-            </div>
-            <div class="mb-4">
-                <h5><strong>Invoice Audit</strong>, <span style="font-style: italic; color: var(--primary-color);">Clean Harbors</span></h5>
-                <ul>
-                    <li>Developed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.</li>
-                    <li>Streamlined invoice verification, reducing audit time by 20%.</li>
-                </ul>
+            <div class="projects-grid">
+                <div class="project-box">
+                    <h5><strong>MARC (Multi-Agent Resource Coordinator)</strong> <span class="company">IBM</span></h5>
+                    <ul>
+                        <li>Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation.</li>
+                        <li>Applied AI Governance principles to ensure ethical and compliant operations of automation agents.</li>
+                        <li>Utilized advanced Large Language Models (LLMs) for intelligent task orchestration and agent selection.</li>
+                        <li>Streamlined enterprise workflows with a scalable multi-agent AI system.</li>
+                    </ul>
+                </div>
+                <div class="project-box">
+                    <h5><strong>Mizuho Bank</strong> <span class="company">Accenture</span></h5>
+                    <ul>
+                        <li>Developed and deployed PdfGPT, an AI-powered text summarization system, enhancing document processing workflows.</li>
+                        <li>Implemented key feature extraction capabilities and PDF text summarization through interactive chat functionality.</li>
+                        <li>Reduced document review time by 30% with AI-driven system.</li>
+                    </ul>
+                </div>
+                <div class="project-box">
+                    <h5><strong>Ulster Bank</strong> <span class="company">Accenture</span></h5>
+                    <ul>
+                        <li>Automated machine learning pipelines for customer segmentation algorithms using Python, Glue, and Athena.</li>
+                        <li>Created and validated Data Models, deriving meaningful insights and explaining them to client stakeholders.</li>
+                    </ul>
+                </div>
+                <div class="project-box">
+                    <h5><strong>Facebook</strong> <span class="company">Accenture</span></h5>
+                    <ul>
+                        <li>Examined data from multiple disparate sources to discover insights providing competitive advantage for clients.</li>
+                        <li>Designed and optimized machine learning pipelines, specializing in the creation of forecasting models.</li>
+                        <li>Leveraged Machine Learning, Python, Glue, Athena, and SageMaker to enhance decision-making processes.</li>
+                    </ul>
+                </div>
+                <div class="project-box">
+                    <h5><strong>Waste Classification Code</strong> <span class="company">Clean Harbors</span></h5>
+                    <ul>
+                        <li>Designed and fine-tuned Waste Classification Code Prediction models, enabling autonomous WCC assignment.</li>
+                        <li>Created a unified dataset encompassing vital features for all waste classes.</li>
+                        <li>Applied logical data checks for input consistency, facilitating classification based on physical properties.</li>
+                    </ul>
+                </div>
+                <div class="project-box">
+                    <h5><strong>Invoice Audit</strong> <span class="company">Clean Harbors</span></h5>
+                    <ul>
+                        <li>Developed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.</li>
+                        <li>Streamlined invoice verification, reducing audit time by 20%.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -537,30 +581,12 @@
             $('#home').addClass('active');
         });
 
-        async function downloadPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
-            const element = document.getElementById('resumeContent');
-            const button = document.getElementById('downloadButton');
-            try {
-                button.innerHTML = "Generating PDF...";
-                button.disabled = true;
-                const canvas = await html2canvas(element, { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff', windowHeight: element.scrollHeight });
-                const imgWidth = 210;
-                const pageHeight = 297;
-                const imgHeight = canvas.height * imgWidth / canvas.width;
-                const imgData = canvas.toDataURL('image/jpeg', 0.85);
-                let heightRatio = pageHeight / imgHeight;
-                let adjustedHeight = imgHeight * heightRatio;
-                doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, adjustedHeight);
-                doc.save('Chandan_Kumar_Resume.pdf');
-                button.innerHTML = "Download Resume as PDF";
-                button.disabled = false;
-            } catch (error) {
-                console.error('Error generating PDF:', error);
-                alert('Failed to generate PDF. Please try again.');
-                button.innerHTML = "Download Resume as PDF";
-                button.disabled = false;
+        function showResume() {
+            const iframe = document.getElementById('resumeIframe');
+            if (iframe.style.display === 'none' || iframe.style.display === '') {
+                iframe.style.display = 'block';
+            } else {
+                iframe.style.display = 'none';
             }
         }
     </script>

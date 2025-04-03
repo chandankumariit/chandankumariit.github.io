@@ -52,14 +52,6 @@
             margin: 0;
             letter-spacing: 0.5px;
         }
-        .navbar-toggler {
-            display: none;
-            border: none;
-            background: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
         .nav-menu {
             display: flex;
             flex-wrap: wrap;
@@ -72,7 +64,6 @@
             text-decoration: none;
             border-radius: 30px;
             font-size: 1rem;
-            cursor: pointer;
         }
         .nav-menu .nav-link:hover,
         .nav-menu .nav-link.active {
@@ -90,6 +81,13 @@
             color: #f59e0b;
             transform: translateY(-4px);
         }
+        .navbar-toggler {
+            display: none;
+            border: none;
+            background: none;
+            color: #fff;
+            font-size: 1.5rem;
+        }
         .content-section {
             padding: 40px;
             background: #fff;
@@ -97,17 +95,15 @@
             margin: 30px auto;
             max-width: 1200px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-            display: none; /* Ensure only active section shows */
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
         }
         .content-section.active {
-            display: block; /* Show only the active section */
+            display: block;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        .content-section.active {
-            animation: fadeIn 0.6s ease-in-out;
         }
         .section-title h2 {
             font-size: 2rem;
@@ -233,9 +229,6 @@
                 flex-direction: column;
                 background: #1e2a44;
                 padding: 10px 0;
-                position: absolute;
-                top: 100%;
-                left: 0;
             }
             .nav-menu.active { display: flex; }
             .nav-menu .nav-link {
@@ -288,7 +281,7 @@
             <button class="navbar-toggler" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav class="nav-menu">
+            <nav class="nav-menu d-flex flex-wrap">
                 <a href="#home" class="nav-link active" data-section="home">Home</a>
                 <a href="#experience" class="nav-link" data-section="experience">Experience</a>
                 <a href="#projects" class="nav-link" data-section="projects">Projects</a>
@@ -529,7 +522,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Toggle mobile menu
+            // Navigation toggle for mobile
             $('.navbar-toggler').on('click', function() {
                 $('.nav-menu').toggleClass('active');
             });
@@ -538,49 +531,37 @@
             $('.nav-link').on('click', function(e) {
                 e.preventDefault();
                 const sectionId = $(this).data('section');
-
-                // Remove active class from all nav links and sections
                 $('.nav-link').removeClass('active');
-                $('.content-section').removeClass('active').hide();
-
-                // Add active class to clicked nav link and show corresponding section
-                $(ರೀಕರಣ$(this).addClass('active');
-                $('#' + sectionId).addClass('active').show();
-
-                // Scroll to top smoothly
+                $('.content-section').removeClass('active');
+                $(this).addClass('active');
+                $('#' + sectionId).addClass('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                // Close mobile menu if open
                 if ($(window).width() <= 768) {
-                    $('.nav-menu').removeClass('active');
+                    $('.nav-menu').removeClass('active'); // Close menu on mobile after click
                 }
             });
-
-            // Show home section by default
-            $('#home').addClass('active').show();
+            $('#home').addClass('active');
         });
 
-        // Toggle resume iframe
         function showResume() {
-            const resumeIframe = $('#resumeIframe');
-            const biodataIframe = $('#biodataIframe');
-            if (resumeIframe.is(':hidden')) {
-                resumeIframe.show();
-                biodataIframe.hide();
+            const resumeIframe = document.getElementById('resumeIframe');
+            const biodataIframe = document.getElementById('biodataIframe');
+            if (resumeIframe.style.display === 'none' || resumeIframe.style.display === '') {
+                resumeIframe.style.display = 'block';
+                biodataIframe.style.display = 'none';
             } else {
-                resumeIframe.hide();
+                resumeIframe.style.display = 'none';
             }
         }
 
-        // Toggle biodata iframe
         function showBiodata() {
-            const resumeIframe = $('#resumeIframe');
-            const biodataIframe = $('#biodataIframe');
-            if (biodataIframe.is(':hidden')) {
-                biodataIframe.show();
-                resumeIframe.hide();
+            const resumeIframe = document.getElementById('resumeIframe');
+            const biodataIframe = document.getElementById('biodataIframe');
+            if (biodataIframe.style.display === 'none' || biodataIframe.style.display === '') {
+                biodataIframe.style.display = 'block';
+                resumeIframe.style.display = 'none';
             } else {
-                biodataIframe.hide();
+                biodataIframe.style.display = 'none';
             }
         }
     </script>

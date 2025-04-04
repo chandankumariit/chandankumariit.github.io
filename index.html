@@ -668,21 +668,22 @@
             height: 297mm;
             background: #fff;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            padding: 8mm;
+            padding: 5mm 8mm; /* Reduced padding */
             font-family: 'Open Sans', sans-serif;
-            font-size: 9pt;
-            line-height: 1.3;
+            font-size: 8pt; /* Reduced base font size */
+            line-height: 1.2; /* Tighter line spacing */
             color: var(--text-color);
         }
         .resume-page header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 4mm;
-            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 2mm; /* Reduced padding */
+            border-bottom: 1px solid var(--primary-color); /* Thinner border */
+            margin-bottom: 2mm;
         }
         .resume-page .header-left h1 {
-            font-size: 20pt;
+            font-size: 14pt; /* Reduced header font size */
             font-weight: 700;
             color: var(--primary-color);
             margin: 0;
@@ -691,23 +692,24 @@
         .resume-page .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 5mm;
-            font-size: 9pt;
+            gap: 2mm; /* Reduced gap */
+            font-size: 7pt; /* Smaller contact font */
             font-weight: 500;
         }
         .resume-page .contact-item i {
             color: var(--secondary-color);
-            margin-right: 2mm;
+            margin-right: 1mm; /* Reduced margin */
+            font-size: 8pt;
         }
         .resume-page .contact-item a, .resume-page .contact-item span {
             color: var(--text-color);
             text-decoration: none;
         }
         .resume-page .profile-photo {
-            width: 35mm;
-            height: 35mm;
+            width: 20mm; /* Smaller photo */
+            height: 20mm;
             border-radius: 50%;
-            border: 2px solid var(--primary-color);
+            border: 1px solid var(--primary-color); /* Thinner border */
             overflow: hidden;
         }
         .resume-page .profile-photo img {
@@ -715,51 +717,67 @@
             height: 100%;
             object-fit: cover;
         }
+        .resume-page .profile-photo-fallback {
+            display: none;
+            width: 20mm;
+            height: 20mm;
+            border-radius: 50%;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 6pt;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid var(--primary-color);
+        }
         .resume-page .content {
             display: flex;
-            gap: 5mm;
-            margin-top: 4mm;
+            gap: 3mm; /* Reduced gap */
+            margin-top: 2mm; /* Reduced margin */
         }
-        .resume-page .left-column, .resume-page .right-column {
-            flex: 1;
+        .resume-page .left-column {
+            flex: 6; /* Slightly more space for left column */
         }
         .resume-page .right-column {
+            flex: 4;
             border-left: 1px solid var(--border-color);
-            padding-left: 5mm;
+            padding-left: 3mm; /* Reduced padding */
         }
         .resume-page .section {
-            margin-bottom: 4mm;
+            margin-bottom: 2mm; /* Reduced margin */
         }
         .resume-page .section-title {
-            font-size: 12pt;
+            font-size: 9pt; /* Reduced title size */
             font-weight: 700;
             color: var(--primary-color);
             text-transform: uppercase;
             border-bottom: 1px solid var(--secondary-color);
-            padding-bottom: 1mm;
-            margin-bottom: 2mm;
+            padding-bottom: 0.5mm; /* Reduced padding */
+            margin-bottom: 1mm; /* Reduced margin */
         }
         .resume-page .section-title i {
             color: var(--accent-color);
-            margin-right: 2mm;
-            font-size: 10pt;
+            margin-right: 1mm;
+            font-size: 8pt;
         }
         .resume-page p, .resume-page li {
-            margin: 0 0 1mm;
+            margin: 0 0 0.5mm; /* Tighter spacing */
             text-align: justify;
         }
         .resume-page .job-title, .resume-page .school-name, .resume-page .project-title {
-            font-size: 10pt;
+            font-size: 8pt; /* Reduced font size */
             font-weight: 600;
             color: #000;
         }
         .resume-page .job-period, .resume-page .education-period {
             float: right;
-            font-size: 9pt;
+            font-size: 7pt; /* Smaller period font */
             font-weight: 500;
         }
         .resume-page ul {
-            padding-left: 5mm;
+            padding-left: 4mm; /* Reduced padding */
             margin: 0;
         }
         .resume-page .skills-list ul {
@@ -767,8 +785,8 @@
             list-style: none;
         }
         .resume-page .skills-list li {
-            margin-bottom: 1mm;
-            padding-left: 5mm;
+            margin-bottom: 0.5mm; /* Tighter spacing */
+            padding-left: 4mm;
             position: relative;
         }
         .resume-page .skills-list li::before {
@@ -778,16 +796,17 @@
             color: var(--accent-color);
             position: absolute;
             left: 0;
+            font-size: 7pt;
         }
         .resume-page .certifications-list ul {
             column-count: 2;
-            column-gap: 5mm;
+            column-gap: 3mm; /* Reduced gap */
         }
         .resume-page .additional-info {
-            margin-top: 2mm;
+            margin-top: 1mm; /* Reduced margin */
         }
         .resume-page .additional-info p {
-            margin-bottom: 2mm;
+            margin-bottom: 1mm; /* Reduced spacing */
         }
 
         /* Mobile Optimizations */
@@ -839,7 +858,7 @@
                 border-left: none;
                 padding-left: 0;
                 border-top: 1px solid var(--border-color);
-                padding-top: 5mm;
+                padding-top: 3mm;
             }
         }
         @media (max-width: 576px) {
@@ -858,7 +877,7 @@
             .resume-page {
                 box-shadow: none;
                 margin: 0;
-                padding: 8mm;
+                padding: 5mm 8mm;
                 width: 210mm;
                 height: 297mm;
             }
@@ -1168,7 +1187,7 @@
                                 </div>
                             </div>
                             <div class="section">
-                                <div class="section-title"><i class="fas fa-trophy"></i>Key Achievements</div>
+                                <div class="section-title"><i class="fas fa-trophy"></i>Achievements</div>
                                 <ul id="resume-achievements"></ul>
                             </div>
                             <div class="section">
@@ -1185,7 +1204,7 @@
                             </div>
                             <div class="additional-info">
                                 <p><strong>Languages:</strong> English (Fluent), Hindi (Native)</p>
-                                <p><strong>Interests:</strong> AI Ethics, Sustainable Technology, Chess</p>
+                                <p><strong>Interests:</strong> AI Ethics, Sustainable Tech, Chess</p>
                             </div>
                         </div>
                     </div>

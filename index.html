@@ -668,22 +668,22 @@
             height: 297mm;
             background: #fff;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            padding: 5mm 8mm; /* Reduced padding */
+            padding: 5mm 8mm;
             font-family: 'Open Sans', sans-serif;
-            font-size: 8pt; /* Reduced base font size */
-            line-height: 1.2; /* Tighter line spacing */
+            font-size: 8pt;
+            line-height: 1.2;
             color: var(--text-color);
         }
         .resume-page header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 2mm; /* Reduced padding */
-            border-bottom: 1px solid var(--primary-color); /* Thinner border */
+            padding-bottom: 1mm; /* Further reduced */
+            border-bottom: 1px solid var(--primary-color);
             margin-bottom: 2mm;
         }
         .resume-page .header-left h1 {
-            font-size: 14pt; /* Reduced header font size */
+            font-size: 12pt; /* Further reduced from 14pt */
             font-weight: 700;
             color: var(--primary-color);
             margin: 0;
@@ -692,24 +692,24 @@
         .resume-page .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 2mm; /* Reduced gap */
-            font-size: 7pt; /* Smaller contact font */
+            gap: 1mm; /* Further reduced */
+            font-size: 6pt; /* Further reduced */
             font-weight: 500;
         }
         .resume-page .contact-item i {
             color: var(--secondary-color);
-            margin-right: 1mm; /* Reduced margin */
-            font-size: 8pt;
+            margin-right: 1mm;
+            font-size: 7pt; /* Adjusted to match smaller text */
         }
         .resume-page .contact-item a, .resume-page .contact-item span {
             color: var(--text-color);
             text-decoration: none;
         }
         .resume-page .profile-photo {
-            width: 20mm; /* Smaller photo */
-            height: 20mm;
+            width: 15mm; /* Further reduced from 20mm */
+            height: 15mm;
             border-radius: 50%;
-            border: 1px solid var(--primary-color); /* Thinner border */
+            border: 1px solid var(--primary-color);
             overflow: hidden;
         }
         .resume-page .profile-photo img {
@@ -719,12 +719,12 @@
         }
         .resume-page .profile-photo-fallback {
             display: none;
-            width: 20mm;
-            height: 20mm;
+            width: 15mm;
+            height: 15mm;
             border-radius: 50%;
             background: #e0e0e0;
             color: #666;
-            font-size: 6pt;
+            font-size: 5pt;
             font-weight: 500;
             display: flex;
             align-items: center;
@@ -734,28 +734,28 @@
         }
         .resume-page .content {
             display: flex;
-            gap: 3mm; /* Reduced gap */
-            margin-top: 2mm; /* Reduced margin */
+            gap: 3mm;
+            margin-top: 2mm;
         }
         .resume-page .left-column {
-            flex: 6; /* Slightly more space for left column */
+            flex: 6;
         }
         .resume-page .right-column {
             flex: 4;
             border-left: 1px solid var(--border-color);
-            padding-left: 3mm; /* Reduced padding */
+            padding-left: 3mm;
         }
         .resume-page .section {
-            margin-bottom: 2mm; /* Reduced margin */
+            margin-bottom: 2mm;
         }
         .resume-page .section-title {
-            font-size: 9pt; /* Reduced title size */
+            font-size: 9pt;
             font-weight: 700;
             color: var(--primary-color);
             text-transform: uppercase;
             border-bottom: 1px solid var(--secondary-color);
-            padding-bottom: 0.5mm; /* Reduced padding */
-            margin-bottom: 1mm; /* Reduced margin */
+            padding-bottom: 0.5mm;
+            margin-bottom: 1mm;
         }
         .resume-page .section-title i {
             color: var(--accent-color);
@@ -763,33 +763,33 @@
             font-size: 8pt;
         }
         .resume-page p, .resume-page li {
-            margin: 0 0 0.5mm; /* Tighter spacing */
+            margin: 0 0 0.5mm;
             text-align: justify;
         }
         .resume-page .job-title, .resume-page .school-name, .resume-page .project-title {
-            font-size: 8pt; /* Reduced font size */
+            font-size: 8pt;
             font-weight: 600;
             color: #000;
         }
         .resume-page .job-period, .resume-page .education-period {
             float: right;
-            font-size: 7pt; /* Smaller period font */
+            font-size: 7pt;
             font-weight: 500;
         }
         .resume-page ul {
-            padding-left: 4mm; /* Reduced padding */
+            padding-left: 4mm;
             margin: 0;
         }
-        .resume-page .skills-list ul {
+        .resume-page .skills-list ul, .resume-page .certifications-list ul {
             padding-left: 0;
             list-style: none;
         }
-        .resume-page .skills-list li {
-            margin-bottom: 0.5mm; /* Tighter spacing */
+        .resume-page .skills-list li, .resume-page .certifications-list li {
+            margin-bottom: 0.5mm;
             padding-left: 4mm;
             position: relative;
         }
-        .resume-page .skills-list li::before {
+        .resume-page .skills-list li::before, .resume-page .certifications-list li::before {
             content: '\f105';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
@@ -798,15 +798,11 @@
             left: 0;
             font-size: 7pt;
         }
-        .resume-page .certifications-list ul {
-            column-count: 2;
-            column-gap: 3mm; /* Reduced gap */
-        }
         .resume-page .additional-info {
-            margin-top: 1mm; /* Reduced margin */
+            margin-top: 1mm;
         }
         .resume-page .additional-info p {
-            margin-bottom: 1mm; /* Reduced spacing */
+            margin-bottom: 1mm;
         }
 
         /* Mobile Optimizations */
@@ -1201,10 +1197,6 @@
                                 <div class="core-competencies-list">
                                     <ul id="resume-core-competencies"></ul>
                                 </div>
-                            </div>
-                            <div class="additional-info">
-                                <p><strong>Languages:</strong> English (Fluent), Hindi (Native)</p>
-                                <p><strong>Interests:</strong> AI Ethics, Sustainable Tech, Chess</p>
                             </div>
                         </div>
                     </div>

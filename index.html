@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -902,7 +901,7 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="dropdown-menu">
-                    <a href="#Professional Summary" class="nav-link active" data-section="Professional Summary"><i class="fas fa-home"></i> Professional Summary</a>
+                    <a href="#Professional-Summary" class="nav-link active" data-section="Professional-Summary"><i class="fas fa-home"></i> Professional Summary</a>
                     <a href="#experience" class="nav-link" data-section="experience"><i class="fas fa-briefcase"></i> Experience</a>
                     <a href="#projects" class="nav-link" data-section="projects"><i class="fas fa-project-diagram"></i> Projects</a>
                     <a href="#education" class="nav-link" data-section="education"><i class="fas fa-graduation-cap"></i> Education</a>
@@ -922,7 +921,7 @@
     </header>
 
     <main class="container">
-        <section id="Professional Summary" class="content-section active">
+        <section id="Professional-Summary" class="content-section active">
             <div class="section-title">
                 <h2>Professional Summary</h2>
             </div>
@@ -933,11 +932,9 @@
                 </div>
                 <div class="profile-text">
                     <h3>Chandan Kumar</h3>
-                    <p>IIT graduate and Data Scientist with around 7 years of expertise in Data Science, AI, and Product Development, specializing in Generative AI, AI governance, and advanced automation.</p>
+                    <p><strong>IIT graduate</strong> and <strong>AI Researcher</strong> with around <strong>7 years</strong> of expertise in Data Science, AI, and Product Development, specializing in Generative AI, AI governance, and advanced automation. Proven ability to design, deploy, and optimize AI/ML solutions across finance, banking, energy, and environmental sectors, driving business transformation and efficiency. Skilled in machine learning, deep learning, NLP, and AI-driven automation, with hands-on experience in Python, SQL, LangChain, CrewAI, TensorFlow, PyTorch, and cloud platforms (Azure, AWS, GCP, IBM). Led AI-driven initiatives, driving efficiency, scalability, and innovation across diverse applications. Experienced in AI model deployment, workflow automation, and strategy implementation, delivering measurable business impact.</p>
                 </div>
             </div>
-            <p class="lead">Proven ability to design, deploy, and optimize AI/ML solutions across finance, banking, energy, and environmental sectors, driving business transformation and efficiency. Skilled in machine learning, deep learning, NLP, and AI-driven automation, with hands-on experience in Python, SQL, LangChain, CrewAI, TensorFlow, PyTorch, and cloud platforms (Azure, AWS, GCP, IBM). Led AI-driven initiatives, driving efficiency, scalability, and innovation across diverse applications. Experienced in AI model deployment, workflow automation, and strategy implementation, delivering measurable business impact.</p>
-            
             <div class="button-container">
                 <button id="viewResumeButton" onclick="showResumeSection()"><i class="fas fa-file-alt"></i> View Resume</button>
                 <button id="downloadResumeButton" onclick="downloadPDF()"><i class="fas fa-download"></i> Download Resume</button>
@@ -948,23 +945,8 @@
             <div class="section-title">
                 <h2>Experience</h2>
             </div>
-            <div class="experience-grid">
-                <div class="experience-box">
-                    <h5><strong>IBM</strong> - Data Scientist</h5>
-                    <p><span class="float-end">Mar 2024 – Present</span></p>
-                </div>
-                <div class="experience-box">
-                    <h5><strong>Accenture</strong> - Data Scientist</h5>
-                    <p><span class="float-end">Apr 2021 – Feb 2024</span></p>
-                </div>
-                <div class="experience-box">
-                    <h5><strong>Capgemini</strong> - Process Lead</h5>
-                    <p><span class="float-end">Feb 2021 – Mar 2021</span></p>
-                </div>
-                <div class="experience-box">
-                    <h5><strong>Clean Harbors</strong> - Data Scientist</h5>
-                    <p><span class="float-end">Jun 2018 – Jan 2021</span></p>
-                </div>
+            <div class="experience-grid" id="experience-grid">
+                <!-- Experience data will be dynamically populated here -->
             </div>
         </section>
 
@@ -972,54 +954,8 @@
             <div class="section-title">
                 <h2>Projects</h2>
             </div>
-            <div class="projects-grid">
-                <div class="project-box">
-                    <h5><strong>MARC (Multi-Agent Resource Coordinator)</strong> <span class="company">IBM</span></h5>
-                    <ul>
-                        <li>Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation.</li>
-                        <li>Applied AI Governance principles to ensure ethical and compliant operations of automation agents.</li>
-                        <li>Utilized advanced Large Language Models (LLMs) for intelligent task orchestration and agent selection.</li>
-                        <li>Streamlined enterprise workflows with a scalable multi-agent AI system.</li>
-                    </ul>
-                </div>
-                <div class="project-box">
-                    <h5><strong>Mizuho Bank</strong> <span class="company">Accenture</span></h5>
-                    <ul>
-                        <li>Developed and deployed PdfGPT, an AI-powered text summarization system, enhancing document processing workflows.</li>
-                        <li>Implemented key feature extraction capabilities and PDF text summarization through interactive chat functionality.</li>
-                        <li>Reduced document review time by 30% with AI-driven system.</li>
-                    </ul>
-                </div>
-                <div class="project-box">
-                    <h5><strong>Ulster Bank</strong> <span class="company">Accenture</span></h5>
-                    <ul>
-                        <li>Automated machine learning pipelines for customer segmentation algorithms using Python, Glue, and Athena.</li>
-                        <li>Created and validated Data Models, deriving meaningful insights and explaining them to client stakeholders.</li>
-                    </ul>
-                </div>
-                <div class="project-box">
-                    <h5><strong>Facebook</strong> <span class="company">Accenture</span></h5>
-                    <ul>
-                        <li>Examined data from multiple disparate sources to discover insights providing competitive advantage for clients.</li>
-                        <li>Designed and optimized machine learning pipelines, specializing in the creation of forecasting models.</li>
-                        <li>Leveraged Machine Learning, Python, Glue, Athena, and SageMaker to enhance decision-making processes.</li>
-                    </ul>
-                </div>
-                <div class="project-box">
-                    <h5><strong>Waste Classification Code</strong> <span class="company">Clean Harbors</span></h5>
-                    <ul>
-                        <li>Designed and fine-tuned Waste Classification Code Prediction models, enabling autonomous WCC assignment.</li>
-                        <li>Created a unified dataset encompassing vital features for all waste classes.</li>
-                        <li>Applied logical data checks for input consistency, facilitating classification based on physical properties.</li>
-                    </ul>
-                </div>
-                <div class="project-box">
-                    <h5><strong>Invoice Audit</strong> <span class="company">Clean Harbors</span></h5>
-                    <ul>
-                        <li>Developed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.</li>
-                        <li>Streamlined invoice verification, reducing audit time by 20%.</li>
-                    </ul>
-                </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects data will be dynamically populated here -->
             </div>
         </section>
 
@@ -1027,15 +963,8 @@
             <div class="section-title">
                 <h2>Education</h2>
             </div>
-            <div class="education-grid">
-                <div class="education-box">
-                    <h5><strong>IIT Dhanbad</strong> - B.Tech</h5>
-                    <p><span class="float-end">2013 – 2017</span></p>
-                </div>
-                <div class="education-box">
-                    <h5><strong>Super30</strong>, Patna</h5>
-                    <p><span class="float-end">2012 – 2013</span></p>
-                </div>
+            <div class="education-grid" id="education-grid">
+                <!-- Education data will be dynamically populated here -->
             </div>
         </section>
 
@@ -1043,59 +972,8 @@
             <div class="section-title">
                 <h2>Certification</h2>
             </div>
-            <div class="certification-grid">
-                <div class="certification-box">
-                    <span class="institution">Northwestern University</span><br>
-                    <span class="course">Analytics & AI</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">IBM</span><br>
-                    <span class="course">IBM watsonx.ai Technical Essentials</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">IBM</span><br>
-                    <span class="course">IBM watsonx Essentials</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">Microsoft & LinkedIn</span><br>
-                    <span class="course">Generative AI</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">Microsoft</span><br>
-                    <span class="course">Azure Machine Learning</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">Stanford University</span><br>
-                    <span class="course">Machine Learning</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">Duke University</span><br>
-                    <span class="course">DevOps, DataOps, MLOps</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">Neo4j</span><br>
-                    <span class="course">Neo4j & LLM Fundamentals</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">AWS</span><br>
-                    <span class="course">AWS Cloud</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">Udemy</span><br>
-                    <span class="course">Project Management Fundamentals</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">Udemy</span><br>
-                    <span class="course">Product Management Fundamentals</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">Udemy</span><br>
-                    <span class="course">MCP (Model Context Protocol)</span>
-                </div>
-                <div class="certification-box">
-                    <span class="institution">Microsoft</span><br>
-                    <span class="course">SQL Server</span>
-                </div>
+            <div class="certification-grid" id="certification-grid">
+                <!-- Certification data will be dynamically populated here -->
             </div>
         </section>
 
@@ -1103,12 +981,8 @@
             <div class="section-title">
                 <h2>Achievements</h2>
             </div>
-            <ul>
-                <li>Ranked #1 in HackerRank SQL.</li>
-                <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
-                <li>Led a team of five analysts, restoring team credibility and stability.</li>
-                <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
-                <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
+            <ul id="achievements-list">
+                <!-- Achievements data will be dynamically populated here -->
             </ul>
         </section>
 
@@ -1116,15 +990,8 @@
             <div class="section-title">
                 <h2>Skills</h2>
             </div>
-            <ul class="skills-grid">
-                <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee, Supervised ML, Unsupervised ML, NLP, Time Series, Model Development & Deployment, RAG, Vector DB, Prompt Engineering</li>
-                <li><strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM</li>
-                <li><strong>Programming:</strong> Python, SQL</li>
-                <li><strong>Data Engineering:</strong> Azure Data Factory, Databricks, Azure Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy</li>
-                <li><strong>Databases:</strong> Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
-                <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
-                <li><strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD</li>
-                <li><strong>Domains:</strong> Finance, Banking, Environmental, Social Media, Waste Management, Energy</li>
+            <ul class="skills-grid" id="skills-list">
+                <!-- Skills data will be dynamically populated here -->
             </ul>
         </section>
 
@@ -1132,14 +999,8 @@
             <div class="section-title">
                 <h2>Core Competencies</h2>
             </div>
-            <ul>
-                <li>Project Management and Deployment</li>
-                <li>Data Strategy and Management</li>
-                <li>Business Strategy and Consulting</li>
-                <li>Service Delivery and Execution</li>
-                <li>Business and Data Analytics</li>
-                <li>Analytics & AI</li>
-                <li>Product Management</li>
+            <ul id="core-competencies-list">
+                <!-- Core Competencies data will be dynamically populated here -->
             </ul>
         </section>
 
@@ -1168,74 +1029,20 @@
                             <br>
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-user"></i>Professional Summary</div>
-                                <p><strong>IIT graduate</strong> and <strong>Data Scientist</strong> with around <strong>7 years</strong> of expertise in Data Science, AI, and Product Development, specializing in Generative AI, AI governance, and advanced automation. Proven ability to design, deploy, and optimize AI/ML solutions across finance, banking, energy, and environmental sectors, driving business transformation and efficiency. Skilled in machine learning, deep learning, NLP, and AI-driven automation, with hands-on experience in Python, SQL, LangChain, CrewAI, TensorFlow, PyTorch, and cloud platforms (Azure, AWS, GCP, IBM). Led AI-driven initiatives, driving efficiency, scalability, and innovation across diverse applications. Experienced in AI model deployment, workflow automation, and strategy implementation, delivering measurable business impact.</p>
+                                <p><strong>IIT graduate</strong> and <strong>AI Researcher</strong> with around <strong>7 years</strong> of expertise in Data Science, AI, and Product Development, specializing in Generative AI, AI governance, and advanced automation. Proven ability to design, deploy, and optimize AI/ML solutions across finance, banking, energy, and environmental sectors, driving business transformation and efficiency. Skilled in machine learning, deep learning, NLP, and AI-driven automation, with hands-on experience in Python, SQL, LangChain, CrewAI, TensorFlow, PyTorch, and cloud platforms (Azure, AWS, GCP, IBM). Led AI-driven initiatives, driving efficiency, scalability, and innovation across diverse applications. Experienced in AI model deployment, workflow automation, and strategy implementation, delivering measurable business impact.</p>
                             </div>
                             <br>
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-briefcase"></i>Experience</div>
                                 <div id="resume-experience">
-                                    <p class="job-title">IBM - Data Scientist <span class="job-period">Mar 2024 – Present</span></p>
-                                    <p class="job-title">Accenture - Data Scientist <span class="job-period">Apr 2021 – Feb 2024</span></p>
-                                    <p class="job-title">Capgemini - Process Lead <span class="job-period">Feb 2021 – Mar 2021</span></p>
-                                    <p class="job-title">Clean Harbors - Data Scientist <span class="job-period">Jun 2018 – Jan 2021</span></p>
+                                    <!-- Experience data will be dynamically populated here -->
                                 </div>
                             </div>
                             <br>
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-project-diagram"></i>Key Projects</div>
                                 <div id="resume-projects">
-                                    <div class="project">
-                                        <div class="project-title"><strong>MARC (Multi-Agent Resource Coordinator)</strong> - IBM</div>
-                                        <ul>
-                                            <li>Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation.</li>
-                                            <li>Applied AI Governance principles to ensure ethical and compliant operations of automation agents.</li>
-                                            <li>Utilized advanced Large Language Models (LLMs) for intelligent task orchestration and agent selection.</li>
-                                            <li>Streamlined enterprise workflows with a scalable multi-agent AI system.</li>
-                                        </ul>
-                                    </div>
-                                    <br>
-                                    <div class="project">
-                                        <div class="project-title"><strong>Mizuho Bank</strong> - Accenture</div>
-                                        <ul>
-                                            <li>Developed and deployed PdfGPT, an AI-powered text summarization system, enhancing document processing workflows.</li>
-                                            <li>Implemented key feature extraction capabilities and PDF text summarization through interactive chat functionality.</li>
-                                            <li>Reduced document review time by 30% with AI-driven system.</li>
-                                        </ul>
-                                    </div>
-                                    <br>
-                                    <div class="project">
-                                        <div class="project-title"><strong>Ulster Bank</strong> - Accenture</div>
-                                        <ul>
-                                            <li>Automated machine learning pipelines for customer segmentation algorithms using Python, Glue, and Athena.</li>
-                                            <li>Created and validated Data Models, deriving meaningful insights and explaining them to client stakeholders.</li>
-                                        </ul>
-                                    </div>
-                                    <br>
-                                    <div class="project">
-                                        <div class="project-title"><strong>Facebook</strong> - Accenture</div>
-                                        <ul>
-                                            <li>Examined data from multiple disparate sources to discover insights providing competitive advantage for clients.</li>
-                                            <li>Designed and optimized machine learning pipelines, specializing in the creation of forecasting models.</li>
-                                            <li>Leveraged Machine Learning, Python, Glue, Athena, and SageMaker to enhance decision-making processes.</li>
-                                        </ul>
-                                    </div>
-                                    <br>
-                                    <div class="project">
-                                        <div class="project-title"><strong>Waste Classification Code</strong> - Clean Harbors</div>
-                                        <ul>
-                                            <li>Designed and fine-tuned Waste Classification Code Prediction models, enabling autonomous WCC assignment.</li>
-                                            <li>Created a unified dataset encompassing vital features for all waste classes.</li>
-                                            <li>Applied logical data checks for input consistency, facilitating classification based on physical properties.</li>
-                                        </ul>
-                                    </div>
-                                    <br>
-                                    <div class="project">
-                                        <div class="project-title"><strong>Invoice Audit</strong> - Clean Harbors</div>
-                                        <ul>
-                                            <li>Developed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.</li>
-                                            <li>Streamlined invoice verification, reducing audit time by 20%.</li>
-                                        </ul>
-                                    </div>
+                                    <!-- Projects data will be dynamically populated here -->
                                 </div>
                             </div>
                         </div>
@@ -1244,8 +1051,7 @@
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-graduation-cap"></i>Education</div>
                                 <div id="resume-education">
-                                    <p class="school-name">IIT Dhanbad - B.Tech <span class="education-period">2013 – 2017</span></p>
-                                    <p class="school-name">Super30, Patna <span class="education-period">2012 – 2013</span></p>
+                                    <!-- Education data will be dynamically populated here -->
                                 </div>
                             </div>
                             <br>
@@ -1253,19 +1059,7 @@
                                 <div class="section-title"><i class="fas fa-certificate"></i>Certifications</div>
                                 <div class="certifications-list">
                                     <ul id="resume-certifications">
-                                        <li>Northwestern University - Analytics & AI</li>
-                                        <li>IBM - IBM watsonx.ai Technical Essentials</li>
-                                        <li>IBM - IBM watsonx Essentials</li>
-                                        <li>Microsoft & LinkedIn - Generative AI</li>
-                                        <li>Microsoft - Azure Machine Learning</li>
-                                        <li>Stanford University - Machine Learning</li>
-                                        <li>Duke University - DevOps, DataOps, MLOps</li>
-                                        <li>Neo4j - Neo4j & LLM Fundamentals</li>
-                                        <li>AWS - AWS Cloud</li>
-                                        <li>Udemy - Project Management Fundamentals</li>
-                                        <li>Udemy - Product Management Fundamentals</li>
-                                        <li>Udemy - MCP (Model Context Protocol)</li>
-                                        <li>Microsoft - SQL Server</li>
+                                        <!-- Certification data will be dynamically populated here -->
                                     </ul>
                                 </div>
                             </div>
@@ -1273,11 +1067,7 @@
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-trophy"></i>Achievements</div>
                                 <ul id="resume-achievements">
-                                    <li>Ranked #1 in HackerRank SQL.</li>
-                                    <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
-                                    <li>Led a team of five analysts, restoring team credibility and stability.</li>
-                                    <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
-                                    <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
+                                    <!-- Achievements data will be dynamically populated here -->
                                 </ul>
                             </div>
                             <br>
@@ -1285,14 +1075,7 @@
                                 <div class="section-title"><i class="fas fa-tools"></i>Skills</div>
                                 <div class="skills-list">
                                     <ul id="resume-skills">
-                                        <li>Data Science & AI: Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee, Supervised ML, Unsupervised ML, NLP, Time Series, Model Development & Deployment, RAG, Vector DB, Prompt Engineering</li>
-                                        <li>Cloud Platforms: Azure, AWS, GCP, IBM</li>
-                                        <li>Programming: Python, SQL</li>
-                                        <li>Data Engineering: Azure Data Factory, Databricks, Azure Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy</li>
-                                        <li>Databases: Azure SQL, SQL Server, MySQL, MongoDB</li>
-                                        <li>Visualization: Power BI, Matplotlib, Seaborn</li>
-                                        <li>DevOps: Docker, Kubernetes, Git, CI/CD</li>
-                                        <li>Domains: Finance, Banking, Environmental, Social Media, Waste Management, Energy</li>
+                                        <!-- Skills data will be dynamically populated here -->
                                     </ul>
                                 </div>
                             </div>
@@ -1301,11 +1084,7 @@
                                 <div class="section-title"><i class="fas fa-star"></i>Core Competencies</div>
                                 <div class="core-competencies-list">
                                     <ul id="resume-core-competencies">
-                                        <li>Project Management and Deployment</li>
-                                        <li>Data Strategy and Management</li>
-                                        <li>Business and Data Analytics</li>
-                                        <li>Analytics & AI</li>
-                                        <li>Product Management</li>
+                                        <!-- Core Competencies data will be dynamically populated here -->
                                     </ul>
                                 </div>
                             </div>
@@ -1350,8 +1129,8 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            $('#Professional Summary').addClass('active');
-            $('.nav-link[data-section="Professional Summary"]').addClass('active');
+            $('#Professional-Summary').addClass('active');
+            $('.nav-link[data-section="Professional-Summary"]').addClass('active');
 
             $(window).on('scroll', function() {
                 if ($(window).scrollTop() > 50) {
@@ -1435,6 +1214,185 @@
                 });
             }
         }
+
+        // Data for dynamic population
+        const data = {
+            experience: [
+                { company: "IBM", role: "Data Scientist", period: "Mar 2024 – Present" },
+                { company: "Accenture", role: "Data Scientist", period: "Apr 2021 – Feb 2024" },
+                { company: "Capgemini", role: "Process Lead", period: "Feb 2021 – Mar 2021" },
+                { company: "Clean Harbors", role: "Data Scientist", period: "Jun 2018 – Jan 2021" }
+            ],
+            projects: [
+                { title: "MARC (Multi-Agent Resource Coordinator)", company: "IBM", description: ["Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation.", "Applied AI Governance principles to ensure ethical and compliant operations of automation agents.", "Utilized advanced Large Language Models (LLMs) for intelligent task orchestration and agent selection.", "Streamlined enterprise workflows with a scalable multi-agent AI system."] },
+                { title: "Mizuho Bank", company: "Accenture", description: ["Developed and deployed PdfGPT, an AI-powered text summarization system, enhancing document processing workflows.", "Implemented key feature extraction capabilities and PDF text summarization through interactive chat functionality.", "Reduced document review time by 30% with AI-driven system."] },
+                { title: "Ulster Bank", company: "Accenture", description: ["Automated machine learning pipelines for customer segmentation algorithms using Python, Glue, and Athena.", "Created and validated Data Models, deriving meaningful insights and explaining them to client stakeholders."] },
+                { title: "Facebook", company: "Accenture", description: ["Examined data from multiple disparate sources to discover insights providing competitive advantage for clients.", "Designed and optimized machine learning pipelines, specializing in the creation of forecasting models.", "Leveraged Machine Learning, Python, Glue, Athena, and SageMaker to enhance decision-making processes."] },
+                { title: "Waste Classification Code", company: "Clean Harbors", description: ["Designed and fine-tuned Waste Classification Code Prediction models, enabling autonomous WCC assignment.", "Created a unified dataset encompassing vital features for all waste classes.", "Applied logical data checks for input consistency, facilitating classification based on physical properties."] },
+                { title: "Invoice Audit", company: "Clean Harbors", description: ["Developed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.", "Streamlined invoice verification, reducing audit time by 20%."] }
+            ],
+            education: [
+                { institution: "IIT Dhanbad", degree: "B.Tech", period: "2013 – 2017" },
+                { institution: "Super30, Patna", degree: "", period: "2012 – 2013" }
+            ],
+            certifications: [
+                { institution: "Northwestern University", course: "Analytics & AI" },
+                { institution: "IBM", course: "IBM watsonx.ai Technical Essentials" },
+                { institution: "IBM", course: "IBM watsonx Essentials" },
+                { institution: "Microsoft & LinkedIn", course: "Generative AI" },
+                { institution: "Microsoft", course: "Azure Machine Learning" },
+                { institution: "Stanford University", course: "Machine Learning" },
+                { institution: "Duke University", course: "DevOps, DataOps, MLOps" },
+                { institution: "Neo4j", course: "Neo4j & LLM Fundamentals" },
+                { institution: "AWS", course: "AWS Cloud" },
+                { institution: "Udemy", course: "Project Management Fundamentals" },
+                { institution: "Udemy", course: "Product Management Fundamentals" },
+                { institution: "Udemy", course: "MCP (Model Context Protocol)" },
+                { institution: "Microsoft", course: "SQL Server" }
+            ],
+            achievements: [
+                "Ranked #1 in HackerRank SQL.",
+                "Consistently recognized by clients for error-free, timely project deliveries.",
+                "Led a team of five analysts, restoring team credibility and stability.",
+                "Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.",
+                "Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016)."
+            ],
+            skills: [
+                "Data Science & AI: Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee, Supervised ML, Unsupervised ML, NLP, Time Series, Model Development & Deployment, RAG, Vector DB, Prompt Engineering",
+                "Cloud Platforms: Azure, AWS, GCP, IBM",
+                "Programming: Python, SQL",
+                "Data Engineering: Azure Data Factory, Databricks, Azure Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy",
+                "Databases: Azure SQL, SQL Server, MySQL, MongoDB, BigQuery",
+                "Visualization: Power BI, Matplotlib, Seaborn",
+                "DevOps: Docker, Kubernetes, Git, CI/CD",
+                "Domains: Finance, Banking, Environmental, Social Media, Waste Management, Energy"
+            ],
+            coreCompetencies: [
+                "Project Management and Deployment",
+                "Data Strategy and Management",
+                "Business and Data Analytics",
+                "Analytics & AI",
+                "Product Management"
+            ]
+        };
+
+        // Function to dynamically populate sections
+        function populateSections() {
+            // Experience
+            const experienceGrid = $('#experience-grid');
+            data.experience.forEach(item => {
+                experienceGrid.append(`
+                    <div class="experience-box">
+                        <h5><strong>${item.company}</strong> - ${item.role}</h5>
+                        <p><span class="float-end">${item.period}</span></p>
+                    </div>
+                `);
+            });
+
+            // Projects
+            const projectsGrid = $('#projects-grid');
+            data.projects.forEach(item => {
+                projectsGrid.append(`
+                    <div class="project-box">
+                        <h5><strong>${item.title}</strong> <span class="company">${item.company}</span></h5>
+                        <ul>
+                            ${item.description.map(desc => `<li>${desc}</li>`).join('')}
+                        </ul>
+                    </div>
+                `);
+            });
+
+            // Education
+            const educationGrid = $('#education-grid');
+            data.education.forEach(item => {
+                educationGrid.append(`
+                    <div class="education-box">
+                        <h5><strong>${item.institution}</strong> - ${item.degree}</h5>
+                        <p><span class="float-end">${item.period}</span></p>
+                    </div>
+                `);
+            });
+
+            // Certifications
+            const certificationGrid = $('#certification-grid');
+            data.certifications.forEach(item => {
+                certificationGrid.append(`
+                    <div class="certification-box">
+                        <span class="institution">${item.institution}</span><br>
+                        <span class="course">${item.course}</span>
+                    </div>
+                `);
+            });
+
+            // Achievements
+            const achievementsList = $('#achievements-list');
+            data.achievements.forEach(item => {
+                achievementsList.append(`<li>${item}</li>`);
+            });
+
+            // Skills
+            const skillsList = $('#skills-list');
+            data.skills.forEach(item => {
+                skillsList.append(`<li><strong>${item}</strong></li>`);
+            });
+
+            // Core Competencies
+            const coreCompetenciesList = $('#core-competencies-list');
+            data.coreCompetencies.forEach(item => {
+                coreCompetenciesList.append(`<li>${item}</li>`);
+            });
+
+            // Resume Sections
+            const resumeExperience = $('#resume-experience');
+            data.experience.forEach(item => {
+                resumeExperience.append(`
+                    <p class="job-title">${item.company} - ${item.role} <span class="job-period">${item.period}</span></p>
+                `);
+            });
+
+            const resumeProjects = $('#resume-projects');
+            data.projects.forEach(item => {
+                resumeProjects.append(`
+                    <div class="project">
+                        <div class="project-title"><strong>${item.title}</strong> - ${item.company}</div>
+                        <ul>
+                            ${item.description.map(desc => `<li>${desc}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <br>
+                `);
+            });
+
+            const resumeEducation = $('#resume-education');
+            data.education.forEach(item => {
+                resumeEducation.append(`
+                    <p class="school-name">${item.institution} - ${item.degree} <span class="education-period">${item.period}</span></p>
+                `);
+            });
+
+            const resumeCertifications = $('#resume-certifications');
+            data.certifications.forEach(item => {
+                resumeCertifications.append(`<li>${item.institution} - ${item.course}</li>`);
+            });
+
+            const resumeAchievements = $('#resume-achievements');
+            data.achievements.forEach(item => {
+                resumeAchievements.append(`<li>${item}</li>`);
+            });
+
+            const resumeSkills = $('#resume-skills');
+            data.skills.forEach(item => {
+                resumeSkills.append(`<li>${item}</li>`);
+            });
+
+            const resumeCoreCompetencies = $('#resume-core-competencies');
+            data.coreCompetencies.forEach(item => {
+                resumeCoreCompetencies.append(`<li>${item}</li>`);
+            });
+        }
+
+        // Call the function to populate sections
+        populateSections();
     </script>
 </body>
 </html>

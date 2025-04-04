@@ -655,7 +655,7 @@
         }
         .resume-page {
             width: 210mm;
-            height: 297mm;
+            min-height: 297mm; /* Changed to min-height to accommodate all content */
             background: #fff;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             padding: 5mm 8mm;
@@ -860,7 +860,6 @@
                 margin: 0;
                 padding: 5mm 8mm;
                 width: 210mm;
-                height: 297mm;
             }
             #downloadResumeButton {
                 display: none;
@@ -1142,42 +1141,135 @@
                         <div class="left-column">
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-user"></i>Professional Summary</div>
-                                <p id="resume-summary"></p>
+                                <p><strong>IIT graduate</strong> and <strong>AI Researcher</strong> with around <strong>7 years</strong> of expertise in Data Science, AI, and Product Development, specializing in Generative AI, AI governance, and advanced automation. Proven ability to design, deploy, and optimize AI/ML solutions across finance, banking, energy, and environmental sectors, driving business transformation and efficiency. Skilled in machine learning, deep learning, NLP, and AI-driven automation, with hands-on experience in Python, SQL, LangChain, CrewAI, TensorFlow, PyTorch, and cloud platforms (Azure, AWS, GCP, IBM). Led AI-driven initiatives, driving efficiency, scalability, and innovation across diverse applications. Experienced in AI model deployment, workflow automation, and strategy implementation, delivering measurable business impact.</p>
                             </div>
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-briefcase"></i>Experience</div>
-                                <div id="resume-experience"></div>
+                                <div id="resume-experience">
+                                    <p class="job-title">IBM - Data Scientist <span class="job-period">Mar 2024 – Present</span></p>
+                                    <p class="job-title">Accenture - Data Scientist <span class="job-period">Apr 2021 – Feb 2024</span></p>
+                                    <p class="job-title">Capgemini - Process Lead <span class="job-period">Feb 2021 – Mar 2021</span></p>
+                                    <p class="job-title">Clean Harbors - Data Scientist <span class="job-period">Jun 2018 – Jan 2021</span></p>
+                                </div>
                             </div>
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-project-diagram"></i>Key Projects</div>
-                                <div id="resume-projects"></div>
+                                <div id="resume-projects">
+                                    <div class="project">
+                                        <div class="project-title"><strong>MARC (Multi-Agent Resource Coordinator)</strong> <span class="company">IBM</span></div>
+                                        <ul>
+                                            <li>Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation.</li>
+                                            <li>Applied AI Governance principles to ensure ethical and compliant operations of automation agents.</li>
+                                            <li>Utilized advanced Large Language Models (LLMs) for intelligent task orchestration and agent selection.</li>
+                                            <li>Streamlined enterprise workflows with a scalable multi-agent AI system.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project">
+                                        <div class="project-title"><strong>Mizuho Bank</strong> <span class="company">Accenture</span></div>
+                                        <ul>
+                                            <li>Developed and deployed PdfGPT, an AI-powered text summarization system, enhancing document processing workflows.</li>
+                                            <li>Implemented key feature extraction capabilities and PDF text summarization through interactive chat functionality.</li>
+                                            <li>Reduced document review time by 30% with AI-driven system.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project">
+                                        <div class="project-title"><strong>Ulster Bank</strong> <span class="company">Accenture</span></div>
+                                        <ul>
+                                            <li>Automated machine learning pipelines for customer segmentation algorithms using Python, Glue, and Athena.</li>
+                                            <li>Created and validated Data Models, deriving meaningful insights and explaining them to client stakeholders.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project">
+                                        <div class="project-title"><strong>Facebook</strong> <span class="company">Accenture</span></div>
+                                        <ul>
+                                            <li>Examined data from multiple disparate sources to discover insights providing competitive advantage for clients.</li>
+                                            <li>Designed and optimized machine learning pipelines, specializing in the creation of forecasting models.</li>
+                                            <li>Leveraged Machine Learning, Python, Glue, Athena, and SageMaker to enhance decision-making processes.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project">
+                                        <div class="project-title"><strong>Waste Classification Code</strong> <span class="company">Clean Harbors</span></div>
+                                        <ul>
+                                            <li>Designed and fine-tuned Waste Classification Code Prediction models, enabling autonomous WCC assignment.</li>
+                                            <li>Created a unified dataset encompassing vital features for all waste classes.</li>
+                                            <li>Applied logical data checks for input consistency, facilitating classification based on physical properties.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project">
+                                        <div class="project-title"><strong>Invoice Audit</strong> <span class="company">Clean Harbors</span></div>
+                                        <ul>
+                                            <li>Developed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.</li>
+                                            <li>Streamlined invoice verification, reducing audit time by 20%.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="right-column">
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-graduation-cap"></i>Education</div>
-                                <div id="resume-education"></div>
+                                <div id="resume-education">
+                                    <p class="school-name">IIT Dhanbad - B.Tech <span class="education-period">2013 – 2017</span></p>
+                                    <p class="school-name">Super30, Patna <span class="education-period">2012 – 2013</span></p>
+                                </div>
                             </div>
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-certificate"></i>Certifications</div>
                                 <div class="certifications-list">
-                                    <ul id="resume-certifications"></ul>
+                                    <ul id="resume-certifications">
+                                        <li>Northwestern University - Analytics & AI</li>
+                                        <li>IBM - IBM watsonx.ai Technical Essentials</li>
+                                        <li>IBM - IBM watsonx Essentials</li>
+                                        <li>Microsoft & LinkedIn - Generative AI</li>
+                                        <li>Microsoft - Azure Machine Learning</li>
+                                        <li>Stanford University - Machine Learning</li>
+                                        <li>Duke University - DevOps, DataOps, MLOps</li>
+                                        <li>Neo4j - Neo4j & LLM Fundamentals</li>
+                                        <li>AWS - AWS Cloud</li>
+                                        <li>Udemy - Project Management Fundamentals</li>
+                                        <li>Udemy - Product Management Fundamentals</li>
+                                        <li>Udemy - MCP (Model Context Protocol)</li>
+                                        <li>Microsoft - SQL Server</li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-trophy"></i>Achievements</div>
-                                <ul id="resume-achievements"></ul>
+                                <ul id="resume-achievements">
+                                    <li>Ranked #1 in HackerRank SQL.</li>
+                                    <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
+                                    <li>Led a team of five analysts, restoring team credibility and stability.</li>
+                                    <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
+                                    <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
+                                </ul>
                             </div>
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-tools"></i>Skills</div>
                                 <div class="skills-list">
-                                    <ul id="resume-skills"></ul>
+                                    <ul id="resume-skills">
+                                        <li>Data Science & AI: Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee, Supervised ML, Unsupervised ML, NLP, Time Series, Model Development & Deployment, RAG, Vector DB, Prompt Engineering</li>
+                                        <li>Cloud Platforms: Azure, AWS, GCP, IBM</li>
+                                        <li>Programming: Python, SQL</li>
+                                        <li>Data Engineering: Azure Data Factory, Databricks, Azure Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy</li>
+                                        <li>Databases: Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
+                                        <li>Visualization: Power BI, Matplotlib, Seaborn</li>
+                                        <li>DevOps: Docker, Kubernetes, Git, CI/CD</li>
+                                        <li>Domains: Finance, Banking, Environmental, Social Media, Waste Management, Energy</li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="section">
                                 <div class="section-title"><i class="fas fa-star"></i>Core Competencies</div>
                                 <div class="core-competencies-list">
-                                    <ul id="resume-core-competencies"></ul>
+                                    <ul id="resume-core-competencies">
+                                        <li>Project Management and Deployment</li>
+                                        <li>Data Strategy and Management</li>
+                                        <li>Business Strategy and Consulting</li>
+                                        <li>Service Delivery and Execution</li>
+                                        <li>Business and Data Analytics</li>
+                                        <li>Analytics & AI</li>
+                                        <li>Product Management</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -1231,82 +1323,6 @@
                     $('#header').removeClass('scrolled');
                 }
             });
-
-            const summaryText = $('#home .lead').text();
-            $('#resume-summary').text(summaryText);
-
-            const experienceItems = $('#experience .experience-box');
-            let experienceHTML = '';
-            experienceItems.each(function() {
-                const title = $(this).find('h5').text();
-                const period = $(this).find('p .float-end').text();
-                experienceHTML += `
-                    <div class="job">
-                        <div class="job-title">${title}</div>
-                        <div class="job-period">${period}</div>
-                    </div>
-                `;
-            });
-            $('#resume-experience').html(experienceHTML);
-
-            const projectItems = $('#projects .project-box');
-            let projectsHTML = '';
-            projectItems.each(function() {
-                const title = $(this).find('h5').html();
-                const details = $(this).find('ul').html();
-                projectsHTML += `
-                    <div class="project">
-                        <div class="project-title">${title}</div>
-                        <ul>${details}</ul>
-                    </div>
-                `;
-            });
-            $('#resume-projects').html(projectsHTML);
-
-            const educationItems = $('#education .education-box');
-            let educationHTML = '';
-            educationItems.each(function() {
-                const school = $(this).find('h5').text();
-                const period = $(this).find('p .float-end').text();
-                educationHTML += `
-                    <div class="education-item">
-                        <div class="school-name">${school}</div>
-                        <div class="education-period">${period}</div>
-                    </div>
-                `;
-            });
-            $('#resume-education').html(educationHTML);
-
-            const certificationItems = $('#certification .certification-box');
-            let certificationsHTML = '';
-            certificationItems.each(function() {
-                const institution = $(this).find('.institution').text();
-                const course = $(this).find('.course').text();
-                certificationsHTML += `<li>${institution} - ${course}</li>`;
-            });
-            $('#resume-certifications').html(certificationsHTML);
-
-            const achievementItems = $('#achievements ul li');
-            let achievementsHTML = '';
-            achievementItems.each(function() {
-                achievementsHTML += `<li>${$(this).text()}</li>`;
-            });
-            $('#resume-achievements').html(achievementsHTML);
-
-            const skillItems = $('#skills .skills-grid li');
-            let skillsHTML = '';
-            skillItems.each(function() {
-                skillsHTML += `<li>${$(this).text()}</li>`;
-            });
-            $('#resume-skills').html(skillsHTML);
-
-            const coreCompetencyItems = $('#core-competencies ul li');
-            let coreCompetenciesHTML = '';
-            coreCompetencyItems.each(function() {
-                const text = $(this).text();
-                coreCompetenciesHTML += `<li>${text}</li>`;
-            });
-            $('#resume-core-competencies').html(coreCompetenciesHTML);
         });
 
         function showResumeSection() {
@@ -1319,7 +1335,12 @@
 
         async function downloadPDF() {
             const { jsPDF } = window.jspdf;
-            const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+            const doc = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4',
+                compress: true
+            });
             const page = document.querySelector('.resume-page');
             const button = document.getElementById('downloadResumeButton');
             
@@ -1327,15 +1348,35 @@
                 button.innerHTML = '<i class="fas fa-download"></i> Generating PDF...';
                 button.disabled = true;
 
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
                 const canvas = await html2canvas(page, {
                     scale: 2,
                     useCORS: true,
-                    backgroundColor: '#ffffff'
+                    backgroundColor: '#ffffff',
+                    windowWidth: page.scrollWidth,
+                    windowHeight: page.scrollHeight,
+                    scrollX: 0,
+                    scrollY: 0
                 });
+                
                 const imgData = canvas.toDataURL('image/jpeg', 0.95);
                 const imgWidth = 210;
+                const pageHeight = 297;
                 const imgHeight = canvas.height * imgWidth / canvas.width;
-                doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
+                let heightLeft = imgHeight;
+                let position = 0;
+
+                doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+
                 doc.save('Chandan_Kumar_Resume.pdf');
                 button.innerHTML = '<i class="fas fa-download"></i> Download Resume';
                 button.disabled = false;

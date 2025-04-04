@@ -658,228 +658,136 @@
             line-height: 1.6;
         }
 
-        /* Resume Section Styles */
+        /* Updated Resume Section Styles */
         #resume .resume-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
+            max-width: 210mm;
+            margin: 0 auto;
         }
         .resume-page {
             width: 210mm;
             height: 297mm;
-            background-color: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            padding: 8mm 10mm;
-            position: relative;
-            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 8mm;
             font-family: 'Open Sans', sans-serif;
-            color: var(--text-color);
+            font-size: 9pt;
             line-height: 1.3;
-            font-size: 10px;
-            font-weight: 400;
-        }
-        .resume-page::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(10, 102, 194, 0.05), rgba(245, 158, 11, 0.05));
-            z-index: -1;
+            color: var(--text-color);
         }
         .resume-page header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-bottom: 4mm;
             border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
-            margin-bottom: 8px;
-            position: relative;
         }
-        .resume-page .header-left {
-            flex: 1;
-        }
-        .resume-page header h1 {
-            font-size: 22px;
+        .resume-page .header-left h1 {
+            font-size: 20pt;
             font-weight: 700;
             color: var(--primary-color);
-            letter-spacing: 1px;
-            margin-bottom: 2px;
+            margin: 0;
             text-transform: uppercase;
         }
         .resume-page .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            font-size: 9px;
-            margin-bottom: 2px;
+            gap: 5mm;
+            font-size: 9pt;
+            font-weight: 500;
         }
-        .resume-page .contact-item {
-            display: flex;
-            align-items: center;
-        }
-        .resume-page .contact-item .icon {
+        .resume-page .contact-item i {
             color: var(--secondary-color);
-            margin-right: 3px;
-            font-size: 11px;
+            margin-right: 2mm;
         }
         .resume-page .contact-item a, .resume-page .contact-item span {
             color: var(--text-color);
             text-decoration: none;
-            font-weight: 600;
-        }
-        .resume-page .contact-item a:hover {
-            color: var(--secondary-color);
         }
         .resume-page .profile-photo {
-            width: 40px;
-            height: 40px;
+            width: 35mm;
+            height: 35mm;
             border-radius: 50%;
-            overflow: hidden;
             border: 2px solid var(--primary-color);
+            overflow: hidden;
         }
         .resume-page .profile-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .resume-page .profile-photo-fallback {
-            display: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #e0e0e0;
-            color: #666;
-            font-size: 8px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            border: 2px solid var(--primary-color);
-        }
         .resume-page .content {
             display: flex;
-            gap: 10px;
-            margin-top: 8px;
+            gap: 5mm;
+            margin-top: 4mm;
         }
-        .resume-page .left-column {
-            flex: 6;
+        .resume-page .left-column, .resume-page .right-column {
+            flex: 1;
         }
         .resume-page .right-column {
-            flex: 4;
             border-left: 1px solid var(--border-color);
-            padding-left: 10px;
+            padding-left: 5mm;
         }
         .resume-page .section {
-            margin-bottom: 8px;
+            margin-bottom: 4mm;
         }
         .resume-page .section-title {
-            font-size: 12px;
+            font-size: 12pt;
             font-weight: 700;
             color: var(--primary-color);
             text-transform: uppercase;
             border-bottom: 1px solid var(--secondary-color);
-            padding-bottom: 2px;
-            margin-bottom: 5px;
-            letter-spacing: 0.5px;
-            position: relative;
+            padding-bottom: 1mm;
+            margin-bottom: 2mm;
         }
-        .resume-page .section-title::before {
-            content: '\f0c1';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            margin-right: 5px;
+        .resume-page .section-title i {
             color: var(--accent-color);
-            font-size: 10px;
+            margin-right: 2mm;
+            font-size: 10pt;
         }
-        .resume-page .job, .resume-page .education-item, .resume-page .project {
-            margin-bottom: 5px;
+        .resume-page p, .resume-page li {
+            margin: 0 0 1mm;
+            text-align: justify;
         }
         .resume-page .job-title, .resume-page .school-name, .resume-page .project-title {
-            font-size: 10px;
+            font-size: 10pt;
             font-weight: 600;
-            color: #000000;
-            display: inline-block;
-        }
-        .resume-page .project-title .company-name {
-            font-weight: 400;
-            font-style: italic;
-            color: var(--primary-color);
-            margin-left: 3px;
+            color: #000;
         }
         .resume-page .job-period, .resume-page .education-period {
             float: right;
-            font-weight: 600;
-            font-size: 9px;
+            font-size: 9pt;
+            font-weight: 500;
         }
         .resume-page ul {
-            padding-left: 12px;
-            margin: 2px 0;
+            padding-left: 5mm;
+            margin: 0;
         }
-        .resume-page li {
-            margin-bottom: 2px;
-            text-align: justify;
+        .resume-page .skills-list ul {
+            padding-left: 0;
+            list-style: none;
         }
-        .resume-page p {
-            margin: 2px 0;
-            text-align: justify;
-            font-size: 10px;
+        .resume-page .skills-list li {
+            margin-bottom: 1mm;
+            padding-left: 5mm;
+            position: relative;
         }
-        .resume-page strong {
-            font-weight: 700;
-            color: #000000;
-        }
-        .resume-page .skills-list ul li {
-            margin-bottom: 2px;
+        .resume-page .skills-list li::before {
+            content: '\f105';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
         }
         .resume-page .certifications-list ul {
-            column-count: 1;
-        }
-        .resume-page .core-competencies-list ul {
-            column-count: 1;
-        }
-        .resume-page .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5px;
-        }
-        .resume-page .skills-grid li {
-            background: rgba(10, 102, 194, 0.05);
-            padding: 5px;
-            border-radius: 5px;
-            font-size: 9px;
-        }
-        .resume-page .core-competencies-list ul li {
-            background: rgba(245, 158, 11, 0.05);
-            padding: 5px;
-            border-radius: 5px;
-            margin-bottom: 3px;
+            column-count: 2;
+            column-gap: 5mm;
         }
         .resume-page .additional-info {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid var(--border-color);
-        }
-        .resume-page .additional-info h4 {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 5px;
+            margin-top: 2mm;
         }
         .resume-page .additional-info p {
-            font-size: 10px;
-            color: #4b5563;
-            margin-bottom: 5px;
-        }
-        .resume-page .additional-info ul {
-            padding-left: 12px;
-        }
-        .resume-page .additional-info ul li {
-            font-size: 10px;
-            margin-bottom: 3px;
+            margin-bottom: 2mm;
         }
 
         /* Mobile Optimizations */
@@ -924,32 +832,14 @@
                 height: 150px;
             }
             .profile-text h3 { font-size: 1.5rem; }
-            .resume-page {
-                width: 95%;
-                height: auto;
-                padding: 10px;
-            }
             .resume-page .content {
                 flex-direction: column;
-            }
-            .resume-page header {
-                flex-direction: column;
-                align-items: center;
-            }
-            .resume-page .header-left {
-                text-align: center;
-            }
-            .resume-page .profile-photo {
-                margin: 5px auto;
             }
             .resume-page .right-column {
                 border-left: none;
                 padding-left: 0;
                 border-top: 1px solid var(--border-color);
-                padding-top: 10px;
-            }
-            .resume-page .skills-grid {
-                grid-template-columns: 1fr;
+                padding-top: 5mm;
             }
         }
         @media (max-width: 576px) {
@@ -968,9 +858,9 @@
             .resume-page {
                 box-shadow: none;
                 margin: 0;
-                padding: 8mm 10mm;
-                width: 100%;
-                height: 100%;
+                padding: 8mm;
+                width: 210mm;
+                height: 297mm;
             }
             #downloadResumeButton {
                 display: none;
@@ -1236,83 +1126,66 @@
                 <h2>Resume</h2>
             </div>
             <div class="resume-container" id="resumeContent">
-                <!-- Single Page -->
                 <div class="resume-page">
                     <header>
                         <div class="header-left">
                             <h1>CHANDAN KUMAR</h1>
                             <div class="contact-info">
-                                <div class="contact-item">
-                                    <span class="icon"><i class="fas fa-envelope"></i></span>
-                                    <a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a>
-                                </div>
-                                <div class="contact-item">
-                                    <span class="icon"><i class="fas fa-phone"></i></span>
-                                    <span>+91-9199000200</span>
-                                </div>
-                                <div class="contact-item">
-                                    <span class="icon"><i class="fab fa-linkedin-in"></i></span>
-                                    <a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/chandaniit</a>
-                                </div>
+                                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a></div>
+                                <div class="contact-item"><i class="fas fa-phone"></i><span>+91-9199000200</span></div>
+                                <div class="contact-item"><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/chandaniit</a></div>
                             </div>
                         </div>
                         <div class="profile-photo">
-                            <img src="ck.jpg" alt="Chandan Kumar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <img src="ck.jpg" alt="Chandan Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
                             <div class="profile-photo-fallback">Image Not Available</div>
                         </div>
                     </header>
                     <div class="content">
                         <div class="left-column">
                             <div class="section">
-                                <div class="section-title">Professional Summary</div>
+                                <div class="section-title"><i class="fas fa-user"></i>Professional Summary</div>
                                 <p id="resume-summary"></p>
                             </div>
                             <div class="section">
-                                <div class="section-title">Experience</div>
+                                <div class="section-title"><i class="fas fa-briefcase"></i>Experience</div>
                                 <div id="resume-experience"></div>
                             </div>
                             <div class="section">
-                                <div class="section-title">Key Projects</div>
+                                <div class="section-title"><i class="fas fa-project-diagram"></i>Key Projects</div>
                                 <div id="resume-projects"></div>
                             </div>
                         </div>
                         <div class="right-column">
                             <div class="section">
-                                <div class="section-title">Education</div>
+                                <div class="section-title"><i class="fas fa-graduation-cap"></i>Education</div>
                                 <div id="resume-education"></div>
                             </div>
                             <div class="section">
-                                <div class="section-title">Certifications</div>
+                                <div class="section-title"><i class="fas fa-certificate"></i>Certifications</div>
                                 <div class="certifications-list">
                                     <ul id="resume-certifications"></ul>
                                 </div>
                             </div>
                             <div class="section">
-                                <div class="section-title">Key Achievements</div>
+                                <div class="section-title"><i class="fas fa-trophy"></i>Key Achievements</div>
                                 <ul id="resume-achievements"></ul>
                             </div>
                             <div class="section">
-                                <div class="section-title">Skills</div>
+                                <div class="section-title"><i class="fas fa-tools"></i>Skills</div>
                                 <div class="skills-list">
-                                    <ul id="resume-skills" class="skills-grid"></ul>
+                                    <ul id="resume-skills"></ul>
                                 </div>
                             </div>
                             <div class="section">
-                                <div class="section-title">Core Competencies</div>
+                                <div class="section-title"><i class="fas fa-star"></i>Core Competencies</div>
                                 <div class="core-competencies-list">
                                     <ul id="resume-core-competencies"></ul>
                                 </div>
                             </div>
                             <div class="additional-info">
-                                <h4>Professional Affiliations</h4>
-                                <ul>
-                                    <li>Member, Data Science Association</li>
-                                    <li>Contributor, Open Source AI Projects</li>
-                                </ul>
-                                <h4>Languages</h4>
-                                <p>English (Fluent), Hindi (Native)</p>
-                                <h4>Interests</h4>
-                                <p>AI Ethics, Sustainable Technology, Chess</p>
+                                <p><strong>Languages:</strong> English (Fluent), Hindi (Native)</p>
+                                <p><strong>Interests:</strong> AI Ethics, Sustainable Technology, Chess</p>
                             </div>
                         </div>
                     </div>
@@ -1334,19 +1207,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Hamburger menu toggle
             $('.navbar-toggler').on('click', function() {
                 $('.hamburger-menu').toggleClass('active');
             });
 
-            // Close dropdown when clicking outside
             $(document).on('click', function(e) {
                 if (!$(e.target).closest('.hamburger-menu').length) {
                     $('.hamburger-menu').removeClass('active');
                 }
             });
 
-            // Section navigation
             $('.nav-link').on('click', function(e) {
                 e.preventDefault();
                 const sectionId = $(this).attr('data-section');
@@ -1354,15 +1224,13 @@
                 $(this).addClass('active');
                 $('.content-section').removeClass('active');
                 $('#' + sectionId).addClass('active');
-                $('.hamburger-menu').removeClass('active'); // Close dropdown after click
+                $('.hamburger-menu').removeClass('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            // Ensure the home section is active on page load
             $('#home').addClass('active');
             $('.nav-link[data-section="home"]').addClass('active');
 
-            // Header scroll effect
             $(window).on('scroll', function() {
                 if ($(window).scrollTop() > 50) {
                     $('#header').addClass('scrolled');
@@ -1371,12 +1239,9 @@
                 }
             });
 
-            // Populate Resume Section Dynamically
-            // Professional Summary
             const summaryText = $('#home .lead').text();
             $('#resume-summary').text(summaryText);
 
-            // Experience
             const experienceItems = $('#experience .experience-box');
             let experienceHTML = '';
             experienceItems.each(function() {
@@ -1391,7 +1256,6 @@
             });
             $('#resume-experience').html(experienceHTML);
 
-            // Projects
             const projectItems = $('#projects .project-box');
             let projectsHTML = '';
             projectItems.each(function() {
@@ -1406,7 +1270,6 @@
             });
             $('#resume-projects').html(projectsHTML);
 
-            // Education
             const educationItems = $('#education .education-box');
             let educationHTML = '';
             educationItems.each(function() {
@@ -1415,13 +1278,12 @@
                 educationHTML += `
                     <div class="education-item">
                         <div class="school-name">${school}</div>
-                        <div class="education-period">(${period})</div>
+                        <div class="education-period">${period}</div>
                     </div>
                 `;
             });
             $('#resume-education').html(educationHTML);
 
-            // Certifications
             const certificationItems = $('#certification .certification-box');
             let certificationsHTML = '';
             certificationItems.each(function() {
@@ -1431,7 +1293,6 @@
             });
             $('#resume-certifications').html(certificationsHTML);
 
-            // Achievements
             const achievementItems = $('#achievements ul li');
             let achievementsHTML = '';
             achievementItems.each(function() {
@@ -1439,15 +1300,13 @@
             });
             $('#resume-achievements').html(achievementsHTML);
 
-            // Skills
             const skillItems = $('#skills .skills-grid li');
             let skillsHTML = '';
             skillItems.each(function() {
-                skillsHTML += `<li>${$(this).html()}</li>`;
+                skillsHTML += `<li>${$(this).text()}</li>`;
             });
             $('#resume-skills').html(skillsHTML);
 
-            // Core Competencies
             const coreCompetencyItems = $('#core-competencies ul li');
             let coreCompetenciesHTML = '';
             coreCompetencyItems.each(function() {
@@ -1482,34 +1341,22 @@
         async function downloadPDF() {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
-            const pages = document.querySelectorAll('.resume-page');
+            const page = document.querySelector('.resume-page');
             const button = document.getElementById('downloadResumeButton');
             
             try {
                 button.innerHTML = '<i class="fas fa-download"></i> Generating PDF...';
                 button.disabled = true;
 
-                for (let i = 0; i < pages.length; i++) {
-                    const canvas = await html2canvas(pages[i], {
-                        scale: 3,
-                        useCORS: true,
-                        logging: false,
-                        backgroundColor: '#ffffff',
-                        windowHeight: pages[i].scrollHeight
-                    });
-                    const imgWidth = 210;
-                    const pageHeight = 297;
-                    const imgHeight = canvas.height * imgWidth / canvas.width;
-                    const imgData = canvas.toDataURL('image/jpeg', 0.9);
-                    let heightRatio = pageHeight / imgHeight;
-                    let adjustedHeight = imgHeight * heightRatio;
-
-                    if (i > 0) {
-                        doc.addPage();
-                    }
-                    doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, adjustedHeight);
-                }
-
+                const canvas = await html2canvas(page, {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: '#ffffff'
+                });
+                const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                const imgWidth = 210;
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
                 doc.save('Chandan_Kumar_Resume.pdf');
                 button.innerHTML = '<i class="fas fa-download"></i> Download Resume as PDF';
                 button.disabled = false;

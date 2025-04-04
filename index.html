@@ -670,38 +670,38 @@
             height: 297mm;
             background-color: white;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            padding: 5mm 6mm;
+            padding: 4mm 5mm;
             position: relative;
             overflow: hidden;
             font-family: 'Open Sans', sans-serif;
             color: var(--text-color);
             line-height: 1.1;
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 400;
         }
         .resume-page header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
             padding-bottom: 2px;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
         .resume-page .header-left {
             flex: 1;
         }
         .resume-page header h1 {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: var(--primary-color);
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             margin-bottom: 1px;
         }
         .resume-page .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            font-size: 8px;
+            gap: 5px;
+            font-size: 7px;
             margin-bottom: 1px;
         }
         .resume-page .contact-item {
@@ -711,7 +711,7 @@
         .resume-page .contact-item .icon {
             color: var(--secondary-color);
             margin-right: 2px;
-            font-size: 10px;
+            font-size: 9px;
         }
         .resume-page .contact-item a, .resume-page .contact-item span {
             color: var(--text-color);
@@ -722,8 +722,8 @@
             color: var(--secondary-color);
         }
         .resume-page .profile-photo {
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             overflow: hidden;
         }
@@ -734,12 +734,12 @@
         }
         .resume-page .profile-photo-fallback {
             display: none;
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             background: #e0e0e0;
             color: #666;
-            font-size: 7px;
+            font-size: 6px;
             font-weight: 500;
             display: flex;
             align-items: center;
@@ -748,8 +748,8 @@
         }
         .resume-page .content {
             display: flex;
-            gap: 6px;
-            margin-top: 4px;
+            gap: 5px;
+            margin-top: 3px;
         }
         .resume-page .left-column {
             flex: 6;
@@ -758,10 +758,10 @@
             flex: 4;
         }
         .resume-page .section {
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
         .resume-page .section-title {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 700;
             color: var(--primary-color);
             text-transform: uppercase;
@@ -774,7 +774,7 @@
             margin-bottom: 2px;
         }
         .resume-page .job-title, .resume-page .school-name, .resume-page .project-title {
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 600;
             color: #000000;
             display: inline-block;
@@ -788,10 +788,10 @@
         .resume-page .job-period, .resume-page .education-period {
             float: right;
             font-weight: 600;
-            font-size: 8px;
+            font-size: 7px;
         }
         .resume-page ul {
-            padding-left: 10px;
+            padding-left: 8px;
             margin: 1px 0;
         }
         .resume-page li {
@@ -801,7 +801,7 @@
         .resume-page p {
             margin: 1px 0;
             text-align: justify;
-            font-size: 9px;
+            font-size: 8px;
         }
         .resume-page strong {
             font-weight: 700;
@@ -812,7 +812,11 @@
         }
         .resume-page .certifications-list ul {
             column-count: 2;
-            column-gap: 10px;
+            column-gap: 8px;
+        }
+        .resume-page .core-competencies-list ul {
+            column-count: 2;
+            column-gap: 8px;
         }
 
         /* Mobile Optimizations */
@@ -860,7 +864,7 @@
             .resume-page {
                 width: 95%;
                 height: auto;
-                padding: 10px;
+                padding: 8px;
             }
             .resume-page .content {
                 flex-direction: column;
@@ -873,9 +877,10 @@
                 text-align: center;
             }
             .resume-page .profile-photo {
-                margin: 5px auto;
+                margin: 4px auto;
             }
-            .resume-page .certifications-list ul {
+            .resume-page .certifications-list ul,
+            .resume-page .core-competencies-list ul {
                 column-count: 1;
             }
         }
@@ -895,7 +900,7 @@
             .resume-page {
                 box-shadow: none;
                 margin: 0;
-                padding: 5mm 6mm;
+                padding: 4mm 5mm;
                 width: 100%;
                 height: 100%;
             }
@@ -931,7 +936,7 @@
                 <a href="https://www.linkedin.com/in/chandaniit/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-   </header>
+    </header>
 
     <main class="container">
         <section id="home" class="content-section active">
@@ -1192,146 +1197,43 @@
                         <div class="left-column">
                             <div class="section">
                                 <div class="section-title">Professional Summary</div>
-                                <p><strong>IIT graduate</strong> and <strong>AI Researcher</strong> with around <strong>7 years</strong> of expertise in Data Science, AI, and Product Development, specializing in Generative AI, AI governance, and advanced automation. Proven ability to design, deploy, and optimize AI/ML solutions across finance, banking, energy, and environmental sectors, driving business transformation and efficiency. Skilled in machine learning, deep learning, NLP, and AI-driven automation, with hands-on experience in Python, SQL, LangChain, CrewAI, TensorFlow, PyTorch, and cloud platforms (Azure, AWS, GCP, IBM). Led AI-driven initiatives, driving efficiency, scalability, and innovation across diverse applications. Experienced in AI model deployment, workflow automation, and strategy implementation, delivering measurable business impact.</p>
+                                <p id="resume-summary"></p>
                             </div>
                             <div class="section">
                                 <div class="section-title">Experience</div>
-                                <div class="job">
-                                    <div class="job-title"><strong>IBM</strong> - Data Scientist</div>
-                                    <div class="job-period">Mar 2024 - Present</div>
-                                </div>
-                                <div class="job">
-                                    <div class="job-title"><strong>Accenture</strong> - Data Scientist</div>
-                                    <div class="job-period">Apr 2021 - Feb 2024</div>
-                                </div>
-                                <div class="job">
-                                    <div class="job-title"><strong>Capgemini</strong> - Process Lead</div>
-                                    <div class="job-period">Feb 2021 - Mar 2021</div>
-                                </div>
-                                <div class="job">
-                                    <div class="job-title"><strong>Clean Harbors</strong> - Data Scientist</div>
-                                    <div class="job-period">Jun 2018 - Jan 2021</div>
-                                </div>
+                                <div id="resume-experience"></div>
                             </div>
                             <div class="section">
                                 <div class="section-title">Key Projects</div>
-                                <div class="project">
-                                    <div class="project-title"><strong>MARC</strong>, <span class="company-name">IBM</span></div>
-                                    <ul>
-                                        <li>Developed and deployed multiple agents for IBM's MARC platform, enhancing multi-agent collaboration and workflow automation.</li>
-                                        <li>Applied AI Governance principles to ensure ethical and compliant operations of automation agents.</li>
-                                        <li>Utilized advanced Large Language Models (LLMs) for intelligent task orchestration and agent selection.</li>
-                                        <li>Streamlined enterprise workflows with a scalable multi-agent AI system.</li>
-                                    </ul>
-                                </div>
-                                <div class="project">
-                                    <div class="project-title"><strong>Mizuho Bank</strong>, <span class="company-name">Accenture</span></div>
-                                    <ul>
-                                        <li>Developed and deployed PdfGPT, an AI-powered text summarization system, enhancing document processing workflows.</li>
-                                        <li>Implemented key feature extraction capabilities and PDF text summarization through interactive chat functionality.</li>
-                                        <li>Reduced document review time by 30% with AI-driven system.</li>
-                                    </ul>
-                                </div>
-                                <div class="project">
-                                    <div class="project-title"><strong>Ulster Bank</strong>, <span class="company-name">Accenture</span></div>
-                                    <ul>
-                                        <li>Automated machine learning pipelines for customer segmentation algorithms using Python, Glue, and Athena.</li>
-                                        <li>Created and validated Data Models, deriving meaningful insights and explaining them to client stakeholders.</li>
-                                    </ul>
-                                </div>
-                                <div class="project">
-                                    <div class="project-title"><strong>Facebook</strong>, <span class="company-name">Accenture</span></div>
-                                    <ul>
-                                        <li>Examined data from multiple disparate sources to discover insights providing competitive advantage for clients.</li>
-                                        <li>Designed and optimized machine learning pipelines, specializing in the creation of forecasting models.</li>
-                                        <li>Leveraged Machine Learning, Python, Glue, Athena, and SageMaker to enhance decision-making processes.</li>
-                                    </ul>
-                                </div>
-                                <div class="project">
-                                    <div class="project-title"><strong>Waste Classification Code</strong>, <span class="company-name">Clean Harbors</span></div>
-                                    <ul>
-                                        <li>Designed and fine-tuned Waste Classification Code Prediction models, enabling autonomous WCC assignment.</li>
-                                        <li>Created a unified dataset encompassing vital features for all waste classes.</li>
-                                        <li>Applied logical data checks for input consistency, facilitating classification based on physical properties.</li>
-                                    </ul>
-                                </div>
-                                <div class="project">
-                                    <div class="project-title"><strong>Invoice Audit</strong>, <span class="company-name">Clean Harbors</span></div>
-                                    <ul>
-                                        <li>Developed an invoice auditing and revenue prediction algorithm using machine learning and statistical analysis.</li>
-                                        <li>Streamlined invoice verification, reducing audit time by 20%.</li>
-                                    </ul>
-                                </div>
+                                <div id="resume-projects"></div>
                             </div>
                         </div>
                         <div class="right-column">
                             <div class="section">
                                 <div class="section-title">Education</div>
-                                <div class="education-item">
-                                    <div class="school-name"><strong>IIT Dhanbad</strong> - B.Tech</div>
-                                    <div class="education-period">(2013-2017)</div>
-                                </div>
-                                <div class="education-item">
-                                    <div class="school-name"><strong>Super30</strong>, Patna</div>
-                                    <div class="education-period">(2012-2013)</div>
-                                </div>
+                                <div id="resume-education"></div>
                             </div>
                             <div class="section">
                                 <div class="section-title">Certifications</div>
                                 <div class="certifications-list">
-                                    <ul>
-                                        <li>Northwestern University - Analytics & AI</li>
-                                        <li>IBM - IBM watsonx.ai Technical Essentials</li>
-                                        <li>IBM - IBM watsonx Essentials</li>
-                                        <li>Microsoft & LinkedIn - Generative AI</li>
-                                        <li>Microsoft - Azure Machine Learning</li>
-                                        <li>Stanford University - Machine Learning</li>
-                                        <li>Duke University - DevOps, DataOps, MLOps</li>
-                                        <li>Neo4j - Neo4j & LLM Fundamentals</li>
-                                        <li>AWS - AWS Cloud</li>
-                                        <li>Udemy - Project Management Fundamentals</li>
-                                        <li>Udemy - Product Management Fundamentals</li>
-                                        <li>Udemy - MCP (Model Context Protocol)</li>
-                                        <li>Microsoft - SQL Server</li>
-                                    </ul>
+                                    <ul id="resume-certifications"></ul>
                                 </div>
                             </div>
                             <div class="section">
                                 <div class="section-title">Key Achievements</div>
-                                <ul>
-                                    <li>Ranked #1 in HackerRank SQL.</li>
-                                    <li>Consistently recognized by clients for error-free, timely project deliveries.</li>
-                                    <li>Led a team of five analysts, restoring team credibility and stability.</li>
-                                    <li>Cleared IIT JEE-2013, ranking in the top 1% of JEE Advanced qualifiers.</li>
-                                    <li>Served as Student Representative in Mess Committee, IIT Dhanbad (2015-2016).</li>
-                                </ul>
+                                <ul id="resume-achievements"></ul>
                             </div>
                             <div class="section">
                                 <div class="section-title">Skills</div>
                                 <div class="skills-list">
-                                    <ul>
-                                        <li><strong>Data Science & AI:</strong> Generative AI, Deep Learning, AI Governance, Responsible AI, MLOps, Statistical Analysis, TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face, LangChain, CrewAI, AutoGen, Bee, Supervised ML, Unsupervised ML, NLP, Time Series, Model Development & Deployment, RAG, Vector DB, Prompt Engineering</li>
-                                        <li><strong>Cloud Platforms:</strong> Azure, AWS, GCP, IBM</li>
-                                        <li><strong>Programming:</strong> Python, SQL</li>
-                                        <li><strong>Data Engineering:</strong> Azure Data Factory, Databricks, Azure Synapse Analytics, AWS S3, Glue, SageMaker, BigQuery, Pandas, NumPy</li>
-                                        <li><strong>Databases:</strong> Azure SQL, SQL Server, MySQL, MongoDB, BigQuery</li>
-                                        <li><strong>Visualization:</strong> Power BI, Matplotlib, Seaborn</li>
-                                        <li><strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD</li>
-                                        <li><strong>Domains:</strong> Finance, Banking, Environmental, Social Media, Waste Management, Energy</li>
-                                    </ul>
+                                    <ul id="resume-skills"></ul>
                                 </div>
                             </div>
                             <div class="section">
                                 <div class="section-title">Core Competencies</div>
-                                <ul>
-                                    <li>Project Management and Deployment</li>
-                                    <li>Data Strategy and Management</li>
-                                    <li>Business Strategy and Consulting</li>
-                                    <li>Service Delivery and Execution</li>
-                                    <li>Business and Data Analytics</li>
-                                    <li>Analytics & AI</li>
-                                    <li>Product Management</li>
-                                </ul>
+                                <div class="core-competencies-list">
+                                    <ul id="resume-core-competencies"></ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1389,6 +1291,91 @@
                     $('#header').removeClass('scrolled');
                 }
             });
+
+            // Populate Resume Section Dynamically
+            // Professional Summary
+            const summaryText = $('#home .lead').text();
+            $('#resume-summary').text(summaryText);
+
+            // Experience
+            const experienceItems = $('#experience .experience-box');
+            let experienceHTML = '';
+            experienceItems.each(function() {
+                const title = $(this).find('h5').text();
+                const period = $(this).find('p .float-end').text();
+                experienceHTML += `
+                    <div class="job">
+                        <div class="job-title">${title}</div>
+                        <div class="job-period">${period}</div>
+                    </div>
+                `;
+            });
+            $('#resume-experience').html(experienceHTML);
+
+            // Projects
+            const projectItems = $('#projects .project-box');
+            let projectsHTML = '';
+            projectItems.each(function() {
+                const title = $(this).find('h5').html();
+                const details = $(this).find('ul').html();
+                projectsHTML += `
+                    <div class="project">
+                        <div class="project-title">${title}</div>
+                        <ul>${details}</ul>
+                    </div>
+                `;
+            });
+            $('#resume-projects').html(projectsHTML);
+
+            // Education
+            const educationItems = $('#education .education-box');
+            let educationHTML = '';
+            educationItems.each(function() {
+                const school = $(this).find('h5').text();
+                const period = $(this).find('p .float-end').text();
+                educationHTML += `
+                    <div class="education-item">
+                        <div class="school-name">${school}</div>
+                        <div class="education-period">(${period})</div>
+                    </div>
+                `;
+            });
+            $('#resume-education').html(educationHTML);
+
+            // Certifications
+            const certificationItems = $('#certification .certification-box');
+            let certificationsHTML = '';
+            certificationItems.each(function() {
+                const institution = $(this).find('.institution').text();
+                const course = $(this).find('.course').text();
+                certificationsHTML += `<li>${institution} - ${course}</li>`;
+            });
+            $('#resume-certifications').html(certificationsHTML);
+
+            // Achievements
+            const achievementItems = $('#achievements ul li');
+            let achievementsHTML = '';
+            achievementItems.each(function() {
+                achievementsHTML += `<li>${$(this).text()}</li>`;
+            });
+            $('#resume-achievements').html(achievementsHTML);
+
+            // Skills
+            const skillItems = $('#skills .skills-grid li');
+            let skillsHTML = '';
+            skillItems.each(function() {
+                skillsHTML += `<li>${$(this).html()}</li>`;
+            });
+            $('#resume-skills').html(skillsHTML);
+
+            // Core Competencies
+            const coreCompetencyItems = $('#core-competencies ul li');
+            let coreCompetenciesHTML = '';
+            coreCompetencyItems.each(function() {
+                const text = $(this).text();
+                coreCompetenciesHTML += `<li>${text}</li>`;
+            });
+            $('#resume-core-competencies').html(coreCompetenciesHTML);
         });
 
         function showResume() {
@@ -1425,7 +1412,7 @@
 
                 for (let i = 0; i < pages.length; i++) {
                     const canvas = await html2canvas(pages[i], {
-                        scale: 2,
+                        scale: 3, // Increased scale for better quality
                         useCORS: true,
                         logging: false,
                         backgroundColor: '#ffffff',
@@ -1434,7 +1421,7 @@
                     const imgWidth = 210;
                     const pageHeight = 297;
                     const imgHeight = canvas.height * imgWidth / canvas.width;
-                    const imgData = canvas.toDataURL('image/jpeg', 0.85);
+                    const imgData = canvas.toDataURL('image/jpeg', 0.9); // Improved quality
                     let heightRatio = pageHeight / imgHeight;
                     let adjustedHeight = imgHeight * heightRatio;
 

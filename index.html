@@ -655,7 +655,7 @@
         }
         .resume-page {
             width: 210mm;
-            min-height: 297mm; /* Changed to min-height to accommodate all content */
+            height: 297mm; /* Fixed height for one-page resume */
             background: #fff;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             padding: 5mm 8mm;
@@ -663,6 +663,7 @@
             font-size: 8pt;
             line-height: 1.2;
             color: var(--text-color);
+            overflow: hidden; /* Prevents content from spilling over */
         }
         .resume-page header {
             display: flex;
@@ -685,6 +686,9 @@
             gap: 1mm;
             font-size: 6pt;
             font-weight: 500;
+        }
+        .resume-page .contact-item {
+            font-weight: bold; /* Bold contact info */
         }
         .resume-page .contact-item i {
             color: var(--secondary-color);
@@ -860,6 +864,7 @@
                 margin: 0;
                 padding: 5mm 8mm;
                 width: 210mm;
+                height: 297mm;
             }
             #downloadResumeButton {
                 display: none;
@@ -1127,9 +1132,9 @@
                         <div class="header-left">
                             <h1>CHANDAN KUMAR</h1>
                             <div class="contact-info">
-                                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:ckism.iit@gmail.com">ckism.iit@gmail.com</a></div>
-                                <div class="contact-item"><i class="fas fa-phone"></i><span>+91-9199000200</span></div>
-                                <div class="contact-item"><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/chandaniit">linkedin.com/in/chandaniit</a></div>
+                                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:ckism.iit@gmail.com"><strong>ckism.iit@gmail.com</strong></a></div>
+                                <div class="contact-item"><i class="fas fa-phone"></i><span><strong>+91-9199000200</strong></span></div>
+                                <div class="contact-item"><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/chandaniit"><strong>linkedin.com/in/chandaniit</strong></a></div>
                             </div>
                         </div>
                         <div class="profile-photo">
@@ -1361,21 +1366,16 @@
                 });
                 
                 const imgData = canvas.toDataURL('image/jpeg', 0.95);
-                const imgWidth = 210;
-                const pageHeight = 297;
+                const imgWidth = 210; // A4 width in mm
+                const pageHeight = 297; // A4 height in mm
                 const imgHeight = canvas.height * imgWidth / canvas.width;
-                let heightLeft = imgHeight;
-                let position = 0;
 
-                doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
-                heightLeft -= pageHeight;
+                // Scale image to fit one page
+                const ratio = Math.min(pageHeight / imgHeight, 1);
+                const scaledHeight = imgHeight * ratio;
 
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    doc.addPage();
-                    doc.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                }
+                // Add image to PDF, ensuring it fits on one page
+                doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, scaledHeight);
 
                 doc.save('Chandan_Kumar_Resume.pdf');
                 button.innerHTML = '<i class="fas fa-download"></i> Download Resume';

@@ -20,13 +20,15 @@
             --text-color: #1e2a44;
             --light-gray: #f5f5f5;
             --border-color: #e0e0e0;
+            --accent-color: #f59e0b;
+            --hover-color: #ffca28;
         }
         body {
             font-family: 'Poppins', sans-serif;
             background: #f8fafc;
             color: var(--text-color);
             margin: 0;
-            padding-top: 70px;
+            padding-top: 80px;
             line-height: 1.6;
             font-size: 16px;
         }
@@ -39,6 +41,10 @@
             width: 100%;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: background 0.3s ease;
+        }
+        #header.scrolled {
+            background: linear-gradient(135deg, #1e2a44, #0a4a9b);
         }
         #header .container {
             display: flex;
@@ -47,28 +53,55 @@
             flex-wrap: wrap;
         }
         #header h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             margin: 0;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #fff, #ddd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+        #header h1:hover {
+            transform: scale(1.05);
         }
         .social-links a {
             color: #fff;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-left: 20px;
             transition: all 0.3s ease;
+            position: relative;
         }
         .social-links a:hover {
-            color: #f59e0b;
+            color: var(--accent-color);
             transform: translateY(-4px);
+        }
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        .social-links a:hover::after {
+            width: 100%;
         }
         .navbar-toggler {
             border: none;
             background: none;
             color: #fff;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
-            padding: 0;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .navbar-toggler:hover {
+            color: var(--accent-color);
+            transform: rotate(90deg);
         }
         .hamburger-menu {
             position: relative;
@@ -78,30 +111,62 @@
             display: none;
             position: absolute;
             background: #1e2a44;
-            min-width: 200px;
-            border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            min-width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
             z-index: 1000;
             left: 0;
             top: 100%;
-            margin-top: 5px;
+            margin-top: 10px;
+            padding: 10px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            animation: slideDown 0.3s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .hamburger-menu.active .dropdown-menu {
             display: block;
         }
         .dropdown-menu .nav-link {
-            display: block;
-            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
             color: #fff;
             text-decoration: none;
-            border-radius: 0;
             font-weight: 500;
             transition: all 0.3s ease;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .dropdown-menu .nav-link:last-child {
+            border-bottom: none;
+        }
+        .dropdown-menu .nav-link i {
+            margin-right: 10px;
+            font-size: 1.1rem;
         }
         .dropdown-menu .nav-link:hover,
         .dropdown-menu .nav-link.active {
-            background: #f59e0b;
+            background: var(--accent-color);
             color: #fff;
+            padding-left: 25px;
+        }
+        .dropdown-menu .nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--hover-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .dropdown-menu .nav-link:hover::before,
+        .dropdown-menu .nav-link.active::before {
+            opacity: 1;
         }
         .content-section {
             padding: 40px;
@@ -112,9 +177,13 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
             display: none;
             animation: fadeIn 0.6s ease-in-out;
+            transition: transform 0.3s ease;
         }
         .content-section.active {
             display: block;
+        }
+        .content-section:hover {
+            transform: translateY(-5px);
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -128,15 +197,22 @@
             position: relative;
             text-transform: uppercase;
             letter-spacing: 1px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .section-title h2::after {
             content: '';
             width: 60px;
             height: 4px;
-            background: #f59e0b;
+            background: var(--accent-color);
             position: absolute;
             bottom: -10px;
             left: 0;
+            transition: width 0.3s ease;
+        }
+        .section-title h2:hover::after {
+            width: 100px;
         }
         ul {
             padding-left: 20px;
@@ -144,6 +220,10 @@
         ul li {
             margin-bottom: 12px;
             line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+        ul li:hover {
+            color: var(--primary-color);
         }
         .experience-grid, .education-grid, .projects-grid, .skills-grid, .certification-grid {
             display: grid;
@@ -191,7 +271,7 @@
         #viewResumeButton, #viewBiodataButton {
             width: 200px;
             padding: 12px;
-            background-color: var(--primary-color);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             color: white;
             text-align: center;
             border-radius: 30px;
@@ -201,10 +281,26 @@
             border: none;
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
         #viewResumeButton:hover, #viewBiodataButton:hover {
-            background-color: #074e91;
+            background: linear-gradient(90deg, #074e91, #1a73e8);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        #viewResumeButton::before, #viewBiodataButton::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        #viewResumeButton:hover::before, #viewBiodataButton:hover::before {
+            left: 100%;
         }
         #resumeIframe, #biodataIframe {
             width: 100%;
@@ -224,7 +320,7 @@
             font-size: 0.9rem;
         }
         footer a {
-            color: #f59e0b;
+            color: var(--accent-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -283,14 +379,14 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="dropdown-menu">
-                    <a href="#home" class="nav-link active" data-section="home">Home</a>
-                    <a href="#experience" class="nav-link" data-section="experience">Experience</a>
-                    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-                    <a href="#education" class="nav-link" data-section="education">Education</a>
-                    <a href="#certification" class="nav-link" data-section="certification">Certification</a>
-                    <a href="#achievements" class="nav-link" data-section="achievements">Achievements</a>
-                    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-                    <a href="#core-competencies" class="nav-link" data-section="core-competencies">Core Competencies</a>
+                    <a href="#home" class="nav-link active" data-section="home"><i class="fas fa-home"></i> Home</a>
+                    <a href="#experience" class="nav-link" data-section="experience"><i class="fas fa-briefcase"></i> Experience</a>
+                    <a href="#projects" class="nav-link" data-section="projects"><i class="fas fa-project-diagram"></i> Projects</a>
+                    <a href="#education" class="nav-link" data-section="education"><i class="fas fa-graduation-cap"></i> Education</a>
+                    <a href="#certification" class="nav-link" data-section="certification"><i class="fas fa-certificate"></i> Certification</a>
+                    <a href="#achievements" class="nav-link" data-section="achievements"><i class="fas fa-trophy"></i> Achievements</a>
+                    <a href="#skills" class="nav-link" data-section="skills"><i class="fas fa-tools"></i> Skills</a>
+                    <a href="#core-competencies" class="nav-link" data-section="core-competencies"><i class="fas fa-star"></i> Core Competencies</a>
                 </div>
             </div>
             <h1>Chandan Kumar</h1>
@@ -552,6 +648,15 @@
             // Ensure the home section is active on page load
             $('#home').addClass('active');
             $('.nav-link[data-section="home"]').addClass('active');
+
+            // Header scroll effect
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() > 50) {
+                    $('#header').addClass('scrolled');
+                } else {
+                    $('#header').removeClass('scrolled');
+                }
+            });
         });
 
         function showResume() {

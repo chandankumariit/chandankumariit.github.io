@@ -423,7 +423,7 @@
             margin: 30px auto;
             flex-wrap: wrap;
         }
-        #viewResumeButton, #viewBiodataButton, #downloadResumeButton {
+        #viewResumeButton, #downloadResumeButton {
             width: 220px;
             padding: 15px;
             background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
@@ -443,18 +443,18 @@
             justify-content: center;
             gap: 8px;
         }
-        #viewResumeButton i, #viewBiodataButton i, #downloadResumeButton i {
+        #viewResumeButton i, #downloadResumeButton i {
             transition: var(--transition-fast);
         }
-        #viewResumeButton:hover, #viewBiodataButton:hover, #downloadResumeButton:hover {
+        #viewResumeButton:hover, #downloadResumeButton:hover {
             background: linear-gradient(90deg, #074e91, #1a73e8);
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(10, 102, 194, 0.45);
         }
-        #viewResumeButton:hover i, #viewBiodataButton:hover i, #downloadResumeButton:hover i {
+        #viewResumeButton:hover i, #downloadResumeButton:hover i {
             transform: scale(1.2);
         }
-        #viewResumeButton::before, #viewBiodataButton::before, #downloadResumeButton::before {
+        #viewResumeButton::before, #downloadResumeButton::before {
             content: '';
             position: absolute;
             top: 0;
@@ -464,18 +464,8 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: 0.5s;
         }
-        #viewResumeButton:hover::before, #viewBiodataButton:hover::before, #downloadResumeButton:hover::before {
+        #viewResumeButton:hover::before, #downloadResumeButton:hover::before {
             left: 100%;
-        }
-        #resumeIframe, #biodataIframe {
-            width: 100%;
-            height: 700px;
-            border: none;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            margin-top: 30px;
-            display: none;
-            animation: fadeIn 0.6s ease-in-out;
         }
 
         .skills-grid {
@@ -678,12 +668,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 1mm; /* Further reduced */
+            padding-bottom: 1mm;
             border-bottom: 1px solid var(--primary-color);
             margin-bottom: 2mm;
         }
         .resume-page .header-left h1 {
-            font-size: 12pt; /* Further reduced from 14pt */
+            font-size: 12pt;
             font-weight: 700;
             color: var(--primary-color);
             margin: 0;
@@ -692,21 +682,21 @@
         .resume-page .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 1mm; /* Further reduced */
-            font-size: 6pt; /* Further reduced */
+            gap: 1mm;
+            font-size: 6pt;
             font-weight: 500;
         }
         .resume-page .contact-item i {
             color: var(--secondary-color);
             margin-right: 1mm;
-            font-size: 7pt; /* Adjusted to match smaller text */
+            font-size: 7pt;
         }
         .resume-page .contact-item a, .resume-page .contact-item span {
             color: var(--text-color);
             text-decoration: none;
         }
         .resume-page .profile-photo {
-            width: 15mm; /* Further reduced from 20mm */
+            width: 15mm;
             height: 15mm;
             border-radius: 50%;
             border: 1px solid var(--primary-color);
@@ -820,15 +810,11 @@
                 align-items: center;
                 gap: 15px;
             }
-            #viewResumeButton, #viewBiodataButton, #downloadResumeButton {
+            #viewResumeButton, #downloadResumeButton {
                 width: 100%;
                 max-width: 280px;
                 padding: 12px;
                 font-size: 13px;
-            }
-            #resumeIframe, #biodataIframe {
-                height: 450px;
-                margin-top: 15px;
             }
             .experience-grid, .education-grid, .projects-grid, .skills-grid, .certification-grid {
                 grid-template-columns: 1fr;
@@ -862,7 +848,6 @@
             #header h1::after { font-size: 0.6rem; bottom: -8px; }
             .content-section { padding: 15px; }
             .section-title h2 { font-size: 1.4rem; }
-            #resumeIframe, #biodataIframe { height: 400px; }
             .profile-image, .profile-image-fallback {
                 width: 120px;
                 height: 120px;
@@ -929,12 +914,9 @@
             <p class="lead">Proven ability to design, deploy, and optimize AI/ML solutions across finance, banking, energy, and environmental sectors, driving business transformation and efficiency. Skilled in machine learning, deep learning, NLP, and AI-driven automation, with hands-on experience in Python, SQL, LangChain, CrewAI, TensorFlow, PyTorch, and cloud platforms (Azure, AWS, GCP, IBM). Led AI-driven initiatives, driving efficiency, scalability, and innovation across diverse applications. Experienced in AI model deployment, workflow automation, and strategy implementation, delivering measurable business impact.</p>
             
             <div class="button-container">
-                <button id="viewResumeButton" onclick="showResume()"><i class="fas fa-file-alt"></i> View Resume</button>
-                <button id="viewBiodataButton" onclick="showBiodata()"><i class="fas fa-address-card"></i> View Biodata</button>
+                <button id="viewResumeButton" onclick="showResumeSection()"><i class="fas fa-file-alt"></i> View Resume</button>
+                <button id="downloadResumeButton" onclick="downloadPDF()"><i class="fas fa-download"></i> Download Resume</button>
             </div>
-            
-            <iframe id="resumeIframe" src="https://chandankumariit.github.io/resume.html"></iframe>
-            <iframe id="biodataIframe" src="https://chandankumariit.github.io/menu.html"></iframe>
         </section>
 
         <section id="experience" class="content-section">
@@ -1327,26 +1309,12 @@
             $('#resume-core-competencies').html(coreCompetenciesHTML);
         });
 
-        function showResume() {
-            const resumeIframe = document.getElementById('resumeIframe');
-            const biodataIframe = document.getElementById('biodataIframe');
-            if (resumeIframe.style.display === 'none' || resumeIframe.style.display === '') {
-                resumeIframe.style.display = 'block';
-                biodataIframe.style.display = 'none';
-            } else {
-                resumeIframe.style.display = 'none';
-            }
-        }
-
-        function showBiodata() {
-            const resumeIframe = document.getElementById('resumeIframe');
-            const biodataIframe = document.getElementById('biodataIframe');
-            if (biodataIframe.style.display === 'none' || biodataIframe.style.display === '') {
-                biodataIframe.style.display = 'block';
-                resumeIframe.style.display = 'none';
-            } else {
-                biodataIframe.style.display = 'none';
-            }
+        function showResumeSection() {
+            $('.content-section').removeClass('active');
+            $('#resume').addClass('active');
+            $('.nav-link').removeClass('active');
+            $('.nav-link[data-section="resume"]').addClass('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         async function downloadPDF() {
@@ -1369,12 +1337,12 @@
                 const imgHeight = canvas.height * imgWidth / canvas.width;
                 doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
                 doc.save('Chandan_Kumar_Resume.pdf');
-                button.innerHTML = '<i class="fas fa-download"></i> Download Resume as PDF';
+                button.innerHTML = '<i class="fas fa-download"></i> Download Resume';
                 button.disabled = false;
             } catch (error) {
                 console.error('Error generating PDF:', error);
                 alert('Failed to generate PDF. Please try again.');
-                button.innerHTML = '<i class="fas fa-download"></i> Download Resume as PDF';
+                button.innerHTML = '<i class="fas fa-download"></i> Download Resume';
                 button.disabled = false;
             }
         }

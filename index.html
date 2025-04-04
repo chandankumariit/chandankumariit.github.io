@@ -502,7 +502,7 @@
 
         #core-competencies ul {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: by repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             list-style-type: none;
             padding: 0;
@@ -1346,25 +1346,36 @@
                 format: 'a4',
                 compress: true
             });
-            const page = document.querySelector('.resume-page');
-            const button = document.getElementById('downloadResumeButton');
-            
-            try {
-                button.innerHTML = '<i class="fas fa-download"></i> Generating PDF...';
-                button.disabled = true;
+            const resumePage = document.querySelector('#resumeContent .resume-page');
+            const buttons = document.querySelectorAll('#downloadResumeButton');
 
-                await new Promise(resolve => setTimeout(resolve, 500));
-                
-                const canvas = await html2canvas(page, {
+            try {
+                // Update all download buttons to show "Generating PDF..."
+                buttons.forEach(button => {
+                    button.innerHTML = '<i class="fas fa-download"></i> Generating PDF...';
+                    button.disabled = true;
+                });
+
+                // Ensure the resume section is temporarily visible for rendering
+                const wasHidden = !$('#resume').hasClass('active');
+                if (wasHidden) {
+                    $('#resume').addClass('active').css('display', 'block');
+                }
+
+                await new Promise(resolve => setTimeout(resolve, 100)); // Allow DOM to update
+
+                const canvas = await html2canvas(resumePage, {
                     scale: 2,
                     useCORS: true,
                     backgroundColor: '#ffffff',
-                    windowWidth: page.scrollWidth,
-                    windowHeight: page.scrollHeight,
+                    width: resumePage.offsetWidth,
+                    height: resumePage.offsetHeight,
+                    windowWidth: document.documentElement.scrollWidth,
+                    windowHeight: document.documentElement.scrollHeight,
                     scrollX: 0,
                     scrollY: 0
                 });
-                
+
                 const imgData = canvas.toDataURL('image/jpeg', 0.95);
                 const imgWidth = 210; // A4 width in mm
                 const pageHeight = 297; // A4 height in mm
@@ -1374,17 +1385,26 @@
                 const ratio = Math.min(pageHeight / imgHeight, 1);
                 const scaledHeight = imgHeight * ratio;
 
-                // Add image to PDF, ensuring it fits on one page
                 doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, scaledHeight);
-
                 doc.save('Chandan_Kumar_Resume.pdf');
-                button.innerHTML = '<i class="fas fa-download"></i> Download Resume';
-                button.disabled = false;
+
+                // Restore original state
+                if (wasHidden) {
+                    $('#resume').removeClass('active').css('display', 'none');
+                }
+
+                // Reset all download buttons
+                buttons.forEach(button => {
+                    button.innerHTML = '<i class="fas fa-download"></i> Download Resume';
+                    button.disabled = false;
+                });
             } catch (error) {
-                console.error('Error generating PDF:', error);
+                console.error('PDF Generation Error:', error.message, error.stack);
                 alert('Failed to generate PDF. Please try again.');
-                button.innerHTML = '<i class="fas fa-download"></i> Download Resume';
-                button.disabled = false;
+                buttons.forEach(button => {
+                    button.innerHTML = '<i class="fas fa-download"></i> Download Resume';
+                    button.disabled = false;
+                });
             }
         }
     </script>

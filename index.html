@@ -337,7 +337,7 @@
         }
         .experience-box:nth-child(1), .education-box:nth-child(1), .project-box:nth-child(1), .skills-grid li:nth-child(1), .certification-box:nth-child(1) { background: linear-gradient(to right bottom, #e0f2fe, #ffffff); border-left: 6px solid var(--primary-color); }
         .experience-box:nth-child(2), .education-box:nth-child(2), .project-box:nth-child(2), .skills-grid li:nth-child(2), .certification-box:nth-child(2) { background: linear-gradient(to right bottom, #dcfce7, #ffffff); border-left: 6px solid #10b981; }
-        .experience-box:nth-child(3), .project-box:nth-child(3), .skills-grid li:nth-child(3), .certification-box:nth-child(3) { background: linear-gradient(to right bottom, #fef3c7, #ffffff); border-left: 6px solid #f59e0b; }
+        .experience-box:nth-child(3), .project-box:nth-child(3), .skills-grid li:nth-child(3), .certification-box:nth-child(3) { background: linear-gradient(to right bottom, #fef3c7, #ffffff); border-left: 6Reload: 6px solid #f59e0b; }
         .experience-box:nth-child(4), .project-box:nth-child(4), .skills-grid li:nth-child(4), .certification-box:nth-child(4) { background: linear-gradient(to right bottom, #fce7f3, #ffffff); border-left: 6px solid #ec4899; }
         .project-box:nth-child(5), .skills-grid li:nth-child(5), .certification-box:nth-child(5) { background: linear-gradient(to right bottom, #e5e7eb, #ffffff); border-left: 6px solid #6b7280; }
         .project-box:nth-child(6), .skills-grid li:nth-child(6), .certification-box:nth-child(6) { background: linear-gradient(to right bottom, #e0f2fe, #ffffff); border-left: 6px solid var(--primary-color); }
@@ -625,6 +625,26 @@
             transform: scale(1.05);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
+        .profile-image-fallback {
+            display: none;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: var(--transition-slow);
+        }
+        .profile-image-fallback:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
         .profile-text h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
@@ -675,7 +695,7 @@
                 align-items: center;
                 text-align: center;
             }
-            .profile-image {
+            .profile-image, .profile-image-fallback {
                 width: 150px;
                 height: 150px;
             }
@@ -687,7 +707,7 @@
             .content-section { padding: 15px; }
             .section-title h2 { font-size: 1.4rem; }
             #resumeIframe, #biodataIframe { height: 400px; }
-            .profile-image {
+            .profile-image, .profile-image-fallback {
                 width: 120px;
                 height: 120px;
             }
@@ -729,8 +749,8 @@
             </div>
             <div class="profile-section">
                 <div class="profile-image">
-                    <!-- Replace with your actual image URL -->
-                    <img src="https://via.placeholder.com/180" alt="Chandan Kumar">
+                    <img src="ck.jpg" alt="Chandan Kumar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="profile-image-fallback">Image Not Available</div>
                 </div>
                 <div class="profile-text">
                     <h3>Chandan Kumar</h3>
